@@ -86,3 +86,12 @@ Section `Leaderboard` (`79075:3513`, сіра) праворуч від біли�
 - **Бракує токенів** (на етап токенів): радіус 8 (рядок Card) і 16 (плашка Striped) — у `border-radius.global.*` є лише 4/6/12/20; стоять значення без токена.
 - Відхилення від оригіналів: Lottery рядок мав падінги 12/6 → 16/8; Hall of fame — колонки з gap 48 і thumb гри 48 → колонки FILL, гра через іконку/ручну заміну; поточний гравець у Lottery мав помаранчевий текст — тепер підсвічення заливкою `Selected`, текст змінюється вручну; Ingame активний рядок `#9f87cf` (hex) → `semantic/fill/active`; spin history (чужі змінні) → `Style=Card, Inverted=True`.
 - Device-варіанти (`Mobile(320-767)` / `Desktop`) не робимо: мобільна версія — та сама таблиця вужча, 2-рядкові комірки через `Subtext`.
+
+## 8. Image у комірці (2026-10-26)
+- `Table/Cell` + Boolean `⬅️ Image` (off) і swap `↳ 💠 Image` (дефолт `Image/Single` Slot=False; preferred — `Image/Single` і медалі `Place`, чужа бібліотека, set key `1a26f576…`). Шар `Image` стоїть між `Icon` і `Content` (Left) / між `Content` і `Icon` (Right). Розмір — токен на height: md `size/400` (32), sm `size/300` (24), lock ratio. Медалі 1–3 місць — swap на `Place` place=1|2|3.
+- Перевірено превʼю (Striped лідерборд, медалі 1–3) — медалі на місці, 32×32.
+
+### Знайдено 2026-10-26: токени змінились після експорту 22.10
+- Змінної `semantic/background/slate-for-cards` у Figma більше немає (Export видалив) → мертві прив'язки: плашка `Leaderboard` Striped, `Head`, `Leaderboard/Row` Style=Fill (обидва Inverted).
+- `semantic/background/slate-1` у MB тепер `core/grey/100a10` (світлий 10 %), в експорті 22.10 — `core.grey.700`.
+- Нічого не перепривʼязано (не підміняємо без погодження). Потрібен свіжий архів JSON з Token Studio.
