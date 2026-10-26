@@ -95,3 +95,44 @@ Section `Leaderboard` (`79075:3513`, сіра) праворуч від біли�
 - Змінної `semantic/background/slate-for-cards` у Figma більше немає (Export видалив) → мертві прив'язки: плашка `Leaderboard` Striped, `Head`, `Leaderboard/Row` Style=Fill (обидва Inverted).
 - `semantic/background/slate-1` у MB тепер `core/grey/100a10` (світлий 10 %), в експорті 22.10 — `core.grey.700`.
 - Нічого не перепривʼязано (не підміняємо без погодження). Потрібен свіжий архів JSON з Token Studio.
+
+## 9. Звірка групи 1 з `Leaderboard` (2026-10-26)
+| Оригінал | Покрито | Як |
+|---|---|---|
+| Leaders | ✅ | Striped; № — комірка з номером або медаль (`Image` → `Place`); поточний гравець — `Selected` |
+| lottery leader table / header / players, places | ✅ | Striped + `Table/Head/Cell`; mobile — `Subtext` (нік + квиток, сума + приз) |
+| Hall-of-fame / Table, Table-head, Player-number(-states) | ✅ | Card; місце — swap іконки на `List/Bullet`; статус — `Image` (Level) + Label; Current user — `Selected` |
+| Ingame table row | ✅ | Card, комірки `sm` + `Image` 24 → висота рядка 40, як в оригіналі |
+| spin history | ✅ | Card Inverted; дата/час — `Subtext`, сектор / 3D — `Image` |
+Вручну в інстансі (не варіанти): помаранчевий текст поточного гравця (`semantic/text/brand/primary`), жовтий множник `X.2` (колір частини тексту), сума `lg-stronger`, колір посилання назви гри, thumb гри 48 (override висоти Image), заголовок таблиці (`Heading`) і `Show more` (`Button`) — поза компонентом.
+
+## 10. `Table/Cell` — доповнення (2026-10-26)
+- Єдиний порядок шарів для обох Align: `Icon` → `Image` → `Content` → `Icon right`; Align змінює лише вирівнювання тексту і групи.
+- Нове: Boolean `Icon ➡️` + swap `↳ 💠 Icon right` (дефолт `plus`; для ID — `copy`). Щоб іконка стала одразу за текстом, в інстансі комірці і `Content` ставиться Hug, тексту — auto width (так у `History/Details`).
+- **`Table/Cell — Slot`** (`79214:293697`, `Align = Left | Right`): SLOT `Content` (VERTICAL, gap `spacing/200`, вирівнювання за Align), preferred `Status/Badge`, `Button`, `Button/Text`. Для статусів, лічильників статусів, kebab, сума + Cashout стовпчиком.
+
+## 11. Етап 3 — Історія з розкриттям (зібрано 2026-10-26)
+Section `History` (`79215:4197`, сіра) праворуч від білих оригіналів груп 2–3.
+
+| Компонент | Node | Властивості | Анатомія |
+|---|---|---|---|
+| `History` | `79215:294208` | `Style = Card \| Divider`; SLOT `Head cells` (preferred `Table/Head/Cell`), SLOT `Rows` (preferred `History/Row`); Boolean `Show head`, `Chevron space` | VERTICAL 676; Card — gap `spacing/100` між рядками (як Payment history), Divider — 0. `Head`: padding-v `spacing/100`, нижня лінія `semantic/divider/default/primary`, `Chevron space` 24 (`size/300` на width) + gap `spacing/200` — колонки хедера стоять рівно над комірками рядків; Card — padding-l `spacing/200`, padding-r `spacing/400` як у рядка |
+| `History/Row` | `79215:4246` | `Style = Card \| Divider` × `State = Default \| Hover \| Open`; Boolean `Chevron`; SLOT `Cells` (preferred `Table/Cell`, `Table/Cell — Slot`); SLOT `Details` лише в Open (preferred `History/Details`, `History/Row`) | VERTICAL 676, padding-v `spacing/200`, gap `spacing/200`. Card: padding-l `spacing/200`, padding-r `spacing/400`, радіус `border-radius/global/xs`, fill `semantic/fill/subtle` / Hover `semantic/fill/hover`. Divider: без падінгів по боках, нижня лінія `semantic/divider/default/primary`, Hover `semantic/fill/hover`. `Main`: `Chevron` (chevron-right / Open chevron-down, Static, 24 `size/300`, `semantic/icon/default/tertiary`) + `Cells` (gap `spacing/400`). `Details`: padding-l `spacing/800` (під текстом), gap `spacing/200`. Дефолт: комірка з іконкою + Subtext, статус, сума + Subtext |
+| `History/Details` | `79215:4198` | SLOT `Content` (preferred `Table/Cell`, `Table/Cell — Slot`, `Table/Row`) | VERTICAL, padding `spacing/300` / `spacing/400`, gap `spacing/100`, fill `semantic/fill/subtle`, радіус 8 (немає токена). Дефолт: `ID: …` + copy і рядок опису |
+
+Як збираються оригінали:
+- **transactions table item / Payment history item** — `Style=Card`; статус — `Cell — Slot` зі `Status`; kebab — `Cell — Slot` з `Button/Text` або іконкою.
+- **transactions table group / complicated** — у `Details` кладуться вкладені `History/Row` (без шеврона), лічильники статусів — `Status payment history{several}` у `Cell — Slot`.
+- **Betting history (desktop/mobile)** — Card, 5 колонок; сума + Cashout або Win/Loss (`type bet Statuses`) стовпчиком у `Cell — Slot`; Express Open — `History/Details` з `Table/Row` (подія + коефіцієнт).
+- **Loyalty points / points exchange history** — `Style=Divider`; деталі — `History/Details` (ID + copy, Bonus/Status/Exchange rate).
+- **Контейнери** (Payment history content/mobile, Bets history content, заголовок, таби, Filter, empty state) — композиція в лейауті: `Heading` + `Tabs`/`Filter button` + `History` + `Empty`. Окремих компонентів-контейнерів не робимо.
+- Device-варіантів немає: mobile — та сама `History`, вужча, 2-рядкові комірки.
+
+Перевірено превʼю: Card і Divider (MB, XON), Express Open з Cashout і картками подій (MB).
+
+Відхилення від оригіналів (на перевірку):
+- Картка рядка була `semantic/background/slate-2` (білий в обох брендах — у XON білий текст на білому) → `semantic/fill/subtle`.
+- Панель деталей була `contextual/popup/slate/2` (чужий компонентний токен) → `semantic/fill/subtle`.
+- Іконка в колі 40 (Loyalty) → `Image` 32 або іконка 24; copy 20 → 24; відступи між колонками 24–56 → колонки FILL з gap 16 (ширини колонок можна задати в інстансі).
+- Опис під рядком транзакції (на всю ширину) — `Details` з `Table/Cell sm`.
+- Inverted не потрібен (темного контексту немає).
