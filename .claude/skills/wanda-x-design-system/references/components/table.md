@@ -153,3 +153,30 @@ Section `History` (`79215:4197`, сіра) праворуч від білих о
 | 3. Історія з розкриттям | `History` (Card / Divider) + `History/Row` + `History/Details` |
 | 4. Таблиці з колонками | `Table` (Plain / Filled) + `Table/Row` (Horizontal / Vertical) |
 | Спільне | `Table/Cell`, `Table/Cell — Slot`, `Table/Head/Cell` |
+
+## 13. Єдиний неймінг властивостей (2026-10-26, рішення Андрея)
+`Variant` = **як розділені рядки**; ті самі слова в усіх таблицях. Порядок: `Variant → Size → State → Align → Inverted → Direction`.
+
+| Значення | Що означає | Де |
+|---|---|---|
+| `Divider` | рядки розділені лінією, без фону | `Table`, `Table/Row`, `History`, `History/Row` |
+| `Card` | кожен рядок — окрема картка з відступом | `Leaderboard`, `Leaderboard/Row`, `History`, `History/Row` |
+| `Striped` | рядки чергуються на спільній темній плашці | `Leaderboard` |
+| `Panel` | уся таблиця на плашці, хедер із заливкою (Welcome bonus) | `Table` |
+| `Stripe` / `Plain` | один рядок смуги: із заливкою / без | `Leaderboard/Row`, `Table/Row` (Plain = без лінії) |
+
+| Компонент | Властивості |
+|---|---|
+| `Table` | `Variant = Divider \| Panel`; слоти `Head`, `Rows`; `Show head` |
+| `Table/Row` | `Variant = Divider \| Plain`, `Size = md \| sm`, `Direction = Horizontal \| Vertical`; слот `Cells` |
+| `Leaderboard` | `Variant = Card \| Striped`; `Head`, `Rows`; `Show head` |
+| `Leaderboard/Row` | `Variant = Card \| Stripe \| Plain`, `State = Default \| Selected`, `Inverted`; `Cells` |
+| `History` | `Variant = Divider \| Card`; `Head`, `Rows`; `Show head`, `Chevron space` |
+| `History/Row` | `Variant = Card \| Divider`, `State = Default \| Hover \| Open`; `Chevron`; `Cells`, `Details` |
+| `History/Details` | слот `Content` |
+| `Table/Cell` | `Size`, `Align`, `Inverted`; `⬅️ Icon` + `↳ 💠 Icon left`, `Image` + `↳ 💠 Image`, `Subtext`, `Icon ➡️` + `↳ 💠 Icon right` |
+| `Table/Cell — Slot` | `Align`; слот `Content` |
+| `Table/Head/Cell` | `Align`, `Inverted` |
+
+Замінено: `Style` → `Variant`; `Filled` → `Panel`; рядок `Fill` → `Stripe`; `Divider = True | False` → `Variant = Divider | Plain`; слот `Head cells` → `Head`; `↳ 💠 Icon` → `↳ 💠 Icon left`; `⬅️ Image` → `Image`.
+Пастка: при перейменуванні варіантів за шаблоном набір `History` отримав назви `Component` (порожній результат) — після масового перейменування перевіряти `variantOptions` кожного набору.
