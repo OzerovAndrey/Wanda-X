@@ -100,6 +100,7 @@ description: Правила, еталони та чекліст очистки �
 - Token Studio (storage у файлі, запис токенів, токени на шарах) — `references/token-studio.md`.
 
 ## Журнал
+- 2026-10-26 — **Table: доробки групи 4** — `Table` набір `Style = Plain | Filled` (`contextual/table/fill|header`, радіус md), `Table/Row` + `Direction = Horizontal | Vertical`. Усі 4 групи оригіналів покриті (`components/table.md` §12).
 - 2026-10-26 — **Table, етап 3 — історія з розкриттям**: `History` (Card | Divider, слоти Head cells / Rows), `History/Row` (Style × State Default | Hover | Open, слоти Cells / Details), `History/Details`; `Table/Cell` + `Icon ➡️`, новий `Table/Cell — Slot`. Звірка групи 1 — покрито (`components/table.md` §9–11).
 - 2026-10-26 — **Table/Cell: Image** (`⬅️ Image` + swap, медалі `Place`, розмір `size/400`|`size/300`). Знайдено: Export видалив `semantic/background/slate-for-cards`, `slate-1` у MB став світлим — Leaderboard Striped на мертвих змінних, чекаємо свіжий JSON (`components/table.md` §8).
 - 2026-10-23 — **Table, етап 2 — лідерборд**: `Leaderboard` (Style Card | Striped, слоти Head / Rows), `Leaderboard/Row` (Style Card | Fill | Plain × State Default | Selected × Inverted); `Table/Cell` і `Table/Head/Cell` + `Inverted`. Бракує токенів радіуса 8 і 16 (`components/table.md`).

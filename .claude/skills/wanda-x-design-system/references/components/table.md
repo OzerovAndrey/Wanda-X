@@ -136,3 +136,20 @@ Section `History` (`79215:4197`, сіра) праворуч від білих о
 - Іконка в колі 40 (Loyalty) → `Image` 32 або іконка 24; copy 20 → 24; відступи між колонками 24–56 → колонки FILL з gap 16 (ширини колонок можна задати в інстансі).
 - Опис під рядком транзакції (на всю ширину) — `Details` з `Table/Cell sm`.
 - Inverted не потрібен (темного контексту немає).
+
+## 12. Доробки групи 4 (2026-10-26) — підбірка покрита повністю
+- **`Table` перескладено набором** (`79220:4707`, старий `79056:291816` видалено — 0 інстансів): `Style = Plain | Filled`; слоти `Head`, `Rows`, Boolean `Show head` — як раніше.
+  - **Filled** (Welcome bonus): плашка `contextual/table/fill`, радіус `border-radius/global/md` (12), clip; `Head` з заливкою `contextual/table/header` і padding-h `spacing/400`; `Rows` padding-h `spacing/400`. Токени `contextual/table/*` уже були в `Product` (обидва зараз alias на одну змінну — перевірити на етапі токенів).
+  - Хедер Welcome bonus в оригіналі `text/md-strong` heading, у нас `Table/Head/Cell` `text/sm-strong` secondary — ручний override або питання.
+- **`Table/Row` + `Direction = Horizontal | Vertical`** (8v): Vertical — комірки стовпчиком, gap `spacing/200`, ширина 328 (Time limit history mobile, key-value рядки).
+- Комірка з кількома блоками «заголовок + опис» (Welcome bonus) — `Table/Cell — Slot` з кількома `Table/Cell` стовпчиком.
+- Перевірено превʼю: Welcome bonus (Filled) і Time limit mobile (Vertical) у MB і XON.
+
+### Підсумок покриття (усі 4 групи)
+| Група | Новий компонент |
+|---|---|
+| 1. Лідерборди | `Leaderboard` (Card / Striped) + `Leaderboard/Row` |
+| 2. Транзакції та платежі | `History` (Card) + `History/Row` + `History/Details` |
+| 3. Історія з розкриттям | `History` (Card / Divider) + `History/Row` + `History/Details` |
+| 4. Таблиці з колонками | `Table` (Plain / Filled) + `Table/Row` (Horizontal / Vertical) |
+| Спільне | `Table/Cell`, `Table/Cell — Slot`, `Table/Head/Cell` |
