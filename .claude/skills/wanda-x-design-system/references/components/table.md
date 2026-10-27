@@ -180,3 +180,11 @@ Section `History` (`79215:4197`, сіра) праворуч від білих о
 
 Замінено: `Style` → `Variant`; `Filled` → `Panel`; рядок `Fill` → `Stripe`; `Divider = True | False` → `Variant = Divider | Plain`; слот `Head cells` → `Head`; `↳ 💠 Icon` → `↳ 💠 Icon left`; `⬅️ Image` → `Image`.
 Пастка: при перейменуванні варіантів за шаблоном набір `History` отримав назви `Component` (порожній результат) — після масового перейменування перевіряти `variantOptions` кожного набору.
+
+## 14. `Table` без проміжного `Table/Row` (2026-10-27, рішення Андрея)
+- `Table/Row` видалено. Рядок у `Table` — **автолейаут-фрейм `Row`** у слоті `Rows`, всередині прямо `Table/Cell`. Прив'язки на фреймі: padding-v md `spacing/400` / sm `spacing/200`, gap Horizontal `spacing/400` / Vertical `spacing/200`, нижня лінія `semantic/divider/default/primary`. Дублювання рядка в інстансі копіює прив'язки.
+- **`Table`** (`79220:4707`): `Variant = Default | Filled` (назви Андрея; замість `Divider | Panel`) × `Size = md | sm` × `Direction = Horizontal | Vertical` — 8 варіантів; слоти `Head` (preferred `Table/Head/Cell`), `Rows` (preferred `Table/Cell`); `Show head`. Horizontal 676, Vertical 328.
+- Filled: останній рядок дефолтно без лінії; Default — лінія в кожному рядку. Лінію в останньому рядку прибирають вручну (знімають stroke) — перемикача на рівні рядка немає.
+- `History/Details` preferred: `Table/Cell`, `Table/Cell — Slot` (без Table/Row). Картка події в Express — `Table/Cell` + `Table/Cell` Right у фреймі або `Table/Cell — Slot`.
+- Інстанс Андрея на сторінці (`79408:78119`, без змін, лише розмір) замінено свіжим `79412:5351` того ж варіанту.
+- Рядки `Leaderboard/Row` і `History/Row` лишаються компонентами — у них стан усього рядка (Selected, Hover, Open).
