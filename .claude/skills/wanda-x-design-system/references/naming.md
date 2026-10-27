@@ -70,4 +70,4 @@
 Квадратному елементу **блокуємо пропорції** (lock aspect ratio) і токен розміру (`icon-size`, `chevron-size`) ставимо **тільки на висоту**; ширина без токена — тягнеться пропорцією (рішення 2026-10-22).
 
 ## Таблиці — словник `Variant` (2026-10-26)
-Для всіх табличних компонентів `Variant` описує спосіб розділення рядків: `Divider` (лінія), `Card` (окремі картки), `Striped` (смуги на плашці), `Default` / `Filled` для `Table` (назви Андрея, 2026-10-27; Filled — уся таблиця на плашці з хедером); для одного рядка смуги — `Stripe` / `Plain`. Не `Style`, не `Filled`/`Fill`, не Boolean `Divider = True|False`. Слоти — `Head`, `Rows`, `Cells`, `Content`, `Details`. Деталі — `components/table.md` §13.
+Для всіх табличних компонентів `Variant` описує спосіб розділення рядків: `Divider` (лінія), `Card` (окремі картки), `Striped` (смуги на плашці), `Panel` (уся таблиця на плашці з хедером); для одного рядка смуги — `Stripe` / `Plain`. Не `Style`, не `Filled`/`Fill`, не Boolean `Divider = True|False`. Слоти — `Head`, `Rows`, `Cells`, `Content`, `Details`. Деталі — `components/table.md` §13.
