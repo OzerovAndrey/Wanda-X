@@ -184,3 +184,10 @@ Section `History` (`79215:4197`, сіра) праворуч від білих о
 ## 14. Повернуто `Table/Row` (2026-10-27)
 Спроба зібрати `Table` без `Table/Row` відкочена на прохання Андрея. `Table/Row` перестворено з тими самими варіантами й прив'язками (новий node `79415:4874`, key `0766282b…`); `Table` — `Variant = Default | Filled` (назви Андрея), слот `Rows` з інстансами `Table/Row`; preferred у `Table` і `History/Details` відновлено.
 `Table/Cell` Inverted: ліва `Icon` теж на `semantic/text/default-invert/primary`.
+
+## 15. `Table/Cell — Slot` злито в `Table/Cell` (2026-10-27, рішення Андрея)
+- `Table/Cell` (`79056:3444`): **`Type = Text | Slot`** × `Size` × `Align` × `Inverted` — 16 варіантів. Порядок: `Type → Size → Align → Inverted`.
+- `Type=Slot`: SLOT `Content` (VERTICAL, gap `spacing/200`, вирівнювання за Align; preferred `Status/Badge`, `Button`, `Button/Text`), дефолт — `Status/Badge`. Варіанти Slot однакові для всіх Size/Inverted — повна матриця потрібна, щоб перемикач `Type` працював з будь-якої комбінації (неповна матриця → «Unable to find a variant»).
+- `Type=Text`: як раніше (`⬅️ Icon`, `Image`, `Subtext`, `Icon ➡️` + swap-и). Figma показує лише властивості поточного Type.
+- Злиття — перенесенням компонентів (`set.appendChild`): властивість SLOT переїхала, 12 інстансів (у `History/Row`) лишились прив'язаними, старий набір (`79214:293697`) зник сам.
+- Preferred оновлено: `History/Row` Cells → `Table/Cell`; `History/Details` → `Table/Cell`, `Table/Row`.
