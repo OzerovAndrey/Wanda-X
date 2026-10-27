@@ -304,3 +304,10 @@ Section `History` (`79215:4197`, сіра) праворуч від білих о
 ## 25. MB alias (2026-10-27, JSON-handoff)
 Андрей дав повний `mb/alias`; додано 5 (+5 / −0 / ~0): `border-radius.global.card` (між `sm` і `md`), `border-radius.global.container` (між `md` і `lg`), `semantic.background.slate-dark-1|2`, `semantic.background.brand-subtle` (після `slate-for-cards`, перед групою `brand`). Усі 21 посилання токенів таблиць у `mb/component` тепер резолвляться.
 Примітка: у свіжому `mb/alias` `semantic.background.slate-for-cards` знову існує, але як **градієнт** (`linear-gradient(...brand-preset.for-gradients.primary...)`), а `slate-1` = `{core.grey.100a10}` — тому для темної плашки лідерборду лишаємо `slate-dark-1|2`.
+
+## 26. Одна компонента `Table` з підвидами (2026-10-27, рішення Андрея)
+- Набори: `Table` (Default | Filled), `Table/Leaderboard`, `Table/History`, їхні рядки `Table/Row`, `Table/Leaderboard/Row`, `Table/History/Row`, спільні `Table/Cell`, `Table/Head/Cell` (назви Андрея).
+- **Одна Section `Table`** (`79056:3415`): три колонки підвидів (контейнер зверху, рядок під ним, 80 px), внизу `Table/Cell` і `Table/Head/Cell`. Section `Table/Leaderboard`, `Table/History`, `Table/Cell` прибрано; оригінали зсунуто праворуч.
+- Сітка варіантів у кожному наборі — 16 px, рядки/колонки за властивостями: Table/Row — Variant × (Size·Direction); Leaderboard/Row — (Variant·State) × Inverted; History/Row — Variant × State; Cell — Inverted × (Size·Align); Head/Cell — Inverted × Align.
+- **Токени в просторі `table`**: `leaderboard.*` → `table.leaderboard.*`, `history.*` → `table.history.*`, `border-radius.{leaderboard|history}.*` → `border-radius.table.{…}.*`, `contextual.{leaderboard|history}.*` → `contextual.table.{…}.*` (50 токенів; MB component +50 / −2 / ~0 проти вихідного).
+- **Інцидент:** Export з бренчі без наших токенів видалив 48 компонентних + 5 alias-змінних (490 мертвих прив'язок). Відновлено: 55 змінних перестворено з новими назвами, 474 прив'язки — за plugin data `tokens`; мертвих 0. Старі `contextual/table/fill|header` повернув Export (їх тримає оригінал Welcome bonus).
