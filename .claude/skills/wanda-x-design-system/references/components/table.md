@@ -223,7 +223,7 @@ Section `History` (`79215:4197`, сіра) праворуч від білих о
 | `table.panel.padding-h` | `{spacing.400}` | Head, Rows (Filled) |
 | `table.row.padding-v.md` / `.sm` | `{spacing.400}` / `{spacing.200}` | Table/Row |
 | `table.row.gap` | `{spacing.400}` | Cells (Horizontal), Head |
-| `table.row.gap-vertical` | `{spacing.200}` | Cells (Vertical) |
+| `table.row.gap-v` | `{spacing.200}` | Cells (Vertical) |
 | `table.cell.gap` | `{spacing.200}` | Table/Cell |
 | `table.cell.icon-size` | `{size.300}` | Icon, Icon right |
 | `table.cell.image-size.md` / `.sm` | `{size.400}` / `{size.300}` | Image |

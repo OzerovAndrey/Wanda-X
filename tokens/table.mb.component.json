@@ -52,7 +52,7 @@
           ]
         }
       },
-      "gap-vertical": {
+      "gap-v": {
         "value": "{spacing.200}",
         "type": "spacing",
         "$extensions": {
