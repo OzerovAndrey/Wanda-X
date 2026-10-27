@@ -209,3 +209,55 @@ Section `History` (`79215:4197`, сіра) праворуч від білих о
 ## 18. Слот `Details` прибрано (2026-10-27, рішення Андрея)
 - `History/Row` (Open): `Details` — звичайний фрейм (VERTICAL, STRETCH, padding-l `spacing/800`, gap `spacing/200`), всередині фрейм `Panel` (колишня обгортка деталей, токени ті самі). Усе кастомно редагується в інстансі.
 - Властивості `History/Row`: `Variant`, `State`, `Chevron`, слот `Cells`.
+
+## 19. Структура після правок Андрея (2026-10-27)
+4 сірі Section: `Table` (`Table`, `Table/Row`) · `Leaderboard` (`Leaderboard`, `Leaderboard/Row`) · `History` (`History`, `History/Row`) · `Cell` (`Table/Cell`, `Table/Head/Cell` — спільні для всіх таблиць). Основний компонент у кожній — зверху.
+
+## 20. План токенів (чернетка до JSON-handoff)
+Текст, іконки, шеврони — `semantic.*` напряму (правило); компонентні токени — розміри, падінги, gap, радіуси, заливки, лінії. Значення — лише alias.
+
+**table** (`mb/component`, `xon/component`)
+| Токен | Значення | Шар |
+|---|---|---|
+| `table.head.height` | `{size.500}` | Head |
+| `table.panel.padding-h` | `{spacing.400}` | Head, Rows (Filled) |
+| `table.row.padding-v.md` / `.sm` | `{spacing.400}` / `{spacing.200}` | Table/Row |
+| `table.row.gap` | `{spacing.400}` | Cells (Horizontal), Head |
+| `table.row.gap-vertical` | `{spacing.200}` | Cells (Vertical) |
+| `table.cell.gap` | `{spacing.200}` | Table/Cell |
+| `table.cell.icon-size` | `{size.300}` | Icon, Icon right |
+| `table.cell.image-size.md` / `.sm` | `{size.400}` / `{size.300}` | Image |
+| `border-radius.table` | `{border-radius.global.md}` | Table Filled |
+| `contextual.table.fill` | зараз `{core.brand-60.a10}` → alias `semantic.*` (?) | Table Filled |
+| `contextual.table.header` | зараз = fill (двічі накладається) → (?) | Head Filled |
+| `contextual.table.divider` | `{semantic.divider.default.primary}` | Table/Row Divider |
+
+**leaderboard**
+| Токен | Значення | Шар |
+|---|---|---|
+| `leaderboard.gap` | `{spacing.200}` | Card: між Head і Rows, між рядками |
+| `leaderboard.head.height.card` / `.striped` | `{size.500}` / `{size.600}` | Head |
+| `leaderboard.row.padding-h` / `padding-v` / `gap` | `{spacing.400}` / `{spacing.200}` / `{spacing.400}` | Leaderboard/Row |
+| `border-radius.leaderboard.row` | 8 — alias немає (?) | Row Card |
+| `border-radius.leaderboard.striped` | 16 — alias немає (?) | Striped |
+| `contextual.leaderboard.row.fill.card` / `.card-inverted` | `{semantic.fill.subtle}` / `{semantic.fill.subtle-invert}` | Row Card |
+| `contextual.leaderboard.row.fill.stripe` | (?) — `slate-for-cards` видалено | Row Stripe |
+| `contextual.leaderboard.row.fill.selected` | `{semantic.fill.active}` | Row Selected |
+| `contextual.leaderboard.striped.fill` / `.head-fill` | (?) — темний в обох брендах | Striped, Head |
+
+**history**
+| Токен | Значення | Шар |
+|---|---|---|
+| `history.gap` | `{spacing.100}` | Card: між рядками |
+| `history.head.padding-v` | `{spacing.100}` | Head row |
+| `history.row.padding-v` / `padding-left` / `padding-right` / `gap` | `{spacing.200}` / `{spacing.200}` / `{spacing.400}` / `{spacing.200}` | History/Row (Card) |
+| `history.chevron-size` | `{size.300}` | Chevron, Chevron space |
+| `history.details.padding-left` / `gap` | `{spacing.800}` / `{spacing.200}` | Details |
+| `history.panel.padding-v` / `padding-h` / `gap` | `{spacing.300}` / `{spacing.400}` / `{spacing.100}` | Panel |
+| `border-radius.history.row` | `{border-radius.global.xs}` | Row Card |
+| `border-radius.history.panel` | 8 — alias немає (?) | Panel |
+| `contextual.history.row.fill.card` / `.hover` | `{semantic.fill.subtle}` / `{semantic.fill.hover}` | Row |
+| `contextual.history.panel.fill` | `{semantic.fill.subtle}` | Panel |
+| `contextual.history.divider` | `{semantic.divider.default.primary}` | Row Divider, Head |
+
+Відкриті рішення: alias для радіусів 8 і 16; темна заливка Striped/Stripe замість видаленого `slate-for-cards` (і `slate-1`, що в MB став світлим); `contextual.table.fill|header` — на core і однакові.
