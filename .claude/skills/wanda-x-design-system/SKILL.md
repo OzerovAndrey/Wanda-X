@@ -100,6 +100,7 @@ description: Правила, еталони та чекліст очистки �
 - Token Studio (storage у файлі, запис токенів, токени на шарах) — `references/token-studio.md`.
 
 ## Журнал
+- 2026-10-27 — **Table/Cell: `Status` і `Label` (Boolean) замість `Type=Slot`** — статус вбудований під текстом (exposed), Slot-варіанти прибрано, History/Row переведено (`components/table.md` §16).
 - 2026-10-27 — **`Table/Cell — Slot` злито в `Table/Cell`** як `Type = Text | Slot` (16v, повна матриця); інстанси збережено перенесенням варіантів (`components/table.md` §15).
 - 2026-10-27 — Table: спробу без `Table/Row` відкочено, `Table/Row` перестворено (`79415:4874`); `Table` = `Variant Default | Filled`. Table/Cell Inverted — ліва іконка інвертована.
 - 2026-10-26 — **Table: єдиний неймінг властивостей** — `Variant = Divider | Card | Striped | Panel` (+ `Stripe`/`Plain` для рядка) в усіх таблицях, слоти `Head`/`Rows`/`Cells`, свопи `↳ 💠 Icon left|right` (`naming.md` → Таблиці, `components/table.md` §13).

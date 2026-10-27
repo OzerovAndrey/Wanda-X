@@ -191,3 +191,11 @@ Section `History` (`79215:4197`, сіра) праворуч від білих о
 - `Type=Text`: як раніше (`⬅️ Icon`, `Image`, `Subtext`, `Icon ➡️` + swap-и). Figma показує лише властивості поточного Type.
 - Злиття — перенесенням компонентів (`set.appendChild`): властивість SLOT переїхала, 12 інстансів (у `History/Row`) лишились прив'язаними, старий набір (`79214:293697`) зник сам.
 - Preferred оновлено: `History/Row` Cells → `Table/Cell`; `History/Details` → `Table/Cell`, `Table/Row`.
+
+## 16. Статус у `Table/Cell` замість `Type=Slot` (2026-10-27, рішення Андрея)
+- `Type = Text | Slot` прибрано: `Table/Cell` знову `Size × Align × Inverted` (8v), без слота.
+- Нове: Boolean **`Status`** (off) — exposed instance `Status/Badge` (Status=Success, Size=md, Variant=Subtle) усередині `Content` під текстом; вирівнюється за `Align`. Його варіанти (Status, Size, Variant) змінюються з батьківського інстансу.
+- Нове: Boolean **`Label`** (on) — вимикає основний текст. Колонка статусу = `Label` off + `Status` on.
+- Порядок у `Content`: `Label` → `Subtext` → `Status` (gap 0).
+- 6 комірок-статусів у мейнах `History/Row` переведено на `Table/Cell` (Label off, Status on); вкладені копії оновились від мейнів. Варіанти Slot і властивість `Content` видалено.
+- Cashout / kebab / сума + кнопка стовпчиком більше не мають окремої комірки — у разі потреби повернутись до питання (Button у комірці).
