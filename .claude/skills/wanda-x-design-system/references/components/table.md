@@ -205,3 +205,7 @@ Section `History` (`79215:4197`, сіра) праворуч від білих о
 - Компонент `History/Details` (`79215:4198`) видалено після заміни 2 інстансів у мейнах `History/Row` (Open); вкладені копії оновились від мейнів.
 - `History/Row` → слот `Details` preferred: `Table/Cell`, `History/Row` (вкладені рядки груп транзакцій).
 - Картка події Express — такий самий фрейм із `Table/Row` / двома `Table/Cell`.
+
+## 18. Слот `Details` прибрано (2026-10-27, рішення Андрея)
+- `History/Row` (Open): `Details` — звичайний фрейм (VERTICAL, STRETCH, padding-l `spacing/800`, gap `spacing/200`), всередині фрейм `Panel` (колишня обгортка деталей, токени ті самі). Усе кастомно редагується в інстансі.
+- Властивості `History/Row`: `Variant`, `State`, `Chevron`, слот `Cells`.
