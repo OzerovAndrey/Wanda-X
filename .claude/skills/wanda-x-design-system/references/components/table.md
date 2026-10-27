@@ -199,3 +199,9 @@ Section `History` (`79215:4197`, сіра) праворуч від білих о
 - Порядок у `Content`: `Label` → `Subtext` → `Status` (gap 0).
 - 6 комірок-статусів у мейнах `History/Row` переведено на `Table/Cell` (Label off, Status on); вкладені копії оновились від мейнів. Варіанти Slot і властивість `Content` видалено.
 - Cashout / kebab / сума + кнопка стовпчиком більше не мають окремої комірки — у разі потреби повернутись до питання (Button у комірці).
+
+## 17. `History/Details` прибрано (2026-10-27, рішення Андрея)
+- Обгортка деталей збирається в таблиці кастомно: у слоті `Details` рядків `State=Open` — **фрейм `Details`**: VERTICAL, padding `spacing/300` / `spacing/400`, gap `spacing/100`, fill `semantic/fill/subtle`, радіус 8 (без токена), STRETCH; всередині `Table/Cell sm` (перша — Hug + `Icon ➡️` copy, текст auto width; друга — опис).
+- Компонент `History/Details` (`79215:4198`) видалено після заміни 2 інстансів у мейнах `History/Row` (Open); вкладені копії оновились від мейнів.
+- `History/Row` → слот `Details` preferred: `Table/Cell`, `History/Row` (вкладені рядки груп транзакцій).
+- Картка події Express — такий самий фрейм із `Table/Row` / двома `Table/Cell`.
