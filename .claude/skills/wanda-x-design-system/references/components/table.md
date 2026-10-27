@@ -180,3 +180,7 @@ Section `History` (`79215:4197`, сіра) праворуч від білих о
 
 Замінено: `Style` → `Variant`; `Filled` → `Panel`; рядок `Fill` → `Stripe`; `Divider = True | False` → `Variant = Divider | Plain`; слот `Head cells` → `Head`; `↳ 💠 Icon` → `↳ 💠 Icon left`; `⬅️ Image` → `Image`.
 Пастка: при перейменуванні варіантів за шаблоном набір `History` отримав назви `Component` (порожній результат) — після масового перейменування перевіряти `variantOptions` кожного набору.
+
+## 14. Повернуто `Table/Row` (2026-10-27)
+Спроба зібрати `Table` без `Table/Row` відкочена на прохання Андрея. `Table/Row` перестворено з тими самими варіантами й прив'язками (новий node `79415:4874`, key `0766282b…`); `Table` — `Variant = Default | Filled` (назви Андрея), слот `Rows` з інстансами `Table/Row`; preferred у `Table` і `History/Details` відновлено.
+`Table/Cell` Inverted: ліва `Icon` теж на `semantic/text/default-invert/primary`.
