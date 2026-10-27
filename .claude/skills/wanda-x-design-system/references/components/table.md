@@ -261,3 +261,17 @@ Section `History` (`79215:4197`, сіра) праворуч від білих о
 | `contextual.history.divider` | `{semantic.divider.default.primary}` | Row Divider, Head |
 
 Відкриті рішення: alias для радіусів 8 і 16; темна заливка Striped/Stripe замість видаленого `slate-for-cards` (і `slate-1`, що в MB став світлим); `contextual.table.fill|header` — на core і однакові.
+
+## 21. Виправлено 3 проблеми токенів (2026-10-27, на прохання Андрея)
+Створено змінні в `Product` (обидва режими, alias на core, явні scopes) + фрагменти JSON для Token Studio (`tokens/table-fixes.{mb,xon}.{alias,component}.json` — **вставити в Token Studio до наступного Export**, інакше Export видалить змінні):
+| Новий alias | Значення | Де |
+|---|---|---|
+| `border-radius.global.card` | `{border-radius.core.200}` = 8 | Leaderboard/Row Card, History/Row Panel |
+| `border-radius.global.container` | `{border-radius.core.400}` = 16 | Leaderboard Striped |
+| `semantic.background.slate-dark-1` | `{core.grey.700}` | Leaderboard Striped (плашка) |
+| `semantic.background.slate-dark-2` | `{core.grey.800}` | Striped Head, Row Stripe Inverted |
+| `semantic.background.brand-subtle` | `{core.brand-60.a10}` | `contextual.table.fill` / `header` |
+- `slate-dark-*` = значення, які мали `slate-1` / `slate-for-cards` в експорті 22.10 (колеги перевели `slate-1` у MB на світлий і видалили `slate-for-cards`).
+- `contextual.table.fill|header` → `{semantic.background.brand-subtle}` (було `{core.brand-60.a10}`); однакові навмисно — хедер темніший за рахунок накладання, як в оригіналі Welcome bonus.
+- `Leaderboard/Row` Stripe Inverted=False → `semantic.fill.subtle` (світлий контекст).
+- Перевірка: 0 мертвих прив'язок, 0 радіусів без токена в усіх табличних наборах; превʼю MB/XON.

@@ -1,0 +1,33 @@
+{
+  "border-radius": {
+    "global": {
+      "card": {
+        "value": "{border-radius.core.200}",
+        "type": "borderRadius"
+      },
+      "container": {
+        "value": "{border-radius.core.400}",
+        "type": "borderRadius"
+      }
+    }
+  },
+  "semantic": {
+    "background": {
+      "slate-dark-1": {
+        "value": "{core.grey.700}",
+        "type": "color",
+        "description": "+ dark plate (leaderboard striped)"
+      },
+      "slate-dark-2": {
+        "value": "{core.grey.800}",
+        "type": "color",
+        "description": "+ dark stripe / head on dark plate"
+      },
+      "brand-subtle": {
+        "value": "{core.brand-60.a10}",
+        "type": "color",
+        "description": "+ table panel"
+      }
+    }
+  }
+}

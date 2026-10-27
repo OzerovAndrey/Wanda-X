@@ -1,0 +1,14 @@
+{
+  "contextual": {
+    "table": {
+      "fill": {
+        "value": "{semantic.background.brand-subtle}",
+        "type": "color"
+      },
+      "header": {
+        "value": "{semantic.background.brand-subtle}",
+        "type": "color"
+      }
+    }
+  }
+}
