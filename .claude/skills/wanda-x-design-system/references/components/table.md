@@ -300,3 +300,7 @@ Section `History` (`79215:4197`, сіра) праворуч від білих о
 - `history.row.padding-right` → `history.row.card.padding-right`
 - `border-radius.history.row` → `border-radius.history.row.card`
 Замість `panel` — `filled` (Variant=Filled); `header` → `head-fill` (шар `Head`, як `striped.head-fill`). Оригінал Welcome bonus тримає прив'язку (змінна та сама, перейменована).
+
+## 25. MB alias (2026-10-27, JSON-handoff)
+Андрей дав повний `mb/alias`; додано 5 (+5 / −0 / ~0): `border-radius.global.card` (між `sm` і `md`), `border-radius.global.container` (між `md` і `lg`), `semantic.background.slate-dark-1|2`, `semantic.background.brand-subtle` (після `slate-for-cards`, перед групою `brand`). Усі 21 посилання токенів таблиць у `mb/component` тепер резолвляться.
+Примітка: у свіжому `mb/alias` `semantic.background.slate-for-cards` знову існує, але як **градієнт** (`linear-gradient(...brand-preset.for-gradients.primary...)`), а `slate-1` = `{core.grey.100a10}` — тому для темної плашки лідерборду лишаємо `slate-dark-1|2`.
