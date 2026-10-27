@@ -275,3 +275,8 @@ Section `History` (`79215:4197`, сіра) праворуч від білих о
 - `contextual.table.fill|header` → `{semantic.background.brand-subtle}` (було `{core.brand-60.a10}`); однакові навмисно — хедер темніший за рахунок накладання, як в оригіналі Welcome bonus.
 - `Leaderboard/Row` Stripe Inverted=False → `semantic.fill.subtle` (світлий контекст).
 - Перевірка: 0 мертвих прив'язок, 0 радіусів без токена в усіх табличних наборах; превʼю MB/XON.
+
+## 22. Токени MB component (2026-10-27, JSON-handoff)
+Андрей дав повний `mb/component`; додано +48, змінено 2 (`contextual.table.fill|header` → `{semantic.background.brand-subtle}`), видалено 0. Підмножина — `tokens/table.mb.component.json`. Назви — як у §20, з уточненнями: `history.row.gap` (Main↔Details і шеврон↔комірки) + `history.row.cells-gap`; `leaderboard.head.padding-h`; інвертовані — `contextual.leaderboard.row.inverted.fill.{card|stripe|selected}`.
+Залежить від alias із `tokens/table-fixes.*.alias.json` (`border-radius.global.card|container`, `semantic.background.slate-dark-1|2`, `semantic.background.brand-subtle`) — вони мають бути в `mb/alias` до вставки, інакше посилання обірвуться.
+Далі: XON component (той самий набір), Export → прив'язка токенів на шари (plugin data `tokens` + змінні).

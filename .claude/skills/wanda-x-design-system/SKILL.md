@@ -100,6 +100,7 @@ description: Правила, еталони та чекліст очистки �
 - Token Studio (storage у файлі, запис токенів, токени на шарах) — `references/token-studio.md`.
 
 ## Журнал
+- 2026-10-27 — **Table: токени MB component** (+48 / ~2) — `table.*`, `leaderboard.*`, `history.*`, `border-radius.*`, `contextual.*` (`tokens/table.mb.component.json`, `components/table.md` §22).
 - 2026-10-27 — **Table: токен-проблеми виправлено** — нові alias `border-radius.global.card|container`, `semantic.background.slate-dark-1|2`, `semantic.background.brand-subtle`; `contextual.table.*` → alias; JSON-фрагменти `tokens/table-fixes.*` (`components/table.md` §21).
 - 2026-10-27 — Table: Андрей переставив Section (Table / Leaderboard / History / Cell); чернетка плану токенів `table.*`, `leaderboard.*`, `history.*` (`components/table.md` §19–20).
 - 2026-10-27 — **правило: Fill замість Hug** для елементів з вільним місцем праворуч; комірка ID у Panel рядка Open — Fill, copy лишається одразу за текстом (`working-agreements.md` §4).
