@@ -286,3 +286,17 @@ Section `History` (`79215:4197`, сіра) праворуч від білих о
 - 244 прив'язки на шарах (plugin data `tokens` + змінна): Table 32, Table/Row 52, Table/Cell 32, Leaderboard 62, Leaderboard/Row 122, History 58, History/Row 107 (з вкладеними шарами). Лишились лише `semantic.text/icon` (за правилом), стилі тексту і власні токени `Status`. Мертвих прив'язок — 0.
 - Мапа шар → токен — як у §20 (+ `table.row.gap` на Head, `leaderboard.row.gap` на Head лідерборду, `history.row.gap` на Head row і Main, `history.row.cells-gap` на Head і Cells, `history.chevron-size` на Chevron space (width)).
 - **Ризик:** поки JSON (MB alias-фрагмент + component, XON) не вставлено в Token Studio, Export видалить ці змінні → прив'язки стануть мертвими. Лікування — перестворити змінні й перепривʼязати за plugin data `tokens` (`working-agreements.md` §2.6).
+
+## 24. Назви токенів = назви властивостей (2026-10-27, Андрей)
+Токен, що діє лише в одному варіанті, містить назву цього варіанту. Перейменовано (змінні в Figma, plugin data на 40 шарах, JSON):
+- `table.panel.padding-h` → `table.filled.padding-h`
+- `contextual.table.fill` → `contextual.table.filled.fill`
+- `contextual.table.header` → `contextual.table.filled.head-fill`
+- `border-radius.table` → `border-radius.table.filled`
+- `leaderboard.gap` → `leaderboard.card.gap`
+- `border-radius.leaderboard.row` → `border-radius.leaderboard.row.card`
+- `history.gap` → `history.card.gap`
+- `history.row.padding-left` → `history.row.card.padding-left`
+- `history.row.padding-right` → `history.row.card.padding-right`
+- `border-radius.history.row` → `border-radius.history.row.card`
+Замість `panel` — `filled` (Variant=Filled); `header` → `head-fill` (шар `Head`, як `striped.head-fill`). Оригінал Welcome bonus тримає прив'язку (змінна та сама, перейменована).

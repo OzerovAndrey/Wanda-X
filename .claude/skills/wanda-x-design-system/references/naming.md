@@ -71,3 +71,6 @@
 
 ## Таблиці — словник `Variant` (2026-10-26)
 Для всіх табличних компонентів `Variant` описує спосіб розділення рядків: `Divider` (лінія), `Card` (окремі картки), `Striped` (смуги на плашці), `Panel` (уся таблиця на плашці з хедером); для одного рядка смуги — `Stripe` / `Plain`. Не `Style`, не `Filled`/`Fill`, не Boolean `Divider = True|False`. Слоти — `Head`, `Rows`, `Cells`, `Content`, `Details`. Деталі — `components/table.md` §13.
+
+## Токени ↔ властивості (2026-10-27)
+Сегменти назви компонентного токена повторюють значення властивостей компонента: варіант (`filled`, `card`, `striped`), розмір (`md`/`sm`), напрям (`-h`/`-v`), стан (`hover`, `selected`), `inverted`. Токен, що діє лише в одному варіанті, містить цей варіант (`table.filled.padding-h`, `history.row.card.padding-left`). Шар-хедер — `head` (`head-fill`, `head.height`).

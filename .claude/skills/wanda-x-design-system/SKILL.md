@@ -100,6 +100,7 @@ description: Правила, еталони та чекліст очистки �
 - Token Studio (storage у файлі, запис токенів, токени на шарах) — `references/token-studio.md`.
 
 ## Журнал
+- 2026-10-27 — **Table: токени перейменовано за властивостями** (`panel` → `filled`, `header` → `head-fill`, Card-only токени з `card`); правило в `naming.md` → Токени ↔ властивості.
 - 2026-10-27 — **Table: компонентні токени прив'язано** — 48 змінних у `Product`, 244 прив'язки (plugin data + змінні) у 7 наборах; 0 мертвих (`components/table.md` §23).
 - 2026-10-27 — **Table: токени MB component** (+48 / ~2) — `table.*`, `leaderboard.*`, `history.*`, `border-radius.*`, `contextual.*` (`tokens/table.mb.component.json`, `components/table.md` §22).
 - 2026-10-27 — **Table: токен-проблеми виправлено** — нові alias `border-radius.global.card|container`, `semantic.background.slate-dark-1|2`, `semantic.background.brand-subtle`; `contextual.table.*` → alias; JSON-фрагменти `tokens/table-fixes.*` (`components/table.md` §21).
