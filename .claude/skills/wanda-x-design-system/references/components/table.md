@@ -311,3 +311,7 @@ Section `History` (`79215:4197`, сіра) праворуч від білих о
 - Сітка варіантів у кожному наборі — 16 px, рядки/колонки за властивостями: Table/Row — Variant × (Size·Direction); Leaderboard/Row — (Variant·State) × Inverted; History/Row — Variant × State; Cell — Inverted × (Size·Align); Head/Cell — Inverted × Align.
 - **Токени в просторі `table`**: `leaderboard.*` → `table.leaderboard.*`, `history.*` → `table.history.*`, `border-radius.{leaderboard|history}.*` → `border-radius.table.{…}.*`, `contextual.{leaderboard|history}.*` → `contextual.table.{…}.*` (50 токенів; MB component +50 / −2 / ~0 проти вихідного).
 - **Інцидент:** Export з бренчі без наших токенів видалив 48 компонентних + 5 alias-змінних (490 мертвих прив'язок). Відновлено: 55 змінних перестворено з новими назвами, 474 прив'язки — за plugin data `tokens`; мертвих 0. Старі `contextual/table/fill|header` повернув Export (їх тримає оригінал Welcome bonus).
+
+## 27. XON (2026-10-27, JSON-handoff)
+- `xon/alias` +5 / −0 / ~0: ті самі `slate-dark-1|2`, `brand-subtle`; **`border-radius.global.card` і `container` = `{border-radius.core.300}` (12)** — у XON уся шкала `sm`/`md`/`lg` = 12, тож рядок Card, Panel і плашка Striped теж 12 (бренд-різниця). Порядок радіусів упорядковано: `xs, sm, card, md, container, lg`. Змінні Figma (режим XON) оновлено так само.
+- `xon/component` +50 / −2 / ~0 — набір токенів таблиць ідентичний MB (`tokens/table.xon.component.json`); −2 = `contextual.table.fill|header` → `contextual.table.filled.*`. Усі 21 посилання резолвляться в `xon/alias`.

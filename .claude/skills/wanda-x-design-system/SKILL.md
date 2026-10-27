@@ -100,6 +100,7 @@ description: Правила, еталони та чекліст очистки �
 - Token Studio (storage у файлі, запис токенів, токени на шарах) — `references/token-studio.md`.
 
 ## Журнал
+- 2026-10-27 — **Table: токени XON** — alias +5 (card/container = 12 за шкалою XON), component +50/−2, ідентично MB (`components/table.md` §27).
 - 2026-10-27 — **Table — одна компонента з підвидами**: одна Section, вирівняні сітки, токени `table.leaderboard.*` / `table.history.*`; після Export перестворено 55 змінних, 474 прив'язки за plugin data (`components/table.md` §26).
 - 2026-10-27 — **MB alias: +5 alias для таблиць** (card, container, slate-dark-1|2, brand-subtle); посилання component резолвляться (`components/table.md` §25).
 - 2026-10-27 — **правило порядку токенів**: у групі спершу листки, потім підгрупи (`token-studio.md` → Порядок у групі); застосовано до токенів таблиць.

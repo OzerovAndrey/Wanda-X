@@ -1,0 +1,528 @@
+{
+  "table": {
+    "head": {
+      "height": {
+        "value": "{size.500}",
+        "type": "sizing",
+        "$extensions": {
+          "com.figma.scopes": [
+            "NONE"
+          ]
+        }
+      }
+    },
+    "row": {
+      "gap": {
+        "value": "{spacing.400}",
+        "type": "spacing",
+        "$extensions": {
+          "com.figma.scopes": [
+            "NONE"
+          ]
+        }
+      },
+      "gap-v": {
+        "value": "{spacing.200}",
+        "type": "spacing",
+        "$extensions": {
+          "com.figma.scopes": [
+            "NONE"
+          ]
+        }
+      },
+      "padding-v": {
+        "md": {
+          "value": "{spacing.400}",
+          "type": "spacing",
+          "$extensions": {
+            "com.figma.scopes": [
+              "NONE"
+            ]
+          }
+        },
+        "sm": {
+          "value": "{spacing.200}",
+          "type": "spacing",
+          "$extensions": {
+            "com.figma.scopes": [
+              "NONE"
+            ]
+          }
+        }
+      }
+    },
+    "cell": {
+      "gap": {
+        "value": "{spacing.200}",
+        "type": "spacing",
+        "$extensions": {
+          "com.figma.scopes": [
+            "NONE"
+          ]
+        }
+      },
+      "icon-size": {
+        "value": "{size.300}",
+        "type": "sizing",
+        "$extensions": {
+          "com.figma.scopes": [
+            "NONE"
+          ]
+        }
+      },
+      "image-size": {
+        "md": {
+          "value": "{size.400}",
+          "type": "sizing",
+          "$extensions": {
+            "com.figma.scopes": [
+              "NONE"
+            ]
+          }
+        },
+        "sm": {
+          "value": "{size.300}",
+          "type": "sizing",
+          "$extensions": {
+            "com.figma.scopes": [
+              "NONE"
+            ]
+          }
+        }
+      }
+    },
+    "filled": {
+      "padding-h": {
+        "value": "{spacing.400}",
+        "type": "spacing",
+        "$extensions": {
+          "com.figma.scopes": [
+            "NONE"
+          ]
+        }
+      }
+    },
+    "leaderboard": {
+      "head": {
+        "padding-h": {
+          "value": "{spacing.400}",
+          "type": "spacing",
+          "$extensions": {
+            "com.figma.scopes": [
+              "NONE"
+            ]
+          }
+        },
+        "height": {
+          "card": {
+            "value": "{size.500}",
+            "type": "sizing",
+            "$extensions": {
+              "com.figma.scopes": [
+                "NONE"
+              ]
+            }
+          },
+          "striped": {
+            "value": "{size.600}",
+            "type": "sizing",
+            "$extensions": {
+              "com.figma.scopes": [
+                "NONE"
+              ]
+            }
+          }
+        }
+      },
+      "row": {
+        "padding-h": {
+          "value": "{spacing.400}",
+          "type": "spacing",
+          "$extensions": {
+            "com.figma.scopes": [
+              "NONE"
+            ]
+          }
+        },
+        "padding-v": {
+          "value": "{spacing.200}",
+          "type": "spacing",
+          "$extensions": {
+            "com.figma.scopes": [
+              "NONE"
+            ]
+          }
+        },
+        "gap": {
+          "value": "{spacing.400}",
+          "type": "spacing",
+          "$extensions": {
+            "com.figma.scopes": [
+              "NONE"
+            ]
+          }
+        }
+      },
+      "card": {
+        "gap": {
+          "value": "{spacing.200}",
+          "type": "spacing",
+          "$extensions": {
+            "com.figma.scopes": [
+              "NONE"
+            ]
+          }
+        }
+      }
+    },
+    "history": {
+      "chevron-size": {
+        "value": "{size.300}",
+        "type": "sizing",
+        "$extensions": {
+          "com.figma.scopes": [
+            "NONE"
+          ]
+        }
+      },
+      "head": {
+        "padding-v": {
+          "value": "{spacing.100}",
+          "type": "spacing",
+          "$extensions": {
+            "com.figma.scopes": [
+              "NONE"
+            ]
+          }
+        }
+      },
+      "row": {
+        "padding-v": {
+          "value": "{spacing.200}",
+          "type": "spacing",
+          "$extensions": {
+            "com.figma.scopes": [
+              "NONE"
+            ]
+          }
+        },
+        "gap": {
+          "value": "{spacing.200}",
+          "type": "spacing",
+          "$extensions": {
+            "com.figma.scopes": [
+              "NONE"
+            ]
+          }
+        },
+        "cells-gap": {
+          "value": "{spacing.400}",
+          "type": "spacing",
+          "$extensions": {
+            "com.figma.scopes": [
+              "NONE"
+            ]
+          }
+        },
+        "card": {
+          "padding-left": {
+            "value": "{spacing.200}",
+            "type": "spacing",
+            "$extensions": {
+              "com.figma.scopes": [
+                "NONE"
+              ]
+            }
+          },
+          "padding-right": {
+            "value": "{spacing.400}",
+            "type": "spacing",
+            "$extensions": {
+              "com.figma.scopes": [
+                "NONE"
+              ]
+            }
+          }
+        }
+      },
+      "details": {
+        "padding-left": {
+          "value": "{spacing.800}",
+          "type": "spacing",
+          "$extensions": {
+            "com.figma.scopes": [
+              "NONE"
+            ]
+          }
+        },
+        "gap": {
+          "value": "{spacing.200}",
+          "type": "spacing",
+          "$extensions": {
+            "com.figma.scopes": [
+              "NONE"
+            ]
+          }
+        }
+      },
+      "panel": {
+        "padding-v": {
+          "value": "{spacing.300}",
+          "type": "spacing",
+          "$extensions": {
+            "com.figma.scopes": [
+              "NONE"
+            ]
+          }
+        },
+        "padding-h": {
+          "value": "{spacing.400}",
+          "type": "spacing",
+          "$extensions": {
+            "com.figma.scopes": [
+              "NONE"
+            ]
+          }
+        },
+        "gap": {
+          "value": "{spacing.100}",
+          "type": "spacing",
+          "$extensions": {
+            "com.figma.scopes": [
+              "NONE"
+            ]
+          }
+        }
+      },
+      "card": {
+        "gap": {
+          "value": "{spacing.100}",
+          "type": "spacing",
+          "$extensions": {
+            "com.figma.scopes": [
+              "NONE"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "border-radius": {
+    "table": {
+      "filled": {
+        "value": "{border-radius.global.md}",
+        "type": "borderRadius",
+        "$extensions": {
+          "com.figma.scopes": [
+            "NONE"
+          ]
+        }
+      },
+      "leaderboard": {
+        "striped": {
+          "value": "{border-radius.global.container}",
+          "type": "borderRadius",
+          "$extensions": {
+            "com.figma.scopes": [
+              "NONE"
+            ]
+          }
+        },
+        "row": {
+          "card": {
+            "value": "{border-radius.global.card}",
+            "type": "borderRadius",
+            "$extensions": {
+              "com.figma.scopes": [
+                "NONE"
+              ]
+            }
+          }
+        }
+      },
+      "history": {
+        "panel": {
+          "value": "{border-radius.global.card}",
+          "type": "borderRadius",
+          "$extensions": {
+            "com.figma.scopes": [
+              "NONE"
+            ]
+          }
+        },
+        "row": {
+          "card": {
+            "value": "{border-radius.global.xs}",
+            "type": "borderRadius",
+            "$extensions": {
+              "com.figma.scopes": [
+                "NONE"
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "contextual": {
+    "table": {
+      "divider": {
+        "value": "{semantic.divider.default.primary}",
+        "type": "color",
+        "$extensions": {
+          "com.figma.scopes": [
+            "NONE"
+          ]
+        }
+      },
+      "filled": {
+        "fill": {
+          "value": "{semantic.background.brand-subtle}",
+          "type": "color",
+          "$extensions": {
+            "com.figma.scopes": [
+              "NONE"
+            ]
+          }
+        },
+        "head-fill": {
+          "value": "{semantic.background.brand-subtle}",
+          "type": "color",
+          "$extensions": {
+            "com.figma.scopes": [
+              "NONE"
+            ]
+          }
+        }
+      },
+      "leaderboard": {
+        "row": {
+          "fill": {
+            "card": {
+              "value": "{semantic.fill.subtle}",
+              "type": "color",
+              "$extensions": {
+                "com.figma.scopes": [
+                  "NONE"
+                ]
+              }
+            },
+            "stripe": {
+              "value": "{semantic.fill.subtle}",
+              "type": "color",
+              "$extensions": {
+                "com.figma.scopes": [
+                  "NONE"
+                ]
+              }
+            },
+            "selected": {
+              "value": "{semantic.fill.active}",
+              "type": "color",
+              "$extensions": {
+                "com.figma.scopes": [
+                  "NONE"
+                ]
+              }
+            }
+          },
+          "inverted": {
+            "fill": {
+              "card": {
+                "value": "{semantic.fill.subtle-invert}",
+                "type": "color",
+                "$extensions": {
+                  "com.figma.scopes": [
+                    "NONE"
+                  ]
+                }
+              },
+              "stripe": {
+                "value": "{semantic.background.slate-dark-2}",
+                "type": "color",
+                "$extensions": {
+                  "com.figma.scopes": [
+                    "NONE"
+                  ]
+                }
+              },
+              "selected": {
+                "value": "{semantic.fill.active}",
+                "type": "color",
+                "$extensions": {
+                  "com.figma.scopes": [
+                    "NONE"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "striped": {
+          "fill": {
+            "value": "{semantic.background.slate-dark-1}",
+            "type": "color",
+            "$extensions": {
+              "com.figma.scopes": [
+                "NONE"
+              ]
+            }
+          },
+          "head-fill": {
+            "value": "{semantic.background.slate-dark-2}",
+            "type": "color",
+            "$extensions": {
+              "com.figma.scopes": [
+                "NONE"
+              ]
+            }
+          }
+        }
+      },
+      "history": {
+        "divider": {
+          "value": "{semantic.divider.default.primary}",
+          "type": "color",
+          "$extensions": {
+            "com.figma.scopes": [
+              "NONE"
+            ]
+          }
+        },
+        "row": {
+          "fill": {
+            "card": {
+              "value": "{semantic.fill.subtle}",
+              "type": "color",
+              "$extensions": {
+                "com.figma.scopes": [
+                  "NONE"
+                ]
+              }
+            },
+            "hover": {
+              "value": "{semantic.fill.hover}",
+              "type": "color",
+              "$extensions": {
+                "com.figma.scopes": [
+                  "NONE"
+                ]
+              }
+            }
+          }
+        },
+        "panel": {
+          "fill": {
+            "value": "{semantic.fill.subtle}",
+            "type": "color",
+            "$extensions": {
+              "com.figma.scopes": [
+                "NONE"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}
