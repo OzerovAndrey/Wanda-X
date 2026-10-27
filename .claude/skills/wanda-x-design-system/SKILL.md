@@ -100,6 +100,7 @@ description: Правила, еталони та чекліст очистки �
 - Token Studio (storage у файлі, запис токенів, токени на шарах) — `references/token-studio.md`.
 
 ## Журнал
+- 2026-10-27 — **правило: Fill замість Hug** для елементів з вільним місцем праворуч; комірка ID у Panel рядка Open — Fill, copy лишається одразу за текстом (`working-agreements.md` §4).
 - 2026-10-27 — History/Row: слот `Details` → звичайний фрейм `Details` > `Panel` (`components/table.md` §18).
 - 2026-10-27 — **`History/Details` прибрано**: деталі — токенізований фрейм `Details` у слоті рядка Open (`components/table.md` §17).
 - 2026-10-27 — **Table/Cell: `Status` і `Label` (Boolean) замість `Type=Slot`** — статус вбудований під текстом (exposed), Slot-варіанти прибрано, History/Row переведено (`components/table.md` §16).
