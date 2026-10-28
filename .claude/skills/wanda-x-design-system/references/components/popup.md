@@ -84,3 +84,4 @@ Breakpoint=Mobile, Size=full: корінь 360×640, вікно притисну
 Попередні описи `Breakpoint` / `full` у розділах 3 і 6 застаріли.
 
 - 2026-10-28: службовий шар `Container` (банер + вікно) перейменовано на `Wrapper` у `Popup` і `Drawer` (правило `naming.md`).
+- 2026-10-28: шар вікна `Window` → `Wrapper` у `Popup` і `Drawer` (12 варіантів). У варіантах з банером: `Wrapper` (банер + вікно) > `Popup/Banner`, `Wrapper` (вікно) > `Body`, `Footer`.
