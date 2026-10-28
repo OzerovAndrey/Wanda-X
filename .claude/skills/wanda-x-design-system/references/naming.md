@@ -15,13 +15,15 @@
 | Тип | Ключ | Значення | Приклад |
 |---|---|---|---|
 | Variant | Title Case, 1 слово | Title Case | `Variant=Primary`, `State=Hover` |
-| Variant `Size` | `Size` | t-shirt lowercase | `lg \| md \| sm` (+ `xs`, `xl`) |
+| Variant `Size` | `Size` | t-shirt **завжди малими** | `xl \| lg \| md \| sm \| xs` — від більшого до меншого: `xl` зверху, `xs` знизу (рішення 2026-10-28) |
 | Variant binary | Title Case | `True \| False` | `Inverted=False` |
 | Variant breakpoint | `Breakpoint` | токен брейкпоінта | `3xs \| sm \| lg \| xl \| 2xl` |
 | Boolean | Title Case / іконка | — | `Show`, `Indicator`, `⬅️ Icon`, `Icon ➡️` |
 | Instance swap | `↳ 💠 …` | — | `↳ 💠 Icon left` |
 | Text | **не використовується** | — | текст міняють вручну в інстансі (рішення 2026-10-22) |
 | Slot | Title Case | — | `Trigger`, `Body`, `↳ Slot` |
+
+**Порядок значень `Size`** (рішення 2026-10-28): у пікері й у наборі — `xl` зверху → `xs` знизу; службові значення (`full`) — після `xs`. Figma бере порядок значень з порядку **створення** варіантів (не з шарів і не з перейменування), тому варіанти створюємо одразу від `xl` до `xs`; виправити порядок наявного набору можна лише перезбиранням.
 
 Стандартні значення `State`: `Default | Hover | Active | Selected | Disabled` (+ `Error`, `Filled`, `Focus` для форм). Порядок властивостей: `Variant → Size → State → Inverted → решта`.
 

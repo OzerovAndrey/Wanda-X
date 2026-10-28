@@ -1,6 +1,6 @@
 # Popup — інвентаризація і оптимізована збірка
 
-Сторінка `↳ Popup - Андрей` (`27928:150291`) · нова Section `Popup` (сіра, x 6666) · набір `Popup` (`79597:7480`) + `Popup/Banner` (`79597:7291`) · статус: **етап 1 зібрано (2026-10-28), токени — наступний етап**
+Сторінка `↳ Popup - Андрей` (`27928:150291`) · нова Section `Popup` (сіра, x 6666) · набір `Popup` (`79607:19185`) + `Popup/Banner` (`79597:7291`) · статус: **етап 1 зібрано (2026-10-28), токени — наступний етап**
 
 ## 1. Інвентаризація (2026-10-28, весь файл, read-only скан)
 Скан 90+ сторінок за назвами `popup|pop-up|modal|dialog|overlay` і за мейнами інстансів.
@@ -27,8 +27,8 @@
 Один набір замість старого `Popup` (8v), `Popup mob` (2v) і `Popup web` (5v). Section `Popup` праворуч від оригіналів; основний — `Popup`, під ним `Popup/Banner`.
 
 ```
-Popup (COMPONENT_SET 79597:7480)  Breakpoint × Size × Banner (12v)
-└─ Breakpoint=Desktop, Size=XS, Banner=False  VERTICAL 1280×800, center/center, padding popup.layout.padding (24), fill contextual.overlay
+Popup (COMPONENT_SET 79607:19185)  Breakpoint × Size × Banner (12v)
+└─ Breakpoint=Desktop, Size=xs, Banner=False  VERTICAL 1280×800, center/center, padding popup.layout.padding (24), fill contextual.overlay
     └─ Window  VERTICAL, width 420 (XS) | 560 | 640 | 800 | 1200, hug, clip, radius border-radius.popup.desktop.*, fill contextual.popup.fill
         ├─ Body  padding popup.padding.top / horizontal / bottom (40/16/32)
         │   └─ Content (SLOT)  дефолт: текст Label (text/md, semantic.text.default.primary)
@@ -37,7 +37,7 @@ Popup (COMPONENT_SET 79597:7480)  Breakpoint × Size × Banner (12v)
         ├─ Close (ABS 8/8 від правого-верхнього, Button/Link/Default + іконка close)   ← Boolean Close
         └─ Scrollbar (ABS, 8 від правого краю, top 56)   ← Boolean Scrollbar
 Banner=True: Window обгорнутий у Container (VERTICAL, gap −20) з Popup/Banner зверху; Close — Button/Link/Inverted у Container (над банером).
-Breakpoint=Mobile, Size=Full: корінь 360×640, вікно притиснуте донизу (MAX), Fill по ширині, радіус border-radius.popup.mobile.* (низ 0), + Handle 64×4 (semantic.background.2)   ← Boolean Handle
+Breakpoint=Mobile, Size=full: корінь 360×640, вікно притиснуте донизу (MAX), Fill по ширині, радіус border-radius.popup.mobile.* (низ 0), + Handle 64×4 (semantic.background.2)   ← Boolean Handle
 ```
 
 | Властивість | Тип | Значення / default |
@@ -72,3 +72,6 @@ Breakpoint=Mobile, Size=Full: корінь 360×640, вікно притисну
 2. Скрол-бар: у `Popup web` був увімкнений за замовчуванням, у старому — вимкнений. Зараз default false.
 3. Міграція 190+ інстансів (старий `Popup` 130 + `Popup mob` 60) на новий набір — окремою задачею після погодження.
 4. Продуктові вмісти (Achievements, Lootboxes, Wheel, Profile …) — лишаються продуктовими (правило 11), у ДС лише оболонка.
+
+## 6. 2026-10-28 — значення Size малими, порядок xl → xs
+Набір перезібрано (`79607:19185`, інстансів у старого не було): `Size = xl | lg | md | sm | xs | full`, варіанти в наборі рядами від `xl` зверху до `xs`, мобільний `full` унизу. Правило — `naming.md`.
