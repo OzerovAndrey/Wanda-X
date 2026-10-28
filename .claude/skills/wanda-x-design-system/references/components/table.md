@@ -315,3 +315,9 @@ Section `History` (`79215:4197`, сіра) праворуч від білих о
 ## 27. XON (2026-10-27, JSON-handoff)
 - `xon/alias` +5 / −0 / ~0: ті самі `slate-dark-1|2`, `brand-subtle`; **`border-radius.global.card` і `container` = `{border-radius.core.300}` (12)** — у XON уся шкала `sm`/`md`/`lg` = 12, тож рядок Card, Panel і плашка Striped теж 12 (бренд-різниця). Порядок радіусів упорядковано: `xs, sm, card, md, container, lg`. Змінні Figma (режим XON) оновлено так само.
 - `xon/component` +50 / −2 / ~0 — набір токенів таблиць ідентичний MB (`tokens/table.xon.component.json`); −2 = `contextual.table.fill|header` → `contextual.table.filled.*`. Усі 21 посилання резолвляться в `xon/alias`.
+
+## 28. Після мерджу і Export (2026-10-28)
+- MR «Tokens for table» змерджено (MB: +53, перейменовано 2; XON: +55, −2).
+- Export перестворив змінні → 174 мертві прив'язки (старі ID) — переприв'язано за plugin data на живі змінні з тими ж назвами.
+- Inspect показував радіуси з ⬡: plugin data мав ключ `borderRadius`, а змінні — на кутах. Записано per-corner ключі на 25 шарах (100), `borderRadius` прибрано.
+- Аудит: 517 властивостей = змінна + однойменний токен; 0 мертвих; 32 «розбіжності» — корінь інстансу `Status` (показує прив'язки мейна, токени стоять у компоненті Status).

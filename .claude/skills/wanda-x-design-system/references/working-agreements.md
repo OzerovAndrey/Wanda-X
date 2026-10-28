@@ -58,6 +58,9 @@
 - Помилка посеред `use_figma` = скрипт відкочується повністю; `return` раніше — зміни до нього лишаються.
 - Темний фон з **мертвою змінною** (fallback колір іншого бренду) — це поломка макета, а не привід для Inverted.
 
+- **Ключі plugin data для Token Studio (перевірено 2026-10-28):** радіус — окремо на кожен кут `borderRadiusTopLeft` / `borderRadiusTopRight` / `borderRadiusBottomRight` / `borderRadiusBottomLeft` (як у `Status`); один ключ `borderRadius` при змінних на кутах Inspect показує як ⬡ (лише змінна, без токена). Інші ключі: `itemSpacing`, `paddingTop|Right|Bottom|Left`, `height`, `width`, `fill`, `borderColor`. Значення — `JSON.stringify("token.name")`.
+- **Export перестворює змінні з новими ID** (навіть з тими самими назвами) → прив'язки на старі ID мертві. Після кожного Export: аудит мертвих прив'язок і переприв'язка за plugin data `tokens` на живу змінну з тією ж назвою.
+
 ## 7. Що зроблено 2026-10-22 (стан на кінець дня)
 - Chip: `contextual.chips.inverted.*`. Datepicker: копія + 10 токенів. Filter & Sorting: `filter-sort.*` (без групи `button`), `tabs-sort.*`, Tabs & Sort зі слотом.
 - Gamehall / Open-thumb-provider: лишився один варіант `Progress=Off` (Progress=On відв'язано й видалено, 1 інстанс на `Gamehall +` відірвано); токени `gamehall.thumb-providers.{height,max-width,padding-h,provider.gap}`.
