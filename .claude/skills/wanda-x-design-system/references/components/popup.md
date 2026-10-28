@@ -154,3 +154,7 @@ Modal/Banner: gap spacing.400 · padding-right 40 · radius 24/24/0/0 · fill г
 
 ## 12. 2026-10-28 — `Layout = Default | Sidebar` — спробували й відкотили
 Пробували в `Modal` варіант `Layout=Sidebar` (каса: сайдбар 270 + контент, за `Payment popup` `48364:83398`). Андрей вирішив, що поки не потрібно — варіанти, слот `Sidebar` і властивість `Layout` прибрано, `Modal` знову 10v (`Size` × `Banner`), 17 інстансів на місці. Тип «модалка з сайдбаром» (каса, профіль) лишається в Originals 5 як продуктовий.
+
+## 13. 2026-10-28 — назад до Footer + Divider на всю ширину (рішення Андрея)
+`Wrapper` > `Body` (padding `popup.padding.top / horizontal / bottom` = 40/16/32, gap 0) > `Content` (SLOT) → `Divider` (інстанс Divider/Variant=Secondary, **на всю ширину вікна**, ← `Divider`) → `Footer` (padding `popup.padding.footer.top / horizontal / bottom` = 16/16/32, ← `Actions`) > `Actions` (HORIZONTAL, gap `spacing.400`, кнопки по центру) > `Secondary` (← `↳ Secondary`) + `Primary`.
+Boolean `Actions` тепер ховає весь `Footer`. Інстанси: 59 заготовок — `Actions` off; Data refinement ×2 — `Actions` on, одна Primary по центру.
