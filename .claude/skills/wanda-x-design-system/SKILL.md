@@ -100,6 +100,7 @@ description: Правила, еталони та чекліст очистки �
 - Token Studio (storage у файлі, запис токенів, токени на шарах) — `references/token-studio.md`.
 
 ## Журнал
+- 2026-10-28 — **правило: шар без визначеної ролі називаємо `Wrapper`** (`naming.md`); у Popup/Drawer `Container` → `Wrapper`.
 - 2026-10-28 — **Popup розділено: `Popup` (модалка, Size × Banner) і окремий `Drawer` (Banner, Handle)** — мобільне вікно знизу не є розміром (`components/popup.md` §7).
 - 2026-10-28 — **правило: значення `Size` завжди малими, порядок `xl` зверху → `xs` знизу** (`naming.md`); `Popup` перезібрано під нього (`79607:19185`).
 - 2026-10-28 — **Popup: інвентаризація + оптимізована збірка** — скан усього файлу; оригінали в 5 Section `Originals` (врятовано 8 мейнів-сиріт, у т.ч. старий `Popup` на 130 інстансів; 33 мейни з MrBet Black — знімками, перенести вручну); новий `Popup` (Breakpoint × Size × Banner, слоти Content / Footer content, Boolean Close / Footer / Scrollbar / Handle) + `Popup/Banner` (`components/popup.md`).

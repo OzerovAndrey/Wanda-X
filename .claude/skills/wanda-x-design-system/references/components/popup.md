@@ -36,7 +36,7 @@ Popup (COMPONENT_SET 79607:19185)  Breakpoint × Size × Banner (12v)
         │   └─ Footer content (SLOT)  дефолт: Button Primary lg, Fill
         ├─ Close (ABS 8/8 від правого-верхнього, Button/Link/Default + іконка close)   ← Boolean Close
         └─ Scrollbar (ABS, 8 від правого краю, top 56)   ← Boolean Scrollbar
-Banner=True: Window обгорнутий у Container (VERTICAL, gap −20) з Popup/Banner зверху; Close — Button/Link/Inverted у Container (над банером).
+Banner=True: Window обгорнутий у Wrapper (VERTICAL, gap −20) з Popup/Banner зверху; Close — Button/Link/Inverted у Wrapper (над банером).
 Breakpoint=Mobile, Size=full: корінь 360×640, вікно притиснуте донизу (MAX), Fill по ширині, радіус border-radius.popup.mobile.* (низ 0), + Handle 64×4 (semantic.background.2)   ← Boolean Handle
 ```
 
@@ -82,3 +82,5 @@ Breakpoint=Mobile, Size=full: корінь 360×640, вікно притисну
 - **`Drawer`** (`79615:19236`) — `Banner = False | True` (2v); ті самі Boolean і слоти + `Handle`. Корінь 360×640, вікно притиснуте донизу, Fill по ширині, радіус `border-radius.popup.mobile.*` (низ 0).
 - Section `Popup`: `Popup` → `Drawer` → `Popup/Banner` (спільний під-компонент).
 Попередні описи `Breakpoint` / `full` у розділах 3 і 6 застаріли.
+
+- 2026-10-28: службовий шар `Container` (банер + вікно) перейменовано на `Wrapper` у `Popup` і `Drawer` (правило `naming.md`).
