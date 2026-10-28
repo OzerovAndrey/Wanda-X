@@ -75,3 +75,10 @@ Breakpoint=Mobile, Size=full: корінь 360×640, вікно притисну
 
 ## 6. 2026-10-28 — значення Size малими, порядок xl → xs
 Набір перезібрано (`79607:19185`, інстансів у старого не було): `Size = xl | lg | md | sm | xs | full`, варіанти в наборі рядами від `xl` зверху до `xs`, мобільний `full` унизу. Правило — `naming.md`.
+
+## 7. 2026-10-28 — Drawer окремим компонентом (рішення Андрея)
+Мобільний варіант — це не розмір, а інший тип вікна (виїжджає знизу), тому `Size=full` і `Breakpoint` прибрано.
+- **`Popup`** (`79615:19151`) — модалка: `Size = xl | lg | md | sm | xs` × `Banner = False | True` (10v); Boolean `Close`, `Footer`, `Scrollbar`; слоти `Content`, `Footer content`. Вікно по центру оверлея 1280×800.
+- **`Drawer`** (`79615:19236`) — `Banner = False | True` (2v); ті самі Boolean і слоти + `Handle`. Корінь 360×640, вікно притиснуте донизу, Fill по ширині, радіус `border-radius.popup.mobile.*` (низ 0).
+- Section `Popup`: `Popup` → `Drawer` → `Popup/Banner` (спільний під-компонент).
+Попередні описи `Breakpoint` / `full` у розділах 3 і 6 застаріли.
