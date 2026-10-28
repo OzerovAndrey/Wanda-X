@@ -26,7 +26,7 @@
 | Table | `↳ Table -` | Rebuilt + component tokens bound 2026-10-27 — XON JSON pending | | `components/table.md` | | |
 | Notifications, Cookies, Toast | `↳ Notifications, Cookies, Toast` | Not started | | `Toast` 47040:2552 | 8 | |
 | Pagination & Scroll | `↳ Pagination & Scroll` | Not started | | `scrollbar` 28787:64507 | 6 | |
-| Popup | `↳ Popup -` | Changed | | нові `Popup mob` 77814:6477, `Popup web` 77818:294521 у Section `Popup` | 2 + 5 | |
+| Popup | `↳ Popup -` | Rebuilt (етап 1) | 2026-10-28 | оригінали в 5 Section Originals; новий `Popup` 79597:7480 (Breakpoint × Size × Banner, 12v) + `Popup/Banner` 79597:7291 у сірій Section `Popup` — `components/popup.md` | 12 + 1 | токени ширин/банера — наступний етап |
 | Section | `↳ Section 💛` | Learned | 2026-10-21 | 78117:335001 | 2 | `components/section.md` |
 | Status | `↳ Status 💛` | Learned | 2026-10-21 | 47052:2374 (`Status/Badge`), 78152:197 (`Status/Indicator`) | 28 + 14 | `components/status.md` |
 | Switcher | `↳ Switcher -` | Changed | | нові `Switcher-item` 46861:61667, `Switcher` 46861:61677 у Section `Switcher` | 3 + 6 | |

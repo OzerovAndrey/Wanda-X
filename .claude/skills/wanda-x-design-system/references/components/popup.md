@@ -1,0 +1,74 @@
+# Popup — інвентаризація і оптимізована збірка
+
+Сторінка `↳ Popup - Андрей` (`27928:150291`) · нова Section `Popup` (сіра, x 6666) · набір `Popup` (`79597:7480`) + `Popup/Banner` (`79597:7291`) · статус: **етап 1 зібрано (2026-10-28), токени — наступний етап**
+
+## 1. Інвентаризація (2026-10-28, весь файл, read-only скан)
+Скан 90+ сторінок за назвами `popup|pop-up|modal|dialog|overlay` і за мейнами інстансів.
+
+**Оболонки, що реально використовуються:**
+| Набір | Node | Інстансів | Де |
+|---|---|---|---|
+| `Popup` (старий, `device × type`: Normal / normal-with-bottom / dialog / with banner) | `47105:166398` | 130 | Log in, Profile, Ingame, Achievements, Shop, Cashbox, Calendar … — **мейн був сиротою (без сторінки)**, тепер у Section Originals 1 |
+| `Popup mob` (збірка команди, `Banner=false\|true`) | `77814:6477` | 60 | Log in, Ingame, Cashbox, Messages, Wheel … |
+| `Popup web` (збірка команди, `Banner=XS…XL` = ширини 420/560/640/800/1200) | `77818:294521` | 1 | Data refinement |
+| `Popup` remote (чужа бібліотека, та сама структура) | `66674:60777` | 4 | Ingame |
+| `overlay` ×2, `mobile popup + overlay` ×2 (Pregame, Cashbox) | | | окремі оверлеї |
+
+**Що вкладається в оболонку** — діалоги (`dialog modal content` 21 інст., VIP, bet history, AFK, congrats, cashback, bonus wagered, play for real), банер (`Banner`, `Registration popup`), продуктовий контент (Achievements, Calendar, Deals, Lottery, Lootboxes, Messages, Mobile app, Providers, Strip, Wheel) і великі попапи-сторінки (Profile, Payment, макети 1096).
+
+## 2. Оригінали зібрано на сторінці (2026-10-28)
+5 білих Section з підписами `назва · звідки · що це · node · статус`:
+`79593:809` 1. Оболонка · `79593:970` 2. Діалоги · `79593:1660` 3. З банером · `79593:1878` 4. Контент продуктових попапів · `79593:5094` 5. Великі попапи.
+- Мейни перенесено (інстанси в макетах лишились прив'язаними); фрейми з макетів — копії.
+- Врятовано 8 мейнів-сиріт без сторінки: `Popup` (130 інст.), `overlay` ×2, `play for real pop-up`, `AFK modal content`, `AFK modal/opientation4|6`.
+- **Шрифт MrBet Black недоступний конектору** → 33 мейни/копії не переносяться. На їхньому місці — червона пунктирна рамка зі знімком (картинка) і червоний підпис «перенести вручну». Те, що вже лежало на сторінці (`Registration popup`, `AFK modal` ×2, два інстанси-приклади, `Vector 1`), відсунуто під Section команди (x −2678, y 5200+).
+
+## 3. Оптимізована збірка — `Popup`
+Один набір замість старого `Popup` (8v), `Popup mob` (2v) і `Popup web` (5v). Section `Popup` праворуч від оригіналів; основний — `Popup`, під ним `Popup/Banner`.
+
+```
+Popup (COMPONENT_SET 79597:7480)  Breakpoint × Size × Banner (12v)
+└─ Breakpoint=Desktop, Size=XS, Banner=False  VERTICAL 1280×800, center/center, padding popup.layout.padding (24), fill contextual.overlay
+    └─ Window  VERTICAL, width 420 (XS) | 560 | 640 | 800 | 1200, hug, clip, radius border-radius.popup.desktop.*, fill contextual.popup.fill
+        ├─ Body  padding popup.padding.top / horizontal / bottom (40/16/32)
+        │   └─ Content (SLOT)  дефолт: текст Label (text/md, semantic.text.default.primary)
+        ├─ Footer  padding popup.padding.footer.* (16/16/32), верхня лінія 1px contextual.popup.border   ← Boolean Footer
+        │   └─ Footer content (SLOT)  дефолт: Button Primary lg, Fill
+        ├─ Close (ABS 8/8 від правого-верхнього, Button/Link/Default + іконка close)   ← Boolean Close
+        └─ Scrollbar (ABS, 8 від правого краю, top 56)   ← Boolean Scrollbar
+Banner=True: Window обгорнутий у Container (VERTICAL, gap −20) з Popup/Banner зверху; Close — Button/Link/Inverted у Container (над банером).
+Breakpoint=Mobile, Size=Full: корінь 360×640, вікно притиснуте донизу (MAX), Fill по ширині, радіус border-radius.popup.mobile.* (низ 0), + Handle 64×4 (semantic.background.2)   ← Boolean Handle
+```
+
+| Властивість | Тип | Значення / default |
+|---|---|---|
+| `Breakpoint` | Variant | Desktop \| Mobile (структурна різниця: bottom sheet) |
+| `Size` | Variant | XS \| SM \| MD \| LG \| XL (Desktop) · Full (Mobile) |
+| `Banner` | Variant | False \| True |
+| `Close` | Boolean | true |
+| `Footer` | Boolean | true |
+| `Scrollbar` | Boolean | false |
+| `Handle` | Boolean | false (лише Mobile) |
+| `Content`, `Footer content` | Slot | Label / Button |
+
+`Popup/Banner` (`79597:7291`): HORIZONTAL 420 (Fill в інстансі), hug, gap spacing.400, padding-right 40, радіус 24/24/0/0, fill contextual.popup.banner.fill (градієнт), обведення contextual.popup.border; `Image` (Image/Single 100, lock ratio) + `Label` (text/md-stronger, semantic.text.default-invert.heading, Fill).
+
+Прив'язки: змінні `Product` + plugin data `tokens` на шарах; іконки close перефарбовано після swap (`semantic.link.default.default` / `semantic.text.default-invert.heading`). Перевірено превʼю в MB і XON.
+
+### Що змінено проти оригіналів (на перевірку)
+- `Popup web` `Banner=XS…XL` → `Size`; `device=mob|desktop` → `Breakpoint`; `type=dialog` прибрано (діалог — це вміст слота); `normal-with-bottom` → Boolean `Footer`; `with banner` → `Banner`.
+- Оверлей усередині компонента, як у збірці команди (у старому `Popup` оверлея не було).
+- Заливка на `Window` один раз (а не на `Popup` і `Bottom-content` окремо); `Line` → `Handle`; `Close Header` → той самий `Close` (у Banner=True кнопка стоїть над банером).
+- Колір тексту банера — `semantic.text.default-invert.heading` напряму (правило 6), замість `contextual.popup.banner.color`.
+
+## 4. Бракує токенів (наступний етап, JSON-handoff)
+- `popup.width.xs|sm|md|lg|xl` (420/560/640/800/1200) — ширини стоять значеннями.
+- `popup.banner.padding-right` (40), `border-radius.popup.banner` (24), `popup.banner.gap-v` (−20, нахлест вікна на банер), `popup.banner.image-size` (100).
+- `popup.handle.*` (64×4, радіус 4); `border-radius.popup.*` за правилом alias-only — ок; `contextual.popup.fill` у XON посилається на `core.brand-60.900` (core, не alias) і градієнт банера — на `core.*`.
+- `contextual.popup.slate.1|2` — на core (`core.brand-60.a15|a10`).
+
+## 5. Відкриті питання
+1. `Popup/Dialog` (вміст-діалог: Status icon + заголовок + текст + кнопки, 21+ інстанс) — зібрати як під-компонент? Заголовок на MrBet Black — конектор не може створити такий текст; потрібно, щоб Андрей переніс `dialog modal content` або дав доступ до шрифту.
+2. Скрол-бар: у `Popup web` був увімкнений за замовчуванням, у старому — вимкнений. Зараз default false.
+3. Міграція 190+ інстансів (старий `Popup` 130 + `Popup mob` 60) на новий набір — окремою задачею після погодження.
+4. Продуктові вмісти (Achievements, Lootboxes, Wheel, Profile …) — лишаються продуктовими (правило 11), у ДС лише оболонка.

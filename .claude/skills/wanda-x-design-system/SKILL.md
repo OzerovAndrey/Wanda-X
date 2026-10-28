@@ -100,6 +100,7 @@ description: Правила, еталони та чекліст очистки �
 - Token Studio (storage у файлі, запис токенів, токени на шарах) — `references/token-studio.md`.
 
 ## Журнал
+- 2026-10-28 — **Popup: інвентаризація + оптимізована збірка** — скан усього файлу; оригінали в 5 Section `Originals` (врятовано 8 мейнів-сиріт, у т.ч. старий `Popup` на 130 інстансів; 33 мейни з MrBet Black — знімками, перенести вручну); новий `Popup` (Breakpoint × Size × Banner, слоти Content / Footer content, Boolean Close / Footer / Scrollbar / Handle) + `Popup/Banner` (`components/popup.md`).
 - 2026-10-27 — **Table: токени XON** — alias +5 (card/container = 12 за шкалою XON), component +50/−2, ідентично MB (`components/table.md` §27).
 - 2026-10-27 — **Table — одна компонента з підвидами**: одна Section, вирівняні сітки, токени `table.leaderboard.*` / `table.history.*`; після Export перестворено 55 змінних, 474 прив'язки за plugin data (`components/table.md` §26).
 - 2026-10-27 — **MB alias: +5 alias для таблиць** (card, container, slate-dark-1|2, brand-subtle); посилання component резолвляться (`components/table.md` §25).
