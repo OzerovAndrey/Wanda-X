@@ -151,3 +151,16 @@ Modal/Banner: gap spacing.400 · padding-right 40 · radius 24/24/0/0 · fill г
 | handle | `semantic.background.2`, 64×4 r4 | `contextual.drawer.handle.fill`, `drawer.handle.width|height`, `border-radius.drawer.handle` |
 | close | abs 8/8 | `modal.close.offset` (питання — чи токенізувати позицію) |
 Видалити після переходу: `popup.padding.footer.*`, `contextual.popup.banner.color`, `contextual.popup.border` (якщо ніде не використовується), `popup.*`, `border-radius.popup.*` — лише після перевірки використань у файлі.
+
+## 12. 2026-10-28 — `Layout = Default | Sidebar` у `Modal` (на перегляд Андрею)
+Джерело: `Payment popup` (каса, 1028×574, `48364:83398`) і прод-скрін каси. Наявні варіанти отримали `Layout=Default`; додано **2 варіанти** `Size=xl|lg, Banner=False, Layout=Sidebar` (матриця неповна — інші розміри/банер для Sidebar не робили, у джерелах їх немає).
+```
+Layout=Sidebar  корінь як у Default (overlay, padding popup.layout.padding)
+└─ Wrapper  HORIZONTAL · 1200|800 × 574 (fixed) · radius border-radius.popup.desktop.* · fill contextual.popup.fill · clip
+    ├─ Sidebar (SLOT)  270 × Fill · fill semantic.background.slate-1 · права лінія 1px semantic.divider.default.primary (як Payment sidebar)
+    ├─ Body  Fill · padding 40 (popup.padding.top) / 24 / 24 / 24 (spacing.600) > Content (SLOT)
+    ├─ Close (Button/Text Default, abs 8/8)   ← Closable
+    └─ Scrollbar (abs)                        ← Scrollbar
+```
+Нова властивість — SLOT `Sidebar`. `Actions`, `↳ Secondary`, `Divider` у Sidebar-варіантах не діють (шарів немає). Висота 574 — фіксована, як у каси. Токени на етап токенів: `modal.sidebar.width` (270), `contextual.modal.sidebar.fill`, `contextual.modal.sidebar.border`, `modal.sidebar.body.padding-*`.
+Відкрите: ширина каси 1028 не збігається з `xl`/`lg`; шапка `Profile popup`; мобільна каса.
