@@ -99,3 +99,9 @@ Breakpoint=Mobile, Size=full: корінь 360×640, вікно притисну
 - Мігровано 18 інстансів на сторінці `↳ Popup`; у вкладених у мейни (`Registration popup`, `Cashbox mobile popup + overlay`) вміст перестав відображатись → **усе повернуто** swap-ом на старі варіанти `Popup` (вміст відновився), розміри/футери звірено з оригіналами. `Cashbox mobile popup` перезібрано: старий `Popup` mob/dialog + `Cashbox bonus content` (Mobile), закриття вимкнено — **кнопку Activate звірити** (стан міг бути змінений в оригіналі).
 - Boolean `Overlay` (додавався для міграції) прибрано. Старий `Popup`: 138 інстансів; `Modal`: 1 (інстанс Андрея на сторінці), `Drawer`: 0.
 - Пастки — `working-agreements.md` §8.
+
+## 10. 2026-10-28 — `Popup mob` / `Popup web` переведено на `Drawer` / `Modal`, Section видалено
+- 61 інстанс (усі на верхньому рівні сторінок): ширина ≤ 420 → `Drawer` (44), ширше → `Modal` з розміром за шириною (16: 640 → md, 768 → lg з шириною 800), `Popup web` LG → `Modal` lg (1).
+- Swap з тимчасовим перейменуванням слотів (`content` / `Bottom-content`) — вміст збережено (Data refinement звірено «до/після» — ідентично). Boolean: `Bottom-content2` → `Footer`, `Line` → `Handle`, `Scrollbar`. Розмір і sizing кореня — як у старого інстансу; `Modal` з `Popup mob` — padding 0, вікно знизу (MAX), як було.
+- 59 з 61 — **порожні заготовки** (слоти пусті): дефолтний `Label`/кнопку прибрано. Вікно в них нижче, ніж було (старий слот мав фіксовані 175 px; min-height в інстансі Figma не перевизначає) — з вмістом висота стане правильною.
+- `Popup mob` і `Popup web` — 0 інстансів → Section `Popup` (`79642:18972`) видалено. Старий `Popup` (Originals, 138 інстансів) — не чіпали.

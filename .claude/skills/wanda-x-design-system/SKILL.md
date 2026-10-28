@@ -100,6 +100,7 @@ description: Правила, еталони та чекліст очистки �
 - Token Studio (storage у файлі, запис токенів, токени на шарах) — `references/token-studio.md`.
 
 ## Журнал
+- 2026-10-28 — **`Popup mob` / `Popup web` → `Drawer` (44) / `Modal` (17)**, Section команди видалено; старий `Popup` (138) лишився (`components/popup.md` §10).
 - 2026-10-28 — **Popup: міграцію відкочено** (вкладені в мейни інстанси втрачали вміст після swap; swap назад повертає); пастки міграції — `working-agreements.md` §8.
 - 2026-10-28 — **правило: шар без визначеної ролі називаємо `Wrapper`** (`naming.md`); у Popup/Drawer `Container` → `Wrapper`.
 - 2026-10-28 — **Popup розділено: `Popup` (модалка, Size × Banner) і окремий `Drawer` (Banner, Handle)** — мобільне вікно знизу не є розміром (`components/popup.md` §7).
