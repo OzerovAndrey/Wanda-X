@@ -110,3 +110,44 @@ Breakpoint=Mobile, Size=full: корінь 360×640, вікно притисну
 - 2026-10-28: `Actions` перенесено **всередину слота `Footer content`** — це його вміст за замовчуванням (Boolean `Actions` / `Secondary` прив'язані й працюють). Структура: `Footer` > `Footer content` (SLOT) > `Actions` > `Secondary` + `Primary`. Мігровані інстанси не змінились (59 з порожнім футером, 2 з власним вмістом Data refinement).
 - 2026-10-28: **`Body` і `Footer` об'єднано** (запит Андрея): `Wrapper` > `Body` (VERTICAL, padding `popup.padding.top / horizontal / bottom`, gap `spacing.600` = 24) > `Content` (SLOT) → `Divider` (інстанс `Divider` Variant=Secondary, Fill) → `Footer content` (SLOT). Boolean `Divider` (on) — лінія; `Footer` тепер керує видимістю слота `Footer content`. Відстань контент → кнопки та сама, що й була (24 + 1 + 24 ≈ 32 + 16), але лінія тепер з відступами 16 по боках, а не на всю ширину. Окремий фрейм `Footer` і його токени `popup.padding.footer.*` більше не використовуються. Мігровані інстанси перевірено: 59 заготовок порожні, Data refinement зі своїм вмістом.
 - 2026-10-28: **слот `Footer content` прибрано** (рішення Андрея): `Body` > `Content` (SLOT) → `Divider` → `Actions` (звичайний шар: `Secondary` + `Primary`). Властивості `Footer` і `Footer content` видалено, їхню роль виконує Boolean `Actions`. Поточні властивості — `Modal`: Closable, Scrollbar, Content, Actions, Secondary, Divider, Size, Banner; `Drawer`: Close, Scrollbar, Handle, Content, Actions, Secondary, Divider, Banner. Data refinement (власний футер = одна Primary) → `Actions` on; 59 заготовок — `Actions` off.
+
+## 11. Синхронізація 2026-10-28 (перед етапом токенів) — знімок структури
+Сторінка перейменована: `↳ Modal/Drawer - Андрей`. Section `Modal` (`Modal` 10v), Section `Drawer` (`Drawer` 2v); `Modal/Banner` (`79597:7291`) — на рівні сторінки, поза Section.
+
+**Властивості**
+- `Modal`: `Closable` (on), `Scrollbar` (off), `Content` (slot), `Actions` (on), `↳ Secondary` (off), `Divider` (on), `Size = xl|lg|md|sm|xs`, `Banner = False|True`.
+- `Drawer`: `Closable` (on), `Scrollbar` (off), `Handle` (off), `Content` (slot), `Actions` (on), ` ↳ Secondary` (off — **з пробілом на початку**), `Divider` (on), `Banner = False|True`.
+
+**Анатомія** (однакова для обох; Drawer — корінь без падінгів, вікно знизу, Fill)
+```
+<variant> (overlay)  fill contextual.overlay · Modal: padding popup.layout.padding
+└─ Wrapper (вікно)  radius border-radius.popup.{desktop|mobile}.* · fill contextual.popup.fill · width 1200/800/640/560/420 (без токена)
+    ├─ Body  padding popup.padding.top / horizontal / bottom · gap spacing.600
+    │   ├─ Content (SLOT) — дефолт Label (text/md, semantic.text.default.primary)
+    │   ├─ Divider (інстанс Divider/Variant=Secondary)        ← Divider
+    │   └─ Actions  gap spacing.400                           ← Actions
+    │       ├─ Secondary (Button Tertiary lg)                 ← ↳ Secondary
+    │       └─ Primary (Button Primary lg, Fill)
+    ├─ Scrollbar (abs 8 / 56)                                  ← Scrollbar
+    ├─ Handle 64×4 r4 semantic.background.2 (лише Drawer)      ← Handle
+    └─ Close (Button/Text Default, abs 8 / 8)                  ← Closable
+Banner=True: Wrapper (gap −20) > Modal/Banner + Wrapper(вікно); Close (Button/Text Inverted) — над банером.
+Modal/Banner: gap spacing.400 · padding-right 40 · radius 24/24/0/0 · fill градієнт core/grey/700 → core/brand-60/600 · stroke contextual.popup.border · Image 100 · Label text/md-stronger semantic.text.default-invert.heading
+```
+
+### План токенів (на погодження)
+Простір імен за назвами компонентів: `modal.*`, `drawer.*` (правило «токени ↔ властивості»), замість `popup.*`.
+| Що | Зараз | Пропозиція |
+|---|---|---|
+| оверлей | `contextual.overlay` | `contextual.modal.overlay`, `contextual.drawer.overlay` → `{semantic…}` (alias для `core.grey.a50` — бракує) |
+| відступ оверлея | `popup.layout.padding` | `modal.padding` |
+| ширини | — | `modal.width.xl|lg|md|sm|xs` = 1200/800/640/560/420 |
+| заливка вікна | `contextual.popup.fill` (XON → `core.brand-60.900`, не alias) | `contextual.modal.fill`, `contextual.drawer.fill` → alias |
+| радіус вікна | `border-radius.popup.desktop|mobile.*` | `border-radius.modal` (одне значення), `border-radius.drawer.top` (низ 0 — без токена) |
+| падінги Body | `popup.padding.top|horizontal|bottom` (40/16/32) | `modal.body.padding-top`, `modal.body.padding-h`, `modal.body.padding-bottom` (асиметричні) — те саме для `drawer` |
+| gap Body | `spacing.600` напряму | `modal.body.gap-v` |
+| gap Actions | `spacing.400` напряму | `modal.actions.gap` |
+| банер | core-градієнт, 40, 24, 100, −20 | `contextual.modal.banner.fill` (alias), `modal.banner.padding-right`, `border-radius.modal.banner`, `modal.banner.image-size`, `modal.banner.overlap` |
+| handle | `semantic.background.2`, 64×4 r4 | `contextual.drawer.handle.fill`, `drawer.handle.width|height`, `border-radius.drawer.handle` |
+| close | abs 8/8 | `modal.close.offset` (питання — чи токенізувати позицію) |
+Видалити після переходу: `popup.padding.footer.*`, `contextual.popup.banner.color`, `contextual.popup.border` (якщо ніде не використовується), `popup.*`, `border-radius.popup.*` — лише після перевірки використань у файлі.
