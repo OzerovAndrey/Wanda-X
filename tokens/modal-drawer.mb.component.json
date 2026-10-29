@@ -316,7 +316,7 @@
         }
       },
       "fill": {
-        "value": "{semantic.background.slate-2}",
+        "value": "{semantic.background.surface}",
         "type": "color",
         "$extensions": {
           "com.figma.scopes": [
@@ -356,7 +356,7 @@
         }
       },
       "fill": {
-        "value": "{semantic.background.slate-2}",
+        "value": "{semantic.background.surface}",
         "type": "color",
         "$extensions": {
           "com.figma.scopes": [

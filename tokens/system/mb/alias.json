@@ -413,7 +413,7 @@
         "type": "color"
       },
       "slate-1": {
-        "value": "{core.grey.700}",
+        "value": "{core.grey.100a10}",
         "type": "color",
         "description": "+ ingame, timer"
       },
@@ -433,9 +433,34 @@
         "description": "+ shop prices"
       },
       "slate-for-cards": {
-        "value": "{core.grey.800}",
+        "value": "linear-gradient(135deg, {core.brand-preset.for-gradients.primary.start} 0%, {core.brand-preset.for-gradients.primary.end} 100%)",
         "type": "color",
         "description": "+ slate for cards BG "
+      },
+      "slate-dark-1": {
+        "value": "{core.grey.700}",
+        "type": "color",
+        "description": "+ dark plate: leaderboard striped"
+      },
+      "slate-dark-2": {
+        "value": "{core.grey.800}",
+        "type": "color",
+        "description": "+ dark stripe / head on dark plate"
+      },
+      "brand-subtle": {
+        "value": "{core.brand-60.a10}",
+        "type": "color",
+        "description": "+ table filled"
+      },
+      "overlay": {
+        "value": "{core.grey.a50}",
+        "type": "color",
+        "description": "+ modal, drawer overlay"
+      },
+      "surface": {
+        "value": "{core.white.500}",
+        "type": "color",
+        "description": "+ modal, drawer window"
       },
       "brand": {
         "emphasizing": {
@@ -481,9 +506,14 @@
         "description": "+ badge 5"
       },
       "11": {
-        "value": "linear-gradient(180deg, {core.grey.700} 0%, {core.brand-preset.for-gradients.4} 100%)",
+        "value": "linear-gradient(180deg, {core.grey.600} 0%, {core.grey.700} 100%)",
         "type": "color",
-        "description": "+ for card bd\n"
+        "description": "+ for card bd, bonus and bonuses\n"
+      },
+      "12": {
+        "value": "linear-gradient(90deg, {core.grey.700} 0%, {core.brand-60.600} 100%)",
+        "type": "color",
+        "description": "+ modal banner"
       }
     },
     "fill": {
@@ -508,6 +538,27 @@
             "modify": {
               "type": "alpha",
               "value": "0.24",
+              "space": "hsl"
+            }
+          }
+        }
+      },
+      "active": {
+        "value": "{core.grey.200a40}",
+        "type": "color"
+      },
+      "subtle": {
+        "value": "{core.content.a8}",
+        "type": "color"
+      },
+      "subtle-invert": {
+        "value": "{core.white.500}",
+        "type": "color",
+        "$extensions": {
+          "studio.tokens": {
+            "modify": {
+              "type": "alpha",
+              "value": "0.1",
               "space": "hsl"
             }
           }
@@ -1070,16 +1121,32 @@
   },
   "border-radius": {
     "global": {
-      "lg": {
-        "value": "20",
+      "xs": {
+        "value": "{border-radius.core.100}",
+        "type": "borderRadius"
+      },
+      "sm": {
+        "value": "6",
+        "type": "borderRadius"
+      },
+      "card": {
+        "value": "{border-radius.core.200}",
         "type": "borderRadius"
       },
       "md": {
         "value": "{border-radius.core.300}",
         "type": "borderRadius"
       },
-      "sm": {
-        "value": "6",
+      "container": {
+        "value": "{border-radius.core.400}",
+        "type": "borderRadius"
+      },
+      "lg": {
+        "value": "20",
+        "type": "borderRadius"
+      },
+      "xl": {
+        "value": "{border-radius.core.600}",
         "type": "borderRadius"
       }
     }

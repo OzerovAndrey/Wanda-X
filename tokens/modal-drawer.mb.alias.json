@@ -5,6 +5,11 @@
         "value": "{core.grey.a50}",
         "type": "color",
         "description": "+ modal, drawer overlay"
+      },
+      "surface": {
+        "value": "{core.white.500}",
+        "type": "color",
+        "description": "+ modal, drawer window"
       }
     },
     "gradients": {

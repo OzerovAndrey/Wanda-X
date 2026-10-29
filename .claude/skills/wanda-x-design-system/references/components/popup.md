@@ -172,3 +172,20 @@ Boolean `Actions` тепер ховає весь `Footer`. Інстанси: 59 
 - `contextual.modal.fill` / `contextual.drawer.fill` = `{semantic.background.2}` — у XON alias це `core.brand-60.600` = brand-preset.tertiary, той самий колір, що був у `contextual.popup.fill` (`core.brand-60.900` → теж brand-preset.tertiary), але тепер через alias.
 - `border-radius.global.xl` = `{border-radius.core.300}` (12) — у XON усі global-радіуси 12; **візуальна зміна:** верхні кути банера в XON 24 → 12.
 - **Відкрите:** `contextual.drawer.handle-fill` = `semantic.background.2` в XON збігається з заливкою вікна → смужка невидима (як було й раніше). Потрібне рішення команди (напр. `semantic.border.default.default`).
+
+## 16. Прив'язка токенів (2026-10-29, після Export Андрея)
+252 прив'язки (змінна `Product` + plugin data `tokens`, радіуси — per-corner ключі) на `Modal` (10v), `Drawer` (2v), `Modal/Banner`. Жодних `popup.*` / `contextual.popup.*` / мертвих змінних у трьох компонентах не лишилось.
+| Шар | Токени |
+|---|---|
+| корінь варіанта | fill `contextual.{modal|drawer}.overlay`; Modal padding ×4 `modal.padding` |
+| `Wrapper` з фікс. шириною (Modal) | width `modal.width.<size>` |
+| `Wrapper` банер+вікно | itemSpacing `{modal|drawer}.banner.gap-v` |
+| `Wrapper` вікно | radius `border-radius.{modal|drawer}.wrapper` (Drawer — лише верх, низ 0 без токена), fill `contextual.{modal|drawer}.fill` |
+| `Body` | padding `{c}.body.padding-t|h|b` |
+| `Actions` | padding `{c}.actions.padding-t|h|b`, gap `{c}.actions.gap` |
+| `Handle` | width/height `drawer.handle.*`, radius `border-radius.drawer.handle`, fill `contextual.drawer.handle-fill` |
+| `Modal/Banner` | gap `modal.banner.gap`, padding-right `modal.banner.padding-r`, radius верх `border-radius.modal.banner`, stroke `contextual.modal.banner.border`, fill — градієнт, токен `contextual.modal.banner.fill` лише в plugin data (градієнти в змінні не експортуються; стопи — змінні core); `Image` height `modal.banner.image-size` (lock ratio) |
+
+**Виправлення XON-заливки:** у репо `tokens/system/xon/core.json` був застарілий (`core.brand-60.900` і `.600` обидва → tertiary), тому `semantic.background.2` дав блакитне вікно. Справжнє: XON `brand-60/900` = #101a1b, `/600` = #23bcd4. Додано alias **`semantic.background.surface`** (MB `{core.white.500}`, XON `{core.brand-60.900}`), `contextual.modal.fill` / `contextual.drawer.fill` → `{semantic.background.surface}`; змінну створено в Figma (до наступного Export з оновленими JSON). Handle у XON тепер видно (cyan на темному) — питання §15 закрите.
+**Урок:** значення core для перевірки брати з Figma (`resolveForConsumer`) або свіжого `core.json`, не з експорту в репо.
+`tokens/system/{mb,xon}/{alias,component}.json` оновлено файлами, переданими Андрею 29.10; `core.json` у репо застарілий — потрібен свіжий.
