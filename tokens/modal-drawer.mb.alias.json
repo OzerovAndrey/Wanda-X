@@ -1,0 +1,26 @@
+{
+  "semantic": {
+    "background": {
+      "overlay": {
+        "value": "{core.grey.a50}",
+        "type": "color",
+        "description": "+ modal, drawer overlay"
+      }
+    },
+    "gradients": {
+      "12": {
+        "value": "linear-gradient(90deg, {core.grey.700} 0%, {core.brand-60.600} 100%)",
+        "type": "color",
+        "description": "+ modal banner"
+      }
+    }
+  },
+  "border-radius": {
+    "global": {
+      "xl": {
+        "value": "{border-radius.core.600}",
+        "type": "borderRadius"
+      }
+    }
+  }
+}
