@@ -81,6 +81,8 @@ Inverted міняє лише колір тексту — окремих inverted
 
 13. 2026-10-29 — **файл переведено зі старих `contextual.progress-bar.*` на нові токени** (рішення Андрея: у Token Studio лишаємо тільки нову групу). Pass 1 — власні шари (мейни, фрейми) на всіх сторінках: 128 токенів (plugin data) + 83 прив'язки змінних; Pass 2 — прив'язки всередині інстансів (оверрайди, інстанси видалених мейнів): ~860 шарів; + `Bonuses/No active` (видалений мейн). Контрольний скан: 0 посилань на `progress-bar`. Мапінг: `normal.primary.track`→`primary.indicator`, `normal.secondary.track`→`secondary.indicator`, `normal.*.container` і `normal.static.container`→`track`, `height.*`/`gap`→`progress.height.*`/`progress.gap`, `progress-bar.color`→`semantic.text.default.heading`. Зачеплено: старі набори на сторінці Progress, `Navigator`, `Notification/Onboarding`, `Homepage / mini banner`, `Achievement cards`, `Achivments card`, `stores`, Ingame/Profile/VIP/Strip компоненти. Інстанси **не свопались** на новий компонент — лише токени. Тимчасові змінні — `scripts/progress-var-map.json`.
 
+14. 2026-10-29 — **група `contextual.progress-bar` повернута в обидва сети з тими самими значеннями, але з `$deprecated`** (фронти не можуть змерджити видалення); у message — на який токен замінити. Шари у Figma лишаються на нових токенах. Підсумок для сетів: +8 нових, 7 позначено deprecated, −0.
+
 ## Відхилення від правил
 - Кольори XON (`core.content.a10/a15/a100`) і MB `core.brand-60.500` — посилання на core, бо в alias немає відповідників (скопійовано як є).
 - `border-radius.progress` → `{border-radius.core.full}` (core). Alias `border-radius.global.full` передано разом зі Scrollbar (29.10), у експорті його ще немає — після вставки перевести `border-radius.progress` на нього.
