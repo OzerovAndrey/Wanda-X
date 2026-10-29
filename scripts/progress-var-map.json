@@ -1,0 +1,10 @@
+{
+  "_note": "Тимчасові (ручні) змінні Progress, створені 2026-10-29 до Export з Token Studio. Після Export прив'язки на ці ID стануть мертвими — переприв'язати на живу змінну з тією ж назвою (у т.ч. оверрайди всередині інстансів, де plugin data немає).",
+  "VariableID:79830:2": "progress/gap",
+  "VariableID:79830:3": "progress/height/md",
+  "VariableID:79830:4": "progress/height/sm",
+  "VariableID:79830:5": "progress/step/gap",
+  "VariableID:79830:6": "progress/circle/size",
+  "VariableID:79830:7": "contextual/progress/track",
+  "VariableID:79830:8": "contextual/progress/secondary/indicator"
+}
