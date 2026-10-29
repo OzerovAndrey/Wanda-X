@@ -13,15 +13,13 @@
 ## Анатомія
 ```
 Scrollbar (COMPONENT_SET 79774:18)   Variant × State × Horizontal (8v)
-└─ Variant=…, State=…, Horizontal=False (COMPONENT)  auto layout VERTICAL · fixed · padding 0 · без заливки
-│   width ← scroll.size | scroll.hover.size, height 88 (довжина — в інстансі)
-│   └─ Thumb (RECTANGLE)  FILL × FILL · radius ← border-radius.scroll (4 кути) · fill ← contextual.scroll.fill.*
-└─ Variant=…, State=…, Horizontal=True (COMPONENT)   auto layout HORIZONTAL · width 88 · height ← токен товщини
-    └─ Thumb — те саме
+└─ Variant=…, State=…, Horizontal=False|True (COMPONENT, без дочірніх шарів — компонент і є thumb)
+     width (V) / height (H) ← scroll.size | scroll.hover.size; довжина 88 — в інстансі
+     radius (4 кути) ← border-radius.scroll
+     fill ← contextual.scroll.fill.default | .transparent
 ```
-**Без rotation.** Горизонтальні варіанти мають реальні розміри 88×4 / 88×8. Поворот компонента не переноситься при свопі варіанту в інстансі — через це раніше `Horizontal=True` в інстансах лишався вертикальним.
-
-Шар `Thumb` (колишній `scrollbar`) свідомо лишається окремо від кореня: у ~30 інстансах макетів на ньому перевизначена заливка — сплющення структури їх би скинуло.
+**Без rotation.** Горизонтальні варіанти мають реальні розміри 88×4 / 88×8.
+**Без вкладеного `Thumb`** (2026-10-29, на запит Андрея): усі токени стоять на самому компоненті — у Token Studio при виділенні варіанту підсвічуються всі (розмір, fill, радіус). У старому наборі (Originals) шар лишався через override-и заливки в ~30 інстансах; при міграції ці override-и треба перенести з шару на корінь.
 
 ## Властивості
 | Властивість | Тип | Значення / default | Що робить |
@@ -43,9 +41,9 @@ Scrollbar (COMPONENT_SET 79774:18)   Variant × State × Horizontal (8v)
 |---|---|---|---|
 | `scroll.size` | root → width (V) / height (H) | `{spacing.100}` = 4 | `{spacing.100}` |
 | `scroll.hover.size` | root → width / height | `{spacing.200}` = 8 | `{spacing.200}` |
-| `border-radius.scroll` | Thumb → 4 кути | `{border-radius.global.full}` | те саме |
-| `contextual.scroll.fill.default` | Thumb → fill | `{core.grey.400}` ⚠️ | те саме |
-| `contextual.scroll.fill.transparent` | Thumb → fill | `{core.content.a20}` ⚠️ | те саме |
+| `border-radius.scroll` | root → 4 кути | `{border-radius.global.full}` | те саме |
+| `contextual.scroll.fill.default` | root → fill | `{core.grey.400}` ⚠️ | те саме |
+| `contextual.scroll.fill.transparent` | root → fill | `{core.content.a20}` ⚠️ | те саме |
 
 Новий alias (обидва бренди): `border-radius.global.full` = `{border-radius.core.full}`.
 JSON-фрагменти: `tokens/scrollbar.{mb,xon}.{alias,component}.json`. Змінні з тими ж назвами створено в `Product` вручну — **вставити JSON у Token Studio до наступного Export**, інакше Export видалить змінні (`working-agreements.md` §2.6).
