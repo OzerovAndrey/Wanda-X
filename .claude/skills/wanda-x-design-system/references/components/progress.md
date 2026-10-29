@@ -7,8 +7,8 @@
 ## Призначення і характер
 Індикатор прогресу: лінійна смуга з лічильником (`2/5`), покрокова смуга з сегментів і кільце з відсотком.
 - **Роль і місце:** картки бонусів (`Card/Bonus/Conten-block/timer` — ~400 інстансів, sm), VIP-картки, реєстрація (Step), онбординг, профіль; кільце — плитки провайдерів у Gamehall, бонуси Ingame.
-- **Поведінка:** станів немає (неінтерактивний). Значення задається в інстансі: ширина `Thumb` (Line), кількість і `Active` сегментів у слоті `Items` (Step), дуга `Thumb` + текст (Circle). **Частковий сегмент** (як колишні `Progress line` / `Progress bar`): у сегменті `Active=True` і ширина його `Thumb` = значення (Fill → Fixed в інстансі).
-- **Inverted:** міняється лише колір `Value` (`semantic.text.default.heading` → `default-invert.heading`); Track/Thumb мають власні `inverted` токени з тими ж значеннями.
+- **Поведінка:** станів немає (неінтерактивний). Значення задається в інстансі: ширина `Indicator` (Line), кількість і `Active` сегментів у слоті `Items` (Step), дуга `Indicator` + текст (Circle). **Частковий сегмент** (як колишні `Progress line` / `Progress bar`): у сегменті `Active=True` і ширина його `Indicator` = значення (Fill → Fixed в інстансі).
+- **Inverted:** міняється лише колір `Value` (`semantic.text.default.heading` → `default-invert.heading`); Track/Indicator мають власні `inverted` токени з тими ж значеннями.
 - **MB vs XON:** Primary — градієнт success→vibrant в обох; Secondary — MB `core.brand-60.500` (синій), XON `core.content.a100` (білий). Track: MB `semantic.fill.default`, XON `core.content.a10/a15`.
 - **Масштаб:** ширина фіксована 200 у мейні, в макетах тягнеться (Track — Fill). Висота Track: md 10 / sm 4.
 - **Межі:** Type=Step — md і sm, лише Inverted=False; Circle без Size і Inverted (як в оригіналі).
@@ -18,17 +18,17 @@
 Progress (COMPONENT_SET 79804:4510)   Variant × Size × Inverted × Type (12v) · Value (bool) · Items (slot)
 ├─ Variant=…, Size=md|sm, Inverted=…, Type=Line   H · gap progress.gap · 200 FIXED / HUG · align CENTER
 │   ├─ Track  FRAME  H · FILL · height progress.height.{md|sm} · radius border-radius.progress · fill contextual.progress[.inverted].{primary|secondary}.track · clip
-│   │   └─ Thumb  RECT  FIXED ширина (= значення; 134 Primary / 54 Secondary за замовч.) · FILL висота · fill …{primary|secondary}.thumb · radius
+│   │   └─ Indicator  RECT  FIXED ширина (= значення; 134 Primary / 54 Secondary за замовч.) · FILL висота · fill …{primary|secondary}.thumb · radius
 │   └─ Value  TEXT  text.xs-strong · semantic.text.default[-invert].heading · "2/5" · visible ← Value
 └─ Variant=…, Size=md|sm, Inverted=False, Type=Step   H · 200 FIXED / HUG
     └─ Items  SLOT (спільна властивість)  H · gap progress.step.gap · FILL · 10 × Progress/Step того ж Size (FILL), 3 Active
 Progress/Circle (COMPONENT_SET 79803:70)  Variant (2v) · 36×36 · height progress.circle.size, lock ratio
 ├─ Track  ELLIPSE  stroke contextual.progress.{v}.track · borderWidth progress.circle.track-width (1)
-├─ Thumb  ELLIPSE  arc · stroke contextual.progress.{v}.thumb · borderWidth progress.circle.thumb-width (2) · round cap
+├─ Indicator  ELLIPSE  arc · stroke contextual.progress.{v}.thumb · borderWidth progress.circle.thumb-width (2) · round cap
 └─ Label  TEXT  text.xs-strong · semantic.text.default.heading · "86%"
 Progress/Step (COMPONENT_SET 79803:61)  Variant × Size × Active (8v)
 └─ Variant=…, Size=md|sm, Active=…  (корінь = трек) H · 24 FIXED · height progress.height.{md|sm} · radius · fill …{v}.track · clip
-    └─ Thumb  RECT  FILL × FILL · fill …{v}.thumb · radius · visible лише в Active=True
+    └─ Indicator  RECT  FILL × FILL · fill …{v}.thumb · radius · visible лише в Active=True
 ```
 Круги кільця накладені (не auto layout) — це оверлеї.
 
@@ -42,7 +42,7 @@ Progress/Step (COMPONENT_SET 79803:61)  Variant × Size × Active (8v)
 | `Value` | Boolean | true | показ лічильника (лише Line) |
 | `Items` | Slot | 10 × `Progress/Step` | сегменти Step; preferred — `Progress/Step` |
 | `Progress/Step` → `Size` | Variant | md \| sm | висота сегмента 10 / 4 |
-| `Progress/Step` → `Active` | Variant | False \| True | показ `Thumb`; ширина `Thumb` в інстансі = часткове заповнення |
+| `Progress/Step` → `Active` | Variant | False \| True | показ `Indicator`; ширина `Indicator` в інстансі = часткове заповнення |
 
 ## Токени (`progress.*`, `contextual.progress.*`)
 Значення скопійовано з `contextual.progress-bar.*` (експорт 2026-10-29). Файли: `tokens/progress.{mb,xon}.component.json`.
@@ -53,13 +53,13 @@ Progress/Step (COMPONENT_SET 79803:61)  Variant × Size × Active (8v)
 | `progress.height.md` / `.sm` | Track, Step → height | 10 / 4 | = |
 | `progress.step.gap` | slot Items → itemSpacing | `{spacing.100}` (4) | = |
 | `progress.circle.size` | Circle root → height | `{size.450}` (36) | = |
-| `progress.circle.track-width` / `.thumb-width` | Circle Track/Thumb → strokeWeight | 1 / 2 | = |
+| `progress.circle.track-width` / `.thumb-width` | Circle Track/Indicator → strokeWeight | 1 / 2 | = |
 | `border-radius.progress` (наявний) | Track, Thumb, Step → 4 кути | `{border-radius.core.full}` | = |
 | `contextual.progress.primary.track` | Track, Step off, Circle Track | `{semantic.fill.default}` | `{core.content.a10}` |
 | `contextual.progress.primary.thumb` | Thumb, Step on, Circle Thumb | gradient success→vibrant (без змінної) | = |
 | `contextual.progress.secondary.track` | Track, Step off, Circle Track | `{semantic.fill.default}` | `{core.content.a15}` |
 | `contextual.progress.secondary.thumb` | Thumb, Step on, Circle Thumb | `{core.brand-60.500}` | `{core.content.a100}` |
-| `contextual.progress.inverted.*` (4) | Track/Thumb у Inverted=True | = звичайним | = |
+| `contextual.progress.inverted.*` (4) | Track/Indicator у Inverted=True | = звичайним | = |
 | `semantic.text.default[-invert].heading` | Value, Label → fill | — | — |
 
 Градієнтні токени — лише plugin data (Figma-змінна не вміє градієнт); стопи прив'язані до `core/brand-preset/*`, як в оригіналі. Змінні в `Product` створено з тими самими назвами і scopes (GAP / WIDTH_HEIGHT / STROKE_FLOAT / FRAME_FILL+SHAPE_FILL+STROKE_COLOR).
@@ -72,9 +72,11 @@ Progress/Step (COMPONENT_SET 79803:61)  Variant × Size × Active (8v)
 5. Circle Label — `semantic.text.default.heading` замість неіснуючого `contextual.progress-bar.color` (правило: текст — semantic; колір той самий).
 6. Не перенесено як окремі компоненти (0 використань / дублі): `Progress/Steps`, `Progress line`, фрейми `ProgressBar/Timer`, `proress+points`, `Progress bar`. `Registration progress` — продуктова композиція, лишилась як є.
 
-7. 2026-10-29 (на запит Андрея) — покрито вигляд `Progress line` / `Progress bar` і `Progress/Steps`: `Progress/Step` перебудовано як міні-смугу (корінь-трек + `Thumb`) → частково заповнений сегмент; додано `Size=sm` у `Progress/Step` (4v → 8v) і `Type=Step, Size=sm` у `Progress` (10v → 12v). Нових токенів не потрібно (`progress.height.sm`).
+7. 2026-10-29 (на запит Андрея) — покрито вигляд `Progress line` / `Progress bar` і `Progress/Steps`: `Progress/Step` перебудовано як міні-смугу (корінь-трек + `Indicator`) → частково заповнений сегмент; додано `Size=sm` у `Progress/Step` (4v → 8v) і `Type=Step, Size=sm` у `Progress` (10v → 12v). Нових токенів не потрібно (`progress.height.sm`).
 8. 2026-10-29 — Export з Token Studio видалив 13 змінних `progress/*` (токенів ще немає в сетах) → 46 мертвих прив'язок; змінні створено знову й переприв'язано за plugin data (136 властивостей). Повториться після кожного Export, доки `tokens/progress.*.component.json` не вставлено.
 9. Колір **Static** (`Progress/Steps`, lib-`Progress` `Style=Static`) — не додано, чекає рішення команди.
+
+10. 2026-10-29 — шар `Thumb` → **`Indicator`** у всіх варіантах `Progress`, `Progress/Step`, `Progress/Circle` (рішення Андрея). Токени поки `….thumb`.
 
 ## Відхилення від правил
 - Кольори XON (`core.content.a10/a15/a100`) і MB `core.brand-60.500` — посилання на core, бо в alias немає відповідників (скопійовано як є).
