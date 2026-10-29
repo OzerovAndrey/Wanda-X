@@ -49,41 +49,23 @@
             "WIDTH_HEIGHT"
           ]
         }
-      },
-      "track-width": {
-        "value": "1",
-        "type": "borderWidth",
-        "$extensions": {
-          "com.figma.scopes": [
-            "STROKE_FLOAT"
-          ]
-        }
-      },
-      "indicator-width": {
-        "value": "2",
-        "type": "borderWidth",
-        "$extensions": {
-          "com.figma.scopes": [
-            "STROKE_FLOAT"
-          ]
-        }
       }
     }
   },
   "contextual": {
     "progress": {
+      "track": {
+        "value": "{semantic.fill.default}",
+        "type": "color",
+        "$extensions": {
+          "com.figma.scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL",
+            "STROKE_COLOR"
+          ]
+        }
+      },
       "primary": {
-        "track": {
-          "value": "{semantic.fill.default}",
-          "type": "color",
-          "$extensions": {
-            "com.figma.scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL",
-              "STROKE_COLOR"
-            ]
-          }
-        },
         "indicator": {
           "value": "linear-gradient(90deg, {core.brand-preset.validation.success} 0%, {core.brand-preset.vibrant} 100%)",
           "type": "color",
@@ -97,17 +79,6 @@
         }
       },
       "secondary": {
-        "track": {
-          "value": "{semantic.fill.default}",
-          "type": "color",
-          "$extensions": {
-            "com.figma.scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL",
-              "STROKE_COLOR"
-            ]
-          }
-        },
         "indicator": {
           "value": "{core.brand-60.500}",
           "type": "color",
@@ -117,56 +88,6 @@
               "SHAPE_FILL",
               "STROKE_COLOR"
             ]
-          }
-        }
-      },
-      "inverted": {
-        "primary": {
-          "track": {
-            "value": "{semantic.fill.default}",
-            "type": "color",
-            "$extensions": {
-              "com.figma.scopes": [
-                "FRAME_FILL",
-                "SHAPE_FILL",
-                "STROKE_COLOR"
-              ]
-            }
-          },
-          "indicator": {
-            "value": "linear-gradient(90deg, {core.brand-preset.validation.success} 0%, {core.brand-preset.vibrant} 100%)",
-            "type": "color",
-            "$extensions": {
-              "com.figma.scopes": [
-                "FRAME_FILL",
-                "SHAPE_FILL",
-                "STROKE_COLOR"
-              ]
-            }
-          }
-        },
-        "secondary": {
-          "track": {
-            "value": "{semantic.fill.default}",
-            "type": "color",
-            "$extensions": {
-              "com.figma.scopes": [
-                "FRAME_FILL",
-                "SHAPE_FILL",
-                "STROKE_COLOR"
-              ]
-            }
-          },
-          "indicator": {
-            "value": "{core.brand-60.500}",
-            "type": "color",
-            "$extensions": {
-              "com.figma.scopes": [
-                "FRAME_FILL",
-                "SHAPE_FILL",
-                "STROKE_COLOR"
-              ]
-            }
           }
         }
       }

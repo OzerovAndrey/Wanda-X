@@ -44,25 +44,22 @@ Progress/Step (COMPONENT_SET 79803:61)  Variant × Size × Active (8v)
 | `Progress/Step` → `Size` | Variant | md \| sm | висота сегмента 10 / 4 |
 | `Progress/Step` → `Active` | Variant | False \| True | показ `Indicator`; ширина `Indicator` в інстансі = часткове заповнення |
 
-## Токени (`progress.*`, `contextual.progress.*`)
-Значення скопійовано з `contextual.progress-bar.*` (експорт 2026-10-29). Файли: `tokens/progress.{mb,xon}.component.json`.
+## Токени (`progress.*`, `contextual.progress.*`) — 8 шт.
+Файли: `tokens/progress.{mb,xon}.component.json`. Оптимізовано 2026-10-29 (було 15).
 
 | Токен | Шар → властивість | MB | XON |
 |---|---|---|---|
-| `progress.gap` | Line root → itemSpacing | `{spacing.200}` (8) | = |
-| `progress.height.md` / `.sm` | Track, Step → height | 10 / 4 | = |
-| `progress.step.gap` | slot Items → itemSpacing | `{spacing.100}` (4) | = |
-| `progress.circle.size` | Circle root → height | `{size.450}` (36) | = |
-| `progress.circle.track-width` / `.indicator-width` | Circle Track/Indicator → strokeWeight | 1 / 2 | = |
-| `border-radius.progress` (наявний) | Track, Thumb, Step → 4 кути | `{border-radius.core.full}` | = |
-| `contextual.progress.primary.track` | Track, Step off, Circle Track | `{semantic.fill.default}` | `{core.content.a10}` |
-| `contextual.progress.primary.indicator` | Thumb, Step on, Circle Thumb | gradient success→vibrant (без змінної) | = |
-| `contextual.progress.secondary.track` | Track, Step off, Circle Track | `{semantic.fill.default}` | `{core.content.a15}` |
-| `contextual.progress.secondary.indicator` | Thumb, Step on, Circle Thumb | `{core.brand-60.500}` | `{core.content.a100}` |
-| `contextual.progress.inverted.*` (4) | Track/Indicator у Inverted=True | = звичайним | = |
-| `semantic.text.default[-invert].heading` | Value, Label → fill | — | — |
+| `progress.gap` | корінь Line → gap | `{spacing.200}` (8) | = |
+| `progress.height.md` / `.sm` | Track, `Progress/Step` → height | 10 / 4 | = |
+| `progress.step.gap` | слот `Items` → gap | `{spacing.100}` (4) | = |
+| `progress.circle.size` | корінь Circle → height | `{size.450}` (36) | = |
+| `contextual.progress.track` | Track, Step-корінь, Circle Track (усі варіанти, і Inverted) | `{semantic.fill.default}` | `{core.content.a10}` |
+| `contextual.progress.primary.indicator` | Indicator Primary (Line, Step, Circle) | gradient success→vibrant (без змінної) | = |
+| `contextual.progress.secondary.indicator` | Indicator Secondary | `{core.brand-60.500}` | `{core.content.a100}` |
+| `border-radius.progress` (наявний) | 4 кути | `{border-radius.core.full}` | = |
+| `semantic.text.default[-invert].heading` + `text.xs-strong` | Value, Label | — | — |
 
-Градієнтні токени — лише plugin data (Figma-змінна не вміє градієнт); стопи прив'язані до `core/brand-preset/*`, як в оригіналі. Змінні в `Product` створено з тими самими назвами і scopes (GAP / WIDTH_HEIGHT / STROKE_FLOAT / FRAME_FILL+SHAPE_FILL+STROKE_COLOR).
+Inverted міняє лише колір тексту — окремих inverted-токенів немає. Товщини кільця (1 / 2) — без токена.
 
 ## Рішення (історія)
 1. 2026-10-29 — перескладено поруч з оригіналами. Один набір `Progress` замість `Progress/Linear`; `Progres/Step` → `Progress/Step` (`Type` → `Variant`, `Active=Yes|No` → `False|True`); `Progress/Circle` — власні токени.
@@ -79,6 +76,8 @@ Progress/Step (COMPONENT_SET 79803:61)  Variant × Size × Active (8v)
 10. 2026-10-29 — шар `Thumb` → **`Indicator`** у всіх варіантах `Progress`, `Progress/Step`, `Progress/Circle` (рішення Андрея). Токени поки `….indicator`.
 
 11. 2026-10-29 — ще один Export видалив змінні `progress/*` (61 мертва прив'язка) → створено знову (з назвами `indicator`) і переприв'язано. Андрей дав JSON MB зі своєї бренчі → додано 15 токенів (+15 −0 ~0).
+
+12. 2026-10-29 — **оптимізація токенів (рішення Андрея): 15 → 8.** Прибрано `inverted.*` (однакові значення; Inverted міняє лише текст), `primary.track` + `secondary.track` → один `contextual.progress.track` (в XON Secondary Step/Circle трек a10 замість a15 — як було в Line), прибрано `circle.track-width/indicator-width`. Правило: **не дублювати токен під Inverted, якщо значення не відрізняється**.
 
 ## Відхилення від правил
 - Кольори XON (`core.content.a10/a15/a100`) і MB `core.brand-60.500` — посилання на core, бо в alias немає відповідників (скопійовано як є).
