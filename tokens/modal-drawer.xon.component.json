@@ -1,0 +1,378 @@
+{
+  "modal": {
+    "padding": {
+      "value": "{spacing.600}",
+      "type": "spacing",
+      "$extensions": {
+        "com.figma.scopes": [
+          "NONE"
+        ]
+      }
+    },
+    "width": {
+      "xl": {
+        "value": "1200",
+        "type": "sizing",
+        "$extensions": {
+          "com.figma.scopes": [
+            "NONE"
+          ]
+        }
+      },
+      "lg": {
+        "value": "800",
+        "type": "sizing",
+        "$extensions": {
+          "com.figma.scopes": [
+            "NONE"
+          ]
+        }
+      },
+      "md": {
+        "value": "640",
+        "type": "sizing",
+        "$extensions": {
+          "com.figma.scopes": [
+            "NONE"
+          ]
+        }
+      },
+      "sm": {
+        "value": "560",
+        "type": "sizing",
+        "$extensions": {
+          "com.figma.scopes": [
+            "NONE"
+          ]
+        }
+      },
+      "xs": {
+        "value": "420",
+        "type": "sizing",
+        "$extensions": {
+          "com.figma.scopes": [
+            "NONE"
+          ]
+        }
+      }
+    },
+    "body": {
+      "padding-t": {
+        "value": "40",
+        "type": "spacing",
+        "$extensions": {
+          "com.figma.scopes": [
+            "NONE"
+          ]
+        }
+      },
+      "padding-h": {
+        "value": "{spacing.400}",
+        "type": "spacing",
+        "$extensions": {
+          "com.figma.scopes": [
+            "NONE"
+          ]
+        }
+      },
+      "padding-b": {
+        "value": "{spacing.800}",
+        "type": "spacing",
+        "$extensions": {
+          "com.figma.scopes": [
+            "NONE"
+          ]
+        }
+      }
+    },
+    "actions": {
+      "gap": {
+        "value": "{spacing.400}",
+        "type": "spacing",
+        "$extensions": {
+          "com.figma.scopes": [
+            "NONE"
+          ]
+        }
+      },
+      "padding-t": {
+        "value": "{spacing.400}",
+        "type": "spacing",
+        "$extensions": {
+          "com.figma.scopes": [
+            "NONE"
+          ]
+        }
+      },
+      "padding-h": {
+        "value": "{spacing.400}",
+        "type": "spacing",
+        "$extensions": {
+          "com.figma.scopes": [
+            "NONE"
+          ]
+        }
+      },
+      "padding-b": {
+        "value": "{spacing.800}",
+        "type": "spacing",
+        "$extensions": {
+          "com.figma.scopes": [
+            "NONE"
+          ]
+        }
+      }
+    },
+    "banner": {
+      "gap": {
+        "value": "{spacing.400}",
+        "type": "spacing",
+        "$extensions": {
+          "com.figma.scopes": [
+            "NONE"
+          ]
+        }
+      },
+      "gap-v": {
+        "value": "-20",
+        "type": "spacing",
+        "$extensions": {
+          "com.figma.scopes": [
+            "NONE"
+          ]
+        }
+      },
+      "padding-r": {
+        "value": "40",
+        "type": "spacing",
+        "$extensions": {
+          "com.figma.scopes": [
+            "NONE"
+          ]
+        }
+      },
+      "image-size": {
+        "value": "100",
+        "type": "sizing",
+        "$extensions": {
+          "com.figma.scopes": [
+            "NONE"
+          ]
+        }
+      }
+    }
+  },
+  "drawer": {
+    "body": {
+      "padding-t": {
+        "value": "40",
+        "type": "spacing",
+        "$extensions": {
+          "com.figma.scopes": [
+            "NONE"
+          ]
+        }
+      },
+      "padding-h": {
+        "value": "{spacing.400}",
+        "type": "spacing",
+        "$extensions": {
+          "com.figma.scopes": [
+            "NONE"
+          ]
+        }
+      },
+      "padding-b": {
+        "value": "{spacing.800}",
+        "type": "spacing",
+        "$extensions": {
+          "com.figma.scopes": [
+            "NONE"
+          ]
+        }
+      }
+    },
+    "actions": {
+      "gap": {
+        "value": "{spacing.400}",
+        "type": "spacing",
+        "$extensions": {
+          "com.figma.scopes": [
+            "NONE"
+          ]
+        }
+      },
+      "padding-t": {
+        "value": "{spacing.400}",
+        "type": "spacing",
+        "$extensions": {
+          "com.figma.scopes": [
+            "NONE"
+          ]
+        }
+      },
+      "padding-h": {
+        "value": "{spacing.400}",
+        "type": "spacing",
+        "$extensions": {
+          "com.figma.scopes": [
+            "NONE"
+          ]
+        }
+      },
+      "padding-b": {
+        "value": "{spacing.800}",
+        "type": "spacing",
+        "$extensions": {
+          "com.figma.scopes": [
+            "NONE"
+          ]
+        }
+      }
+    },
+    "banner": {
+      "gap-v": {
+        "value": "-20",
+        "type": "spacing",
+        "$extensions": {
+          "com.figma.scopes": [
+            "NONE"
+          ]
+        }
+      }
+    },
+    "handle": {
+      "width": {
+        "value": "64",
+        "type": "sizing",
+        "$extensions": {
+          "com.figma.scopes": [
+            "NONE"
+          ]
+        }
+      },
+      "height": {
+        "value": "4",
+        "type": "sizing",
+        "$extensions": {
+          "com.figma.scopes": [
+            "NONE"
+          ]
+        }
+      }
+    }
+  },
+  "border-radius": {
+    "modal": {
+      "wrapper": {
+        "value": "{border-radius.global.lg}",
+        "type": "borderRadius",
+        "$extensions": {
+          "com.figma.scopes": [
+            "NONE"
+          ]
+        }
+      },
+      "banner": {
+        "value": "{border-radius.global.xl}",
+        "type": "borderRadius",
+        "$extensions": {
+          "com.figma.scopes": [
+            "NONE"
+          ]
+        }
+      }
+    },
+    "drawer": {
+      "wrapper": {
+        "value": "{border-radius.global.lg}",
+        "type": "borderRadius",
+        "$extensions": {
+          "com.figma.scopes": [
+            "NONE"
+          ]
+        }
+      },
+      "handle": {
+        "value": "{border-radius.global.xs}",
+        "type": "borderRadius",
+        "$extensions": {
+          "com.figma.scopes": [
+            "NONE"
+          ]
+        }
+      }
+    }
+  },
+  "contextual": {
+    "modal": {
+      "overlay": {
+        "value": "{semantic.background.overlay}",
+        "type": "color",
+        "$extensions": {
+          "com.figma.scopes": [
+            "NONE"
+          ]
+        }
+      },
+      "fill": {
+        "value": "{semantic.background.2}",
+        "type": "color",
+        "$extensions": {
+          "com.figma.scopes": [
+            "NONE"
+          ]
+        }
+      },
+      "banner": {
+        "fill": {
+          "value": "{semantic.gradients.12}",
+          "type": "color",
+          "$extensions": {
+            "com.figma.scopes": [
+              "NONE"
+            ]
+          }
+        },
+        "border": {
+          "value": "{semantic.border.default.secondary}",
+          "type": "color",
+          "$extensions": {
+            "com.figma.scopes": [
+              "NONE"
+            ]
+          }
+        }
+      }
+    },
+    "drawer": {
+      "overlay": {
+        "value": "{semantic.background.overlay}",
+        "type": "color",
+        "$extensions": {
+          "com.figma.scopes": [
+            "NONE"
+          ]
+        }
+      },
+      "fill": {
+        "value": "{semantic.background.2}",
+        "type": "color",
+        "$extensions": {
+          "com.figma.scopes": [
+            "NONE"
+          ]
+        }
+      },
+      "handle-fill": {
+        "value": "{semantic.background.2}",
+        "type": "color",
+        "$extensions": {
+          "com.figma.scopes": [
+            "NONE"
+          ]
+        }
+      }
+    }
+  }
+}

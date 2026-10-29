@@ -166,3 +166,9 @@ Boolean `Actions` тепер ховає весь `Footer`. Інстанси: 59 
 - **component +38:** `modal.padding`, `modal.width.xl…xs`, `modal.body.padding-t|h|b` (40 / spacing.400 / spacing.800), `modal.actions.gap|padding-t|h|b`, `modal.banner.gap|gap-v(−20)|padding-r(40)|image-size(100)`; `drawer.body.*`, `drawer.actions.*`, `drawer.banner.gap-v`, `drawer.handle.width|height` (64 / 4); `border-radius.modal.wrapper|banner`, `border-radius.drawer.wrapper|handle`; `contextual.modal.overlay|fill|banner.fill|banner.border`, `contextual.drawer.overlay|fill|handle-fill`.
 - Неймінг падінгів — `padding-t` / `padding-b` / `padding-h` / `padding-r`, як у свіжих токенах команди (lootbox, achievements, lottery). Старі `popup.*`, `border-radius.popup.*`, `contextual.popup.*`, `contextual.overlay` не чіпали — ними користується старий `Popup` (138 інст.) і продуктові попапи.
 - Помічено в diff (не наше): з component зникли `anchor.*`, `border-radius.anchor.item`, `contextual.anchor.*` — Section `Anchor` прив'язаний до них.
+
+## 15. Токени — XON (2026-10-29)
+Ті самі ключі, що в MB (alias +3, component +38), фрагменти — `tokens/modal-drawer.xon.*.json`. Відмінності від MB:
+- `contextual.modal.fill` / `contextual.drawer.fill` = `{semantic.background.2}` — у XON alias це `core.brand-60.600` = brand-preset.tertiary, той самий колір, що був у `contextual.popup.fill` (`core.brand-60.900` → теж brand-preset.tertiary), але тепер через alias.
+- `border-radius.global.xl` = `{border-radius.core.300}` (12) — у XON усі global-радіуси 12; **візуальна зміна:** верхні кути банера в XON 24 → 12.
+- **Відкрите:** `contextual.drawer.handle-fill` = `semantic.background.2` в XON збігається з заливкою вікна → смужка невидима (як було й раніше). Потрібне рішення команди (напр. `semantic.border.default.default`).
