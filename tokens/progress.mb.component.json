@@ -1,0 +1,175 @@
+{
+  "progress": {
+    "gap": {
+      "value": "{spacing.200}",
+      "type": "spacing",
+      "$extensions": {
+        "com.figma.scopes": [
+          "GAP"
+        ]
+      }
+    },
+    "height": {
+      "md": {
+        "value": "10",
+        "type": "sizing",
+        "$extensions": {
+          "com.figma.scopes": [
+            "WIDTH_HEIGHT"
+          ]
+        }
+      },
+      "sm": {
+        "value": "4",
+        "type": "sizing",
+        "$extensions": {
+          "com.figma.scopes": [
+            "WIDTH_HEIGHT"
+          ]
+        }
+      }
+    },
+    "step": {
+      "gap": {
+        "value": "{spacing.100}",
+        "type": "spacing",
+        "$extensions": {
+          "com.figma.scopes": [
+            "GAP"
+          ]
+        }
+      }
+    },
+    "circle": {
+      "size": {
+        "value": "{size.450}",
+        "type": "sizing",
+        "$extensions": {
+          "com.figma.scopes": [
+            "WIDTH_HEIGHT"
+          ]
+        }
+      },
+      "track-width": {
+        "value": "1",
+        "type": "borderWidth",
+        "$extensions": {
+          "com.figma.scopes": [
+            "STROKE_FLOAT"
+          ]
+        }
+      },
+      "thumb-width": {
+        "value": "2",
+        "type": "borderWidth",
+        "$extensions": {
+          "com.figma.scopes": [
+            "STROKE_FLOAT"
+          ]
+        }
+      }
+    }
+  },
+  "contextual": {
+    "progress": {
+      "primary": {
+        "track": {
+          "value": "{semantic.fill.default}",
+          "type": "color",
+          "$extensions": {
+            "com.figma.scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL",
+              "STROKE_COLOR"
+            ]
+          }
+        },
+        "thumb": {
+          "value": "linear-gradient(90deg, {core.brand-preset.validation.success} 0%, {core.brand-preset.vibrant} 100%)",
+          "type": "color",
+          "$extensions": {
+            "com.figma.scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL",
+              "STROKE_COLOR"
+            ]
+          }
+        }
+      },
+      "secondary": {
+        "track": {
+          "value": "{semantic.fill.default}",
+          "type": "color",
+          "$extensions": {
+            "com.figma.scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL",
+              "STROKE_COLOR"
+            ]
+          }
+        },
+        "thumb": {
+          "value": "{core.brand-60.500}",
+          "type": "color",
+          "$extensions": {
+            "com.figma.scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL",
+              "STROKE_COLOR"
+            ]
+          }
+        }
+      },
+      "inverted": {
+        "primary": {
+          "track": {
+            "value": "{semantic.fill.default}",
+            "type": "color",
+            "$extensions": {
+              "com.figma.scopes": [
+                "FRAME_FILL",
+                "SHAPE_FILL",
+                "STROKE_COLOR"
+              ]
+            }
+          },
+          "thumb": {
+            "value": "linear-gradient(90deg, {core.brand-preset.validation.success} 0%, {core.brand-preset.vibrant} 100%)",
+            "type": "color",
+            "$extensions": {
+              "com.figma.scopes": [
+                "FRAME_FILL",
+                "SHAPE_FILL",
+                "STROKE_COLOR"
+              ]
+            }
+          }
+        },
+        "secondary": {
+          "track": {
+            "value": "{semantic.fill.default}",
+            "type": "color",
+            "$extensions": {
+              "com.figma.scopes": [
+                "FRAME_FILL",
+                "SHAPE_FILL",
+                "STROKE_COLOR"
+              ]
+            }
+          },
+          "thumb": {
+            "value": "{core.brand-60.500}",
+            "type": "color",
+            "$extensions": {
+              "com.figma.scopes": [
+                "FRAME_FILL",
+                "SHAPE_FILL",
+                "STROKE_COLOR"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

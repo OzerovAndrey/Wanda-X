@@ -48,7 +48,7 @@
 | Loader → **Spinner** | Ready for dev | — | 47531:173652 (сторінка `↳ Spinner`) | 1 | `reference-components.md` |
 | Image | Changed | | `Image/Single` 77815:182, `Image/Multi` 77815:189 (слоти; переїхало в Atoms) | 2 + 2 | |
 | Navigator | Changed | | 78112:227231 (один компонент у Section) | 1 | |
-| Progress | Changed | | новий `Progress/Circle` 46694:445445 у Section; legacy поруч | 2 | |
+| Progress | Rebuilt — review | 2026-10-29 | Section `Progress` 79803:56: `Progress` 79804:4510, `Progress/Circle` 79803:70, `Progress/Step` 79803:61; оригінали ліворуч | 10 + 2 + 4 | `components/progress.md` |
 | Tooltip | Changed | | 27803:186739 (Trigger/Layout slots, Show, Arrow, Position ×8 — як Dropdown) | 8 | |
 | Popover | Changed | | 77787:316988 (структура як Tooltip) | 8 | |
 
