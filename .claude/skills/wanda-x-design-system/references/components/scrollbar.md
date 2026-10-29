@@ -1,6 +1,6 @@
 # Scrollbar
 
-Сторінка `↳ Scrollbar` · Section `Scrollbar` (79771:10) · набір `Scrollbar` (28787:64507) · статус: Rebuilt — review (2026-10-29)
+Сторінка `↳ Scrollbar` · Section `Scrollbar` (79774:19) · новий набір `Scrollbar` (79774:18) · оригінал `Scrollbar` (28787:64507, 79 інстансів) у Section `Originals — Scrollbar (не використовувати)` (79771:10) · статус: нова збірка поруч, інстанси ще на оригіналі
 
 ## Призначення і характер
 Повзунок (thumb) прокрутки для попапів, дропдаунів, каруселей. Трек не малюється — тільки thumb.
@@ -12,7 +12,7 @@
 
 ## Анатомія
 ```
-Scrollbar (COMPONENT_SET 28787:64507)   Variant × State × Horizontal (8v)
+Scrollbar (COMPONENT_SET 79774:18)   Variant × State × Horizontal (8v)
 └─ Variant=…, State=…, Horizontal=False (COMPONENT)  auto layout VERTICAL · fixed · padding 0 · без заливки
 │   width ← scroll.size | scroll.hover.size, height 88 (довжина — в інстансі)
 │   └─ Thumb (RECTANGLE)  FILL × FILL · radius ← border-radius.scroll (4 кути) · fill ← contextual.scroll.fill.*
@@ -53,6 +53,8 @@ JSON-фрагменти: `tokens/scrollbar.{mb,xon}.{alias,component}.json`. З�
 ## Рішення
 1. 2026-10-29 — перезбірка на місці (інстанси збережено): прибрано rotation з `Horizontal=True`, реальні розміри; додано відсутні `State=Hover, Horizontal=True` (×2) — повна матриця 8v; `Transperrent` → `Transparent`; шар `scrollbar` → `Thumb`; auto layout на корені, Thumb FILL; токени товщини й радіуса (раніше хардкод 4/8 і радіус 2/4 — візуально той самий пігулковий кінець); сітка 16 px, сіра Section.
 2. 2026-10-29 — два живі інстанси `Horizontal=True` (`Game not found +` → `Thumbs scroll`, прихований; `Profile +` → `scroll wrap`) були повернуті на 90° і візуально вертикальні 4×88 — переведено в 88×4 без повороту.
+
+3. 2026-10-29 — правка на місці в клієнті Андрея відобразилась зламаною (рамка набору лишилась старого розміру) → на його запит зібрано **новий набір з нуля** праворуч (`79774:18`), оригінал з інстансами — у Section Originals. Перевірено тест-інстансом: перемикання Horizontal/State/Variant дає 4×88 ↔ 88×4 ↔ 88×8 без повороту. Міграцію інстансів — окремо на запит.
 
 ## Відхилення від правил
 - Кольорові токени `contextual.scroll.fill.*` посилаються на **core** (`core.grey.400`, `core.content.a20`), а не на alias `semantic.*` (правило 17). Точного semantic-відповідника немає — не підміняли.
