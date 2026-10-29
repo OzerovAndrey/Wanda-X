@@ -1,0 +1,11 @@
+{
+  "border-radius": {
+    "global": {
+      "full": {
+        "value": "{border-radius.core.full}",
+        "type": "borderRadius",
+        "description": "+ pill / fully rounded (scrollbar thumb)"
+      }
+    }
+  }
+}

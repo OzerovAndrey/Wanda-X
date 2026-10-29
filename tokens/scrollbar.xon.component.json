@@ -1,0 +1,35 @@
+{
+  "scroll": {
+    "size": {
+      "value": "{spacing.100}",
+      "type": "sizing",
+      "$extensions": {
+        "com.figma.scopes": [
+          "NONE"
+        ]
+      }
+    },
+    "hover": {
+      "size": {
+        "value": "{spacing.200}",
+        "type": "sizing",
+        "$extensions": {
+          "com.figma.scopes": [
+            "NONE"
+          ]
+        }
+      }
+    }
+  },
+  "border-radius": {
+    "scroll": {
+      "value": "{border-radius.global.full}",
+      "type": "borderRadius",
+      "$extensions": {
+        "com.figma.scopes": [
+          "NONE"
+        ]
+      }
+    }
+  }
+}

@@ -100,6 +100,7 @@ description: Правила, еталони та чекліст очистки �
 - Token Studio (storage у файлі, запис токенів, токени на шарах) — `references/token-studio.md`.
 
 ## Журнал
+- 2026-10-29 — **Scrollbar перезібрано на місці**: `Horizontal=True` був зроблений поворотом на 90° — rotation не переноситься при свопі варіанту, тому інстанси лишались вертикальними; тепер реальні 88×4/88×8, повна матриця 8v, `Transparent`, шар `Thumb`, токени `scroll.size`/`scroll.hover.size`/`border-radius.scroll` + alias `border-radius.global.full` (`components/scrollbar.md`). **Правило: орієнтацію/дзеркалення варіантів не робити rotation-ом** — тільки реальними розмірами.
 - 2026-10-28 — Table після Export: 174 прив'язки відновлено за plugin data; радіус — per-corner ключі (`borderRadiusTopLeft`…), інакше Inspect показує ⬡ (`working-agreements.md` §6).
 - 2026-10-28 — **`Popup mob` / `Popup web` → `Drawer` (44) / `Modal` (17)**, Section команди видалено; старий `Popup` (138) лишився (`components/popup.md` §10).
 - 2026-10-28 — **Popup: міграцію відкочено** (вкладені в мейни інстанси втрачали вміст після swap; swap назад повертає); пастки міграції — `working-agreements.md` §8.
