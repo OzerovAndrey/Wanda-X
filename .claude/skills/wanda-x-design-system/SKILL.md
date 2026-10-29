@@ -102,6 +102,7 @@ description: Правила, еталони та чекліст очистки �
 - Token Studio (storage у файлі, запис токенів, токени на шарах) — `references/token-studio.md`.
 
 ## Журнал
+- 2026-10-29 — Progress: `Progress/Step` → міні-смуга Track+Thumb (частковий сегмент) + `Size=sm`; `Progress` +`Type=Step, Size=sm` (12v). Після Export змінні `progress/*` зникли — відновлено й переприв'язано за plugin data; **токени Progress треба вставити в Token Studio до наступного Export**.
 - 2026-10-29 — **Progress перескладено** (Section праворуч від оригіналів): `Progress` (Variant × Size × Inverted × Type, 10v, Boolean `Value`, слот `Items` для Step), `Progress/Circle`, `Progress/Step` (без опечатки); 15 токенів `progress.*` / `contextual.progress.*` на бренд — `tokens/progress.{mb,xon}.component.json`, прив'язано; інвентаризація — `reports/progress-inventory-2026-10-29.md` (`components/progress.md`).
 - 2026-10-29 — **правило: токени віддаємо одразу з прив'язками до компонента** — JSON без прив'язаного в Figma компонента не передаємо (`working-agreements.md` §2.5a).
 - 2026-10-29 — **Scrollbar перезібрано на місці**: `Horizontal=True` був зроблений поворотом на 90° — rotation не переноситься при свопі варіанту, тому інстанси лишались вертикальними; тепер реальні 88×4/88×8, повна матриця 8v, `Transparent`, шар `Thumb`, токени `scroll.size`/`scroll.hover.size`/`border-radius.scroll` + alias `border-radius.global.full` (`components/scrollbar.md`). **Правило: орієнтацію/дзеркалення варіантів не робити rotation-ом** — тільки реальними розмірами.
