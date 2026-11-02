@@ -102,6 +102,7 @@ description: Правила, еталони та чекліст очистки �
 - Token Studio (storage у файлі, запис токенів, токени на шарах) — `references/token-studio.md`.
 
 ## Журнал
+- 2026-11-02 — Table/Cell: слот `↳ Slot` (Boolean `Slot`) розміру Image (md 32 / sm 24, токен `table.cell.image-size.*`).
 - 2026-10-29 — **правило: токени не видаляємо, а позначаємо `$deprecated`** з підказкою заміни (фронти не мерджать видалення) — `token-studio.md`. `contextual.progress-bar.*` повернуто як deprecated.
 - 2026-10-29 — **Progress: файл повністю переведено з `contextual.progress-bar.*` на `progress.*` / `contextual.progress.*`** (власні шари + оверрайди в інстансах, 0 залишків). Група `progress-bar` у Token Studio більше не потрібна — видаляється разом із вставкою нових токенів (MB +8 −7). Тимчасові змінні до Export — `scripts/progress-var-map.json`.
 - 2026-10-29 — Progress: `Progress/Step` → міні-смуга Track+Thumb (частковий сегмент) + `Size=sm`; `Progress` +`Type=Step, Size=sm` (12v). Після Export змінні `progress/*` зникли — відновлено й переприв'язано за plugin data; **токени Progress треба вставити в Token Studio до наступного Export**.
