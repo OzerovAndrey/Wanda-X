@@ -86,7 +86,7 @@ return out;
 | Теги | `Tag`, ряд gap 8 |
 | Сітка ігор | `Wrapper` **GRID**: xl 5 колонок (gap 8), 3xs 2 колонки (gap 8) з `Thumb/Default` FILL |
 | Сітка карток | `Wrapper` **GRID**: xl 2 колонки (gap 16), 3xs 1 колонка (gap 8) з `Card / …` FILL |
-| Лідерборд / мій прогрес | **як в оригіналі сторінки**: Hall of Fame — `Table/Leaderboard Card` світлими картками; Tournaments / Lottery — `Striped` (темна плашка, `Plain`/`Stripe` по черзі, `Inverted=True`), мій прогрес — `Card` + мій рядок `Selected Inverted=True`. Поточний гравець — `State=Selected` + текст `semantic/text/brand/primary`; місце — `List/Bullet` або `Image` (медаль / кубок), не слот (`pages/tournaments.md`) |
+| Лідерборд / мій прогрес | **як в оригіналі сторінки**: Hall of Fame — `Table/Leaderboard Card` світлими картками; Tournaments / Lottery — `Striped` (темна плашка, `Plain`/`Stripe` по черзі, `Inverted=True`), мій прогрес — **той самий Striped**, без Head (таблиці на одній сторінці — в одному стилі). Поточний гравець — `State=Selected` + текст `semantic/text/brand/primary`; місце — `List/Bullet` або `Image` (медаль / кубок), не слот (`pages/tournaments.md`) |
 | Порожній стан | `Empty` |
 | Заголовок + опис (будь-де) | два TEXT прямо в батьківському фреймі: **`Title`** (один шар, перенос через Auto height) і **`Description`**, без обгорток (`naming.md` → Текстові конструкції) |
 | Банер-картинка з текстом | фрейм `Banner` (V, center/center, FIXED висота, clip) → `Image/Single Slot=False` ABSOLUTE STRETCH з fill-фото (**без фейдерів**) + заголовок + опис по центру, кольори `semantic/text/default-invert/*` (`pages/hall-of-fame.md`) |

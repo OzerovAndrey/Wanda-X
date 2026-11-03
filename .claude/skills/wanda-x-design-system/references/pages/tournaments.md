@@ -86,5 +86,5 @@ for (const lay of sec.children) {
   - 3xs: комірки `Size=sm`; `Player / Results` (нік + Subtext номер квитка / X.2) · `Sum / Prize` (Right, 120: сума + Subtext призи).
   - Поточний гравець (4) — `State=Selected` + текст комірок `semantic/text/brand/primary` (оверрайд), `List/Bullet Type=Active`.
   - Номери на темному: `List/Bullet` без Inverted → оверрайд fill `semantic/fill/subtle-invert`, текст `semantic/text/default-invert/primary` (**питання: додати `Inverted` у `List/Bullet`**).
-- **My progress** — `Variant=Card`, без Head: 55 / 57 — `Card Default` (світлі), 56 (я) — `Card Selected Inverted=True` (темний) + помаранчевий текст; праворуч `X.2  2 061 835`.
+- **My progress** — той самий стиль, що Leaders: `Variant=Striped`, без Head; 55 / 57 — `Plain`, 56 (я) — `Stripe Selected` + помаранчевий текст, `List/Bullet Active`; праворуч `X.2  2 061 835` (HUG); 3xs — комірки `sm`.
 - **Фікс компонента:** `contextual.table.leaderboard.row.inverted.fill.selected` = `{semantic.background.slate-dark-2}` (було `{semantic.fill.active}` — світло-блакитна плашка). Змінна в Figma оновлена (MB, XON), JSON — `tokens/system/*/component.json`, `tokens/table.*.component.json`; **вставити в Token Studio до наступного Export**.
