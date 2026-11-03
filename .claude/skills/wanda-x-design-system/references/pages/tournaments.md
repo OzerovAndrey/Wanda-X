@@ -29,8 +29,8 @@ Container  V · padding 16/32 · gap 32            (3xs: 16/16 · gap 24)
 ├─ Wrapper V gap 16: Heading Secondary + TEXT (Terms) + TEXT (Prize fund)
 ├─ Wrapper V gap 16: Heading + TEXT (Rules)
 ├─ Wrapper V gap 16: Heading + GRID 5×2 Thumb/Default (3xs: 2×2 + Show more)
-├─ Wrapper V gap 16: Heading + Table/Leaderboard Striped (My progress: без Head, рядок поточного гравця Selected)
-├─ Wrapper V gap 16: Heading + Table/Leaderboard Striped (Head + 5 рядків, місця 1–3 — кубки) + Button Secondary md «Show more»
+├─ Wrapper V gap 16: Heading + Table/Leaderboard **Card** (My progress: без Head, рядок поточного гравця Selected)
+├─ Wrapper V gap 16: Heading + Table/Leaderboard **Card** (Head + 5 рядків, місця 1–3 — `Image` = `brand/tournaments/cup-1..3`) + Button Secondary md «Show more»
 └─ Wrapper V gap 16: Heading + GRID 2 кол. Card / Lottery-tournament + Button «Show more»
 ```
 Сторінка-список: `Heading Variant=Primary` + `Tabs Variant=Navigation` (Active / Archived) + hero з кнопками + блоки `Active` / `Coming soon` з `Card / Lottery-tournament` (`Type=active | Soon | finished`).
@@ -43,7 +43,7 @@ Container  V · padding 16/32 · gap 32            (3xs: 16/16 · gap 24)
 |---|---|---|---|
 | 1 | hero у `Tournaments`, `Tournament — Active / Archived` (обидва брейкпоінти) | декор біля назви — 2 вектори `Union` (правило 13: векторів у лейауті нема) | іконка-орнамент зі `Static — Icons` або частина компонента hero — **питання** |
 | 2 | назад до списку | `Button` (icon-only) + окремий TEXT «Go to tournaments» | один `Button Variant=Text, ⬅️ Icon=True, Label=True` або `Link` — **питання** |
-| 3 | лідерборд, місця 1–3 | кубки `brand/tournaments/cup-1..3` (remote) вставлено в `↳ Slot` комірки | `Table/Cell Image=True` + swap `↳ 💠 Image` — без слота |
+| 3 | ~~лідерборд, місця 1–3: кубки в `↳ Slot`~~ | виправлено 2026-11-03: `Image=True` + swap `↳ 💠 Image` |
 | 4 | `Container`, `Wrapper`, GRID | gap / padding hardcode (32/24/16/8) без токенів | токени `layout.*` / `spacing.*` — **питання**: які токени сторінки |
 | 5 | тексти Terms / Rules | шари названі `Редкая птица долетит` | `Description`, `Prize fund`, `Rules` |
 | 6 | hero | повторюється на Tournaments / Lottery / Races (назва, приз, дати, CTA) | кандидат у компонент `Hero` (лише якщо команда попросить) |
@@ -75,3 +75,6 @@ for (const lay of sec.children) {
 }
 ```
 Результат 2026-11-03: текстів без стилю 0, hardcode-заливок 0, фреймів без AL 0; вектори — лише декор hero (№1); remote — кубки (№3) і ілюстрація Empty (№7).
+
+## Зміни 2026-11-03
+- На запит Андрея лідерборди (My progress, Leaders) у `Tournament — Active` і `Tournament — Archived`, обидва брейкпоінти, переведено на вигляд як у Hall of Fame: `Table/Leaderboard Variant=Card`, рядки `Variant=Card, Inverted=False` (світлі картки), `Table/Head/Cell` і `Table/Cell` `Inverted=False`; поточний гравець — `State=Selected`. Кубки — `Image` swap замість слота.
