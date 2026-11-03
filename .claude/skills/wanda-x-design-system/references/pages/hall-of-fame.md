@@ -20,7 +20,6 @@ Main Area
 │   └─ Podium  H · align top · gap spacing/400 (3xs spacing/100) — 3 × `Hall of Fame/Prize` Place 2 · 1 · 3
 └─ Container  V · xl p16/32 gap 32 · 3xs p16/16 gap 24
     └─ Wrapper V gap 16 · center
-        ├─ Heading Variant=Secondary                     ← «The biggest wins of the month»
         ├─ Date  H gap 4 (HUG, по центру): `calendar` 20 + Link Accent md Strong «May 2026»
         ├─ Table/Leaderboard Variant=Card
         │   ├─ Head: Table/Head/Cell — xl: Place / Winner · Status · Game name · Amount won (Right)
@@ -28,7 +27,7 @@ Main Area
         │   └─ Rows: 9 × Table/Leaderboard/Row Variant=Card (місця 4–12; поточний гравець MyNick — State=Selected)
         │       xl : Cell(⬅️ Icon = List/Bullet № · нік) · Cell(Image = Level «Scout») · Cell(Image = Image/Single · гра) · Cell(Right · сума)
         │       3xs: Cell(List/Bullet № + Image Level + нік + Subtext гра) · Cell(Right · сума, HUG)
-        └─ Button Secondary md · Icon ➡️ chevron-down · «Show more»
+        └─ Button Primary lg · «Show more» (як в оригіналі)
 ```
 **Без `Heading Primary`**; банер — рішення Андрея 2026-11-03: компонент `Image`, чисте зображення без фейдерів, текст поверх відформатований (заголовок + опис по центру). На цій сторінці назву сторінки замінює велика картинка з текстом усередині (рішення Андрея 2026-11-03 — дивитися на композицію старого макета, а не лише на правила).
 - Номер місця: `List/Bullet Text=False`, `Type=Default`, для поточного гравця `Type=Active`.
@@ -36,7 +35,7 @@ Main Area
 - Топ-3 — на п'єдесталі, тому таблиця починається з 4-го місця (в оригіналі стояли плейсхолдери «0»).
 
 ## Що треба доробити вручну (шрифт MrBet Black конектору недоступний)
-- **`Heading Secondary`** — дефолт `Title`: вписати «The biggest wins of the month» і поставити вирівнювання тексту по центру (як у старому макеті) в обох брейкпоінтах.
+- Заголовка блоку немає — в оригіналі над таблицею лише дата (рішення Андрея 2026-11-03).
 
 ## Новий компонент `Hall of Fame/Prize` (80418:9472)
 Section `Hall of Fame/Prize` (80418:9473) праворуч від сету (x 13256). Зібрано з нуля за старим `Hall-of-fame / Prize` (той не використовуємо).
