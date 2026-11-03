@@ -12,10 +12,13 @@ x 11000, y 0 (праворуч від усього), 1656 × 4025, сіра Sect
 
 ```
 Main Area
-├─ Hero  V · center · gap −24 (подіум заходить на нижній край картинки) · FILL — ПОЗА Container, на всю ширину (як у старому макеті)
-│   ├─ Banner — інстанс `[M] Hall-of-fame / Header` зі сторінки, FIXED 383, clip; вбудований `Prizes-on-pedestal` прихований
-│   │          (фон-арена + «Best players of Winzaro» + «Rating of users…» у heading/xxl — тексти з компонента)
-│   └─ Podium — копія фрейму `Prizes-on-pedestal`: Hall-of-fame / Prize 2 · 1 · 3 (3xs: gap 4, HUG)
+├─ Hero  V · center · gap 24 · FILL — ПОЗА Container, на всю ширину
+│   ├─ Banner  V · center/center · gap 12 · FIXED xl 360 / 3xs 280 · p48/32 (3xs 32/16) · clip
+│   │   ├─ Image — `Image/Single Slot=False` ABSOLUTE, STRETCH, fill = чисте фото арени (imageHash з `Banner-background`), **без фейдерів / оверлеїв**
+│   │   ├─ Title — `[M] Hall-of-fame / Header` лише як носій тексту MrBet: фон, опис, подіум приховано, padding 0, hug;
+│   │   │          «Best players / of Winzaro» heading/xxl, колір `semantic/text/default-invert/heading`
+│   │   └─ Description — TEXT text/lg-strong (3xs md-strong), center, 400 (3xs 256), `semantic/text/default-invert/primary`
+│   └─ Podium — копія `Prizes-on-pedestal` під картинкою (3xs: gap 4, HUG)
 └─ Container  V · xl p16/32 gap 32 · 3xs p16/16 gap 24
     └─ Wrapper V gap 16 · center
         ├─ Heading Variant=Secondary                     ← «The biggest wins of the month»
@@ -28,7 +31,7 @@ Main Area
         │       3xs: Cell(List/Bullet № + Image Level + нік + Subtext гра) · Cell(Right · сума, HUG)
         └─ Button Secondary md · Icon ➡️ chevron-down · «Show more»
 ```
-**Без `Heading Primary`**: на цій сторінці назву сторінки замінює велика картинка з текстом усередині (рішення Андрея 2026-11-03 — дивитися на композицію старого макета, а не лише на правила).
+**Без `Heading Primary`**; банер — рішення Андрея 2026-11-03: компонент `Image`, чисте зображення без фейдерів, текст поверх відформатований (заголовок + опис по центру). На цій сторінці назву сторінки замінює велика картинка з текстом усередині (рішення Андрея 2026-11-03 — дивитися на композицію старого макета, а не лише на правила).
 - Номер місця: `List/Bullet Text=False`, `Type=Default`, для поточного гравця `Type=Active`.
 - Статус: `Table/Cell Image` → swap на `Level` (remote, `Type=1 Scout`, 77898:65928).
 - Топ-3 — на п'єдесталі, тому таблиця починається з 4-го місця (в оригіналі стояли плейсхолдери «0»).
@@ -39,7 +42,7 @@ Main Area
 ## Відхилення / питання
 | # | Що | Пропозиція |
 |---|---|---|
-| 1 | Hero = локальний `[M] Hall-of-fame / Header` (з прихованим подіумом) + окремий подіум; опис у `heading/xxl`, як в оригіналі | якщо такий hero повторюється (Tournaments, Lottery) — кандидат у компонент `Hero` |
+| 1 | Заголовок банера — інстанс `[M] Hall-of-fame / Header` з прихованими шарами (єдиний спосіб отримати текст MrBet через конектор) | замінити на звичайний TEXT `heading/xxl` вручну або винести банер у компонент `Hero` (Image + Title + Description) | якщо такий hero повторюється (Tournaments, Lottery) — кандидат у компонент `Hero` |
 | 2 | Комірка суми на 3xs: `Content` / текст переведено в HUG в інстансі, щоб нік не переносився | у `Table/Cell Align=Right` зробити Content HUG за замовчуванням — **питання** |
 | 3 | `Prize-text`: прихований номер квитка з hex-кольором і стилем `Mobile/Mariupol/SM` | прибрати або токенізувати в компоненті |
 | 4 | Відступи Container / Hero / Wrapper — без токенів | як на Tournaments / Calendar |

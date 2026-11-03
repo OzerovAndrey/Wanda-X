@@ -105,6 +105,7 @@ description: Правила, еталони та чекліст очистки �
 - Token Studio (storage у файлі, запис токенів, токени на шарах) — `references/token-studio.md`.
 
 ## Журнал
+- 2026-11-03 — Hall of Fame: банер перезібрано — `Image/Single` з чистим фото арени (без фейдерів), заголовок + опис по центру світлим текстом, подіум під картинкою (`pages/hall-of-fame.md`).
 - 2026-11-03 — **правило: композицію сторінки беремо зі старого макета** (не лише правила збірки). Hall of Fame: прибрано `Heading Primary`, першою — велика картинка з текстом (`[M] Hall-of-fame / Header` на всю ширину) + подіум внахльост (`page-rebuild.md` §2.5, `pages/hall-of-fame.md`).
 - 2026-11-03 — **зібрано `Hall of Fame`** (сет 80409:6454 праворуч від старого): Heading Primary, hero (фон-арена + опис + п'єдестал `Hall-of-fame / Prize`), «Biggest wins» — `Table/Leaderboard Card` (List/Bullet №, `Level`, гра, сума; MyNick Selected), Show more — `pages/hall-of-fame.md`. Обхід MrBet Black: placeholder + `swapComponent` (`page-rebuild.md` §3a); тексти Heading — вручну.
 - 2026-11-03 — вивчено еталон `Calendar` (2 сети сторінки + 2 сети попапів `Popup/Default` 3xs + xl) — `pages/calendar.md`; у стандарт додано сети попапів, банер поза Container на мобайлі, вкладки + Dropdown «More», `Tabs Default` як другий рівень, `Heading All`.
