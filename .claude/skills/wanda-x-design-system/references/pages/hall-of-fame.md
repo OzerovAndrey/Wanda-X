@@ -15,9 +15,7 @@ Main Area
 ├─ Hero  V · center · gap 24 · FILL — ПОЗА Container, на всю ширину
 │   ├─ Banner  V · center/center · gap 12 · FIXED xl 360 / 3xs 280 · p48/32 (3xs 32/16) · clip
 │   │   ├─ Image — `Image/Single Slot=False` ABSOLUTE, STRETCH, fill = чисте фото арени (imageHash з `Banner-background`), **без фейдерів / оверлеїв**
-│   │   ├─ TEXT прямо в Banner, heading/xxl, `semantic/text/default-invert/heading`:
-│   │   │     xl — один шар «Best players of Winzaro» (зробив Андрей); 3xs — два шари «Best players» / «of Winzaro»
-│   │   │     (один рядок на 320 не влазить, а перенос — textAutoResize — конектор без шрифту не змінить)
+│   │   ├─ Title — один TEXT прямо в Banner «Best players of Winzaro», heading/xxl, Auto height, `semantic/text/default-invert/heading`
 │   │   └─ Description — TEXT text/lg-strong (3xs md-strong), center, 400 (3xs 256), `semantic/text/default-invert/primary`
 │   └─ Podium — копія `Prizes-on-pedestal` під картинкою (3xs: gap 4, HUG)
 └─ Container  V · xl p16/32 gap 32 · 3xs p16/16 gap 24

@@ -87,6 +87,7 @@ return out;
 | Сітка карток | `Wrapper` **GRID**: xl 2 колонки (gap 16), 3xs 1 колонка (gap 8) з `Card / …` FILL |
 | Лідерборд / мій прогрес | `Table/Leaderboard Variant=Striped`, рядки `Table/Leaderboard/Row Inverted=True` (`Stripe`/`Plain` чергуються, поточний гравець `State=Selected`), комірки `Table/Cell` / `Table/Head/Cell` `Inverted=True` |
 | Порожній стан | `Empty` |
+| Заголовок + опис (будь-де) | два TEXT прямо в батьківському фреймі: **`Title`** (один шар, перенос через Auto height) і **`Description`**, без обгорток (`naming.md` → Текстові конструкції) |
 | Банер-картинка з текстом | фрейм `Banner` (V, center/center, FIXED висота, clip) → `Image/Single Slot=False` ABSOLUTE STRETCH з fill-фото (**без фейдерів**) + заголовок + опис по центру, кольори `semantic/text/default-invert/*` (`pages/hall-of-fame.md`) |
 
 **Загальні правила лейауту** — `layouts.md` (інстанси ДС, auto layout, `Wrapper` для обгорток, тексти зі стилем, кольори змінними, іконки зі `Static — Icons`, перевірка в MB і XON).
