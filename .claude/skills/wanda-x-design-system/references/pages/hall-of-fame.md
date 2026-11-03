@@ -11,35 +11,35 @@ Page id `35259:128064` · зібрано 2026-11-03 · стандарт — `pag
 x 11000, y 0 (праворуч від усього), 1656 × 4025, сіра Section. `Layout/3xs` 80409:6455 (x 80), `Layout/xl` 80409:9246 (x 480). Один стан — у старих макетах інших станів немає.
 
 ```
-Main Area → Container  V · xl p16/32 gap 32 · 3xs p16/16 gap 24
-├─ Heading Variant=Primary (lg | 3xs)                      ← назва сторінки
-├─ Hero  V · center · gap 24 · p32/16/16/16 (3xs: бокові 0) · clip
-│   ├─ Background — інстанс `Hall of fame / Banner-background` (remote), ABSOLUTE, STRETCH
-│   ├─ Description — TEXT text/lg-strong, center, semantic/text/default/primary
-│   └─ Podium — копія фрейму `Prizes-on-pedestal`: Hall-of-fame / Prize 2 · 1 · 3 (HUG; 3xs gap 4)
-└─ Wrapper V gap 16 · center
-    ├─ Heading Variant=Secondary                            ← «The biggest wins of the month»
-    ├─ Date  H gap 4: `calendar` 20 + Link Accent md Strong «May 2026»
-    ├─ Table/Leaderboard Variant=Card
-    │   ├─ Head: Table/Head/Cell — xl: Place / Winner · Status · Game name · Amount won (Right)
-    │   │                          3xs: Winner / Game name · Amount won (Right, HUG)
-    │   └─ Rows: 9 × Table/Leaderboard/Row Variant=Card (місця 4–12; поточний гравець MyNick — State=Selected)
-    │       xl : Cell(⬅️ Icon = List/Bullet № · нік) · Cell(Image = Level «Scout») · Cell(Image = Image/Single · гра) · Cell(Right · сума)
-    │       3xs: Cell(List/Bullet № + Image Level + нік + Subtext гра) · Cell(Right · сума, HUG)
-    └─ Button Secondary md · Icon ➡️ chevron-down · «Show more»
+Main Area
+├─ Hero  V · center · gap −24 (подіум заходить на нижній край картинки) · FILL — ПОЗА Container, на всю ширину (як у старому макеті)
+│   ├─ Banner — інстанс `[M] Hall-of-fame / Header` зі сторінки, FIXED 383, clip; вбудований `Prizes-on-pedestal` прихований
+│   │          (фон-арена + «Best players of Winzaro» + «Rating of users…» у heading/xxl — тексти з компонента)
+│   └─ Podium — копія фрейму `Prizes-on-pedestal`: Hall-of-fame / Prize 2 · 1 · 3 (3xs: gap 4, HUG)
+└─ Container  V · xl p16/32 gap 32 · 3xs p16/16 gap 24
+    └─ Wrapper V gap 16 · center
+        ├─ Heading Variant=Secondary                     ← «The biggest wins of the month»
+        ├─ Date  H gap 4 (HUG, по центру): `calendar` 20 + Link Accent md Strong «May 2026»
+        ├─ Table/Leaderboard Variant=Card
+        │   ├─ Head: Table/Head/Cell — xl: Place / Winner · Status · Game name · Amount won (Right)
+        │   │                          3xs: Winner / Game name · Amount won (Right, HUG)
+        │   └─ Rows: 9 × Table/Leaderboard/Row Variant=Card (місця 4–12; поточний гравець MyNick — State=Selected)
+        │       xl : Cell(⬅️ Icon = List/Bullet № · нік) · Cell(Image = Level «Scout») · Cell(Image = Image/Single · гра) · Cell(Right · сума)
+        │       3xs: Cell(List/Bullet № + Image Level + нік + Subtext гра) · Cell(Right · сума, HUG)
+        └─ Button Secondary md · Icon ➡️ chevron-down · «Show more»
 ```
+**Без `Heading Primary`**: на цій сторінці назву сторінки замінює велика картинка з текстом усередині (рішення Андрея 2026-11-03 — дивитися на композицію старого макета, а не лише на правила).
 - Номер місця: `List/Bullet Text=False`, `Type=Default`, для поточного гравця `Type=Active`.
 - Статус: `Table/Cell Image` → swap на `Level` (remote, `Type=1 Scout`, 77898:65928).
 - Топ-3 — на п'єдесталі, тому таблиця починається з 4-го місця (в оригіналі стояли плейсхолдери «0»).
 
 ## Що треба доробити вручну (шрифт MrBet Black конектору недоступний)
-- **Тексти `Heading`** — стоять дефолтні `Title`: вписати «Hall of Fame» (Primary) і «The biggest wins of the month» (Secondary) в обох брейкпоінтах.
-- Великий заголовок героя (`Best players of Winzaro`, `heading/xxl`) конектор створити не може — його роль виконує `Heading Primary`; якщо потрібен центрований заголовок на фоні, вписати вручну.
+- **`Heading Secondary`** — дефолт `Title`: вписати «The biggest wins of the month» і поставити вирівнювання тексту по центру (як у старому макеті) в обох брейкпоінтах.
 
 ## Відхилення / питання
 | # | Що | Пропозиція |
 |---|---|---|
-| 1 | Hero зібрано фреймом з remote-фоном і локальними `Hall-of-fame / Prize` (продуктовий блок) | якщо такий hero повторюється (Tournaments, Lottery) — кандидат у компонент `Hero` |
+| 1 | Hero = локальний `[M] Hall-of-fame / Header` (з прихованим подіумом) + окремий подіум; опис у `heading/xxl`, як в оригіналі | якщо такий hero повторюється (Tournaments, Lottery) — кандидат у компонент `Hero` |
 | 2 | Комірка суми на 3xs: `Content` / текст переведено в HUG в інстансі, щоб нік не переносився | у `Table/Cell Align=Right` зробити Content HUG за замовчуванням — **питання** |
 | 3 | `Prize-text`: прихований номер квитка з hex-кольором і стилем `Mobile/Mariupol/SM` | прибрати або токенізувати в компоненті |
 | 4 | Відступи Container / Hero / Wrapper — без токенів | як на Tournaments / Calendar |
