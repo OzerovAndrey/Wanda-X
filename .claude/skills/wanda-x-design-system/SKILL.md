@@ -105,6 +105,7 @@ description: Правила, еталони та чекліст очистки �
 - Token Studio (storage у файлі, запис токенів, токени на шарах) — `references/token-studio.md`.
 
 ## Журнал
+- 2026-11-03 — Tournaments: таблиці перезібрано як в оригіналі (Leaders — Striped темна, 3/2 колонки, X.2, поточний гравець помаранчевим; My progress — Card, мій рядок темний). **Фікс токена** `contextual.table.leaderboard.row.inverted.fill.selected` → `slate-dark-2` (Figma + JSON; вставити в TS) — `pages/tournaments.md`.
 - 2026-11-03 — Tournaments: лідерборди (My progress, Leaders) переведено на `Table/Leaderboard Card` світлими картками, як на Hall of Fame; кубки — `Image` swap. Стандарт лідерборду в `page-rebuild.md` оновлено.
 - 2026-11-03 — **правило: завжди звіряти зі старим оригіналом блок за блоком** і не додавати типові блоки, яких там немає (`page-rebuild.md` §2.5). Hall of Fame: прибрано Heading над таблицею, Show more → Primary lg, як в оригіналі.
 - 2026-11-03 — **правило: старі локальні компоненти сторінки не використовуємо** — збираємо чистий новий поруч (`page-rebuild.md` §2.3). Hall of Fame: новий `Hall of Fame/Prize` (Place 1|2|3, 80418:9472), подіум переведено на нього.

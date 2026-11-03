@@ -2219,7 +2219,7 @@
                 }
               },
               "selected": {
-                "value": "{semantic.fill.active}",
+                "value": "{semantic.background.slate-dark-2}",
                 "type": "color",
                 "$extensions": {
                   "com.figma.scopes": [

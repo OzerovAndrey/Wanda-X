@@ -78,3 +78,13 @@ for (const lay of sec.children) {
 
 ## Зміни 2026-11-03
 - На запит Андрея лідерборди (My progress, Leaders) у `Tournament — Active` і `Tournament — Archived`, обидва брейкпоінти, переведено на вигляд як у Hall of Fame: `Table/Leaderboard Variant=Card`, рядки `Variant=Card, Inverted=False` (світлі картки), `Table/Head/Cell` і `Table/Cell` `Inverted=False`; поточний гравець — `State=Selected`. Кубки — `Image` swap замість слота.
+
+## Таблиці як в оригіналі (2026-11-03, друга ітерація)
+Андрей: таблиці мають бути як у старому макеті (`.Desktop page (Debricate)` 67722:86641). Оригінал робився під темну тему: у MB рядки `even` (`slate-1`, тепер світлий) і `odd` (`#001e76`) дають світло-темну «зебру» з невидимим текстом — це поломка, не задум.
+- **Leaders** — `Table/Leaderboard Variant=Striped`, `Show head`; рядки `Inverted=True`, непарні місця `Plain`, парні `Stripe` (як even/odd оригіналу), 10 рядків.
+  - xl: `Player` (200: кубок `Image` для 1–3 / `List/Bullet` № + нік) · `Results` (120, `510 765 X.2` — X.2 кольором `semantic/text/brand/secondary`) · `Sum / Prize` (Right, Fill: сума + призи).
+  - 3xs: комірки `Size=sm`; `Player / Results` (нік + Subtext номер квитка / X.2) · `Sum / Prize` (Right, 120: сума + Subtext призи).
+  - Поточний гравець (4) — `State=Selected` + текст комірок `semantic/text/brand/primary` (оверрайд), `List/Bullet Type=Active`.
+  - Номери на темному: `List/Bullet` без Inverted → оверрайд fill `semantic/fill/subtle-invert`, текст `semantic/text/default-invert/primary` (**питання: додати `Inverted` у `List/Bullet`**).
+- **My progress** — `Variant=Card`, без Head: 55 / 57 — `Card Default` (світлі), 56 (я) — `Card Selected Inverted=True` (темний) + помаранчевий текст; праворуч `X.2  2 061 835`.
+- **Фікс компонента:** `contextual.table.leaderboard.row.inverted.fill.selected` = `{semantic.background.slate-dark-2}` (було `{semantic.fill.active}` — світло-блакитна плашка). Змінна в Figma оновлена (MB, XON), JSON — `tokens/system/*/component.json`, `tokens/table.*.component.json`; **вставити в Token Studio до наступного Export**.
