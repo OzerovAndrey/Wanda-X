@@ -15,8 +15,9 @@ Main Area
 ├─ Hero  V · center · gap 24 · FILL — ПОЗА Container, на всю ширину
 │   ├─ Banner  V · center/center · gap 12 · FIXED xl 360 / 3xs 280 · p48/32 (3xs 32/16) · clip
 │   │   ├─ Image — `Image/Single Slot=False` ABSOLUTE, STRETCH, fill = чисте фото арени (imageHash з `Banner-background`), **без фейдерів / оверлеїв**
-│   │   ├─ Title — звичайні шари (не компонент): 2 TEXT «Best players» / «of Winzaro» heading/xxl, `semantic/text/default-invert/heading`
-│   │   │          ⚠ поки в 3 вкладених `Wrapper` — залишок detach; підняти TEXT прямо в Banner і видалити фрейм — вручну (MrBet Black)
+│   │   ├─ TEXT прямо в Banner, heading/xxl, `semantic/text/default-invert/heading`:
+│   │   │     xl — один шар «Best players of Winzaro» (зробив Андрей); 3xs — два шари «Best players» / «of Winzaro»
+│   │   │     (один рядок на 320 не влазить, а перенос — textAutoResize — конектор без шрифту не змінить)
 │   │   └─ Description — TEXT text/lg-strong (3xs md-strong), center, 400 (3xs 256), `semantic/text/default-invert/primary`
 │   └─ Podium — копія `Prizes-on-pedestal` під картинкою (3xs: gap 4, HUG)
 └─ Container  V · xl p16/32 gap 32 · 3xs p16/16 gap 24
@@ -42,7 +43,7 @@ Main Area
 ## Відхилення / питання
 | # | Що | Пропозиція |
 |---|---|---|
-| 1 | Заголовок банера: інстанс `[M] Hall-of-fame / Header` від'єднано (detach) у звичайні шари; конектор не може переносити / створювати TEXT з MrBet Black, тому лишились вкладені `Wrapper` | вручну: TEXT — прямо в `Banner`, фрейм `Title` видалити (Андрей сказав: компонент не потрібен, проста збірка) | якщо такий hero повторюється (Tournaments, Lottery) — кандидат у компонент `Hero` |
+| 1 | 3xs: заголовок — 2 TEXT замість одного, як на xl | за бажанням вручну: один TEXT з `Auto height` / Fill | якщо такий hero повторюється (Tournaments, Lottery) — кандидат у компонент `Hero` |
 | 2 | Комірка суми на 3xs: `Content` / текст переведено в HUG в інстансі, щоб нік не переносився | у `Table/Cell Align=Right` зробити Content HUG за замовчуванням — **питання** |
 | 3 | `Prize-text`: прихований номер квитка з hex-кольором і стилем `Mobile/Mariupol/SM` | прибрати або токенізувати в компоненті |
 | 4 | Відступи Container / Hero / Wrapper — без токенів | як на Tournaments / Calendar |

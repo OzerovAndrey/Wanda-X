@@ -93,6 +93,7 @@ return out;
 
 ## 3a. Шрифт MrBet Black — як збирати через конектор (перевірено 2026-11-03)
 Конектор не має шрифту `MrBet Black` (стилі `heading/*`). Будь-який `appendChild` / `insertChild` вузла, де є такий текст (`Heading`, `Layout/*` з футером, копія заголовка), падає з `unloaded font "MrBet Black"`, а створений інстанс лишається на корені сторінки — **прибирати залишки**.
+- **Перенести вузол з MrBet у інший фрейм можна:** `const g = figma.group([node], targetParent, index); figma.ungroup(g);` — group/ungroup не має перевірки шрифту (перевірено 2026-11-03). Так само для копії: `node.clone()` → group/ungroup у потрібний фрейм. Змінювати сам текст (characters, textAutoResize, стиль) — все одно не можна; `fills`, `layoutSizing*` — можна.
 - Обхід: вставити тимчасовий інстанс без MrBet (`Spinner` 47531:173652) у потрібне місце і зробити `swapComponent(<Layout/xl | Heading …>)` — swap шари не переносить і працює. Після swap: `unlockAspectRatio()`, `resize(w, main.height)`, `FILL` / `FIXED` (інакше береться квадрат Spinner).
 - Слот `Main Area` у такого Layout можна чистити і наповнювати вмістом без MrBet; `Heading` усередині — теж через placeholder + swap **після** того, як контейнер уже в слоті.
 - Override `constraints` в інстансі заборонений («cannot be overridden in an instance»); hug-висоту інстансу — через `primaryAxisSizingMode = 'AUTO'`. Накладання блоків (подіум на картинку) — від'ємний `itemSpacing` в auto layout.
