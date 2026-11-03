@@ -40,6 +40,8 @@ description: Правила, еталони та чекліст очистки �
 
 ## 17 золотих правил
 
+0b. **Перед кожною наступною сторінкою — свіжий обхід файлу.** Перш ніж будувати продуктову сторінку: список сторінок + інвентар усіх компонентів → оновити реєстр → вивчити сторінку → тільки тоді збирати. Старе не чіпаємо, нову збірку ставимо праворуч стандартними сетами (`Layout/3xs` + `Layout/xl` у сірій Section на кожен стан). Еталон — сторінка `Tournaments` (`references/page-rebuild.md`, `references/pages/tournaments.md`).
+
 0a. **Токени — разом із прив'язками.** Віддаючи JSON з новими токенами, компонент уже прив'язаний до них у Figma (plugin data + змінна) — `working-agreements.md` §2.5a.
 
 0. **Спершу — свіжі токени.** Токени в Token Studio щодня змінюють колеги. На початку будь-якої роботи з Wanda X спитати, чи були зміни, і попросити свіжий архів JSON; оновити `tokens/system/` і показати diff (`references/token-studio.md` → Свіжість експорту).
@@ -80,6 +82,7 @@ description: Правила, еталони та чекліст очистки �
 | Отримали свіжий архів JSON — оновити експорт і показати diff | `references/token-studio.md` → Свіжість експорту, `scripts/tokens-diff.py` |
 | Зробити аудит сторінки/компонента скриптом | `references/audit-script.md` |
 | Що вже знайдено, беклог по сторінках | `references/audit-2026-10-19.md` |
+| **Будувати / перезбирати продуктову сторінку (спершу обхід файлу!)** | `references/page-rebuild.md`, еталон `references/pages/tournaments.md` |
 | Збирати або чистити лейаут | `references/layouts.md` |
 | Замінити / підібрати іконку | `references/icons.md` |
 | Опис конкретного компонента (анатомія, токени, рішення) | `references/components/<component>.md` |
@@ -102,6 +105,7 @@ description: Правила, еталони та чекліст очистки �
 - Token Studio (storage у файлі, запис токенів, токени на шарах) — `references/token-studio.md`.
 
 ## Журнал
+- 2026-11-03 — **правило: перед кожною наступною сторінкою — повний обхід файлу** (сторінки + інвентар компонентів → реєстр → вивчення сторінки → збирання праворуч, старе не чіпаємо) — `page-rebuild.md`. Вивчено еталон сторінки `Tournaments` (5 сетів `Layout/3xs` + `Layout/xl`) — `pages/tournaments.md`; інвентар — `reports/inventory-2026-11-03.md` (новий `Popup/Default`, `Notification/*`, `Segmented`, єдиний `Status`, `Time`, `Thumb/*`, розділені сторінки Controls / Chip & Tag).
 - 2026-11-02 — Table/Cell: слот `↳ Slot` (Boolean `Slot`) розміру Image (md 32 / sm 24, токен `table.cell.image-size.*`).
 - 2026-10-29 — **правило: токени не видаляємо, а позначаємо `$deprecated`** з підказкою заміни (фронти не мерджать видалення) — `token-studio.md`. `contextual.progress-bar.*` повернуто як deprecated.
 - 2026-10-29 — **Progress: файл повністю переведено з `contextual.progress-bar.*` на `progress.*` / `contextual.progress.*`** (власні шари + оверрайди в інстансах, 0 залишків). Група `progress-bar` у Token Studio більше не потрібна — видаляється разом із вставкою нових токенів (MB +8 −7). Тимчасові змінні до Export — `scripts/progress-var-map.json`.

@@ -1,0 +1,89 @@
+# Перезбирання продуктових сторінок (лейаутів)
+
+Правило Андрея 2026-11-03. Читати перед будь-якою роботою з продуктовою сторінкою (`Tournaments`, `Lottery +`, `Races +`, `Profile +` …).
+
+## 0. ОБОВ'ЯЗКОВО перед кожною наступною сторінкою — свіжий обхід файлу
+
+Компоненти команда допрацьовує щодня, тому **перед тим як будувати будь-яку наступну сторінку**:
+
+1. **Список сторінок** (`figma.root.children`) — нові / перейменовані / зниклі сторінки, позначки (`💛` оновила команда, `💜` зроблено з Ozerov, `🔴` в роботі).
+2. **Інвентар компонентів** — для кожної сторінки розділів `Components` / `Atoms` / `Molecules` / `Organisms` / `Cards`: усі `COMPONENT_SET` і окремі `COMPONENT`, їхні властивості й Section, у якій вони лежать. Скрипт — нижче (батчі по 6–7 сторінок, паралельні виклики `use_figma`, лише читання).
+3. **Порівняти з `component-registry.md`** — що з'явилось, що змінило властивості, що переїхало в `Originals`. Оновити реєстр і записати інвентар у `reports/inventory-<дата>.md`.
+4. **Вивчити сторінку, яку будуємо** (§2) — і тільки потім збирати.
+
+Без цього кроку сторінку не будуємо: інакше збираємо зі старих наборів, які вже замінено.
+
+```js
+// Інвентар: підставити IDS сторінок (6–7 на виклик)
+const IDS = ['…'];
+const out = [];
+for (const pid of IDS) {
+  const page = await figma.getNodeByIdAsync(pid);
+  await page.loadAsync();
+  const sets = page.findAllWithCriteria({ types: ['COMPONENT_SET'] });
+  const comps = page.findAllWithCriteria({ types: ['COMPONENT'] }).filter(c => !c.parent || c.parent.type !== 'COMPONENT_SET');
+  const top = n => { let c = n; while (c.parent && c.parent.type !== 'PAGE') c = c.parent; return c.name; };
+  const props = o => { try { return Object.entries(o.componentPropertyDefinitions).map(([k, v]) => k.split('#')[0] + (v.type === 'VARIANT' ? '=' + v.variantOptions.join('|') : ':' + v.type[0])).join('; '); } catch (e) { return 'ERR'; } };
+  out.push({ page: page.name,
+    sections: page.children.filter(n => n.type === 'SECTION').map(s => s.name),
+    sets: sets.map(s => `${s.id} ${s.name} [${s.children.length}v] {${props(s)}} @${top(s)}`),
+    comps: comps.map(c => `${c.id} ${c.name} {${props(c)}} @${top(c)}`) });
+}
+return out;
+```
+
+## 1. Нічого не ламаємо — нова збірка праворуч
+
+- Старі макети, `(Debricate)`-сторінки, локальні набори на сторінці — **не чіпаємо і не видаляємо**.
+- Нову збірку ставимо **праворуч від усього, що є на сторінці** (на одному рівні `y = 0`), стандартними сетами (§3).
+- Перейменувати / видалити старе — тільки на прямий запит Андрея.
+
+## 2. Як вивчати сторінку перед збиранням
+
+1. Верхній рівень сторінки: Section, старі `.Desktop page (Debricate)` / `.Mobile page (Debricate)`, локальні `COMPONENT`/`COMPONENT_SET` (продуктові блоки сторінки).
+2. Скриншоти старих макетів — які екрани/стани є (список, деталі, архів, порожній стан, попапи).
+3. Для кожного блоку — чим він стає в новій збірці: інстанс ДС (за свіжим інвентарем) / продуктова картка з `↳ Cards` / тимчасовий фрейм `Wrapper` з токенізованими властивостями (якщо компонента ще нема — записати в «Відкриті питання»).
+4. Список станів сторінки → список Section (§3).
+5. Записати вивчене в `references/pages/<page>.md` (структура як у `pages/tournaments.md`).
+
+## 3. Стандарт збірки (еталон — сторінка `Tournaments - Ozerov 💜`, `pages/tournaments.md`)
+
+**Сет = Figma Section на один стан сторінки**
+| | |
+|---|---|
+| Назва | `<Сторінка> — <Стан>`: `Tournaments`, `Tournament — Active`, `Tournaments — Archived`, `Tournaments — Empty` |
+| Стиль | як у компонентів (`section-layout.md`): заливка `#BBBBBB`, обведення чорне 10 % 1 px |
+| Вміст | два інстанси: **`Layout/3xs`** (x 80) і **`Layout/xl`** (x 480), обидва `y = 80` |
+| Відступи | 80 від країв, 80 між мобайлом і десктопом → ширина `80 + 320 + 80 + 1096 + 80 = 1656`; висота по вмісту + 80 |
+| Розкладка сетів | в рядок, `y = 0`, **600 px** між сетами |
+
+**Layout**
+- `Layout/3xs`: `TabBar = true`, `Footer = true`; `Header/3xs Authorized=True`, `TabBar Breakpoint=3xs`, `Footer/3xs Banner=true`.
+- `Layout/xl`: `Footer = true`; `Sidebar/Desktop Authorized=True, Collapsed=False`, `Header/xl Authorized=True`, `Footer/xl Banner=true`.
+- Вміст — у слот `Main Area` одним фреймом **`Container`** (VERTICAL, FILL/HUG):
+  - xl: padding 16 / 32, gap між блоками **32**;
+  - 3xs: padding 16 / 16, gap **24**.
+
+**Блок сторінки** — фрейм `Wrapper` (VERTICAL, gap **16**, FILL/HUG):
+- заголовок — `Heading` `Variant=Secondary`, `Breakpoint=lg | 3xs` (заголовок сторінки — `Variant=Primary`);
+- контент (текст зі стилем `text/*`, таблиця, сітка карток);
+- «Show more» — `Button Variant=Secondary, Size=md, Icon ➡️ = true` (chevron-down).
+
+**Типові блоки**
+| Що | Чим збирати |
+|---|---|
+| Перемикач розділів (Active / Archived) | `Tabs Variant=Navigation` + `Tabs/Item — Navigation` |
+| Назад до списку | `Button Variant=Text, Size=md` + текст (див. відхилення в `pages/tournaments.md`) |
+| Hero (картинка + назва + приз + дати + CTA) | `Wrapper` (fill + radius змінними) → `Image/Multi` + текст + `Time Date=True, Highlighted=True` + `Button Primary/Secondary lg` |
+| Теги | `Tag`, ряд gap 8 |
+| Сітка ігор | `Wrapper` **GRID**: xl 5 колонок (gap 8), 3xs 2 колонки (gap 8) з `Thumb/Default` FILL |
+| Сітка карток | `Wrapper` **GRID**: xl 2 колонки (gap 16), 3xs 1 колонка (gap 8) з `Card / …` FILL |
+| Лідерборд / мій прогрес | `Table/Leaderboard Variant=Striped`, рядки `Table/Leaderboard/Row Inverted=True` (`Stripe`/`Plain` чергуються, поточний гравець `State=Selected`), комірки `Table/Cell` / `Table/Head/Cell` `Inverted=True` |
+| Порожній стан | `Empty` |
+
+**Загальні правила лейауту** — `layouts.md` (інстанси ДС, auto layout, `Wrapper` для обгорток, тексти зі стилем, кольори змінними, іконки зі `Static — Icons`, перевірка в MB і XON).
+
+## 4. Після збирання
+- Скриншот кожного сету; звірка зі старим макетом (нічого не загублено з контенту).
+- Аудит збірки (вектори, тексти без стилю, hardcode-заливки, remote-інстанси) — скрипт у `pages/tournaments.md` → Аудит.
+- `pages/<page>.md`: що зібрано, ID сетів, відхилення, питання. Рядок у журнал `SKILL.md`, коміт `page(<page>): …`.
