@@ -17,7 +17,7 @@ Main Area
 │   │   ├─ Image — `Image/Single Slot=False` ABSOLUTE, STRETCH, fill = чисте фото арени (imageHash з `Banner-background`), **без фейдерів / оверлеїв**
 │   │   ├─ Title — один TEXT прямо в Banner «Best players of Winzaro», heading/xxl, Auto height, `semantic/text/default-invert/heading`
 │   │   └─ Description — TEXT text/lg-strong (3xs md-strong), center, 400 (3xs 256), `semantic/text/default-invert/primary`
-│   └─ Podium — копія `Prizes-on-pedestal` під картинкою (3xs: gap 4, HUG)
+│   └─ Podium  H · align top · gap spacing/400 (3xs spacing/100) — 3 × `Hall of Fame/Prize` Place 2 · 1 · 3
 └─ Container  V · xl p16/32 gap 32 · 3xs p16/16 gap 24
     └─ Wrapper V gap 16 · center
         ├─ Heading Variant=Secondary                     ← «The biggest wins of the month»
@@ -37,6 +37,19 @@ Main Area
 
 ## Що треба доробити вручну (шрифт MrBet Black конектору недоступний)
 - **`Heading Secondary`** — дефолт `Title`: вписати «The biggest wins of the month» і поставити вирівнювання тексту по центру (як у старому макеті) в обох брейкпоінтах.
+
+## Новий компонент `Hall of Fame/Prize` (80418:9472)
+Section `Hall of Fame/Prize` (80418:9473) праворуч від сету (x 13256). Зібрано з нуля за старим `Hall-of-fame / Prize` (той не використовуємо).
+```
+Hall of Fame/Prize   Place = 1 | 2 | 3
+└─ V · center · gap spacing/200 · Place 2|3: padding-top spacing/600 (нижче за 1-ше місце)
+    ├─ Medal — `Hall of fame / Pedestal` gold | Silver | bronze (remote ілюстрація), 92, lock ratio
+    └─ Wrapper V · center · gap spacing/50
+        ├─ Amount       text/md-stronger · semantic/status/{gold|silver|bronze}/text
+        ├─ Title        text/sm-strong   · semantic/text/default/primary      (нік)
+        └─ Description  text/sm-strong   · semantic/text/default/secondary    (гра)
+```
+Токени на шарах (plugin data `tokens`) + змінні; власних `component`-токенів немає (продуктовий компонент) — розмір медалі 92 без токена. Прибрано зі старого: прихований номер квитка з hex, кольори `banner-cart` → `default`.
 
 ## Відхилення / питання
 | # | Що | Пропозиція |
