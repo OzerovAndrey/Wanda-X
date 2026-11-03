@@ -46,7 +46,7 @@ return out;
 4. Список станів сторінки → список Section (§3).
 5. Записати вивчене в `references/pages/<page>.md` (структура як у `pages/tournaments.md`).
 
-## 3. Стандарт збірки (еталон — сторінка `Tournaments - Ozerov 💜`, `pages/tournaments.md`)
+## 3. Стандарт збірки (еталони — `Tournaments - Ozerov 💜` → `pages/tournaments.md`, `Calendar - Ozerov 💜` → `pages/calendar.md`)
 
 **Сет = Figma Section на один стан сторінки**
 | | |
@@ -55,7 +55,8 @@ return out;
 | Стиль | як у компонентів (`section-layout.md`): заливка `#BBBBBB`, обведення чорне 10 % 1 px |
 | Вміст | два інстанси: **`Layout/3xs`** (x 80) і **`Layout/xl`** (x 480), обидва `y = 80` |
 | Відступи | 80 від країв, 80 між мобайлом і десктопом → ширина `80 + 320 + 80 + 1096 + 80 = 1656`; висота по вмісту + 80 |
-| Розкладка сетів | в рядок, `y = 0`, **600 px** між сетами |
+| Розкладка сетів | в рядок, `y = 0`, **600 px** між сетами; спершу стани сторінки, потім попапи |
+| Сет попапу | та сама Section: `Popup/Default Breakpoint=3xs` (x 80, екран 320×640, вікно знизу) + `Popup/Default Breakpoint=xl` (x 480, екран 1096×768, вікно по центру). Назва — суть попапу без префікса сторінки (`Bonus`, `Bonus + Signup`). Довгий вміст — `Max. height = True`; CTA — у футері (`Footer = true`, слот `↳ 💠`) |
 
 **Layout**
 - `Layout/3xs`: `TabBar = true`, `Footer = true`; `Header/3xs Authorized=True`, `TabBar Breakpoint=3xs`, `Footer/3xs Banner=true`.
@@ -73,6 +74,11 @@ return out;
 | Що | Чим збирати |
 |---|---|
 | Перемикач розділів (Active / Archived) | `Tabs Variant=Navigation` + `Tabs/Item — Navigation` |
+| Другий рівень вкладок (фільтр у розділі) | `Tabs Variant=Default` + `Tabs/Item — Default` |
+| Багато вкладок на мобайлі | `Wrapper` H gap 24: `Tabs Navigation` лише з активною + `Dropdown` «More» (Trigger `Button Neutral md, Icon ➡️`, Body — `Dropdown/Item`) |
+| Промо-банер сторінки | `Banner` (78647:15753) `device=lg` у Container; на 3xs `device=xs` **поза Container**, першим у `Main Area`, на всю ширину |
+| Посилання «All» біля заголовка | `Heading All=true` |
+| Списки умов / правил | `List/Item — Default Ordered=False` |
 | Назад до списку | `Button Variant=Text, Size=md` + текст (див. відхилення в `pages/tournaments.md`) |
 | Hero (картинка + назва + приз + дати + CTA) | `Wrapper` (fill + radius змінними) → `Image/Multi` + текст + `Time Date=True, Highlighted=True` + `Button Primary/Secondary lg` |
 | Теги | `Tag`, ряд gap 8 |
