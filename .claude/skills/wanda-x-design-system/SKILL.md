@@ -105,6 +105,7 @@ description: Правила, еталони та чекліст очистки �
 - Token Studio (storage у файлі, запис токенів, токени на шарах) — `references/token-studio.md`.
 
 ## Журнал
+- 2026-11-03 — **зібрано `Hall of Fame`** (сет 80409:6454 праворуч від старого): Heading Primary, hero (фон-арена + опис + п'єдестал `Hall-of-fame / Prize`), «Biggest wins» — `Table/Leaderboard Card` (List/Bullet №, `Level`, гра, сума; MyNick Selected), Show more — `pages/hall-of-fame.md`. Обхід MrBet Black: placeholder + `swapComponent` (`page-rebuild.md` §3a); тексти Heading — вручну.
 - 2026-11-03 — вивчено еталон `Calendar` (2 сети сторінки + 2 сети попапів `Popup/Default` 3xs + xl) — `pages/calendar.md`; у стандарт додано сети попапів, банер поза Container на мобайлі, вкладки + Dropdown «More», `Tabs Default` як другий рівень, `Heading All`.
 - 2026-11-03 — **правило: перед кожною наступною сторінкою — повний обхід файлу** (сторінки + інвентар компонентів → реєстр → вивчення сторінки → збирання праворуч, старе не чіпаємо) — `page-rebuild.md`. Вивчено еталон сторінки `Tournaments` (5 сетів `Layout/3xs` + `Layout/xl`) — `pages/tournaments.md`; інвентар — `reports/inventory-2026-11-03.md` (новий `Popup/Default`, `Notification/*`, `Segmented`, єдиний `Status`, `Time`, `Thumb/*`, розділені сторінки Controls / Chip & Tag).
 - 2026-11-02 — Table/Cell: слот `↳ Slot` (Boolean `Slot`) розміру Image (md 32 / sm 24, токен `table.cell.image-size.*`).
