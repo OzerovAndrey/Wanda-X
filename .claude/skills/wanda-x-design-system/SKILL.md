@@ -105,6 +105,7 @@ description: Правила, еталони та чекліст очистки �
 - Token Studio (storage у файлі, запис токенів, токени на шарах) — `references/token-studio.md`.
 
 ## Журнал
+- 2026-11-04 — **правило: старі макети — у чорних Section**, нові сети — сірі (`page-rebuild.md` §1). VIP: 4 старі Section почорнено + `Old — Popup`; готовий попап Андрея — новий сірий сет `Level Rewards`.
 - 2026-11-04 — **VIP (Loyalty): наведено порядок на сторінці** — 34 розкидані вузли складено в 5 сірих Section (Originals — VIP components, Old — Authorized, Old — Guest, Old — Card states, Popups), вміст не змінювався (`pages/vip.md`).
 - 2026-11-04 — **правило: десктоп і мобайл однакові за контентом** (`page-rebuild.md` §2.5). Lottery — Active xl: додано теги, Buy tickets, сітку квитків.
 - 2026-11-04 — **правило: ніколи не обрізати контент (Clip content off)** — вимкнено на всіх своїх фреймах у сетах Lottery, Tournaments, Hall of Fame (`working-agreements.md` §4).
