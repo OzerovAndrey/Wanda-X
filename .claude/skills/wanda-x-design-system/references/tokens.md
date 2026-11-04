@@ -16,40 +16,7 @@
 | типографіка (`font-size/*`, `line-height/*`, `main`, `accent`, `Light…Black`, `text/*`) | ~35 | шрифти, кеглі, ваги | ✅ через text style + змінні |
 | ефекти (`blur/*`, `depth/*`) | 23 | параметри тіней | ✅ всередині effect style |
 
-## Як прив'язувати: токени Token Studio НАПРЯМУ (обов'язково)
-
-Прив'язка = **токен Token Studio на шарі** (як у еталонах), а не лише Figma-змінна. В Inspect Token Studio має бути видно токен без значка ⬡ «via variable».
-
-Еталон (Button, `Variant=Primary, Size=md`): на кожному шарі є shared plugin data `tokens` **і** прив'язана змінна з тією ж назвою.
-
-| Ключ (`setSharedPluginData('tokens', key, JSON.stringify(name))`) | Що |
-|---|---|
-| `fill` | заливка фрейму / колір тексту / колір вектора іконки |
-| `borderColor` | обведення |
-| `height`, `width` | розміри, розмір іконки |
-| `paddingLeft`, `paddingRight`, `paddingTop`, `paddingBottom` | падінги |
-| `itemSpacing` | gap |
-| `borderRadiusTopLeft` … `borderRadiusBottomRight` | радіус (усі 4 кути) |
-| `typography` | типографіка тексту (`text.md-strong`) |
-| `boxShadow` | тінь |
-
-Порядок роботи:
-1. Токен додається в Token Studio (сет `mb/component` + `xon/component`) → Export у колекцію `Product`.
-2. На шар ставиться **токен** (plugin data, значення — назва токена через крапку, у JSON-лапках: `"anchor.item.height"`).
-3. Змінна з тією ж назвою (`anchor/item/height`) прив'язується до властивості — як у еталоні.
-4. Перевірка: Token Studio → Inspect показує токени напряму, без ⬡.
-
-Ніколи не обмежуватись лише Figma-змінною.
-
-## Правила прив'язки
-
-1. Колір у компоненті → `contextual/{component}/…` або `semantic/…`. **Ніколи hex.**
-2. Компонент використовує **лише свої** contextual/radius токени. `Popover` не бере `contextual/tooltip`, `Switcher` не бере `border-radius/welcome-bonus`, `Footer` не бере `contextual/special-menu-item`.
-3. Будь-яка розмірна величина, що змінюється з `Size`, — токен `{component}/{property}/{size}`.
-4. Text: text style **+** змінні типографіки (як у Button). Текст без стилю = дефект.
-5. Тіні — effect style `shadow/…`; без стилю = дефект.
-6. Градієнти — paint style (змінні не підтримують градієнт), стопи прив'язані до змінних.
-7. **Змінні з чужих бібліотек заборонені** (див. нижче).
+> Як прив'язувати і правила — `rules/tokens.md`.
 
 ## Відомі проблеми токен-системи
 

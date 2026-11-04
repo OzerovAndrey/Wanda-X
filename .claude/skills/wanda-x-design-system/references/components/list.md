@@ -54,7 +54,7 @@ Payment sidebar (Cashbox s2p) — темно-синій фон, пункти з�
 Оригінали **не видалені** — Section `Originals — Profile list (не використовувати)` на тій же сторінці. Порядок сторінки: `List-item` → `Profile Menu` → `Originals`.
 
 ## List-item (виправлено командою)
-Section `List-item`: `List-item` (основний) і `List-item/Bullet` під ним — еталон, оформлено за `section-layout.md`.
+Section `List-item`: `List-item` (основний) і `List-item/Bullet` під ним — еталон, оформлено за `rules/build-component.md` §5.
 
 ## Inverted (2026-10-22, на запит Андрея)
 Темні контексти: `Payment sidebar` (`semantic.background.slate-1` — темний в обох брендах) і `Profile popup mobile` → `Content container` (темний фон на видаленій змінній).
