@@ -91,6 +91,7 @@ return out;
 | Лідерборд / мій прогрес | **як в оригіналі сторінки**: Hall of Fame — `Table/Leaderboard Card` світлими картками; Tournaments / Lottery — `Striped` (темна плашка, `Plain`/`Stripe` по черзі, `Inverted=True`), мій прогрес — **той самий Striped**, без Head (таблиці на одній сторінці — в одному стилі). Поточний гравець — `State=Selected` + текст `semantic/text/brand/primary`; місце — `List/Bullet` або `Image` (медаль / кубок), не слот (`pages/tournaments.md`) |
 | Порожній стан | `Empty` |
 | Заголовок + опис (будь-де) | два TEXT прямо в батьківському фреймі: **`Title`** (один шар, перенос через Auto height) і **`Description`**, без обгорток (`naming.md` → Текстові конструкції) |
+| Hero деталей (турнір / лотерея) | плашка `Wrapper`: fill `semantic/background/1`, радіус `border-radius/global/lg`, padding 16; xl — H gap 32, по центру; 3xs — V gap 24. Однаковий на всіх сторінках деталей |
 | Банер-картинка з текстом | фрейм `Banner` (V, center/center, FIXED висота, clip) → `Image/Single Slot=False` ABSOLUTE STRETCH з fill-фото (**без фейдерів**) + заголовок + опис по центру, кольори `semantic/text/default-invert/*` (`pages/hall-of-fame.md`) |
 
 **Загальні правила лейауту** — `layouts.md` (інстанси ДС, auto layout, `Wrapper` для обгорток, тексти зі стилем, кольори змінними, іконки зі `Static — Icons`, перевірка в MB і XON).

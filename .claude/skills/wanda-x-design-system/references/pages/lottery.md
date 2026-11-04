@@ -20,7 +20,7 @@ Page id `31431:343385`. Модалку (сет `1`, 80390:359896: `Popup/Default
 ### `Lottery — Active`
 ```
 Container
-├─ Wrapper: Button Text + «Lottery» · hero БЕЗ плашки (Image/Multi + назва + приз + Time «Ends in: 12 d : 35 h» + Button Primary lg «Purchase»)
+├─ Wrapper: Button Text + «Lottery» · hero з плашкою як на Tournaments — fill `semantic/background/1`, радіус `border-radius/global/lg`, padding 16 (рішення 2026-11-04, замість варіанту без плашки з `Design`) (Image/Multi + назва + приз + Time «Ends in: 12 d : 35 h» + Button Primary lg «Purchase»)
 ├─ Tags Tickets / Terms / Results            (лише 3xs)
 ├─ Wrapper: Heading «Terms» + Description + Title «How to get a lottery ticket?» (TEXT text/lg-stronger) + 2 × List/Item + Button Secondary «Show less»
 ├─ Wrapper «Buy tickets» (лише 3xs): Heading Info + ряд Card/Lottery & Tournament/Tickets (clip) + Navigator
