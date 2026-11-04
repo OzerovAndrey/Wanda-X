@@ -32,7 +32,7 @@ Container
 3xs: комірки таблиці `sm`, колонка Sum / Prize 120.
 
 ### `Lottery/Ticket`
-H · hug · h24 · center · gap spacing/100 · padding-h spacing/200 · r4 · TEXT `Label` text/md-strong (+ `Icon` 16 у рядку одразу за текстом). Іконка — стандартна `check-mark` зі Static (та сама, що в `Checkbox`). Default — текст `default/primary`; Winning — `brand/primary` + Icon `semantic/icon/default/primary`; Gold — обведення `semantic/status/gold/fill`; Gold-winning — заливка `semantic/status/gold/fill`, текст і Icon `default-invert/primary`. Без absolute-бейджа (рішення Андрея 2026-11-04). Старий `ticket` не використовуємо.
+H · hug · h24 · center · gap spacing/100 · padding-h spacing/200 · r4 · TEXT `Label` text/md-strong (+ `Icon` 16 у рядку одразу за текстом). Іконка — стандартна `check-mark` зі Static (та сама, що в `Checkbox`). Default — текст `default/primary`; Winning — лише помаранчевий текст `brand/primary`, **без галочки** (рішення 2026-11-04); Gold — обведення `semantic/status/gold/fill`; Gold-winning — заливка `semantic/status/gold/fill`, текст і Icon `default-invert/primary`. Без absolute-бейджа (рішення Андрея 2026-11-04). Старий `ticket` не використовуємо.
 
 ## Вручну (MrBet Black — конектор не змінює)
 | Де | Зараз | Має бути |
