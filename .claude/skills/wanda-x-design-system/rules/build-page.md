@@ -25,7 +25,7 @@
 | Назва | `<Сторінка> — <Стан>` (`Tournaments`, `Tournament — Active`, `Tournaments — Empty`); попап — суть без префікса (`Bonus`, `How to install`) |
 | Вміст | `Layout/3xs` (x 80, y 80) + `Layout/xl` (x 480, y 80) |
 | Розмір | ширина `80+320+80+1096+80 = 1656`; висота `80 + max(h) + 80` — **перераховувати після кожної правки** |
-| Попап | `Modal/Default` (сторінка `↳ Modal`) `Breakpoint=3xs` (x 80, екран 320×640, вікно знизу) + `Breakpoint=xl` (x 480, 1096×768, по центру). `Header`, `↳ Title`, `↳ Description`, `Closable` = true, решта false. Довгий вміст — `Max. height = True`; CTA — у футері (`Footer = true`, слот `↳ 💠`) |
+| Попап | картинка в шапці (слот `↳ 💠`) — порожній `Image/Single` того ж розміру, сама картинка — над Section сету; `Modal/Default` (сторінка `↳ Modal`) `Breakpoint=3xs` (x 80, екран 320×640, вікно знизу) + `Breakpoint=xl` (x 480, 1096×768, по центру). `Header`, `↳ Title`, `↳ Description`, `Closable` = true, решта false. Довгий вміст — `Max. height = True`; CTA — у футері (`Footer = true`, слот `↳ 💠`) |
 
 **Layout**
 - `Layout/3xs`: `TabBar = true`, `Footer = true`; `Header/3xs Authorized=True`, `TabBar Breakpoint=3xs`, `Footer/3xs Banner=true`.
