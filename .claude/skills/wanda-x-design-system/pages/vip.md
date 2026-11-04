@@ -80,3 +80,6 @@ Main Area (V, gap 0, padding-bottom 48 | 32)
 | G3 | 3xs — одна картка (як у твоєму еталоні); в оригіналі — карусель | як вирішиш для еталона (#1 вище) — так само тут |
 | G4 | Section `Old` (80613:45785) названа без `— <що>` | перейменувати в `Old — Guest (new)` або злити з `Old — Guest` — скажи |
 | G5 | Зауваження #3–#5 у твоєму сеті `VIP Club` (Section 80 знизу, Clip, ряди) — у Guest уже виправлено | виправити й у `VIP Club`? |
+
+## Картинки → `Image` (2026-11-04)
+`VIP Club/Card` (`Level` → `Image/Single` 124), `VIP Club/Benefit` (148), `VIP Club/Level` (40) — у мейнах порожній `Image`; приклади над Section (медалі Андрея над Card; 3 картинки Benefits; Level — заливка + медаль Scout, яку раніше лежала загубленим інстансом у Section). У сетах `VIP Club` і `VIP Club — Guest` картинки вставлено в `Image` (картки — `Slot=True` + `Level`, Benefits / Levels — заливкою).

@@ -60,3 +60,6 @@ Hall of Fame/Prize   Place = 1 | 2 | 3
 | 5 | Ячейка гри — `Image/Single` 32 (в оригіналі thumb 48 + Link) | ок за `table.md` §7; збільшувати thumb — лише за рішенням |
 
 Аудит збірки: векторів 0, текстів без стилю 0, hardcode-кольорів 0, фреймів без AL 0; remote — лише фон `Banner-background` та іконка `calendar`.
+
+## Картинки → `Image` (2026-11-04)
+`Hall of Fame/Prize` — у мейні `Image/Single Slot=False` (порожній); монети 1/2/3 — інстансами над Section, кожна над своїм варіантом; у сеті `Hall of Fame` — `Image Slot=True` + монета в слоті. Відкрите: Section `Hall of Fame/Prize` стоїть ліворуч від сету (x −629) — за правилом розкладки має бути праворуч.

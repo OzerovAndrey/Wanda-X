@@ -2,6 +2,7 @@
 
 Історія рішень і робіт (раніше — у SKILL.md). Нові записи — зверху. Claude читає лише на прямий запит («що ми робили з …»).
 
+- 2026-11-04 — **правило: картинки в компонентах — порожній `Image/Single`, приклади — над Section, у лейаутах картинка вставлена в `Image`**. Застосовано: `VIP Club/Card|Benefit|Level`, `Mobile App/Benefit`, `Hall of Fame/Prize`; сети VIP, VIP — Guest, Mobile App, Hall of Fame вигляд не змінили.
 - 2026-11-04 — **VIP: зібрано сет `VIP Club — Guest`** (x 2256, копія еталона `VIP Club`): картки `Progress=False`, «Status», кнопка «Level Rewards» + `gift-filled`; решту сторінки зсунуто на +2256. 5 питань — `pages/vip.md`.
 - 2026-11-04 — **скіл оптимізовано**: SKILL.md — індекс + «Куди записувати нове»; швидкі правила в `rules/` (core, build-page, build-component, learn-component, tokens); база знань — `pages/`, `references/`; журнал — CHANGELOG.md. Видалено (злито): working-agreements, page-rebuild, layouts, rebuild-workflow, learning-workflow, definition-of-done, section-layout.
 - 2026-11-04 — **Mobile Application page: порядок + новий сет `Mobile App`** (x 0 y 0, `Layout/3xs` + `Layout/xl` з конфігом VIP): банер поза Container (Title, Segmented iOS/Android, QR, How to install | Download), карусель `Mobile App/Benefit` ×3 (новий компонент) + Navigator, 6 акордеонів. Попап Андрея (Section `1`) — в ряд; старе — `Old — Pages`, `Old — Components`. Свіжий обхід файлу — `reports/inventory-2026-11-04.md` (`Popup/Default` → `Modal/Default`). 9 питань — `pages/mobile-app.md`.

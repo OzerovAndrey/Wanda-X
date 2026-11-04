@@ -14,6 +14,7 @@
 - Text — text style + колір `semantic.text.*`.
 - `resize()` скидає sizing у FIXED → повернути `primaryAxisSizingMode = 'AUTO'`, звірити розміри з оригіналом.
 - Прозорий стан — шар без fill, без токена.
+- Картинка в компоненті — порожній `Image/Single`; приклади — над Section (`rules/core.md` → Компоненти).
 
 ## 3. Властивості (порядок: `Variant → Size → State → Inverted → решта`)
 | Тип | Ключ / значення |
