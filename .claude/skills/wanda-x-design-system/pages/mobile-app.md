@@ -55,4 +55,4 @@ V · center · 245 FIXED / HUG · fill `contextual.mobile-application.card.fill`
 | 9 | Стрілки каруселі xl | в оригіналі накладались на картки (gap −16); тут — поруч, gap 16 | ок? |
 
 ## Картинки → `Image` (2026-11-04)
-`Mobile App/Benefit` — у мейні порожній `Image` 96; 3 приклади над Section; у сеті картинки заливкою `Image`.
+`Mobile App/Benefit` — у мейні порожній `Image` 96; 3 приклади над Section; у сеті інстанси без картинок.

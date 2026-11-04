@@ -82,4 +82,4 @@ Main Area (V, gap 0, padding-bottom 48 | 32)
 | G5 | Зауваження #3–#5 у твоєму сеті `VIP Club` (Section 80 знизу, Clip, ряди) — у Guest уже виправлено | виправити й у `VIP Club`? |
 
 ## Картинки → `Image` (2026-11-04)
-`VIP Club/Card` (`Level` → `Image/Single` 124), `VIP Club/Benefit` (148), `VIP Club/Level` (40) — у мейнах порожній `Image`; приклади над Section (медалі Андрея над Card; 3 картинки Benefits; Level — заливка + медаль Scout, яку раніше лежала загубленим інстансом у Section). У сетах `VIP Club` і `VIP Club — Guest` картинки вставлено в `Image` (картки — `Slot=True` + `Level`, Benefits / Levels — заливкою).
+`VIP Club/Card` (`Level` → `Image/Single` 124), `VIP Club/Benefit` (148), `VIP Club/Level` (40) — у мейнах порожній `Image`; приклади над Section (медалі Андрея над Card; 3 картинки Benefits; Level — заливка + медаль Scout, яку раніше лежала загубленим інстансом у Section). У сетах `VIP Club` і `VIP Club — Guest` інстанси без картинок — `Image` як у мейні.
