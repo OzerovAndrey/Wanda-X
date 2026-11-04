@@ -90,3 +90,20 @@ Main Area (V, gap 0, padding-bottom 48 | 32)
 Питання / вручну:
 - R2: у старому 4-й пункт мав номер `0` — поставив `4`; кнопка в оригіналі `Label` — який текст?
 - R3: Max. height не вмикав (усе влазить, без скролу) — в оригіналі був скролбар.
+
+## Токени компонентів (перев'язано 2026-11-04 за старими `[M] Vip-club card`, `glow`, `dots`, `benefit_card`)
+| Шар | Токен (paint style / змінна) | Властивість |
+|---|---|---|
+| `VIP Club/Card` корінь (усі Type) | `contextual.vip-club.card.background.fill` (style) | fill |
+| `Glow` (ELLIPSE, absolute, index 0) — Current | `contextual.vip-club.card.glow.guest` — 260×179 @ 18, −90 | fill |
+| `Glow` — Locked | `contextual.vip-club.card.glow.next` — 295×215 @ 0, −108 | fill |
+| `Glow` — Completed | `contextual.vip-club.card.glow.completed` — 260×179 @ 18, −90 | fill |
+| корінь Current | `contextual.card.border.active` | stroke |
+| тексти картки | `semantic.text.banner-cart.primary` (Title, Value, цифри) / `.tertiary` (Label, «/ 29», «/ 10 000 points», Left) / `.secondary` (Caption Locked); Caption Current / Completed — без змін | fill |
+| `VIP Club/Benefit` корінь | `contextual.card.bg.fill-2` (style) + `contextual.card.border.default` | fill / stroke |
+| `VIP Club/Level` `State=Active` | `contextual.vip-club.bullets.active.fill` (style) | fill |
+Прибрано: інстанс `Gradient/Welcome` (чужий — Welcome bonus) з усіх карток.
+
+Відкрите:
+- корінь `VIP Club/Card` — `clipsContent = true`, щоб `Glow` (виходить за верх, як в оригіналі) не вилазив за картку — виняток з правила Clip off, погодити.
+- `VIP Club/Benefit` на `card.bg.fill-2` темний, а тексти `default.heading / secondary` (як в старому `benefit_card`) — нечитабельні; перевести на `banner-cart.*`?
