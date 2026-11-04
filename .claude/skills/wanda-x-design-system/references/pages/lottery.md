@@ -51,3 +51,11 @@ H · hug · h24 · center · gap spacing/100 · padding-h spacing/200 · r4 · T
 - Декор hero (2 × `Union`) — як на Tournaments.
 
 - Джерело структури списку — локальний `Lotteries/content` (Desktop / mobile: Active, Coming Soon, Finished), а не обрізаний `.Desktop page` (там лише Active і Coming Soon). Урок: серед старих прикладів брати найповніший.
+
+## Порядок на сторінці (2026-11-04)
+Нові сети — з `x = 0, y = 0` в ряд, 600 px між ними: `Lottery` 80453:9009 · `Lottery — Active` 80453:14180 · `Lottery — History` 80499:38894 · `Lottery — Archived` 80499:39055 · `Lottery — Empty` 80499:39368 · `1` (модалка Андрея) · `Lottery/Ticket`. Далі (+1200) — `Design` і все старе в ряд, `y = 0`, 200 px між вузлами.
+
+Стратегія як у Tournaments:
+- `Lottery — History` — вкладка «Lottery history» (Selected): одна сітка завершених карток без заголовка (xl 6, 3xs 2) + Show more.
+- `Lottery — Archived` — деталі завершеної лотереї: Time `Date=True` «Dates: …», замість Purchase — `Card / Lottery-tournament / Results` (Insufficient), без Buy tickets; квитки, Prize places, Load more, Claim reward лишаються.
+- `Lottery — Empty` — Heading + Tabs + `Empty` «More lotteries coming up here soon ⏳».
