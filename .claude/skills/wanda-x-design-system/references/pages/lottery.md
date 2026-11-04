@@ -47,7 +47,7 @@ H · hug · h24 · center · gap spacing/100 · padding-h spacing/200 · r4 · T
 ## Відхилення / питання
 - Панель «Buy another quantity»: в оригіналі темна (і в MB заголовок нечитабельний) — зібрано світлою карткою `semantic/fill/subtle`; заголовок — TEXT `text/lg-stronger` (heading-стиль конектор не ставить).
 - Посилання «Label» після пунктів How to get… в оригіналі — не додано (плейсхолдер).
-- Desktop за `Design` не має тегів, Buy tickets і сітки квитків — так і зібрано.
+- 2026-11-04: xl доповнено до мобайла (правило «однаковий контент»): теги, Buy tickets (3 картки + точки ліворуч, панель «Buy another quantity» 304 праворуч), сітка 21 квитка (8 у ряд). На 3xs у ряду лишено 2 картки квитків — без вилазу за край.
 - Декор hero (2 × `Union`) — як на Tournaments.
 
 - Джерело структури списку — локальний `Lotteries/content` (Desktop / mobile: Active, Coming Soon, Finished), а не обрізаний `.Desktop page` (там лише Active і Coming Soon). Урок: серед старих прикладів брати найповніший.
