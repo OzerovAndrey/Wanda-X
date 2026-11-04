@@ -105,6 +105,7 @@ description: Правила, еталони та чекліст очистки �
 - Token Studio (storage у файлі, запис токенів, токени на шарах) — `references/token-studio.md`.
 
 ## Журнал
+- 2026-11-04 — **порядок артбордів на всіх лейаут-сторінках Ozerov** (Tournaments, Calendar, Hall of fame, Lottery, Loyalty/VIP): сірі сети з `0,0` в ряд по 600; старе — праворуч у чорних Section `Old — Pages` / `Old — Popups` / `Originals — <сторінка> components` (`page-rebuild.md` §1). Вміст не змінювався. VIP: нових сетів нема — чорні Section на місці, попапи без Section, як були.
 - 2026-11-04 — **правило: старі макети — у чорних Section**, нові сети — сірі (`page-rebuild.md` §1). VIP: 4 старі Section почорнено; попапи (`Modal/Default` «Level Rewards» і старий `Popup`) повернуто як були — без Section.
 - 2026-11-04 — **VIP (Loyalty): наведено порядок на сторінці** — 34 розкидані вузли складено в 5 сірих Section (Originals — VIP components, Old — Authorized, Old — Guest, Old — Card states, Popups), вміст не змінювався (`pages/vip.md`).
 - 2026-11-04 — **правило: десктоп і мобайл однакові за контентом** (`page-rebuild.md` §2.5). Lottery — Active xl: додано теги, Buy tickets, сітку квитків.
