@@ -105,6 +105,7 @@ description: Правила, еталони та чекліст очистки �
 - Token Studio (storage у файлі, запис токенів, токени на шарах) — `references/token-studio.md`.
 
 ## Журнал
+- 2026-11-04 — **правило: ніколи не обрізати контент (Clip content off)** — вимкнено на всіх своїх фреймах у сетах Lottery, Tournaments, Hall of Fame (`working-agreements.md` §4).
 - 2026-11-04 — **правило: Section `Design` на сторінці — головне джерело контенту і структури** (картинки не переносимо). Lottery переведено на `Design`: xl без Finished, 6 карток на блок, тексти карток / кнопок, hero без плашки «Purchase», Terms + How to… в одному блоці (`pages/lottery.md`).
 - 2026-11-04 — **правило: ніколи не робити зайвих обгорток; контент у рядку — по центру по висоті** (`working-agreements.md` §4, `page-rebuild.md` §4). Hero на Lottery / Tournament — Active / Archived (xl): прибрано зайвий `Wrapper`, картинка й текст по центру.
 - 2026-11-04 — **Lottery зібрано** праворуч від модалки Андрея: сети `Lottery` (список) і `Lottery — Active` (деталі), новий компонент `Lottery/Ticket` (Status Default | Winning | Gold | Gold-winning) — `pages/lottery.md`. Прийом: базу беремо копією схожого нового сету (Tournaments) через group/ungroup і міняємо за оригіналом.
