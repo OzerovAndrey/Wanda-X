@@ -17,3 +17,4 @@
 | `Segmented` 78970:888 / `Segmented/Item` 78970:859 | без змін; **немає `Inverted`** (на темному банері Mobile App неактивний сегмент зливається) |
 
 Решта наборів (Button 240v, Accordion 12v, Image/Single, Navigator, Heading, Layout/*, Tabs, Table/*, Progress, Status, Time …) — без змін властивостей відносно 2026-11-03.
+- 2026-11-04 (повторно, перед News): обхід 47 сторінок ДС — без змін відносно ранкового; для News знайдено готові `Card / News` 30866:391415 і `News Video` 31692:764382 в `↳ Cards`.

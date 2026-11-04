@@ -2,6 +2,7 @@
 
 Історія рішень і робіт (раніше — у SKILL.md). Нові записи — зверху. Claude читає лише на прямий запит («що ми робили з …»).
 
+- 2026-11-04 page(news): зібрано сети `News`, `News — Empty`, `News — Article` (x 0 / 2256 / 4512) за референсами Андрея `Breakpoints` + `Components`; ДС `Card / News`, `News Video`; ручні правки MrBet — `pages/news.md` «Відкрите»; пастки GRID/clone — `figma-pitfalls.md`
 - 2026-11-04 page(news): розкладено сторінку News — старі макети в `Old — News` / `Old — Article`, локальні компоненти в `Old — Components` (чорні, з x 9024); `pages/news.md`
 - 2026-11-04 — **VIP: компоненти перев'язано на готові токени `contextual.vip-club.*`** (фон картки, glow за Type, активна точка рівня), прибрано чужий `Gradient/Welcome`; тексти картки → `banner-cart.*` як в оригіналі; Benefit → `contextual.card.bg.fill-2`. Правило «спершу готові токени сторінки» — `rules/build-page.md` §5.
 - 2026-11-04 — **правило картинок поширено на попапи / слоти лейаутів**: `Level Rewards` — у шапці обох модалок порожній `Image` 80×80, `vip benefits/Rewards` над Section.

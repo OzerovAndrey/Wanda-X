@@ -52,3 +52,8 @@
 ## Token Studio plugin data
 - Ключі: `itemSpacing`, `paddingTop|Right|Bottom|Left`, `height`, `width`, `fill`, `borderColor`; радіус — **на кожен кут** `borderRadiusTopLeft|TopRight|BottomRight|BottomLeft` (один `borderRadius` → Inspect показує ⬡). Значення — `JSON.stringify("token.name")`.
 - **Export перестворює змінні з новими ID** (і видаляє створені вручну, якщо їх нема в бренчі) → прив'язки мертві. Після Export: аудит мертвих прив'язок, переприв'язка за plugin data `tokens` на змінну `token.replace(/\./g,'/')`.
+
+## Grid / клони (2026-11-04)
+- Новий `layoutMode = 'GRID'` створює рядки `FLEX` → картки накладаються; одразу `gridRowSizes = rows.map(() => ({type: 'HUG'}))`.
+- `clone()` фрейма зі слота інстансу може загубити TEXT (у дереві — «чужий» вузол з ім'ям `Layout/…`). Не видаляти «чужих» дітей — створити новий фрейм і зібрати заново.
+- Пошук TEXT по `characters` у всьому сеті зачіпає й Sidebar / абзаци — шукати лише всередині свого фрейму за `id`.
