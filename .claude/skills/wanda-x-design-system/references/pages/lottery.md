@@ -8,7 +8,7 @@ Page id `31431:343385`. Модалку (сет `1`, 80390:359896: `Popup/Default
 ## Нова збірка
 | Сет | id | x | Що |
 |---|---|---|---|
-| `Lottery` | 80453:9009 | 21963 | список: `Heading Primary` «Lottery», `Tabs Navigation` All / Lottery history, Active і Coming soon (xl — 4 картки 2×2, 3xs — 2) + `Show more`; на 3xs ще Finished (як в оригіналі мобайла) |
+| `Lottery` | 80453:9009 | 21963 | список: `Heading Primary` «Lottery», `Tabs Navigation` All / Lottery history, Active · Coming soon · Finished (як у `Lotteries/content` — структура для обох брейкпоінтів), xl — 4 картки 2×2, 3xs — 2, у кожному блоці `Show more` |
 | `Lottery — Active` | 80453:14180 | 24219 | деталі лотереї |
 | `Lottery/Ticket` (компонент) | Section 80454:14666, set 80454:14665 | 26475 | `Status = Default \| Winning \| Gold \| Gold-winning` |
 
@@ -35,7 +35,7 @@ H · hug · h24 · padding-h spacing/200 · r4 · TEXT `Label` text/md-strong. D
 ## Вручну (MrBet Black — конектор не змінює)
 | Де | Зараз | Має бути |
 |---|---|---|
-| `Lottery` 3xs, третій блок | Coming soon | Finished |
+| `Lottery`, обидва бп, третій блок | Coming soon | **Finished** |
 | `Lottery — Active`, обидва бп | Rules: | How to get a lottery ticket? |
 | | Tournament games (3xs) | Buy tickets |
 | | My progress | You have 25 lottery tickets |
@@ -47,3 +47,5 @@ H · hug · h24 · padding-h spacing/200 · r4 · TEXT `Label` text/md-strong. D
 - Посилання «Label» після пунктів How to get… в оригіналі — не додано (плейсхолдер).
 - Desktop оригінал не має Buy tickets і сітки квитків — так і лишено; якщо потрібно на xl — скажіть.
 - Декор hero (2 × `Union`) — як на Tournaments.
+
+- Джерело структури списку — локальний `Lotteries/content` (Desktop / mobile: Active, Coming Soon, Finished), а не обрізаний `.Desktop page` (там лише Active і Coming Soon). Урок: серед старих прикладів брати найповніший.
