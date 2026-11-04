@@ -82,7 +82,7 @@ description: Правила, еталони та чекліст очистки �
 | Отримали свіжий архів JSON — оновити експорт і показати diff | `references/token-studio.md` → Свіжість експорту, `scripts/tokens-diff.py` |
 | Зробити аудит сторінки/компонента скриптом | `references/audit-script.md` |
 | Що вже знайдено, беклог по сторінках | `references/audit-2026-10-19.md` |
-| **Будувати / перезбирати продуктову сторінку (спершу обхід файлу!)** | `references/page-rebuild.md`, еталони `references/pages/tournaments.md`, `references/pages/calendar.md` (попапи) |
+| **Будувати / перезбирати продуктову сторінку (спершу обхід файлу!)** | `references/page-rebuild.md`, еталони `references/pages/tournaments.md`, `references/pages/calendar.md` (попапи); VIP — `references/pages/vip.md` |
 | Збирати або чистити лейаут | `references/layouts.md` |
 | Замінити / підібрати іконку | `references/icons.md` |
 | Опис конкретного компонента (анатомія, токени, рішення) | `references/components/<component>.md` |
@@ -105,6 +105,7 @@ description: Правила, еталони та чекліст очистки �
 - Token Studio (storage у файлі, запис токенів, токени на шарах) — `references/token-studio.md`.
 
 ## Журнал
+- 2026-11-04 — **VIP (Loyalty): наведено порядок на сторінці** — 34 розкидані вузли складено в 5 сірих Section (Originals — VIP components, Old — Authorized, Old — Guest, Old — Card states, Popups), вміст не змінювався (`pages/vip.md`).
 - 2026-11-04 — **правило: десктоп і мобайл однакові за контентом** (`page-rebuild.md` §2.5). Lottery — Active xl: додано теги, Buy tickets, сітку квитків.
 - 2026-11-04 — **правило: ніколи не обрізати контент (Clip content off)** — вимкнено на всіх своїх фреймах у сетах Lottery, Tournaments, Hall of Fame (`working-agreements.md` §4).
 - 2026-11-04 — **правило: Section `Design` на сторінці — головне джерело контенту і структури** (картинки не переносимо). Lottery переведено на `Design`: xl без Finished, 6 карток на блок, тексти карток / кнопок, hero без плашки «Purchase», Terms + How to… в одному блоці (`pages/lottery.md`).
