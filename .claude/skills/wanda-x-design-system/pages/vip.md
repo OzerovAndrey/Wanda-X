@@ -1,6 +1,8 @@
 # Loyalty (VIP Club) — сторінка `33498:684868`
 
-Статус: **сет `VIP Club` (стан Authorized) зібрав Андрей 2026-11-04 — еталон, як треба збирати сторінку**. Стан Guest ще не зібрано. Нові сети ставити праворуч від попапів (x ≥ 28267, y = 0, 600 між сетами).
+Статус: **сет `VIP Club` (стан Authorized) зібрав Андрей 2026-11-04 — еталон**; сет `VIP Club — Guest` зібрав Claude 2026-11-04 (копія еталона, див. нижче).
+
+**Порядок сторінки (з 2026-11-04):** `VIP Club` x 0 → `VIP Club — Guest` x 2256 → компоненти `VIP Club/Card|Benefit|Level` і попап Section `1` x 4512 → чорні `Old — …` від x 6232 (усе праворуч від Guest зсунуто на +2256, вміст не змінювався).
 
 ## Розкладка сторінки після впорядкування
 Старі вузли складено в **чорні** Section (`#000000`, правило 2026-11-04), 80 padding / 80 між вузлами, 600 між Section. Нові сети — сірі (`#BBBBBB`). Вміст вузлів не змінювався, нічого не видалено.
@@ -61,3 +63,20 @@ Main Area (V, gap 0, padding-bottom 48 | 32)
 | 7 | Section `VIP Club/Level` | загублений інстанс `Level` 80510:16820 поверх Section | у Section лише мейн-компоненти |
 | 8 | `Container` | gap / padding без змінних | як у Tournaments — уточнити, чи це норма |
 | 9 | стан **Guest** | не зібрано: у старому `Old — Guest` замість прогресу блок «Level Rewards» | окремий сет `VIP Club — Guest` |
+
+## Сет `VIP Club — Guest` (Section 80617:22161, x 2256 y 0, 1656×5308) — 2026-11-04
+Джерело — Section Андрея `Old` (80613:45785: `Desktop page` 80613:42929, `Mobile page` 80613:42930). `Layout/3xs` 80617:22162 · `Layout/xl` 80617:22163.
+Копія `VIP Club`; відмінності від Authorized — лише картки статусів:
+- `VIP Club/Card` `Progress = False` (без рівня, смуги, балів); xl — `Locked · Current · Locked`, 3xs — `Current`; Caption у всіх — «Status» (як в оригіналі).
+- Кнопка картки — `Button Tertiary lg` «Level Rewards», `⬅️ Icon` = `gift-filled` (Static).
+- Решта (Banner, Levels, Benefits + «Go to Game Hall», Terms and Conditions) — як у `VIP Club`.
+Виправлено в Guest відносно еталона (за правилами): 3xs тексти кнопок «Earn points» / «Go to Game Hall», `Main Area` 3xs Clip off, ряди `Cards` / `Levels` / `Benefits` по центру, Section 80 з усіх боків. Аудит `layout-audit.js` — 0.
+
+### Питання по Guest
+| # | Що | Пропозиція |
+|---|---|---|
+| G1 | У `VIP Club/Card` нема нейтрального типу: `Locked` має замок на медалі, `Completed` — галочку, а в гостьовому оригіналі медалі без позначок | додати `Type = Default` (без позначки, без підсвітки) — для бічних карток гостя |
+| G2 | Хедер в оригіналі гостя — з балансом і Deposit (як Authorized) | лишив `Authorized=True`; якщо гість = незалогінений — переключити `Header/* Authorized=False`, `Sidebar` без бонусів |
+| G3 | 3xs — одна картка (як у твоєму еталоні); в оригіналі — карусель | як вирішиш для еталона (#1 вище) — так само тут |
+| G4 | Section `Old` (80613:45785) названа без `— <що>` | перейменувати в `Old — Guest (new)` або злити з `Old — Guest` — скажи |
+| G5 | Зауваження #3–#5 у твоєму сеті `VIP Club` (Section 80 знизу, Clip, ряди) — у Guest уже виправлено | виправити й у `VIP Club`? |
