@@ -17,7 +17,8 @@
 - Перенести вузол: `const g = figma.group([node], targetParent, index); figma.ungroup(g);` (без перевірки шрифту). Копія — `node.clone()` → group/ungroup.
 - Вставити новий: тимчасовий інстанс без MrBet (`Spinner` 47531:173652) → `swapComponent(<Layout/xl | Heading …>)` → `unlockAspectRatio()`, `resize(w, main.height)`, `FILL` / `FIXED`.
 - `Heading` у слоті — placeholder + swap **після** того, як контейнер уже в слоті.
-- Текст MrBet (characters, стиль, autoResize) змінити не можна; `fills`, `layoutSizing*` — можна. Що вписати вручну — перелічити у відповіді.
+- Текст MrBet (characters, стиль, autoResize) змінити не можна; `fills`, `layoutSizing*` — можна, але **ширина не перераховується** (після clone / зміни Breakpoint `Title` лишається старої ширини) — перелічити у відповіді, що поправити вручну.
+- `Button` має `maxWidth = 420` — у модалках xl на всю ширину: `btn.maxWidth = null` + FILL.
 
 ## Вузли, клони, слоти
 - Порівнювати вузли **за `id`**, не за об'єктом.

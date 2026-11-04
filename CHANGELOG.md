@@ -2,6 +2,7 @@
 
 Історія рішень і робіт (раніше — у SKILL.md). Нові записи — зверху. Claude читає лише на прямий запит («що ми робили з …»).
 
+- 2026-11-04 — **VIP: попап `Level Rewards`** — Section `1` → сет `Level Rewards` (3xs + xl) зі списком нагород як у старому `Popup`; новий `VIP Club/Reward`; старий `Popup` → `Old — Popups`; сторінка переставлена (стани → попап → компоненти → старе).
 - 2026-11-04 — **уточнення правила картинок: інстанси в лейаутах повністю наслідують компонент** — картинки з `Image` в інстансах прибрано (VIP ×48, Mobile App ×4, Hall of Fame ×6).
 - 2026-11-04 — **правило: картинки в компонентах — порожній `Image/Single`, приклади — над Section, у лейаутах картинка вставлена в `Image`**. Застосовано: `VIP Club/Card|Benefit|Level`, `Mobile App/Benefit`, `Hall of Fame/Prize`; сети VIP, VIP — Guest, Mobile App, Hall of Fame вигляд не змінили.
 - 2026-11-04 — **VIP: зібрано сет `VIP Club — Guest`** (x 2256, копія еталона `VIP Club`): картки `Progress=False`, «Status», кнопка «Level Rewards» + `gift-filled`; решту сторінки зсунуто на +2256. 5 питань — `pages/vip.md`.

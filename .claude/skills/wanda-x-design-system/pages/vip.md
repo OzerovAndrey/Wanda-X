@@ -2,7 +2,7 @@
 
 Статус: **сет `VIP Club` (стан Authorized) зібрав Андрей 2026-11-04 — еталон**; сет `VIP Club — Guest` зібрав Claude 2026-11-04 (копія еталона, див. нижче).
 
-**Порядок сторінки (з 2026-11-04):** `VIP Club` x 0 → `VIP Club — Guest` x 2256 → компоненти `VIP Club/Card|Benefit|Level` і попап Section `1` x 4512 → чорні `Old — …` від x 6232 (усе праворуч від Guest зсунуто на +2256, вміст не змінювався).
+**Порядок сторінки (з 2026-11-04):** `VIP Club` x 0 → `VIP Club — Guest` x 2256 → попап `Level Rewards` x 4512 → компоненти `VIP Club/Card|Benefit|Level|Reward` x 6768 (стовпчиком) → чорні `Old — …` (останньою — `Old — Popups` зі старим `Popup`).
 
 ## Розкладка сторінки після впорядкування
 Старі вузли складено в **чорні** Section (`#000000`, правило 2026-11-04), 80 padding / 80 між вузлами, 600 між Section. Нові сети — сірі (`#BBBBBB`). Вміст вузлів не змінювався, нічого не видалено.
@@ -83,3 +83,11 @@ Main Area (V, gap 0, padding-bottom 48 | 32)
 
 ## Картинки → `Image` (2026-11-04)
 `VIP Club/Card` (`Level` → `Image/Single` 124), `VIP Club/Benefit` (148), `VIP Club/Level` (40) — у мейнах порожній `Image`; приклади над Section (медалі Андрея над Card; 3 картинки Benefits; Level — заливка + медаль Scout, яку раніше лежала загубленим інстансом у Section). У сетах `VIP Club` і `VIP Club — Guest` інстанси без картинок — `Image` як у мейні.
+
+## Сет попапу `Level Rewards` (Section 80479:207854, x 4512 y 0, 1656×928) — 2026-11-04
+Колишня Section `1` Андрея. `Modal/Default 3xs` 80367:306926 (x 80) + `Modal/Default xl` 80629:23883 (x 480, копія 3xs зі зміною Breakpoint). Вміст як у старому `Popup` (62484:18326, тепер у `Old — Popups`): Header (картинка `vip benefits/Rewards`, Title, Description), `💠 Body` gap `spacing/400`: ряд `Rewards` (V gap `spacing/100`) з 4 × `VIP Club/Reward` + `Button Primary` (FILL; на xl `maxWidth` знято).
+Новий компонент **`VIP Club/Reward`** (80629:23856, Section 80629:23860): H, center, p/gap `spacing.200`, fill `semantic.background.3`, радіус `border-radius.global.md`; `List/Bullet` + TEXT `Label` (`text/md-stronger`, `semantic.text.default.primary`, Fill). Замість старого локального `bullet-lvl-rewards`.
+Питання / вручну:
+- R1: xl `Title` (MrBet) лишився шириною 192 → у Figma поставити Fill вручну (тоді «Level Rewards» в один рядок, як у старому).
+- R2: у старому 4-й пункт мав номер `0` — поставив `4`; кнопка в оригіналі `Label` — який текст?
+- R3: Max. height не вмикав (усе влазить, без скролу) — в оригіналі був скролбар.
