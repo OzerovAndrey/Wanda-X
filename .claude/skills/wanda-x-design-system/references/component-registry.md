@@ -86,3 +86,4 @@
 | `Tournaments - Ozerov 💜` | Еталон збірки сторінки (5 сетів) | 2026-11-03 | `pages/tournaments.md` |
 | `Calendar - Ozerov 💜` | Еталон: сторінка + сети попапів (4 сети) | 2026-11-03 | `pages/calendar.md` |
 | `Hall of fame - Ozerov` | Зібрано Claude (1 сет, 3xs + xl) — review; тексти Heading вписати вручну | 2026-11-03 | `pages/hall-of-fame.md` |
+| `Lottery - Ozerov` | Зібрано Claude (2 сети + модалка Андрея) — review; 6 текстів Heading вручну | 2026-11-04 | `pages/lottery.md` |

@@ -105,6 +105,7 @@ description: Правила, еталони та чекліст очистки �
 - Token Studio (storage у файлі, запис токенів, токени на шарах) — `references/token-studio.md`.
 
 ## Журнал
+- 2026-11-04 — **Lottery зібрано** праворуч від модалки Андрея: сети `Lottery` (список) і `Lottery — Active` (деталі), новий компонент `Lottery/Ticket` (Status Default | Winning | Gold | Gold-winning) — `pages/lottery.md`. Прийом: базу беремо копією схожого нового сету (Tournaments) через group/ungroup і міняємо за оригіналом.
 - 2026-11-03 — Tournaments: таблиці перезібрано як в оригіналі (Leaders — Striped темна, 3/2 колонки, X.2, поточний гравець помаранчевим; My progress — Card, мій рядок темний). **Фікс токена** `contextual.table.leaderboard.row.inverted.fill.selected` → `slate-dark-2` (Figma + JSON; вставити в TS) — `pages/tournaments.md`.
 - 2026-11-03 — Tournaments: лідерборди (My progress, Leaders) переведено на `Table/Leaderboard Card` світлими картками, як на Hall of Fame; кубки — `Image` swap. Стандарт лідерборду в `page-rebuild.md` оновлено.
 - 2026-11-03 — **правило: завжди звіряти зі старим оригіналом блок за блоком** і не додавати типові блоки, яких там немає (`page-rebuild.md` §2.5). Hall of Fame: прибрано Heading над таблицею, Show more → Primary lg, як в оригіналі.
