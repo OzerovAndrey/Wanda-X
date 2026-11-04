@@ -82,7 +82,7 @@ description: Правила, еталони та чекліст очистки �
 | Отримали свіжий архів JSON — оновити експорт і показати diff | `references/token-studio.md` → Свіжість експорту, `scripts/tokens-diff.py` |
 | Зробити аудит сторінки/компонента скриптом | `references/audit-script.md` |
 | Що вже знайдено, беклог по сторінках | `references/audit-2026-10-19.md` |
-| **Будувати / перезбирати продуктову сторінку (спершу обхід файлу!)** | `references/page-rebuild.md`, еталони `references/pages/tournaments.md`, `references/pages/calendar.md` (попапи); VIP — `references/pages/vip.md` |
+| **Будувати / перезбирати продуктову сторінку (спершу обхід файлу!)** | `references/page-rebuild.md`, еталони `references/pages/tournaments.md`, `references/pages/calendar.md` (попапи); VIP (еталон Андрея) — `references/pages/vip.md` |
 | Збирати або чистити лейаут | `references/layouts.md` |
 | Замінити / підібрати іконку | `references/icons.md` |
 | Опис конкретного компонента (анатомія, токени, рішення) | `references/components/<component>.md` |
@@ -105,6 +105,7 @@ description: Правила, еталони та чекліст очистки �
 - Token Studio (storage у файлі, запис токенів, токени на шарах) — `references/token-studio.md`.
 
 ## Журнал
+- 2026-11-04 — **VIP: Андрей зібрав сет `VIP Club` — еталон збірки сторінки** (Banner поза Container, іменовані ряди `Cards` / `Levels` / `Benefits` / `Accordions`, нові `VIP Club/Card|Benefit|Level`); розбір і 9 зауважень — `pages/vip.md`.
 - 2026-11-04 — **чорні Section підписуються `Old — <що>`**: `Originals — … components` → `Old — Components` на всіх 5 лейаут-сторінках; Lottery `Design` → чорна `Old — Design` (`page-rebuild.md` §1).
 - 2026-11-04 — **порядок артбордів на всіх лейаут-сторінках Ozerov** (Tournaments, Calendar, Hall of fame, Lottery, Loyalty/VIP): сірі сети з `0,0` в ряд по 600; старе — праворуч у чорних Section `Old — Pages` / `Old — Popups` / `Originals — <сторінка> components` (`page-rebuild.md` §1). Вміст не змінювався. VIP: нових сетів нема — чорні Section на місці, попапи без Section, як були.
 - 2026-11-04 — **правило: старі макети — у чорних Section**, нові сети — сірі (`page-rebuild.md` §1). VIP: 4 старі Section почорнено; попапи (`Modal/Default` «Level Rewards» і старий `Popup`) повернуто як були — без Section.
