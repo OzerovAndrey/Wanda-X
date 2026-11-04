@@ -80,6 +80,7 @@ return out;
 |---|---|
 | Перемикач розділів (Active / Archived) | `Tabs Variant=Navigation` + `Tabs/Item — Navigation` |
 | Другий рівень вкладок (фільтр у розділі) | `Tabs Variant=Default` + `Tabs/Item — Default` |
+| Каруселі (картки з прокруткою + Navigator) | ряд карток **завжди сам у своєму рядку на всю ширину** — нічого поруч; на xl влазить більше карток, ніж на 3xs; суміжні блоки (панель покупки тощо) — під каруселлю (рішення 2026-11-04) |
 | Багато вкладок на мобайлі | `Wrapper` H gap 24: `Tabs Navigation` лише з активною + `Dropdown` «More» (Trigger `Button Neutral md, Icon ➡️`, Body — `Dropdown/Item`) |
 | Промо-банер сторінки | `Banner` (78647:15753) `device=lg` у Container; на 3xs `device=xs` **поза Container**, першим у `Main Area`, на всю ширину |
 | Посилання «All» біля заголовка | `Heading All=true` |
