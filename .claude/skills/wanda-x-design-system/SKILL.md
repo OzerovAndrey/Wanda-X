@@ -1,193 +1,42 @@
 ---
 name: wanda-x-design-system
-description: Правила, еталони та чекліст очистки для Figma-файлу "[Wanda X] Design system" (fileKey 3MbdWPLOGBjBj92Y3EnPYN, бренди MB / XON, Token Studio core/alias/component). Use ANY TIME the user works on Wanda X components, layouts or tokens — audit, cleanup, fixing a component, building a layout from Wanda X components — or mentions "Wanda X", "Wanda X ДС", file key 3MbdWPLOGBjBj92Y3EnPYN, MB/XON themes. INDEX file — details live in references/*.md, load only what the task needs.
+description: Правила, еталони та чекліст очистки для Figma-файлу "[Wanda X] Design system" (fileKey 3MbdWPLOGBjBj92Y3EnPYN, бренди MB / XON, Token Studio core/alias/component). Use ANY TIME the user works on Wanda X components, layouts or tokens — audit, cleanup, fixing a component, building a layout from Wanda X components — or mentions "Wanda X", "Wanda X ДС", file key 3MbdWPLOGBjBj92Y3EnPYN, MB/XON themes. INDEX file — read rules/core.md + the one rules/ or references/ file the task needs; nothing else.
 ---
 
 # Wanda X — index
 
-> **СПОЧАТКУ прочитай `references/working-agreements.md`** — домовленості з Андреєм, робочий цикл токенів (JSON-handoff), правила токенів і структури, пастки Plugin API. Він має пріоритет над старішими формулюваннями нижче.
->
-> Figma змінюємо **лише на прямий запит** Андрея («зроби / прив'яжи / поправ»); оригінали не видаляємо — складаємо в Section `Originals`.
-
-Дизайн-система, отримана від іншого департаменту. Мета команди — **очистити її від неправильних рішень** і далі використовувати як робочу бібліотеку. Еталон якості — компоненти, позначені **Ready for dev**.
-
-## Файл
+Дизайн-система від іншого департаменту; команда Андрея її очищує. Еталон якості — компоненти **Ready for dev**.
 
 | | |
 |---|---|
-| Figma | `https://www.figma.com/design/3MbdWPLOGBjBj92Y3EnPYN/-Wanda-X--Design-system` |
-| fileKey | `3MbdWPLOGBjBj92Y3EnPYN` |
-| Бренди / теми | **MB**, **XON** (Token Studio: у кожного бренду сети `core`, `alias`, `component`) |
-| Змінні у Figma | 1 колекція `Product`, режими `MB` / `XON` |
-| Розділи сторінок | `Tokens` · `Logotype` · `Breakpoints` · `Components` · `Atoms` · `Molecules` · `Organisms` · `[???]` · `All Cards` · продуктові лейаути (`Homepage +`, `Cashbox`, `Profile +` …) |
+| Figma | `3MbdWPLOGBjBj92Y3EnPYN` · `https://www.figma.com/design/3MbdWPLOGBjBj92Y3EnPYN/-Wanda-X--Design-system` |
+| Бренди | **MB**, **XON** — Token Studio сети `core` / `alias` / `component`; Figma-колекція `Product`, режими MB / XON |
+| Іконки | тільки `Static — Icons` (`J3DHQyf6ARy401o7WywySC`) |
+| Ready for dev | Atoms → `Accordion`, `Badge`, `Button`, `Link`, `Divider`, `Dropdown`, `Label`, `Spinner` (через API не читається — оновлювати тут вручну) |
 
-## Статус компонентів
+## Як читати скіл (економія токенів)
+1. **Завжди:** `rules/core.md` (~6 КБ) — усі жорсткі правила.
+2. **Плюс один файл під задачу** з таблиці нижче. Більше нічого не відкривати без потреби.
+3. `pages/*.md` і `references/components/*.md` — база знань: відкривати **тільки** файл тієї сторінки / компонента, з яким працюєш зараз.
+4. `CHANGELOG.md` (корінь репо) — історія рішень; не читати, лише дописувати рядок після роботи.
 
-**Еталон (Ready for dev, виправлено нашою командою):** Atoms → `Accordion`, `Badge`, `Button`, `Link`, `Divider`, `Dropdown`, `Label`, `Spinner`.
-
-**Оновлено командою і вивчено (💛, не Ready for dev):** `Input`, `Controls`, `Status`, `Timer`, `Empty`, `Section` — `references/components/<c>.md`. У роботі: `Chip & Tag`, `Banner`, `Heading`. Повний список і статуси — `references/component-registry.md`; питання до команди — `references/open-questions.md`.
-
-Все інше — **не еталон**, поки не пройшло `references/definition-of-done.md`. Поточний стан кожної сторінки — у `references/audit-2026-10-19.md`; що вже вивчено і коли — у `references/component-registry.md`.
-
-## Режим навчання
-
-Проєкт **поступово навчається**: команда освіжає й додає компоненти у Figma, Claude відстежує зміни і вивчає кожен компонент — характер, стани, токени (`references/learning-workflow.md`).
-- Тригер — «оновили / додали `<Компонент>`», «що змінилось у `<X>`», або початок сесії (спитати, що чіпали з минулого разу).
-- Цикл: свіжі токени → знімок `scripts/snapshot-component.js` (read-only) → `snapshots/<c>.json` → diff `scripts/snapshot-diff.py` → `references/components/<c>.md` за `_template.md` → реєстр → журнал + коміт `learn(<c>): …`.
-- Claude нічого не виправляє: відхилення від правил — у розділ «Відхилення» компонента і питання команді; повторюване відхилення — привід спитати, чи це нове правило.
-
-> Статус Ready for dev через Plugin API **не читається** (`devStatus` → "not a supported API"). Якщо список еталонів змінився — оновіть його тут вручну.
-
-## 17 золотих правил
-
-0b. **Перед кожною наступною сторінкою — свіжий обхід файлу.** Перш ніж будувати продуктову сторінку: список сторінок + інвентар усіх компонентів → оновити реєстр → вивчити сторінку → тільки тоді збирати. Старе не чіпаємо, нову збірку ставимо праворуч стандартними сетами (`Layout/3xs` + `Layout/xl` у сірій Section на кожен стан). Еталон — сторінка `Tournaments` (`references/page-rebuild.md`, `references/pages/tournaments.md`).
-
-0a. **Токени — разом із прив'язками.** Віддаючи JSON з новими токенами, компонент уже прив'язаний до них у Figma (plugin data + змінна) — `working-agreements.md` §2.5a.
-
-0. **Спершу — свіжі токени.** Токени в Token Studio щодня змінюють колеги. На початку будь-якої роботи з Wanda X спитати, чи були зміни, і попросити свіжий архів JSON; оновити `tokens/system/` і показати diff (`references/token-studio.md` → Свіжість експорту).
-
-1. **Точна копія — нічого не додумувати.** Переробляючи компонент, зберігаємо вигляд, розміри, кількість елементів і стани оригіналу; змінюємо лише збірку. Нові варіанти/брейкпоінти/слоти — тільки на запит команди (`references/rebuild-workflow.md`).
-2. **Еталон перш за все.** Перед тим як правити компонент — відкрий найближчий еталон і повтори його анатомію, неймінг і прив'язки токенів (`references/reference-components.md`).
-3. **Instance, не імітація.** У компонентах і лейаутах — тільки інстанси реальних компонентів. Не малювати кнопку/бейдж фреймом.
-4. **Токени Token Studio — напряму на шар.** Не лише Figma-змінна: на кожну властивість ставиться токен Token Studio (plugin data `tokens`) + однойменна змінна, як в еталоні Button (`references/tokens.md`).
-5. **Жодного hardcode.** Колір, радіус, висота, падінги, розмір іконки, типографіка — через змінні/стилі. Hex-значення в компоненті = дефект.
-6. **Свої компонентні токени** (для заливок, обведень, розмірів; **колір тексту, іконок і шевронів — глобальні `semantic.*` напряму**, без `contextual.<c>.text/icon/…`, рішення 2026-10-22). Компонент прив'язується до власних токенів `<component>.*`, `border-radius.<component>.*`, `contextual.<component>.*` у `mb/component` і `xon/component` (значення кольорів — **тільки alias `semantic.*`**, не `core.*`), а не напряму до semantic/core і не до токенів інших компонентів (`references/token-studio.md`).
-7. **Жодних чужих бібліотек.** Змінні з чужих бібліотек (`Colors/text`, `Radius/0`, `spacing/xxs`, `grid/12`, `list item/*` …) заборонені — заміняти на токени колекції `Product`.
-8. **Один компонент — одна сутність.** Дублікати (`Input` ×2, `Selection-controls` vs `Toggles`, 10 наборів `Status` …) зливаються в один набір з варіантами; legacy видаляється або маркується `Deprecated`.
-9. **Без text-властивостей.** `✏️ Label` та інші TEXT-проперті не створюємо — текст міняють вручну в інстансі (рішення 2026-10-22).
-9a. **Неймінг за стандартом** (`references/naming.md`): Title Case англійською, без опечаток, без `Property 1`, без `Frame 123`.
-10. **Auto layout всюди**, де є 2+ дочірніх елементи. Absolute — тільки для оверлеїв/бейджів/масок.
-11. **Продуктові компоненти — не в ДС.** Hall of fame, Cashbox, Welcome bonus, Lootboxes тощо переїжджають у продуктовий файл або розділ Patterns.
-12. **Кожен компонент — у власній Section** з назвою компонента, без сміття на канвасі (нотатки, загублені інстанси, вектори). Section **сіра `#BBBBBB`**, обведення чорне 10%, радіус 2 — як `Anchor`; оформлення — `references/section-layout.md`.
-13. **Іконки — тільки зі Static — Icons.** Будь-яка іконка в ДС (векторна, detached, з іншої бібліотеки) замінюється на найближчий відповідник з бібліотеки `Static — Icons` (`references/icons.md`).
-14. **Документація — тільки в скілі.** Поле `description` компонентів у Figma лишаємо порожнім, нотатки на канвас не ставимо. Призначення, анатомія, токени, рішення — у `references/components/<component>.md`.
-15. **Inverted — лише де компонент реально стоїть на темному фоні** (перевірити макети; рішення 2026-10-22). Окрема властивість `Inverted = False | True`; міняється колір контенту, токени `contextual.<component>[.<part>].inverted.*`. Не `State=Invert`, не окремий набір (`references/naming.md` → Inverted).
-16. **Не редагувати без дозволу.** Аудит = read-only. Зміни у файлі — тільки після погодження; виправлену копію ставити поруч з оригіналом.
-17. **Тільки alias.** Компонентні токени посилаються на alias (`semantic.*`, `spacing.*`, `size.*`, `border-radius.global.*`), не на core; бракує — додаємо alias-токен.
-18. **Висота — size-токеном.** Рядкові компоненти: `height` токеном розміру, лише горизонтальний падінг; без вертикальних падінгів і зайвих обгорток.
-19. **Дефолти:** текст `Label`, іконка `plus`, у списках 3 пункти; стани логічні (`State = Default | Active | Open`).
-
-## Коли що читати
-
-| Задача | Файл |
+## Задача → файл
+| Задача | Читати |
 |---|---|
-| **Домовленості з Андреєм, JSON-handoff токенів, пастки (читати першим)** | `references/working-agreements.md` |
-| Як влаштований еталон (Button, Badge, Dropdown …) | `references/reference-components.md` |
-| Назви компонентів, властивостей, варіантів, шарів | `references/naming.md` |
-| Структура токенів, як прив'язувати, відомі проблеми | `references/tokens.md` |
-| Чи можна ставити компоненту Ready for dev | `references/definition-of-done.md` |
-| **Переробити компонент (покроково)** | `references/rebuild-workflow.md` |
-| Token Studio: формат, «в рядок», semantic-only, вставка JSON, запис у storage, Inspect | `references/token-studio.md` |
-| Повний експорт токенів (джерело правди) | `tokens/system/` у корені репо |
-| Отримали свіжий архів JSON — оновити експорт і показати diff | `references/token-studio.md` → Свіжість експорту, `scripts/tokens-diff.py` |
-| Зробити аудит сторінки/компонента скриптом | `references/audit-script.md` |
-| Що вже знайдено, беклог по сторінках | `references/audit-2026-10-19.md` |
-| **Будувати / перезбирати продуктову сторінку (спершу обхід файлу!)** | `references/page-rebuild.md`, еталони `references/pages/tournaments.md`, `references/pages/calendar.md` (попапи); VIP (еталон Андрея) — `references/pages/vip.md`; Mobile App — `references/pages/mobile-app.md` |
-| Збирати або чистити лейаут | `references/layouts.md` |
-| Замінити / підібрати іконку | `references/icons.md` |
-| Опис конкретного компонента (анатомія, токени, рішення) | `references/components/<component>.md` |
-| **Команда оновила / додала компонент — вивчити** | `references/learning-workflow.md`, шаблон `references/components/_template.md` |
-| Що вивчено, коли, статуси | `references/component-registry.md` |
-| Питання до команди, нові конвенції на перевірку | `references/open-questions.md` |
-| Знімок компонента і diff з минулим разом | `scripts/snapshot-component.js`, `scripts/snapshot-diff.py`, `snapshots/` |
-| Як оформлювати Section на сторінці компонента | `references/section-layout.md` |
+| **Зібрати / перезібрати продуктову сторінку** | `rules/build-page.md` (+ `pages/<ця-сторінка>.md`, якщо є) |
+| Переробити компонент | `references/rebuild-workflow.md`, еталон — `references/reference-components.md` |
+| Команда оновила / додала компонент — вивчити | `references/learning-workflow.md`, шаблон `references/components/_template.md` |
+| Опис конкретного компонента | `references/components/<c>.md` |
+| Токени: JSON-handoff, вставка, Export, свіжий архів + diff | `references/token-studio.md` (структура токенів — `references/tokens.md`) |
+| Неймінг (компоненти, властивості, шари, токени) — деталі | `references/naming.md` |
+| Щось падає в Plugin API / MrBet / міграція / Export | `references/figma-pitfalls.md` |
+| Іконки | `references/icons.md` |
+| Чи можна ставити Ready for dev | `references/definition-of-done.md` |
+| Аудит скриптом | `references/audit-script.md`, беклог — `references/audit-2026-10-19.md` |
+| Що вивчено, статуси | `references/component-registry.md`; питання — `references/open-questions.md` |
 
-## Технічні нотатки Figma MCP (перевірено на цьому файлі)
+## Скрипти (`scripts/` у корені репо — виконувати, не читати)
+`inventory.js` (обхід компонентів) · `layout-audit.js` (аудит сету сторінки) · `section-create.js` · `snapshot-component.js` + `snapshot-diff.py` (режим навчання) · `tokens-diff.py` (diff свіжого архіву). Повний експорт токенів — `tokens/system/`.
 
-- **Доступ:** Figma-конектор працює від акаунта `evgeniy.bogdanov@ys.bet` (Wanda — visualvoyager/desops). Перед змінами — пробний запис; `read-only mode` = немає Can edit на файл.
-
-- Сторінки вантажаться ліниво: `get_metadata` без nodeId показує лише першу сторінку; список усіх сторінок — через `use_figma` → `figma.root.children`.
-- Одна сторінка = один `use_figma` виклик; кілька сторінок — паралельні виклики (або батч по 4–7 сторінок для read-only).
-- `node.devStatus` недоступний у Plugin API — статус Ready for dev вручну.
-- `componentPropertyDefinitions` кидає помилку на зламаних наборах ("Component set has existing errors") — завжди `try/catch`; сам факт помилки = дефект.
-- Корінь INSTANCE повертає `boundVariables` свого мейн-компонента — при підрахунку токенів не плутати їх з прив'язками на локальних шарах.
-- Єдине джерело іконок — бібліотека `Static — Icons` (fileKey `J3DHQyf6ARy401o7WywySC`). Усе інше (вектори, `BR / Default / …`, `icons / general / …`, `icon / status / …`, голі `close`/`cancel`) — під заміну, див. `references/icons.md`.
-- Token Studio (storage у файлі, запис токенів, токени на шарах) — `references/token-studio.md`.
-
-## Журнал
-- 2026-11-04 — **Mobile Application page: порядок + новий сет `Mobile App`** (x 0 y 0, `Layout/3xs` + `Layout/xl` з конфігом VIP): банер поза Container (Title, Segmented iOS/Android, QR, How to install | Download), карусель `Mobile App/Benefit` ×3 (новий компонент) + Navigator, 6 акордеонів. Попап Андрея (Section `1`) — в ряд; старе — `Old — Pages`, `Old — Components`. Свіжий обхід файлу — `reports/inventory-2026-11-04.md` (`Popup/Default` → `Modal/Default`). 9 питань — `pages/mobile-app.md`.
-- 2026-11-04 — **VIP: Андрей зібрав сет `VIP Club` — еталон збірки сторінки** (Banner поза Container, іменовані ряди `Cards` / `Levels` / `Benefits` / `Accordions`, нові `VIP Club/Card|Benefit|Level`); розбір і 9 зауважень — `pages/vip.md`.
-- 2026-11-04 — **чорні Section підписуються `Old — <що>`**: `Originals — … components` → `Old — Components` на всіх 5 лейаут-сторінках; Lottery `Design` → чорна `Old — Design` (`page-rebuild.md` §1).
-- 2026-11-04 — **порядок артбордів на всіх лейаут-сторінках Ozerov** (Tournaments, Calendar, Hall of fame, Lottery, Loyalty/VIP): сірі сети з `0,0` в ряд по 600; старе — праворуч у чорних Section `Old — Pages` / `Old — Popups` / `Originals — <сторінка> components` (`page-rebuild.md` §1). Вміст не змінювався. VIP: нових сетів нема — чорні Section на місці, попапи без Section, як були.
-- 2026-11-04 — **правило: старі макети — у чорних Section**, нові сети — сірі (`page-rebuild.md` §1). VIP: 4 старі Section почорнено; попапи (`Modal/Default` «Level Rewards» і старий `Popup`) повернуто як були — без Section.
-- 2026-11-04 — **VIP (Loyalty): наведено порядок на сторінці** — 34 розкидані вузли складено в 5 сірих Section (Originals — VIP components, Old — Authorized, Old — Guest, Old — Card states, Popups), вміст не змінювався (`pages/vip.md`).
-- 2026-11-04 — **правило: десктоп і мобайл однакові за контентом** (`page-rebuild.md` §2.5). Lottery — Active xl: додано теги, Buy tickets, сітку квитків.
-- 2026-11-04 — **правило: ніколи не обрізати контент (Clip content off)** — вимкнено на всіх своїх фреймах у сетах Lottery, Tournaments, Hall of Fame (`working-agreements.md` §4).
-- 2026-11-04 — **правило: Section `Design` на сторінці — головне джерело контенту і структури** (картинки не переносимо). Lottery переведено на `Design`: xl без Finished, 6 карток на блок, тексти карток / кнопок, hero без плашки «Purchase», Terms + How to… в одному блоці (`pages/lottery.md`).
-- 2026-11-04 — **правило: ніколи не робити зайвих обгорток; контент у рядку — по центру по висоті** (`working-agreements.md` §4, `page-rebuild.md` §4). Hero на Lottery / Tournament — Active / Archived (xl): прибрано зайвий `Wrapper`, картинка й текст по центру.
-- 2026-11-04 — **Lottery зібрано** праворуч від модалки Андрея: сети `Lottery` (список) і `Lottery — Active` (деталі), новий компонент `Lottery/Ticket` (Status Default | Winning | Gold | Gold-winning) — `pages/lottery.md`. Прийом: базу беремо копією схожого нового сету (Tournaments) через group/ungroup і міняємо за оригіналом.
-- 2026-11-03 — Tournaments: таблиці перезібрано як в оригіналі (Leaders — Striped темна, 3/2 колонки, X.2, поточний гравець помаранчевим; My progress — Card, мій рядок темний). **Фікс токена** `contextual.table.leaderboard.row.inverted.fill.selected` → `slate-dark-2` (Figma + JSON; вставити в TS) — `pages/tournaments.md`.
-- 2026-11-03 — Tournaments: лідерборди (My progress, Leaders) переведено на `Table/Leaderboard Card` світлими картками, як на Hall of Fame; кубки — `Image` swap. Стандарт лідерборду в `page-rebuild.md` оновлено.
-- 2026-11-03 — **правило: завжди звіряти зі старим оригіналом блок за блоком** і не додавати типові блоки, яких там немає (`page-rebuild.md` §2.5). Hall of Fame: прибрано Heading над таблицею, Show more → Primary lg, як в оригіналі.
-- 2026-11-03 — **правило: старі локальні компоненти сторінки не використовуємо** — збираємо чистий новий поруч (`page-rebuild.md` §2.3). Hall of Fame: новий `Hall of Fame/Prize` (Place 1|2|3, 80418:9472), подіум переведено на нього.
-- 2026-11-03 — **правило: текстові конструкції — максимально просто**: TEXT прямо в батьківському фреймі, один шар заголовка, назви `Title` і `Description` (`naming.md` → Текстові конструкції). Hall of Fame: шари банера перейменовано.
-- 2026-11-03 — Hall of Fame: банер перезібрано — `Image/Single` з чистим фото арени (без фейдерів), заголовок + опис по центру світлим текстом, подіум під картинкою (`pages/hall-of-fame.md`).
-- 2026-11-03 — **правило: композицію сторінки беремо зі старого макета** (не лише правила збірки). Hall of Fame: прибрано `Heading Primary`, першою — велика картинка з текстом (`[M] Hall-of-fame / Header` на всю ширину) + подіум внахльост (`page-rebuild.md` §2.5, `pages/hall-of-fame.md`).
-- 2026-11-03 — **зібрано `Hall of Fame`** (сет 80409:6454 праворуч від старого): Heading Primary, hero (фон-арена + опис + п'єдестал `Hall-of-fame / Prize`), «Biggest wins» — `Table/Leaderboard Card` (List/Bullet №, `Level`, гра, сума; MyNick Selected), Show more — `pages/hall-of-fame.md`. Обхід MrBet Black: placeholder + `swapComponent` (`page-rebuild.md` §3a); тексти Heading — вручну.
-- 2026-11-03 — вивчено еталон `Calendar` (2 сети сторінки + 2 сети попапів `Popup/Default` 3xs + xl) — `pages/calendar.md`; у стандарт додано сети попапів, банер поза Container на мобайлі, вкладки + Dropdown «More», `Tabs Default` як другий рівень, `Heading All`.
-- 2026-11-03 — **правило: перед кожною наступною сторінкою — повний обхід файлу** (сторінки + інвентар компонентів → реєстр → вивчення сторінки → збирання праворуч, старе не чіпаємо) — `page-rebuild.md`. Вивчено еталон сторінки `Tournaments` (5 сетів `Layout/3xs` + `Layout/xl`) — `pages/tournaments.md`; інвентар — `reports/inventory-2026-11-03.md` (новий `Popup/Default`, `Notification/*`, `Segmented`, єдиний `Status`, `Time`, `Thumb/*`, розділені сторінки Controls / Chip & Tag).
-- 2026-11-02 — Table/Cell: слот `↳ Slot` (Boolean `Slot`) розміру Image (md 32 / sm 24, токен `table.cell.image-size.*`).
-- 2026-10-29 — **правило: токени не видаляємо, а позначаємо `$deprecated`** з підказкою заміни (фронти не мерджать видалення) — `token-studio.md`. `contextual.progress-bar.*` повернуто як deprecated.
-- 2026-10-29 — **Progress: файл повністю переведено з `contextual.progress-bar.*` на `progress.*` / `contextual.progress.*`** (власні шари + оверрайди в інстансах, 0 залишків). Група `progress-bar` у Token Studio більше не потрібна — видаляється разом із вставкою нових токенів (MB +8 −7). Тимчасові змінні до Export — `scripts/progress-var-map.json`.
-- 2026-10-29 — Progress: `Progress/Step` → міні-смуга Track+Thumb (частковий сегмент) + `Size=sm`; `Progress` +`Type=Step, Size=sm` (12v). Після Export змінні `progress/*` зникли — відновлено й переприв'язано за plugin data; **токени Progress треба вставити в Token Studio до наступного Export**.
-- 2026-10-29 — **Progress перескладено** (Section праворуч від оригіналів): `Progress` (Variant × Size × Inverted × Type, 10v, Boolean `Value`, слот `Items` для Step), `Progress/Circle`, `Progress/Step` (без опечатки); 15 токенів `progress.*` / `contextual.progress.*` на бренд — `tokens/progress.{mb,xon}.component.json`, прив'язано; інвентаризація — `reports/progress-inventory-2026-10-29.md` (`components/progress.md`).
-- 2026-10-29 — **правило: токени віддаємо одразу з прив'язками до компонента** — JSON без прив'язаного в Figma компонента не передаємо (`working-agreements.md` §2.5a).
-- 2026-10-29 — **Scrollbar перезібрано на місці**: `Horizontal=True` був зроблений поворотом на 90° — rotation не переноситься при свопі варіанту, тому інстанси лишались вертикальними; тепер реальні 88×4/88×8, повна матриця 8v, `Transparent`, шар `Thumb`, токени `scroll.size`/`scroll.hover.size`/`border-radius.scroll` + alias `border-radius.global.full` (`components/scrollbar.md`). **Правило: орієнтацію/дзеркалення варіантів не робити rotation-ом** — тільки реальними розмірами.
-- 2026-10-28 — Table після Export: 174 прив'язки відновлено за plugin data; радіус — per-corner ключі (`borderRadiusTopLeft`…), інакше Inspect показує ⬡ (`working-agreements.md` §6).
-- 2026-10-28 — **`Popup mob` / `Popup web` → `Drawer` (44) / `Modal` (17)**, Section команди видалено; старий `Popup` (138) лишився (`components/popup.md` §10).
-- 2026-10-28 — **Popup: міграцію відкочено** (вкладені в мейни інстанси втрачали вміст після swap; swap назад повертає); пастки міграції — `working-agreements.md` §8.
-- 2026-10-28 — **правило: шар без визначеної ролі називаємо `Wrapper`** (`naming.md`); у Popup/Drawer `Container` → `Wrapper`.
-- 2026-10-28 — **Popup розділено: `Popup` (модалка, Size × Banner) і окремий `Drawer` (Banner, Handle)** — мобільне вікно знизу не є розміром (`components/popup.md` §7).
-- 2026-10-28 — **правило: значення `Size` завжди малими, порядок `xl` зверху → `xs` знизу** (`naming.md`); `Popup` перезібрано під нього (`79607:19185`).
-- 2026-10-28 — **Popup: інвентаризація + оптимізована збірка** — скан усього файлу; оригінали в 5 Section `Originals` (врятовано 8 мейнів-сиріт, у т.ч. старий `Popup` на 130 інстансів; 33 мейни з MrBet Black — знімками, перенести вручну); новий `Popup` (Breakpoint × Size × Banner, слоти Content / Footer content, Boolean Close / Footer / Scrollbar / Handle) + `Popup/Banner` (`components/popup.md`).
-- 2026-10-27 — **Table: токени XON** — alias +5 (card/container = 12 за шкалою XON), component +50/−2, ідентично MB (`components/table.md` §27).
-- 2026-10-27 — **Table — одна компонента з підвидами**: одна Section, вирівняні сітки, токени `table.leaderboard.*` / `table.history.*`; після Export перестворено 55 змінних, 474 прив'язки за plugin data (`components/table.md` §26).
-- 2026-10-27 — **MB alias: +5 alias для таблиць** (card, container, slate-dark-1|2, brand-subtle); посилання component резолвляться (`components/table.md` §25).
-- 2026-10-27 — **правило порядку токенів**: у групі спершу листки, потім підгрупи (`token-studio.md` → Порядок у групі); застосовано до токенів таблиць.
-- 2026-10-27 — **Table: токени перейменовано за властивостями** (`panel` → `filled`, `header` → `head-fill`, Card-only токени з `card`); правило в `naming.md` → Токени ↔ властивості.
-- 2026-10-27 — **Table: компонентні токени прив'язано** — 48 змінних у `Product`, 244 прив'язки (plugin data + змінні) у 7 наборах; 0 мертвих (`components/table.md` §23).
-- 2026-10-27 — **Table: токени MB component** (+48 / ~2) — `table.*`, `leaderboard.*`, `history.*`, `border-radius.*`, `contextual.*` (`tokens/table.mb.component.json`, `components/table.md` §22).
-- 2026-10-27 — **Table: токен-проблеми виправлено** — нові alias `border-radius.global.card|container`, `semantic.background.slate-dark-1|2`, `semantic.background.brand-subtle`; `contextual.table.*` → alias; JSON-фрагменти `tokens/table-fixes.*` (`components/table.md` §21).
-- 2026-10-27 — Table: Андрей переставив Section (Table / Leaderboard / History / Cell); чернетка плану токенів `table.*`, `leaderboard.*`, `history.*` (`components/table.md` §19–20).
-- 2026-10-27 — **правило: Fill замість Hug** для елементів з вільним місцем праворуч; комірка ID у Panel рядка Open — Fill, copy лишається одразу за текстом (`working-agreements.md` §4).
-- 2026-10-27 — History/Row: слот `Details` → звичайний фрейм `Details` > `Panel` (`components/table.md` §18).
-- 2026-10-27 — **`History/Details` прибрано**: деталі — токенізований фрейм `Details` у слоті рядка Open (`components/table.md` §17).
-- 2026-10-27 — **Table/Cell: `Status` і `Label` (Boolean) замість `Type=Slot`** — статус вбудований під текстом (exposed), Slot-варіанти прибрано, History/Row переведено (`components/table.md` §16).
-- 2026-10-27 — **`Table/Cell — Slot` злито в `Table/Cell`** як `Type = Text | Slot` (16v, повна матриця); інстанси збережено перенесенням варіантів (`components/table.md` §15).
-- 2026-10-27 — Table: спробу без `Table/Row` відкочено, `Table/Row` перестворено (`79415:4874`); `Table` = `Variant Default | Filled`. Table/Cell Inverted — ліва іконка інвертована.
-- 2026-10-26 — **Table: єдиний неймінг властивостей** — `Variant = Divider | Card | Striped | Panel` (+ `Stripe`/`Plain` для рядка) в усіх таблицях, слоти `Head`/`Rows`/`Cells`, свопи `↳ 💠 Icon left|right` (`naming.md` → Таблиці, `components/table.md` §13).
-- 2026-10-26 — **Table: доробки групи 4** — `Table` набір `Style = Plain | Filled` (`contextual/table/fill|header`, радіус md), `Table/Row` + `Direction = Horizontal | Vertical`. Усі 4 групи оригіналів покриті (`components/table.md` §12).
-- 2026-10-26 — **Table, етап 3 — історія з розкриттям**: `History` (Card | Divider, слоти Head cells / Rows), `History/Row` (Style × State Default | Hover | Open, слоти Cells / Details), `History/Details`; `Table/Cell` + `Icon ➡️`, новий `Table/Cell — Slot`. Звірка групи 1 — покрито (`components/table.md` §9–11).
-- 2026-10-26 — **Table/Cell: Image** (`⬅️ Image` + swap, медалі `Place`, розмір `size/400`|`size/300`). Знайдено: Export видалив `semantic/background/slate-for-cards`, `slate-1` у MB став світлим — Leaderboard Striped на мертвих змінних, чекаємо свіжий JSON (`components/table.md` §8).
-- 2026-10-23 — **Table, етап 2 — лідерборд**: `Leaderboard` (Style Card | Striped, слоти Head / Rows), `Leaderboard/Row` (Style Card | Fill | Plain × State Default | Selected × Inverted); `Table/Cell` і `Table/Head/Cell` + `Inverted`. Бракує токенів радіуса 8 і 16 (`components/table.md`).
-- 2026-10-23 — **Table, етап 1 — сітка зібрана**: `Table` (слоти Head / Rows), `Table/Row` (Size × Divider, слот Cells), `Table/Cell` (Size × Align, Icon / Subtext), `Table/Head/Cell`; Section `Table` праворуч від оригіналів. Далі: лідерборд, історія з розкриттям (`components/table.md`).
-- 2026-10-23 — **Table: оригінали зібрано на `↳ Table -`** у 4 Section за типом (лідерборди / транзакції / історія з розкриттям / сітки) з підписами. Пастка: набори зі шрифтом, недоступним конектору (MrBet Black), не переносяться через `appendChild` — Mariupol переноситься (`components/table.md`).
-- 2026-10-23 — **Table: інвентаризація** — на сторінці `↳ Table -` лише продуктові набори; ще 9 табличних конструкцій у лейаутах (Tournaments, Profile, FAQ/Statistics, Ingame, Cashbox, Wheel). Анатомія універсального `Table` / `Table/Header` / `Table/Row` / `Table/Cell` і питання — `components/table.md`.
-- 2026-10-22 — **правило: висота рядкових компонентів — size-токен на height, без вертикальних падінгів**; Profile-menu/Item без обгортки Header (`components/list.md`).
-- 2026-10-22 — **List / List/Bullet: токени** (`list.*`, `border-radius.list.bullet`, `contextual.list.bullet.fill.*`) + нові alias `semantic.fill.subtle`, `border-radius.global.xs`; **правило:** компонентні токени — тільки через alias, не core (`components/list-bullet.md`).
-- 2026-10-22 — **Profile Menu → `List`** (`List/Item`, `List/Subitem`), перейменував Андрей; Section `List`; документація → `components/list.md`.
-- 2026-10-22 — **Profile Menu/Item: `State = Default | Active | Open`** × Inverted (6v) — неактивний не може бути відкритим (рішення Андрея).
-- 2026-10-22 — **Profile Menu стандартизовано:** один компонент без Device (слот, 3 пункти), дефолти `Label` + іконка `plus`; живі макети перенесено.
-- 2026-10-22 — **Profile Menu: Inverted** для Item (8v) і Subitem (4v); Payment sidebar і Profile popup mobile перемкнуто на Inverted (`components/list.md`).
-- 2026-10-22 — **Profile Menu**: 6 старих наборів (34 варіанти) зведено в 3 (8 варіантів); живі використання в Profile sidebar, Profile popup mobile, Payment sidebar, anchors замінено; оригінали в Section `Originals` (`components/list.md`). `List-item` + `List-item/Bullet` (виправлені командою) — у власній Section.
-- 2026-10-22 — **правило:** квадратні елементи — lock aspect ratio, токен розміру лише на висоту; застосовано до іконок Filter sort.
-- 2026-10-22 — **неймінг токенів падінгів:** `padding-h` / `padding-v`; Filter sort перейменовано (`naming.md`).
-- 2026-10-22 — **правило:** текст, іконки, шеврони — глобальні `semantic.*` напряму, компонентних колірних токенів для них не створюємо. Filter button: fill hover/active → `semantic.fill.hover` / новий `semantic.fill.active` (alias), розміри `filter-sort.*`.
-- 2026-10-22 — **Filter & Sorting вивчено**: використання (Inverted не потрібен — темного контексту немає), впорядкована копія `Tabs & Sort` + `Filter button` (`Type=Icon|Text`), список наявних і потрібних токенів; Open-thumb-provider → Patterns (`components/filter-sorting.md`).
-- 2026-10-22 — **Datepicker: створено відсутні токени** (10 шт., аліаси з видалених змінних) у TS MB/XON + `Product`; копію перепривʼязано за назвою (`components/datepicker.md`, `tokens/datepicker.new-tokens.json`).
-- 2026-10-22 — **Datepicker: перепривʼязку відкочено** — копія знову на змінних видаленої колекції, як оригінал; список відсутніх токенів — `components/datepicker.md`. Урок: не підміняти відсутні токени наявними без погодження.
-- 2026-10-22 — **правило порядку в Section:** основний компонент (той, що йде в дизайн) — завжди перший, під-компоненти під ним; Section Datepicker переставлено (`section-layout.md`).
-- 2026-10-22 — **правило: без text-властивостей** (`✏️ Label`) — текст змінюється вручну в інстансі. З копії Datepicker (`Week day`, `Date`, `Month`) прибрано, тексти 62 інстансів збережено.
-- 2026-10-22 — **Datepicker: виправлена копія** (на запит Андрея, без нових токенів): Section `Datepicker` поруч з оригіналом; під-компоненти `Datepicker/Week day|Date|Month|Select`, Date — `State × Range` замість `Type` + `Selected range`; `✏️ Label`; прибрано `Title old`; колір Week day перенесено з override-ів у мейн (`components/datepicker.md`).
-- 2026-10-21 — **Chip: Inverted** (на запит Андрея, запис у Figma): набір `Chips` State × Inverted (6v); 9 токенів `contextual.chips.inverted.*` у `mb/component` і `xon/component` + змінні `Product`. Питання: немає `core.white.a8` для Active-інверта (`components/chip-tag.md`).
-- 2026-10-21 — **перший обхід у режимі навчання** (42 сторінки, read-only). Вивчено 💛: Input, Controls, Status, Timer, Empty, Section (+ проміжно Chip & Tag); дайджести в `snapshots/`. Структура файлу: Forms → `Input` + `Controls`, Loader → `Spinner`, Section-title → `Heading` (Molecules), Page → `Layout`, Image → Atoms, Thumb → Molecules, Breadcrumbs і Fader прибрані; `Button/Link` → `Button/Text`. Знімок у git — дайджест (хеші шарів), зміни — режимом `BASELINE`. Сім конвенцій на підтвердження — `open-questions.md`.
-- 2026-10-21 — **режим навчання**: `learning-workflow.md`, шаблон `components/_template.md`, реєстр `component-registry.md`, скрипти `snapshot-component.js` / `snapshot-diff.py`, тека `snapshots/`. Команда освіжає компоненти — Claude знімає, порівнює і документує, не правлячи файл.
-- 2026-10-21 — **перейменування в Wanda X**: проєкт, репо `OzerovAndrey/Wanda-X`, скіл `wanda-x-design-system`, назви у всіх файлах.
-- 2026-10-21 — **відкат Chips/Tag**: нові набори `Chip` і `Tag`, їхні 42 змінні та файли (`components/chip.md`, `tag.md`, `tokens/chip.*`, `tokens/tag.*`) прибрано; `contextual/chips/normal/*` відновлено, старий `Chips` перепривʼязано; сторінка знову `↳ Chips & Tags`. Правила (Section, Inverted, однина, свіжі токени) лишаються.
-- 2026-10-21 — Chip: група `base` прибрана (`contextual.chip.*`, `contextual.chip-invert.*`); стара `contextual.chips.normal.*` видалена з Token Studio і Figma після перевірки всього файлу. `border-radius.chips` лишається — його бере осиротілий `Chips/Default/Static` (126 інстансів).
-- 2026-10-21 — правило «назви в однині»: `Chips` → `Chip` (набір, Section, сторінка `↳ Chip & Tag`, токени `chip.*`, `contextual.chip.*`, власний `border-radius.chip`); `components/chips.md` → `chip.md`.
-- 2026-10-21 — правило «свіжі токени»: щоразу питати архів JSON з Token Studio; `tokens/system/` оновлено (+57 / −3 / ~1 у component кожного бренду), скрипт `scripts/tokens-diff.py`.
-- 2026-10-21 — Chips і Tag перескладено за еталоном Anchor (State × Inverted, токени `contextual.<c>.base[-invert]`, сіра Section); Tag — один компонент з іконкою `close`, без окремої кнопки.
-- 2026-10-21 — правила: Section сіра `#BBBBBB` (еталон — Section `Anchor`); `Inverted` обов'язковий для всіх компонентів (`naming.md`, DoD, `rebuild-workflow.md`).
-- 2026-10-19 — Anchor: кольори з alias semantic, структура «в рядок», Inverted, іконка = текст, змінні перестворено після Export.
-- 2026-10-19 — аудит файлу (`audit-2026-10-19.md`), створено скіл. Перший перескладений компонент — `Anchor` (`references/components/anchor.md`), на ньому відпрацьовано `rebuild-workflow.md`.
+## Після роботи
+Нове правило → у `rules/core.md` або `rules/build-page.md` **одним рядком** (без історії); рядок у `CHANGELOG.md`; коміт у `main`.

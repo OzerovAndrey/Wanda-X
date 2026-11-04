@@ -46,7 +46,7 @@ Scrollbar (COMPONENT_SET 79774:18)   Variant × State × Horizontal (8v)
 | `contextual.scroll.fill.transparent` | root → fill | `{core.content.a20}` ⚠️ | те саме |
 
 Новий alias (обидва бренди): `border-radius.global.full` = `{border-radius.core.full}`.
-JSON-фрагменти: `tokens/scrollbar.{mb,xon}.{alias,component}.json`. Змінні з тими ж назвами створено в `Product` вручну — **вставити JSON у Token Studio до наступного Export**, інакше Export видалить змінні (`working-agreements.md` §2.6).
+JSON-фрагменти: `tokens/scrollbar.{mb,xon}.{alias,component}.json`. Змінні з тими ж назвами створено в `Product` вручну — **вставити JSON у Token Studio до наступного Export**, інакше Export видалить змінні (`token-studio.md` → Робочий цикл.6).
 
 ## Рішення
 1. 2026-10-29 — перезбірка на місці (інстанси збережено): прибрано rotation з `Horizontal=True`, реальні розміри; додано відсутні `State=Hover, Horizontal=True` (×2) — повна матриця 8v; `Transperrent` → `Transparent`; шар `scrollbar` → `Thumb`; auto layout на корені, Thumb FILL; токени товщини й радіуса (раніше хардкод 4/8 і радіус 2/4 — візуально той самий пігулковий кінець); сітка 16 px, сіра Section.

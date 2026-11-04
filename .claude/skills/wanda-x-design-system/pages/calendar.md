@@ -1,6 +1,6 @@
 # Сторінка `Calendar - Ozerov 💜` — еталон: сторінка + попапи
 
-Page id `31077:261828` · вивчено 2026-11-03 · доповнює `pages/tournaments.md`; узагальнено в `page-rebuild.md` §3.
+Page id `31077:261828` · вивчено 2026-11-03 · доповнює `pages/tournaments.md`; узагальнено в `rules/build-page.md`
 
 ## Що на сторінці
 

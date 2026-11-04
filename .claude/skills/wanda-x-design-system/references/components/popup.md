@@ -98,7 +98,7 @@ Breakpoint=Mobile, Size=full: корінь 360×640, вікно притисну
 - Набір у Section `Modal` перейменовано на **`Modal`**, `Modal/Banner` — у тій самій Section під ним.
 - Мігровано 18 інстансів на сторінці `↳ Popup`; у вкладених у мейни (`Registration popup`, `Cashbox mobile popup + overlay`) вміст перестав відображатись → **усе повернуто** swap-ом на старі варіанти `Popup` (вміст відновився), розміри/футери звірено з оригіналами. `Cashbox mobile popup` перезібрано: старий `Popup` mob/dialog + `Cashbox bonus content` (Mobile), закриття вимкнено — **кнопку Activate звірити** (стан міг бути змінений в оригіналі).
 - Boolean `Overlay` (додавався для міграції) прибрано. Старий `Popup`: 138 інстансів; `Modal`: 1 (інстанс Андрея на сторінці), `Drawer`: 0.
-- Пастки — `working-agreements.md` §8.
+- Пастки — `figma-pitfalls.md` → Міграція.
 
 ## 10. 2026-10-28 — `Popup mob` / `Popup web` переведено на `Drawer` / `Modal`, Section видалено
 - 61 інстанс (усі на верхньому рівні сторінок): ширина ≤ 420 → `Drawer` (44), ширше → `Modal` з розміром за шириною (16: 640 → md, 768 → lg з шириною 800), `Popup web` LG → `Modal` lg (1).

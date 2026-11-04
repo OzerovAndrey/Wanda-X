@@ -1,6 +1,6 @@
 # Mobile Application page — сторінка `34730:1024724`
 
-Статус: **сет `Mobile App` зібрано 2026-11-04** (Claude, за `page-rebuild.md` і еталоном VIP `pages/vip.md`). Старе — у чорних Section праворуч, вміст не змінювався, нічого не видалено.
+Статус: **сет `Mobile App` зібрано 2026-11-04** (Claude, за `rules/build-page.md` і еталоном VIP `pages/vip.md`). Старе — у чорних Section праворуч, вміст не змінювався, нічого не видалено.
 
 ## Розкладка сторінки
 | x | Section | ID | Що всередині |

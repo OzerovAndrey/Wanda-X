@@ -62,7 +62,7 @@
 Перелік відкритих питань (контраст, вибір іконки) — команді, не вирішувати самостійно. Статус Ready for dev ставить команда.
 
 ## Пастки
-Нові пастки 2026-10-22 (override-и при перенесенні шарів, clone губить property refs, слоти й getInstancesAsync, lazy pages, Export видаляє змінні) — `working-agreements.md` §5–6.
+Нові пастки 2026-10-22 (override-и при перенесенні шарів, clone губить property refs, слоти й getInstancesAsync, lazy pages, Export видаляє змінні) — `rules/core.md` §5–6.
 
 ### Перевірено на Anchor
 - **Видалені змінні.** Якщо Export з Token Studio видалив/не створив змінні, шари лишаються прив'язаними до видалених і показують старий кешований колір. Перевірка: `boundVariables` → id немає в `collection.variableIds`. Лікування: створити змінні з тими самими назвами і перепривʼязати.

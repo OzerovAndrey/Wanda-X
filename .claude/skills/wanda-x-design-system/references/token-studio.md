@@ -44,7 +44,13 @@ MB — світлий продукт (page `#f0f8ff`, heading `#113098`), XON �
 
 Значення — **тільки аліаси на alias** (`{spacing.200}`, `{size.300}`, `{semantic.fill.subtle}`, `{border-radius.global.md}`), не на core (рішення 2026-10-22); бракує в alias — додати alias-токен. Сирі числа лише там, де немає шкали (364, 20).
 
-**Робочий цикл (JSON-handoff)** — `working-agreements.md` §2: Андрей дає JSON alias+component MB/XON зі своєї бренчі → Claude редагує й diff-перевіряє → повертає файли → Андрей вставляє й робить Export.
+## Робочий цикл (JSON-handoff)
+1. Андрей створює **свою бренчу** в Token Studio і дає повні JSON сетів: `alias` + `component` для MB, потім XON (4 файли). Перевірити `product` у alias (`MB`/`XON`).
+2. Claude редагує **саме ці JSON** (python: load → зміни → dump `indent=2, ensure_ascii=False`) і diff-перевіряє проти оригіналу (`+` / `-` / `~`). Жодних інших змін.
+3. Компонент у Figma **уже прив'язаний** до нових токенів (plugin data `tokens` + однойменна змінна `Product`); якщо Export ще не зроблено — створити змінні з тими самими назвами (alias на ті самі змінні, обидва режими, правильні scopes). У відповіді — таблиця «токен → шар → властивість».
+4. Віддати файли (`SendUserFile`), Андрей вставляє в Token Studio і робить Export. Перед Export — попросити вставити ВСІ останні JSON (Export з бренчі без наших токенів видаляє створені вручну змінні).
+5. **Не писати в storage Token Studio напряму** — sync з GitHub перезапише.
+6. Після Export — переприв'язка мертвих змінних за plugin data (`figma-pitfalls.md` → Token Studio plugin data).
 
 ## Як вставляти JSON вручну (JSON-вкладка сету)
 Сет — один великий JSON-обʼєкт. **Ніколи** не вставляти новий обʼєкт `{ … }` у кінець файлу і **не дублювати кореневі ключі** `border-radius`, `contextual` — дубль ключа перезапише всю групу (всі `contextual.*` сету зникнуть).

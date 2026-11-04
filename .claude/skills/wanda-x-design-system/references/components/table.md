@@ -285,7 +285,7 @@ Section `History` (`79215:4197`, сіра) праворуч від білих о
 - У `Product` створено 48 змінних з назвами токенів (`/` замість `.`), alias на ті самі alias-змінні в MB і XON, scopes: spacing → GAP, sizing → WIDTH_HEIGHT, borderRadius → CORNER_RADIUS, color → FRAME_FILL/SHAPE_FILL/STROKE_COLOR; `contextual/table/fill|header` переведено на `semantic/background/brand-subtle`.
 - 244 прив'язки на шарах (plugin data `tokens` + змінна): Table 32, Table/Row 52, Table/Cell 32, Leaderboard 62, Leaderboard/Row 122, History 58, History/Row 107 (з вкладеними шарами). Лишились лише `semantic.text/icon` (за правилом), стилі тексту і власні токени `Status`. Мертвих прив'язок — 0.
 - Мапа шар → токен — як у §20 (+ `table.row.gap` на Head, `leaderboard.row.gap` на Head лідерборду, `history.row.gap` на Head row і Main, `history.row.cells-gap` на Head і Cells, `history.chevron-size` на Chevron space (width)).
-- **Ризик:** поки JSON (MB alias-фрагмент + component, XON) не вставлено в Token Studio, Export видалить ці змінні → прив'язки стануть мертвими. Лікування — перестворити змінні й перепривʼязати за plugin data `tokens` (`working-agreements.md` §2.6).
+- **Ризик:** поки JSON (MB alias-фрагмент + component, XON) не вставлено в Token Studio, Export видалить ці змінні → прив'язки стануть мертвими. Лікування — перестворити змінні й перепривʼязати за plugin data `tokens` (`token-studio.md` → Робочий цикл.6).
 
 ## 24. Назви токенів = назви властивостей (2026-10-27, Андрей)
 Токен, що діє лише в одному варіанті, містить назву цього варіанту. Перейменовано (змінні в Figma, plugin data на 40 шарах, JSON):

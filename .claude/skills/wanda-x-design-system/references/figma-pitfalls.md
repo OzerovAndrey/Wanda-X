@@ -1,0 +1,53 @@
+# Figma MCP / Plugin API — пастки (перевірено на файлі Wanda X)
+
+Читати, коли щось падає або перед складною операцією (міграція, перенесення шарів у мейні, Export).
+
+## Доступ і завантаження
+- Конектор працює від `evgeniy.bogdanov@ys.bet`. Перед змінами — пробний запис; `read-only mode` = немає Can edit.
+- `get_metadata` без nodeId показує лише першу сторінку; список сторінок — `use_figma` → `figma.root.children`.
+- Одна сторінка = один `use_figma`; кілька — паралельні виклики (read-only — батч по 4–7 сторінок).
+- Сторінки вантажаться ліниво: перед `findOne` всередині інстансу з іншої сторінки — `await page.loadAsync()`.
+- `node.devStatus` недоступний — статус Ready for dev вручну.
+- `componentPropertyDefinitions` кидає помилку на зламаних наборах — завжди `try/catch`; помилка = дефект.
+- Корінь INSTANCE повертає `boundVariables` мейна — не плутати з прив'язками локальних шарів.
+- Помилка посеред `use_figma` відкочує весь скрипт; `return` раніше — зміни до нього лишаються.
+
+## MrBet Black (стилі `heading/*`)
+- Конектор не має шрифту: `appendChild` / `insertChild` вузла з таким текстом падає `unloaded font "MrBet Black"`, створений інстанс лишається на корені — **прибирати залишки**.
+- Перенести вузол: `const g = figma.group([node], targetParent, index); figma.ungroup(g);` (без перевірки шрифту). Копія — `node.clone()` → group/ungroup.
+- Вставити новий: тимчасовий інстанс без MrBet (`Spinner` 47531:173652) → `swapComponent(<Layout/xl | Heading …>)` → `unlockAspectRatio()`, `resize(w, main.height)`, `FILL` / `FIXED`.
+- `Heading` у слоті — placeholder + swap **після** того, як контейнер уже в слоті.
+- Текст MrBet (characters, стиль, autoResize) змінити не можна; `fills`, `layoutSizing*` — можна. Що вписати вручну — перелічити у відповіді.
+
+## Вузли, клони, слоти
+- Порівнювати вузли **за `id`**, не за об'єктом.
+- `.children` вузла, перенесеного group/ungroup у слот інстансу, може повертати чужі вузли — брати `findAll(n => n.parent.id === parent.id)` або `getNodeByIdAsync`.
+- `clone()` вузла зі слота інстансу з'являється на корені сторінки — повертати group/ungroup.
+- Після clone / group-ungroup override-и тексту інстансів можуть злетіти до дефолту — перевіряти.
+- Після злиття обгорток може з'явитись `minWidth/minHeight` — обнуляти.
+- Override `constraints` в інстансі заборонений; hug-висота інстансу — `primaryAxisSizingMode = 'AUTO'`. Накладання блоків — від'ємний `itemSpacing`.
+- `clone()` варіанта губить `componentPropertyReferences` і робить із SLOT звичайний FRAME → відновити посилання, видалити FRAME, створити слот заново з `slotContentId` = ключ наявної властивості. Клон варіанта — `set.appendChild(clone)`.
+- `figma.createSlot` не існує — `componentNode.createSlot()`; другий варіант: `slot.componentPropertyReferences = {slotContentId: key}`, дубль-властивість видалити.
+- Прихований шар в інстансі не видно через `findOne` — дивитися `componentProperties`.
+- Paint зі змінною: fallback-колір = реальне значення змінної (інакше рендер чорний).
+- Скріншот мейна може бути кешем — перевіряти на іншому вузлі або даними.
+- Темний фон з мертвою змінною — поломка макета, не привід для Inverted.
+
+## Зміни в мейні
+- Перенесення шарів у мейні (прибрати обгортку) **скидає override-и інстансів** (текст, swap, колір) → записати override-и всіх інстансів (plugin data `figma.root`) → змінити → повернути.
+- Зміна дефолтного тексту в мейні перепише інстанси без override (там, де текст = дефолт) — спершу зафіксувати тексти.
+
+## Аналіз використань
+- `getInstancesAsync()` → сторінка, власник, вкладеність, override-и, фон-предок.
+- `getInstancesAsync` **не повертає** пункти в слотах інстансів — шукати через інстанси контейнера.
+- Інстанси без PAGE-предка — залишки, ігнорувати.
+- Вкладені копії оновлюються від мейна — міняти лише верхній рівень; список верхніх інстансів збирати **до** змін.
+
+## Міграція на новий компонент
+- `swapComponent` губить вміст слотів, якщо назви SLOT-властивостей різні → тимчасово перейменувати SLOT-властивості цілі на назви старого (`editComponentProperty`), після — назад. Boolean-и переносити явно.
+- Інстанс усередині іншого мейна: після swap override-и зовнішнього мейна не застосовуються, вміст «зникає» (не видаляється — swap назад повертає). Такі автоматично не мігрувати.
+- Скріншоти «до» / «після»; старий інстанс не видаляти, доки новий не перевірено.
+
+## Token Studio plugin data
+- Ключі: `itemSpacing`, `paddingTop|Right|Bottom|Left`, `height`, `width`, `fill`, `borderColor`; радіус — **на кожен кут** `borderRadiusTopLeft|TopRight|BottomRight|BottomLeft` (один `borderRadius` → Inspect показує ⬡). Значення — `JSON.stringify("token.name")`.
+- **Export перестворює змінні з новими ID** (і видаляє створені вручну, якщо їх нема в бренчі) → прив'язки мертві. Після Export: аудит мертвих прив'язок, переприв'язка за plugin data `tokens` на змінну `token.replace(/\./g,'/')`.
