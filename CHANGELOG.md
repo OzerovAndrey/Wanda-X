@@ -2,6 +2,7 @@
 
 Історія рішень і робіт (раніше — у SKILL.md). Нові записи — зверху. Claude читає лише на прямий запит («що ми робили з …»).
 
+- 2026-11-05 page(strip): порядок на сторінці (дизайн → `Old — Design — Gallery | My Model | Rules`, `Old — Pages`, `Old — Components`, чорні; Section `1` → попап `Strip Game`) і нові сети `Strip — Gallery`, `Strip — My Model` (x 0 / 2256) + компоненти `Strip/Card`, `Strip/Model`, `Strip/Girl`, `Strip/Progress` на готових `contextual.strip.*`; ручні правки MrBet і питання — `pages/strip.md`
 - 2026-11-05 page(referral): порядок на сторінці (дизайн → `Old — Design` / `Old — Design — Blocked`, `Old — Pages`, `Old — Components`, чорні) і нові сети `Referral Program`, `Referral Program — Blocked` (x 0 / 2256) + компонент `Referral Program/Step` на готовому `contextual.referral.step.fill`; ручні правки MrBet і питання — `pages/referral.md`
 - 2026-11-05 page(races): порядок на сторінці (старе → `Old — Web` / `Old — Pages` / `Old — Components`, чорні) і нові сети `Race — Rules | Prizes | Stage | Stage Empty | Finished` (x 0 … 9024) + компонент `Race/Stage` (Type × Open) на токенах `contextual.lottery-tournament.*`; ручні правки MrBet і питання — `pages/races.md`; обхід — `reports/inventory-2026-11-05.md`
 - 2026-11-04 page(news): зібрано сети `News`, `News — Empty`, `News — Article` (x 0 / 2256 / 4512) за референсами Андрея `Breakpoints` + `Components`; ДС `Card / News`, `News Video`; ручні правки MrBet — `pages/news.md` «Відкрите»; пастки GRID/clone — `figma-pitfalls.md`
