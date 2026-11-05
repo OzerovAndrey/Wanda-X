@@ -88,3 +88,4 @@
 | `Hall of fame - Ozerov` | Зібрано Claude (1 сет, 3xs + xl) — review; тексти Heading вписати вручну | 2026-11-03 | `pages/hall-of-fame.md` |
 | `Lottery - Ozerov` | Зібрано Claude (2 сети + модалка Андрея) — review; 6 текстів Heading вручну | 2026-11-04 | `pages/lottery.md` |
 | `FAQ, Rules, Statistics - Ozerov` | Зібрано Claude (7 сетів) — review; тексти Heading вручну | 2026-11-05 | `pages/faq.md` |
+| `↳Pregame +` | Зібрано Claude (5 сетів + 2 попапи) — review; 6 текстів MrBet вручну | 2026-11-05 | `pages/pregame.md` |
