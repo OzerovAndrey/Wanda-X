@@ -22,7 +22,7 @@
 | Controls (Checkbox, Radio, Toggle) | `↳ Controls … 💛` | Learned | 2026-10-21 | 78315:499124 / 499199 / 499274 | 8 + 6 + 6 | `components/controls.md` |
 | List + List/Bullet | `↳ List item - Андрей`, Section `List` | Виправлено командою + токени | 2026-10-22 | 47820:58472, 30276:434400 | 2 + 4 | `components/list-bullet.md` |
 | Profile-menu (+ /Item, /Subitem) | `↳ List item - Андрей`, Section `Profile-menu` | Нова збірка, макети перенесено, токени | 2026-10-22 | 78892:291573, 78859:389, 78859:340 | 1 + 6 + 4 | `components/list.md` |
-| Gamehall / Open-thumb-provider | `Gamehall` | 1 варіант (Progress=Off) + токени | 2026-10-22 | 41123:11531 | 1 | `components/filter-sorting.md` |
+| Gamehall / Open-thumb-provider | `Gamehall` | Замінено новим `Gamehall/Provider Select` 80735:25481 на сторінці Gamehall (2026-11-05) | 2026-10-22 | 41123:11531 | 1 | `components/filter-sorting.md`, `pages/gamehall.md` |
 | Table | `↳ Table -` | Rebuilt + component tokens bound 2026-10-27 — XON JSON pending | | `components/table.md` | | |
 | Notifications, Cookies, Toast | `↳ Notifications, Cookies, Toast` | Not started | | `Toast` 47040:2552 | 8 | |
 | Scrollbar | `↳ Scrollbar` | Нова збірка поруч, інстанси на оригіналі; токени в TS — pending | 2026-10-29 | новий 79774:18 у Section `Scrollbar` 79774:19; оригінал 28787:64507 (79 інст.) в Originals | 8 | `components/scrollbar.md` |
@@ -59,7 +59,7 @@
 | Heading (колишній Section-title) | In progress (team) | | 67251:370203 | 4 | на канвасі скриншоти 20–21.10 — працюють |
 | Navigation | Not started | | `Navigation` 67415:182038 (Breakpoint 3xs\|sm\|lg), `Navigation/Item` 67330:88046 | 3 + 3 | |
 | Tabs | Not started | | `Tabs` 77999:315447, `Tabs/Item — Default`, `— Navigation` | 2 + 8 + 8 | |
-| Thumb (переїхав з Components) | Not started | | 46535:3315 | 6 | |
+| Thumb (переїхав з Components) | Not started; `Thumb/Provider` 79546:81688 + Boolean `Progress` (2026-11-05, Gamehall) | | 46535:3315 | 6 | `pages/gamehall.md` |
 | Quick pay | Not started | | 28031:69022 | 5 | |
 
 ## Organisms

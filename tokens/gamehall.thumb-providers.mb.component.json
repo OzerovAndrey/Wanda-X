@@ -1,0 +1,26 @@
+{
+  "gamehall": {
+    "thumb-providers": {
+      "chevron-size": {
+        "value": "{size.200}",
+        "type": "sizing"
+      },
+      "info": {
+        "gap-v": {
+          "value": "{spacing.200}",
+          "type": "spacing"
+        }
+      },
+      "progress": {
+        "gap": {
+          "value": "{spacing.400}",
+          "type": "spacing"
+        },
+        "size": {
+          "value": "{size.450}",
+          "type": "sizing"
+        }
+      }
+    }
+  }
+}

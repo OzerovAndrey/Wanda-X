@@ -2,6 +2,7 @@
 
 Історія рішень і робіт (раніше — у SKILL.md). Нові записи — зверху. Claude читає лише на прямий запит («що ми робили з …»).
 
+- 2026-11-05 page(gamehall): Old — Preview / Pages / Components (чорні); сети `Gamehall`, `Gamehall — Provider`; новий `Gamehall/Provider Select`; ДС `Thumb/Provider` + Boolean `Progress` (Games + кільце); 4 нові токени `gamehall.thumb-providers.*` — `pages/gamehall.md`
 - 2026-11-05 page(strip): `Strip/Progress` прибрано — у `Strip/Model` і `Strip — My Model` DS `Progress` (Value «2/10») + текст `Points`; правило «не плодити компоненти сторінки» — `rules/build-page.md` §5
 - 2026-11-05 page(strip): порядок на сторінці (дизайн → `Old — Design — Gallery | My Model | Rules`, `Old — Pages`, `Old — Components`, чорні; Section `1` → попап `Strip Game`) і нові сети `Strip — Gallery`, `Strip — My Model` (x 0 / 2256) + компоненти `Strip/Card`, `Strip/Model`, `Strip/Girl`, `Strip/Progress` на готових `contextual.strip.*`; ручні правки MrBet і питання — `pages/strip.md`
 - 2026-11-05 page(referral): порядок на сторінці (дизайн → `Old — Design` / `Old — Design — Blocked`, `Old — Pages`, `Old — Components`, чорні) і нові сети `Referral Program`, `Referral Program — Blocked` (x 0 / 2256) + компонент `Referral Program/Step` на готовому `contextual.referral.step.fill`; ручні правки MrBet і питання — `pages/referral.md`
