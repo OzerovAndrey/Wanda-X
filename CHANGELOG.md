@@ -2,6 +2,7 @@
 
 Історія рішень і робіт (раніше — у SKILL.md). Нові записи — зверху. Claude читає лише на прямий запит («що ми робили з …»).
 
+- 2026-11-05 page(faq): `Old — Preview` повернуто назву `Preview` (референс Андрея), стоїть після `Old — Components`
 - 2026-11-05 page(faq): звірено з `Preview` (→ `Old — Preview`, чорна): новий сет `Terms and Conditions`; FAQ — тексти з дизайну; статистика — `Table` з роздільниками замість Leaderboard-карток, Popular Games xl 6×4 / 3xs 3×4; алфавіт — GRID 9 кол.; контакти; `Maximum Payouts` → `Best Payout to Stake`; правило «Preview = Design» — `rules/build-page.md` §1
 - 2026-11-05 page(faq): усі `Heading` (26) замінено свіжими інстансами — замість успадкованого «News» дефолт «Title»
 - 2026-11-05 pitfall: MrBet-тексти `Heading` не переписуються навіть через тимчасовий шрифт — `references/figma-pitfalls.md` → MrBet
