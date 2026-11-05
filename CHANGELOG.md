@@ -2,6 +2,7 @@
 
 Історія рішень і робіт (раніше — у SKILL.md). Нові записи — зверху. Claude читає лише на прямий запит («що ми робили з …»).
 
+- 2026-11-05 page(pregame): Pregame — тільки мобільна версія; xl-варіанти прибрано з усіх 7 сетів (Section 480, x 0 … 6480), `Old — …` переставлено за ними
 - 2026-11-05 page(pregame): порядок на сторінці (старе → `Old — Pages` / `Old — Popups` / `Old — Components`, чорні; референси `Content`, `Pregame`, `Pregame modal window`, `Game not found` не чіпали) і нові сети `Pregame`, `— Authorized`, `— Unavailable`, `— Not found`, `— Game unavailable` + попапи `Pregame`, `Game not found` (x 0 … 13536) лише з ДС; нових компонентів / токенів нема; ручні правки MrBet і питання — `pages/pregame.md`
 - 2026-11-05 page(ingame): новий каркас `Ingame/Layout` (xl | 3xs, рейка + слот `Panel` + гра) замість `Layout/*`; 23 сети станів панелі з x 0 (Guest … Strip Model) + 9 попапів; компоненти `Ingame/Navigation item`, `Ingame/Winner`, `Ingame/Booster`, `Ingame/Bonus`; референс `Design` і старе не чіпали; знайдено нову колекцію змінних `Theme` (Default/Inverse) — прив'язки до неї; ручні правки MrBet і питання — `pages/ingame.md`
 - 2026-11-05: page(betting): сет `Betting` (Banner + Sportsbook-iframe) з x 0, `Json` за ним, старі макети в `Old — Pages`.
