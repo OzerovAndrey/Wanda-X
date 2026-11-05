@@ -23,8 +23,9 @@
 - Блок «Bonus wagering prohibited…» — `Wrapper` `Games` (fill `semantic.background.slate-4`, радіус `border-radius.global.lg`, p 16): Heading Secondary · `Alphabet` GRID 9 кол. (`Link`, «All» Accent; у Preview нема «Y» — залишено) · `Divider` · `Groups` (Title `text/lg-strong` + GRID TEXT xl 4 · 3xs 1).
 - Картинки (медалі, ігри) — порожні `Image` / `Thumb` (правило «інстанси без картинок»).
 
-## Вручну (MrBet Black — конектор не змінює)
-Усі `Heading` — свіжі інстанси з текстом «Title»: вписати Rules / Terms and Conditions · 1. O cliente obriga-se: · 2. Possible reasons for refusal of service provision · Bonus wagering prohibited in the following slots: · About us · Our contacts · General questions ×2 · Statistics.
+## Заголовки
+`Heading` (MrBet Black) конектор не переписує → усі заголовки — клони готових TEXT `heading/xxl` (Primary) / `heading/md` (Secondary) зі старих макетів (`Old — Pages`: десктоп → xl, 360 → 3xs), шар `Title`, Fill. Terms and Conditions — заголовок «Rules», як у `Preview`.
+Висоти 3 заголовків на шар — Fixed (2. Possible… / Bonus wagering… на 3xs = 72, About us = 38): конектор не перераховує висоту MrBet-тексту — після відкриття у Figma поставити Auto height.
 
 ## Відкрите
 1. MB / XON — перевірено лише MB.
