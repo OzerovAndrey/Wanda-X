@@ -2,6 +2,7 @@
 
 Історія рішень і робіт (раніше — у SKILL.md). Нові записи — зверху. Claude читає лише на прямий запит («що ми робили з …»).
 
+- 2026-11-05 rule: референси переставляються в ряд за сетами (y 0) — «не чіпати» стосується вмісту / назви / кольору, не позиції — `rules/core.md`
 - 2026-11-05 page(pregame): референси (`Pregame`, `Pregame modal window`, `Game not found`, `Content`) переставлено в ряд одразу за сетами (y 0, 600 між), `Old — …` — за ними; вміст / назви / колір не змінювались
 - 2026-11-05 page(pregame): Pregame — тільки мобільна версія; xl-варіанти прибрано з усіх 7 сетів (Section 480, x 0 … 6480), `Old — …` переставлено за ними
 - 2026-11-05 page(pregame): порядок на сторінці (старе → `Old — Pages` / `Old — Popups` / `Old — Components`, чорні; референси `Content`, `Pregame`, `Pregame modal window`, `Game not found` не чіпали) і нові сети `Pregame`, `— Authorized`, `— Unavailable`, `— Not found`, `— Game unavailable` + попапи `Pregame`, `Game not found` (x 0 … 13536) лише з ДС; нових компонентів / токенів нема; ручні правки MrBet і питання — `pages/pregame.md`
