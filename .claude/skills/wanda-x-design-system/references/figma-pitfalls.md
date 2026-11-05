@@ -18,6 +18,7 @@
 - Вставити новий: тимчасовий інстанс без MrBet (`Spinner` 47531:173652) → `swapComponent(<Layout/xl | Heading …>)` → `unlockAspectRatio()`, `resize(w, main.height)`, `FILL` / `FIXED`.
 - `Heading` у слоті — placeholder + swap **після** того, як контейнер уже в слоті.
 - Текст MrBet (characters, стиль, autoResize) змінити не можна; `fills`, `layoutSizing*` — можна, але **ширина не перераховується** (після clone / зміни Breakpoint `Title` лишається старої ширини) — перелічити у відповіді, що поправити вручну.
+- Обхід через тимчасовий шрифт (`fontName = Inter` → `characters` → `setTextStyleIdAsync(heading/*)`) **не працює**: стиль не повертається, текст лишається Inter — не пробувати. Готові MrBet-тексти в старих макетах — це звичайні TEXT, не `Heading`, перенести їх у `Heading` не можна. Єдиний шлях для конектора — шрифт `MrBet` (Black) має бути доступний Figma (shared font організації).
 - `Button` має `maxWidth = 420` — у модалках xl на всю ширину: `btn.maxWidth = null` + FILL.
 
 ## Вузли, клони, слоти
