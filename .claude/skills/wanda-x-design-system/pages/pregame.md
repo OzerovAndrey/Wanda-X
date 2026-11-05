@@ -5,7 +5,7 @@ Page id `32048:193957`. Сторінка гри перед запуском (pre
 **Pregame — тільки мобільна версія**: сет = лише `Layout/3xs` / `Modal/Default 3xs` (x 80, y 80), Section 480 × (80+h+80); xl не збираємо.
 
 ## Джерело
-Чорні Section-референси (від команди, **не чіпати**, стоять на своїх місцях, y 4416): `Content` 80892:65514 (компоненти `Pregame/Components`), `Pregame` 80892:65698 (мобільні сторінки), `Pregame modal window` 80892:65635, `Game not found` 80892:65638. Десктопного макета нема — сторінка лише мобільна.
+Чорні Section-референси (від команди, вміст / назви / колір **не чіпати**; стоять у ряду одразу за сетами, y 0): `Content` 80892:65514 (компоненти `Pregame/Components`), `Pregame` 80892:65698 (мобільні сторінки), `Pregame modal window` 80892:65635, `Game not found` 80892:65638. Десктопного макета нема — сторінка лише мобільна.
 
 ## Розкладка (y = 0, 600 між)
 | x | Section | ID |
@@ -17,7 +17,8 @@ Page id `32048:193957`. Сторінка гри перед запуском (pre
 | 4320 | `Pregame — Game unavailable` (`Empty`) | 80907:11407 |
 | 5400 | попап `Pregame` (`Modal/Default` 3xs) | 80908:10740 |
 | 6480 | попап `Game not found` (Footer: See all games) | 80908:10986 |
-| 7560 → | `Old — Pages` 80900:1641 (2 `.Mobile page`) · `Old — Popups` 80900:1644 (порожній `Modal/Default` TITLE) · `Old — Components` 80900:1646 (7 локальних `Pregame_*`) | |
+| 7560 → | референси: `Pregame` 80892:65698 → `Pregame modal window` 80892:65635 → `Game not found` 80892:65638 → `Content` 80892:65514 | |
+| 16989 → | `Old — Pages` 80900:1641 (2 `.Mobile page`) · `Old — Popups` 80900:1644 (порожній `Modal/Default` TITLE) · `Old — Components` 80900:1646 (7 локальних `Pregame_*`) | |
 
 ## Структура `Main Area` (3xs)
 ```
