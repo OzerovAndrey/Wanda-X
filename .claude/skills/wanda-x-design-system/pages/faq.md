@@ -13,8 +13,8 @@
 | `Statistics — Latest Payouts` | 80749:32698 | 11280 | 80749:32699 | 80749:33279 | `Table` без Head, `Table/Row Divider`: List/Bullet + нік · сума |
 | `Statistics — Best Payout to Exchange Rate` | 80749:35976 | 13536 | 80749:35977 | 80749:36557 | `Table` з Head: Image + нік · курс · Bet / Win |
 | `Statistics — Best Payout to Stake` | 80749:39357 | 15792 | 80749:39358 | 80749:39938 | те саме, розкритий 5-й (Maximum Payouts) |
-| `Old — Pages` · `Old — Components` | 80748:27215 · 80748:27240 | 18048 / 40176 | | | чорні, вміст не змінювався |
-| `Preview` (референс Андрея) | 80727:123104 | 50192 | | | не перейменовувати й не фарбувати |
+| `Preview` (референс Андрея) | 80727:123104 | 47936 | | | не чіпати |
+| `Old — Pages` · `Old — Components` | 80748:27215 · 80748:27240 | 74984 / 97112 | | | чорні, вміст не змінювався |
 
 ## Рішення
 - Розкритий Accordion = `State=Opened`, вміст — у слот `Layout`.

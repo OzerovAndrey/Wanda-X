@@ -2,6 +2,7 @@
 
 Історія рішень і робіт (раніше — у SKILL.md). Нові записи — зверху. Claude читає лише на прямий запит («що ми робили з …»).
 
+- 2026-11-05 rule: референси ніколи не чіпати (лише читати контент) — `rules/core.md`; `Preview` на FAQ повернуто на x 47936, `Old — …` перенесено правіше
 - 2026-11-05 page(faq): правильні заголовки — клони TEXT `heading/*` зі старих макетів замість `Heading` «Title» (40 шт.); правило — `rules/build-page.md` §6
 - 2026-11-05 page(faq): `Old — Preview` повернуто назву `Preview` (референс Андрея), стоїть після `Old — Components`
 - 2026-11-05 page(faq): звірено з `Preview` (→ `Old — Preview`, чорна): новий сет `Terms and Conditions`; FAQ — тексти з дизайну; статистика — `Table` з роздільниками замість Leaderboard-карток, Popular Games xl 6×4 / 3xs 3×4; алфавіт — GRID 9 кол.; контакти; `Maximum Payouts` → `Best Payout to Stake`; правило «Preview = Design» — `rules/build-page.md` §1
