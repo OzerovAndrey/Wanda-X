@@ -26,10 +26,10 @@
 ## Вручну (MrBet Black — конектор не змінює)
 | Де | Зараз | Має бути |
 |---|---|---|
-| усі сети, перший `Heading Primary` | News | Rules / General questions / Statistics |
-| FAQ, 2-й `Heading Primary` | News | General questions |
+| усі сети, перший `Heading Primary` | Title | Rules / General questions / Statistics |
+| FAQ, 2-й `Heading Primary` | Title | General questions |
 | Rules, `Heading Secondary` ×3 | Title | 1. O cliente obriga-se: · 2. Possible reasons for refusal of service provision · Bonus wagering prohibited in the following slots: |
-| Rules, `Heading Primary` 2-й / 3-й | News | About us / Our contacts |
+| Rules, `Heading Primary` 2-й / 3-й | Title | About us / Our contacts |
 
 ## Відкрите
 1. Картинки статусів (медалі) і ігор у таблицях — порожні `Image` (правило «інстанси без картинок»); приклади лишились у `Old — Pages`.
