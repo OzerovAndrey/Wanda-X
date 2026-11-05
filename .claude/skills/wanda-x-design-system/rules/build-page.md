@@ -43,6 +43,8 @@ Main Area
       ├─ <ряд>       іменований за вмістом: Cards / Levels / Benefits / Accordions …
       └─ Button      «Show more»: Secondary md, Icon ➡️ = true (chevron-down) — якщо є в оригіналі
 ```
+**Ingame** (ігрове вікно) — без `Layout/*`: сет = `Ingame/Layout` `Breakpoint=3xs` (x 80) + `xl` (x 480), вміст — у слот `Panel`, активний пункт рейки — `State=Active`; деталі — `pages/ingame.md`.
+
 **Десктоп і мобайл — однаковий контент** (ті самі блоки, той самий порядок); різниця лише в розкладці (колонки, ряд / стовпчик, кількість карток).
 
 ## 4. Типові блоки

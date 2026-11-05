@@ -22,3 +22,8 @@
 - **Empty md** — тексти не прив'язані до `Title`/`Discription` (`components/empty.md`).
 - **Legacy-набори** поруч з новими (Controls: `Selection-controls`, `Toggles`; Status: 8 наборів; Popup, Switcher, Progress, Banner) — видаляємо чи `Deprecated/…`?
 - **Button/Text** — перейменування з `Button/Link` (еталон) — підтвердити, оновити `reference-components.md` (оновлено 21.10 за файлом).
+
+## Ingame (2026-11-05)
+- Нова колекція змінних `Theme` (Default / Inverse, camelCase) замість `contextual/*` у `Product` — це нова схема? Правило «Token Studio-токен + однойменна змінна Product» оновити на `Theme`? (`pages/ingame.md` #1)
+- Режим `Theme = Inverse` на темній 3xs-панелі замість `Inverted` у кожному компоненті — ок? (`pages/ingame.md` #2)
+- MB: `Account/Balance`, `FastClickPayment` на білій xl-панелі нечитабельні — Inverted для них чи темний `contextual.content.fill`? (`pages/ingame.md` #3)

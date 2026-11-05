@@ -2,6 +2,7 @@
 
 Історія рішень і робіт (раніше — у SKILL.md). Нові записи — зверху. Claude читає лише на прямий запит («що ми робили з …»).
 
+- 2026-11-05 page(ingame): новий каркас `Ingame/Layout` (xl | 3xs, рейка + слот `Panel` + гра) замість `Layout/*`; 23 сети станів панелі з x 0 (Guest … Strip Model) + 9 попапів; компоненти `Ingame/Navigation item`, `Ingame/Winner`, `Ingame/Booster`, `Ingame/Bonus`; референс `Design` і старе не чіпали; знайдено нову колекцію змінних `Theme` (Default/Inverse) — прив'язки до неї; ручні правки MrBet і питання — `pages/ingame.md`
 - 2026-11-05: page(betting): сет `Betting` (Banner + Sportsbook-iframe) з x 0, `Json` за ним, старі макети в `Old — Pages`.
 - 2026-11-05 rule: референси ніколи не чіпати (лише читати контент) — `rules/core.md`; `Preview` на FAQ повернуто на x 47936, `Old — …` перенесено правіше
 - 2026-11-05 page(faq): правильні заголовки — клони TEXT `heading/*` зі старих макетів замість `Heading` «Title» (40 шт.); правило — `rules/build-page.md` §6
