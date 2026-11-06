@@ -1,8 +1,27 @@
 # Profile — сторінка `32965:145491` (`     ↳ Profile +`)
 
-Статус: **дослідження 2026-11-06; впорядкування в `Old — …` Андрей попросив відкотити — сторінка як була.** Нових сетів сторінки ще нема; `Preview` / `Design` Section нема. Правила збірки Андрей дасть окремо.
+Статус: **пілот Bonus balance зібрано 2026-11-06 (на перевірці в Андрея)**; решта розділів — за тим самим зразком після погодження. Старе на сторінці **лишається як є** (не рухати, не складати в `Old — …` — Андрей відкотив таке впорядкування). `Preview` / `Design` нема.
 
-## Що на сторінці (130 вузлів верхнього рівня, усе на x < 0, хаотично)
+## Рішення Андрея (2026-11-06)
+- Профіль збираємо **сторінками в `Layout/3xs` + `Layout/xl`** (як старі макети), **не** як темний `Profile popup` зі сторінки `↳ Modal` (80108:43620 / 43628, `Profile popup mobile` 80108:45062).
+- Рух: пілот **Bonus balance** → перевірка → решта розділів.
+- Модалки Section `1`–`10` **перезібрати всі** наново (поруч, старі Section лишаються).
+
+## Нові сети (y 0, 600 між; старт x 1488 — праворуч від загубленого `Account Info` 32634:38707 на x 744)
+| x | Section | ID | Що |
+|---|---|---|---|
+| 1488 | `Bonus balance` | 81063:50626 | `Layout/3xs` 81063:52458 + `Layout/xl` 81063:54574 · Title + Description → `Notification/System` Info (Actions, кнопка «Games») → Active bonus (`Card / Bonuses (Profile)` Active) → Available (Delete, Default, Default + `Button Tertiary md` «Available promotions» по центру) → FAQ (9 `Accordion`, 2-й Opened) |
+| 3744 | `Bonus balance — Empty` | 81065:53188 | `Layout/3xs` 81065:53189 + `Layout/xl` 81065:54048 · Title → `Notification/System` Info «No active bonuses balances» + `Button Primary lg` «Label» → FAQ |
+| 6000 | `Bonus played` (модалка) | 81065:55301 | `Modal/Default` 3xs Centered 81065:55302 + xl sm Centered 81065:55352 · шапка: порожній `Image/Single` 158×120 + Title + Description «You have played the bonus.» · Body: сума (MrBet, `text.brand.primary`) + «Transferred to your main balance.» · Footer: `Button Primary lg` «OK» FILL. Приклад картинки — над Section (y −224) |
+
+Картки — сітка `Cards` GRID xl 2 кол. gap 16 / 3xs 1 кол. gap 8, рядки HUG. Заголовки — клони MrBet-текстів зі старих макетів (`heading.xxl` / `heading.lg` сторінки, `heading.md` блоків), fill `text.default.heading`.
+
+**Вписати вручну (MrBet):** `FAQ` ×4 — клон без стилю 24 px → стиль `heading/md`; Title модалок ×2 «TITLE» → «Congratulations!».
+**Питання / зауваги:** `Card / Bonuses (Profile)` (сторінка `↳ Cards`) усередині має старий `Progress/Linear`, а у стані Delete кнопка Cancel майже не видна — це картка команди; кнопка порожнього стану в оригіналі «Label» — який текст?; нумерацію FAQ («3.» …) прибрано (в оригіналі була зламана). XON конектором не перевірити (шрифт Xon_028).
+
+## Як було на сторінці до збирання
+
+### 130 старих вузлів верхнього рівня, усе на x < 0 (не рухати)
 | Група | Скільки | Де | Примітка |
 |---|---|---|---|
 | Попапи `Modal/Default` 3xs + xl у сірих Section `1`…`10` | 10 | x −43328 … −27704, y 5494 | вже нового стандарту (1656×928); назви — цифри, порядок по x: 1–5, далі 6…10 у зворотному. Схоже, зібрав Андрей / команда — **не чіпати** без підтвердження |
@@ -33,6 +52,5 @@
 1 Successful registration · 2 Attention (сесія 5 хв) · 3 Access temporarily restricted · 4 Attention (ліміт на вхід) · 5 Attention · 6 Time limit history — empty · 7 Unsaved changes · 8 Confirm your email address · 9 Congratulation / Keep in touch · 10 Info (What is verification? FAQ).
 
 ## Відкриті питання
-- Section `1`–`10` — Андрей їх зібрав / погодив? Перейменовувати (`Successful registration` …) і ставити в ряд з x 0?
 - Desktop має дві ширини (1096 і 1288) — для нових сетів беремо один стандарт `Layout/xl`.
 - Чи збираємо Achievements / Referral program / Real / Sport balance, яких нема в старих макетах.

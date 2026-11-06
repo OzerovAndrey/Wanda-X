@@ -59,3 +59,6 @@
 - Новий `layoutMode = 'GRID'` створює рядки `FLEX` → картки накладаються; одразу `gridRowSizes = rows.map(() => ({type: 'HUG'}))`.
 - `clone()` фрейма зі слота інстансу може загубити TEXT (у дереві — «чужий» вузол з ім'ям `Layout/…`). Не видаляти «чужих» дітей — створити новий фрейм і зібрати заново.
 - Пошук TEXT по `characters` у всьому сеті зачіпає й Sidebar / абзаци — шукати лише всередині свого фрейму за `id`.
+- Новий `GRID`-фрейм створюється з рядками `FLEX` → картки накладаються. Одразу `gridRowSizes = rows.map(() => ({type:'HUG'}))`, дітям `layoutSizingVertical = 'HUG'`.
+- `Modal/Default` (Title — MrBet) не вставляється `appendChild` у Section — тільки `group/ungroup`. Невдалий скрипт `use_figma` відкочується цілком — залишків нема, але перевіряти.
+- Перемкнути режим XON (`setExplicitVariableModeForCollection`) конектор не може — падає на шрифті `Xon_028 Black`; XON перевіряє Андрей у Figma.
