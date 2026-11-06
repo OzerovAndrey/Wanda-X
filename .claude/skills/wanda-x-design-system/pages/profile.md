@@ -1,27 +1,32 @@
 # Profile — сторінка `32965:145491` (`     ↳ Profile +`)
 
-Статус: **пілот Bonus balance зібрано 2026-11-06 (на перевірці в Андрея)**; решта розділів — за тим самим зразком після погодження. Старе на сторінці **лишається як є** (не рухати, не складати в `Old — …` — Андрей відкотив таке впорядкування). `Preview` / `Design` нема.
+Статус (2026-11-06): **зібрано 7 сетів сторінки + 13 модалок; KYC Verification і Loyalty points — ще ні** (потрібні нові компоненти сторінки). Старе — референсами в чорних `Old — …` праворуч (Андрей попросив так після пілоту). `Preview` / `Design` нема.
 
 ## Рішення Андрея (2026-11-06)
-- Профіль збираємо **сторінками в `Layout/3xs` + `Layout/xl`** (як старі макети), **не** як темний `Profile popup` зі сторінки `↳ Modal` (80108:43620 / 43628, `Profile popup mobile` 80108:45062).
-- Рух: пілот **Bonus balance** → перевірка → решта розділів.
-- Модалки Section `1`–`10` **перезібрати всі** наново (поруч, старі Section лишаються).
+- Профіль — **сторінками в `Layout/3xs` + `Layout/xl`**, не темний `Profile popup` (`↳ Modal` 80108:43620 / 43628, `Profile popup mobile` 80108:45062).
+- Модалки Section `1`–`10` — **перезібрати**: клон модалки команди (зберігає вписані MrBet-заголовки) у новий сірий сет + переклад за правилами (CTA у Footer FILL, `Description`, картинки → порожній `Image/Single` + приклад над Section, `Accordions`). Старі Section `1`–`10` → чорні `Old — Popup N · …` (вміст не чіпали; вкласти Section у Section конектор не може).
 
-## Нові сети (y 0, 600 між; старт x 1488 — праворуч від загубленого `Account Info` 32634:38707 на x 744)
+## Розкладка (y 0, 600 між)
 | x | Section | ID | Що |
 |---|---|---|---|
-| 1488 | `Bonus balance` | 81063:50626 | `Layout/3xs` 81063:52458 + `Layout/xl` 81063:54574 · Title + Description → `Notification/System` Info (Actions, кнопка «Games») → Active bonus (`Card / Bonuses (Profile)` Active) → Available (Delete, Default, Default + `Button Tertiary md` «Available promotions» по центру) → FAQ (9 `Accordion`, 2-й Opened) |
-| 3744 | `Bonus balance — Empty` | 81065:53188 | `Layout/3xs` 81065:53189 + `Layout/xl` 81065:54048 · Title → `Notification/System` Info «No active bonuses balances» + `Button Primary lg` «Label» → FAQ |
-| 6000 | `Bonus played` (модалка) | 81065:55301 | `Modal/Default` 3xs Centered 81065:55302 + xl sm Centered 81065:55352 · шапка: порожній `Image/Single` 158×120 + Title + Description «You have played the bonus.» · Body: сума (MrBet, `text.brand.primary`) + «Transferred to your main balance.» · Footer: `Button Primary lg` «OK» FILL. Приклад картинки — над Section (y −224) |
+| 0 | `Bonus balance` | 81063:50626 | Title+Description → `Notification/System` Info (Actions «Games») → Active bonus → Available (+ `Button Tertiary md`) → FAQ (`Accordion` ×9) |
+| 2256 | `Bonus balance — Empty` | 81065:53188 | Title → Info «No active bonuses balances» + `Button Primary lg` → FAQ |
+| 4512 | `Account info` | 81087:61895 | Title → `Notification/System` Info «Share your link…» (Copy link) + Warning «Please confirm your email…» (Verify) → `Inputs` 5 рядів (`Input` Filled; xl 2 кол., 3xs 1 кол.; 5-й — дата + `Segmented`) → `Checkbox` згоди → Change password (`Button Text md`) + Save changes (`Primary md`) |
+| 6768 | `Game limits` | 81086:58889 | Title → 3 картки `Wrapper` (fill `semantic.background.slate-2`, radius `border-radius.global.lg`, p 16): Time Limit / Deposit Limit / Self-Restriction — Title + `Button Text sm` «Limits history», Description, `Input`, `Chip`-и, `Button Primary lg` |
+| 9024 | `Game limits — Active` | 81086:61116 | те саме, Time Limit — відлік «02d : 58h…» + «Active until…» + `Progress` (новий 79804:4510) |
+| 11280 | `Bet history` | 81085:63070 | Title → `Tabs Default` (Open bets / Settled bets) → `Table` 6 кол. (xl з Head; 3xs без Head, `Table/Row Direction=Vertical`), Cashout — `Button Primary sm` у слоті 6-ї клітинки |
+| 13536 | `Bet history — Empty` | 81085:66050 | Title → Tabs → `Empty Card=True` (Description «You have no open bets», Button «Place a bet») |
+| 15792 … 42864 | модалки (по 2256) | | `Bonus played` 81065:55301 · `Successful registration` 81081:54758 · `Session ending` 81081:54913 · `Access restricted` 81081:54990 · `Login limit` 81081:55067 · `Deposit limit` 81081:55144 · `Time limit history` 81083:56052 (`Table` Limit/Start/Finish) · `Time limit history — Empty` 81083:55036 · `Password change` 81083:55810 (2 `Input` + Primary lg + Text «My profile») · `Unsaved changes` 81083:55151 · `Confirm email` 81083:55252 · `Email confirmed` 81083:55399 · `Verification info` 81083:55520 |
+| 45120 → | чорні `Old — Bonus balance` · `Loyalty points` · `Account info` · `KYC Verification` · `Game limits` · `Bet history` · `Popups` · `Popup 1…10 · …` · `Components` | | вміст не змінено |
 
-Картки — сітка `Cards` GRID xl 2 кол. gap 16 / 3xs 1 кол. gap 8, рядки HUG. Заголовки — клони MrBet-текстів зі старих макетів (`heading.xxl` / `heading.lg` сторінки, `heading.md` блоків), fill `text.default.heading`.
+Заголовки — клони MrBet-текстів зі старих макетів, fill `text.default.heading`. Сетка карток — GRID, рядки HUG.
 
-**Вписати вручну (MrBet):** `FAQ` ×4 — клон без стилю 24 px → стиль `heading/md`; Title модалок ×2 «TITLE» → «Congratulations!».
-**Питання / зауваги:** `Card / Bonuses (Profile)` (сторінка `↳ Cards`) усередині має старий `Progress/Linear`, а у стані Delete кнопка Cancel майже не видна — це картка команди; кнопка порожнього стану в оригіналі «Label» — який текст?; нумерацію FAQ («3.» …) прибрано (в оригіналі була зламана). XON конектором не перевірити (шрифт Xon_028).
+**Вписати вручну (MrBet):** стиль `heading/md` на `FAQ` ×4 і на назвах карток Game limits ×12 (клони без стилю); Title модалки `Bonus played` ×2 «TITLE» → «Congratulations!»; заголовок Game limits: xl «Time limits», 3xs «Game limits» — вирівняти на один.
+**Відкрито:** KYC Verification (список · Photo ID з завантаженням · Declined · Verified) і Loyalty points (обмін · магазин · історія · email) — потрібні нові компоненти сторінки (`KYC Verification/Step`, `Loyalty points/Summary`, `/Level`, `/Offer`); кнопка порожнього Bonus balance «Label»; `Card / Bonuses (Profile)` зі старим `Progress/Linear`; Achievements / Referral / Real / Sport balance — макетів нема. XON конектором не перевірити.
 
 ## Як було на сторінці до збирання
 
-### 130 старих вузлів верхнього рівня, усе на x < 0 (не рухати)
+### 130 старих вузлів (тепер у чорних `Old — …`)
 | Група | Скільки | Де | Примітка |
 |---|---|---|---|
 | Попапи `Modal/Default` 3xs + xl у сірих Section `1`…`10` | 10 | x −43328 … −27704, y 5494 | вже нового стандарту (1656×928); назви — цифри, порядок по x: 1–5, далі 6…10 у зворотному. Схоже, зібрав Андрей / команда — **не чіпати** без підтвердження |

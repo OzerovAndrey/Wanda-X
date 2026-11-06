@@ -62,3 +62,8 @@
 - Новий `GRID`-фрейм створюється з рядками `FLEX` → картки накладаються. Одразу `gridRowSizes = rows.map(() => ({type:'HUG'}))`, дітям `layoutSizingVertical = 'HUG'`.
 - `Modal/Default` (Title — MrBet) не вставляється `appendChild` у Section — тільки `group/ungroup`. Невдалий скрипт `use_figma` відкочується цілком — залишків нема, але перевіряти.
 - Перемкнути режим XON (`setExplicitVariableModeForCollection`) конектор не може — падає на шрифті `Xon_028 Black`; XON перевіряє Андрей у Figma.
+- Інстанс, перенесений `appendChild` у слот, отримує новий id — стара змінна мертва. Кнопки в Footer модалки — створювати свіжі інстанси того ж варіанта з тим самим текстом, старі `remove()`.
+- `Table`: при `Show head = false` слот `Head` зникає з `children` — чистити / заповнювати слоти до вимкнення шапки; слоти брати через `t.children`, не `findAll`.
+- `Empty` Card=True має MrBet Title — вставляти group/ungroup, текст — у `Description` (Title вимкнути).
+- Section не вкладається в Section (`appendChild` падає на MrBet усередині) — старі Section-референси лише фарбувати / переставляти.
+- Скриншот одразу після правки часто кешований — перевіряти розміри даними.
