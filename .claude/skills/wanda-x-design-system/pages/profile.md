@@ -60,3 +60,11 @@
 ## Відкриті питання
 - Desktop має дві ширини (1096 і 1288) — для нових сетів беремо один стандарт `Layout/xl`.
 - Чи збираємо Achievements / Referral program / Real / Sport balance, яких нема в старих макетах.
+
+## Версія 2 — Profile popup (2026-11-09)
+Референс — Section-и Андрея під рядом (y ≈ 20 522, сині: `Balances`, `Personal details`, `KYC Verification`, `Game limits` ×2, `Bonus balance`, `Sport balance`, `Loyalty points`, `Bets history`, `Achievements`, `Referral program`) — не чіпали. Сети `Profile popup — <стан>` стоять у ряду y 0 праворуч від `🔴Old — Components` (з x 106 629, крок 2256), під кожним — чорна `Old — Profile popup — <стан>` з клонами референсу (мобайл x 80, десктоп x 480).
+- **xl:** `Modal/Custom` Max. Height=True — Header-слот: `Image` 40 + «Roberto Cao Petruchko» / «Professional • 850/2000(36%)» + `Button Text sm` «Online help» (paddingRight 56 від хрестика); Sidebar-слот: `Wrapper` V (слот у варіанті Max. Height=True горизонтальний — дефект команди) → `Profile-menu` (Balances Open + `Profile-menu/Subitem` Real / Bonus / Sport / Loyalty, Personal details з Tag «2», Bets history, Achievements, Game limits, KYC Verification) + `Profile-menu/Item` «Logout»; Body — вміст.
+- **3xs:** `Modal/Default` 3xs Max. height=True (у `Modal/Custom` 3xs / 2xs слоти ще FRAME, не SLOT — у роботі в команди): блок користувача — у верхній слот Header, вміст — у Body.
+- Body = клон `Container` з відповідного сету версії-сторінки **без page Title** (навігація — меню), padding 0.
+- Зібрано: Balances (поточний баланс + 4 картки балансів + промокод; 3xs — + меню-список, Online help, Logout) · Bonus balance · Personal details · KYC Verification · Game limits · Game limits — Set time limit · Loyalty points ×5 · Bets history — Open / Settled.
+- **Ще ні:** Sport balance (+ Free Bet), Bonus balance — Free Spins, попапи «Congratulations!» і «Bônus 45.000$ + 270 FS», Achievements, Referral program; іконки пунктів меню (дефолтний `plus`).
