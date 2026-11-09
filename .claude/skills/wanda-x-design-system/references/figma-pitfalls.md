@@ -23,6 +23,9 @@
 - `Button` має `maxWidth = 420` — у модалках xl на всю ширину: `btn.maxWidth = null` + FILL.
 
 ## Вузли, клони, слоти
+- Після `group/ungroup` вузла всередині слота клонованого `Layout/*` у **наступному** скрипті діти цього фрейму — биті проксі (ім'я / розмір самого `Layout/*`): `resize()` на такому «дитині» змінює **весь `Layout/*`**. Перед правкою перевіряти `node.name` / `width`; усе правити в тому ж скрипті, де переносили.
+- `Empty`: при `Button = false` інстанс кнопки зникає з `children` — спершу `Button = true`, потім шукати й міняти текст.
+- Button на `background.slateDark1`: `Text [Invert]` / `Tertiary [Invert]` нечитабельні в MB — для текстової CTA на темній картці `Text Accent`.
 - Порівнювати вузли **за `id`**, не за об'єктом.
 - `.children` вузла, перенесеного group/ungroup у слот інстансу, може повертати чужі вузли — брати `findAll(n => n.parent.id === parent.id)` або `getNodeByIdAsync`.
 - `clone()` вузла зі слота інстансу з'являється на корені сторінки — повертати group/ungroup.

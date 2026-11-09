@@ -2,6 +2,7 @@
 
 Історія рішень і робіт (раніше — у SKILL.md). Нові записи — зверху. Claude читає лише на прямий запит («що ми робили з …»).
 
+- 2026-11-09 page(news): концепт News 2.0 — локальні компоненти `News/Card` (Featured / Default / Compact × Default / Hover / Pressed / Focus), `News/CTA`, `News/Skeleton` (глобальні токени) + сети `News 2.0`, `— Article`, `— Loading`, `— No results`, `— Error` праворуч від `TEST`; старі сети й ДС не змінено — `pages/news.md`; 3 нові пастки (биті проксі після group/ungroup у слоті, `Empty` Button, Text [Invert] на темному)
 - 2026-11-09 rule: після збирання сетів референси (`Preview`, `Design`, `Components` …) теж стають чорними `Old — <назва>` — `rules/core.md`, `build-page.md` §2; page(messages): сині референси → `Old — Preview`, `Old — Messages`, `Old — Components (Design)`
 - 2026-11-09 page(messages): сторінку впорядковано (референси `Preview` / `Components` / `Messages` у ряд з x 4512, старе — `Old — Popups`, `Old — Components`); зібрано сети попапа `Messages` і `Messages — Empty` (`Modal/Default` 3xs + xl lg, `Tabs`, `Empty`) і компонент `Messages/Card` (Image / Actions, глобальні токени) — `pages/messages.md`
 - 2026-11-09 page(races): `Race/Stage` перев'язано з `lotteryTournament.*` на глобальні токени (`background.slateDark2`, `divider.default.primary`, `global.borderRadius.lg`, `spacing.*`, `text.*`, `fill.subtleInvert`); правило: локальні компоненти сторінок — лише глобальні токени (`build-page.md` §5)
