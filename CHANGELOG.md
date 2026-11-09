@@ -2,6 +2,7 @@
 
 Історія рішень і робіт (раніше — у SKILL.md). Нові записи — зверху. Claude читає лише на прямий запит («що ми робили з …»).
 
+- 2026-11-09 page(profile): сети Profile popup (+ Old) перенесено праворуч від референсу версії 2 (y 20 522)
 - 2026-11-09 page(profile): версія 2 — Profile popup (`Modal/Custom` + `Profile-menu`), 13 станів з порівнянням `Old —` під кожним
 - 2026-11-09 page(profile): під кожним сетом — `Old — <сет>` з клонами старого мобайлу / десктопа референсу для порівняння; Bet history перебудовано на `Table/History` (розгортання, кольорові суми)
 - 2026-11-09 page(profile): новий референс `Profile` 81302:100053; видалено старі лейаути й 34 невикористані старі компоненти; зібрано Loyalty points ×5, KYC ×4 (+ компонент `KYC Verification/Step`), Account info — Confirmed; Bonus balance / модалки вирівняно з референсом; прибрано Successful registration і Bonus played
