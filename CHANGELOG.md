@@ -2,6 +2,7 @@
 
 Історія рішень і робіт (раніше — у SKILL.md). Нові записи — зверху. Claude читає лише на прямий запит («що ми робили з …»).
 
+- 2026-11-09 page(profile): локальний компонент `Profile/Balance` над сетом Balances, 8 карток → інстанси; правило: компонент сторінки — Section над своїм сетом; пастка GRID
 - 2026-11-09 tokens: export 2026-11-09 з GitLab — нова структура 8 сетів (mb|xon core+override, default|inverse alias+component); повний diff — `reports/tokens-diff-2026-11-09.txt`; `tokens-diff.py` — сети з `$metadata.json`; усі 22 токени профілю є в новому експорті
 - 2026-11-09 tokens: профіль переведено на нові токени з GitLab — 64 fill + 64 radius + 178 typography перейменовано, 145 биті прив'язки перев'язано, 168 прив'язок типографіки MrBet-заголовків знято; 1410 посилань — усі мають змінні
 - 2026-11-09 page(profile): версія 2 добудована (Free Spins, Sport balance + Free Bet, Achievements, Referral, Congratulations, Bonus offer, Cool-off / Subscriptions); увесь референс версії 2 видалено

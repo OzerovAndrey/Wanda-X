@@ -74,3 +74,7 @@
 - Увесь референс версії 2 видалено (усе покрито; клони — у `Old —` під сетами). Верхній ряд не чіпали.
 - **Вписати вручну (MrBet):** Title модалок Congratulations («Congratulations!») і Bonus offer («Bônus 45.000$ + 270 FS»); назви блоків Cool-off Period і Subscriptions у Game limits (зараз клон «Self-Restriction»); Deposit Limit history / Self-Restriction history.
 - Пастка: у `List/Item — Default` перший TEXT — `Indicator` (номер), текст пункту — `Label`.
+
+## Локальні компоненти Profile popup (над своїм сетом)
+- `Profile/Balance` (Section 81406:98481 над `Profile popup — Balances`, comp 81406:98480): картка балансу — `Image/Single` 32 + Description + Title; fill `background.1`, radius `global.borderRadius.lg`, padding `spacing.300`, gap `spacing.200`; дефолт тексти `Label`. У сеті 8 інстансів (xl 1×4, 3xs 2×2), тексти — override.
+- Кандидати далі: картка балів Loyalty («9 083 points», 3 сети), картки Game limits (Time / Deposit Limit / Self-Restriction), картка магазину («Multiplier x1.15»), лічильники Referral, Current balance, прогрес KYC.
