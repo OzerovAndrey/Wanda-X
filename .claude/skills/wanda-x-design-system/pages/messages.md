@@ -3,7 +3,7 @@
 Messages — це **попап** (не сторінка в Layout): сети = `Modal/Default` 3xs + xl.
 
 ## Розкладка (y 0, 600 між)
-`Messages` 81462:2727 (x 0) · `Messages — Empty` 81462:3094 (x 2256) → референси (сині, не чіпати): `Preview` 81453:285715 · `Components` 81453:285732 · `Messages` 81453:285793 → `Old — Popups` 81459:2590 (3 старі `Messages-popup` + 5 модалок) → `Old — Components` 81459:2599 (`Messages / Content`, `Messages-content/messages buttons`).
+`Messages` 81462:2727 (x 0) · `Messages — Empty` 81462:3094 (x 2256) → колишні референси (чорні): `Old — Preview` 81453:285715 · `Old — Messages` 81453:285793 · `Old — Components (Design)` 81453:285732 → `Old — Popups` 81459:2590 (3 старі `Messages-popup` + 5 модалок) → `Old — Components` 81459:2599 (`Messages / Content`, `Messages-content/messages buttons`).
 Над сетом `Messages` — Section компонента `Messages/Card` (81460:2677), над нею приклад картинки `Image — example`.
 
 | Сет | 3xs | xl |
