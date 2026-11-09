@@ -6,9 +6,9 @@
 - Компонентні токени — **тільки** в `*/component`.
 
 ## Джерело правди
-Повний експорт усіх сетів і тем — `tokens/system/` у корені репо (`$themes.json`, `$metadata.json`, `mb/*`, `xon/*`). Перед роботою з токенами читати звідти; після змін у Token Studio — оновлювати експорт.
+Повний експорт усіх сетів і тем — `tokens/system/` у корені репо (`$themes.json`, `$metadata.json`, `mb/*`, `xon/*`, `default/*`, `inverse/*`). Перед роботою з токенами читати звідти; після змін у Token Studio — оновлювати експорт.
 
-**Останній експорт у репо: 2026-10-21** (MB component 656 токенів, XON component 654).
+**Останній експорт у репо: 2026-11-09** (з GitLab; 8 сетів: mb|xon core 238 + override 140, default alias 156 + component 960, inverse alias 88 + component 6).
 
 > Правила токенів, іменування, прив'язка, JSON-handoff, свіжий архів — `rules/tokens.md`. Тут — лише довідка.
 
