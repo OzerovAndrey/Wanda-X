@@ -1,10 +1,12 @@
 {
   "tokenSetOrder": [
     "mb/core",
-    "mb/alias",
-    "mb/component",
+    "mb/override",
     "xon/core",
-    "xon/alias",
-    "xon/component"
+    "xon/override",
+    "default/alias",
+    "default/component",
+    "inverse/alias",
+    "inverse/component"
   ]
 }

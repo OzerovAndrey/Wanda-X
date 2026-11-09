@@ -1,0 +1,66 @@
+{
+  "btn": {
+    "neutral": {
+      "fill": {
+        "default": {
+          "value": "{override.btn.neutralInvert.fill.default}",
+          "type": "color",
+          "$extensions": {
+            "com.figma.scopes": [
+              "NONE"
+            ]
+          }
+        },
+        "hover": {
+          "value": "{override.btn.neutralInvert.fill.hover}",
+          "type": "color",
+          "$extensions": {
+            "com.figma.scopes": [
+              "NONE"
+            ]
+          }
+        },
+        "active": {
+          "value": "{override.btn.neutralInvert.fill.active}",
+          "type": "color",
+          "$extensions": {
+            "com.figma.scopes": [
+              "NONE"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "lotteryTournament": {
+    "card": {
+      "fill": {
+        "value": "{core.grey.800}",
+        "type": "color",
+        "$extensions": {
+          "com.figma.scopes": [
+            "NONE"
+          ]
+        }
+      },
+      "color": {
+        "value": "{text.default.heading}",
+        "type": "color",
+        "$extensions": {
+          "com.figma.scopes": [
+            "NONE"
+          ]
+        }
+      },
+      "border": {
+        "value": "{override.lotteryTournament.card.border}",
+        "type": "color",
+        "$extensions": {
+          "com.figma.scopes": [
+            "NONE"
+          ]
+        }
+      }
+    }
+  }
+}

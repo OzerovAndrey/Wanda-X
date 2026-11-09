@@ -3,12 +3,13 @@
 Разом із `rules/core.md` (§ Токени). Ручна вставка JSON у Token Studio, storage, Inspect — `references/token-studio.md`; відомі проблеми токен-системи й чужі змінні — `references/tokens.md`.
 
 ## Структура
-- Token Studio: сети `mb/core|alias|component`, `xon/core|alias|component`; тема `Product` → режими MB / XON колекції `Product`. Компонентні токени — **тільки** в `*/component`.
-- Джерело правди — `tokens/system/` у репо (дата останнього експорту — `references/token-studio.md`).
-- MB світлий, XON темний: кольори лише через `semantic.*` (різницю дає alias бренду). `Inverted=False` → `semantic.text.default.*`, `Inverted=True` → `semantic.text.default-invert.*`; не підміняти на `text.static.*`. Нема контрасту — питання, не core.
+- Джерело — GitLab `ys/design/wanda-x` (`git.slygods.com`, `main`, тека `tokens`); у нашому репо `tokens/system/` — копія з експорту Андрея (останній — 2026-11-09).
+- Сети: `mb/core`, `mb/override`, `xon/core`, `xon/override` (бренд) + `default/alias`, `default/component`, `inverse/alias`, `inverse/component` (спільні). Теми: група `Product` — MB (`mb/*` + `default/*` source) / XON; група `Theme` — Default (`default/*`) / Inverse (`default/*` + `inverse/*`). Figma: колекції `Product` (MB / XON) і `Theme` (Default / Inverse).
+- Компонентні токени — у `default/component` (camelCase: `btn.*`, `menu.*`, `profileMenu.*`, `modal.*`, `table.*` …), інверт — `inverse/component`. Alias — `default/alias`: `text.*`, `background.*`, `fill.*`, `border.*`, `icon.*`, `status.*`, `global.borderRadius.*`, `spacing.*`. Типографіка — `mb|xon/override`: `heading.*`, `text.md|mdStrong|lgStronger …`.
+- Темний фон: `text.defaultInvert.*` (або тема Inverse). Старі `semantic.*` / `contextual.*` / `border-radius.*` більше не існують.
 
 ## Свіжий архів (на початку кожної сесії)
-Спитати про зміни → zip розпакувати в окрему порожню папку → `python3 -I scripts/tokens-diff.py tokens/system <папка>` → коротко: + / − / ~, що торкається нашого компонента, конфлікти імен → замінити `tokens/system/`, оновити дату в `references/token-studio.md`, коміт `tokens: export YYYY-MM-DD` → перевірити, чи потрапили раніше передані `tokens/<c>.*.json` (ні — нагадати вставити). Нема архіву — сказати, від якої дати експорт.
+Спитати про зміни → zip розпакувати в окрему порожню папку → `python3 -I scripts/tokens-diff.py tokens/system <папка>` (сети бере з `$metadata.json`) → коротко: + / − / ~, що торкається нашого компонента, конфлікти імен → замінити `tokens/system/`, оновити дату в `references/token-studio.md`, коміт `tokens: export YYYY-MM-DD` → перевірити, чи потрапили раніше передані `tokens/<c>.*.json` (ні — нагадати вставити). Нема архіву — сказати, від якої дати експорт.
 
 ## Іменування
 | Що | Шаблон | Тип |

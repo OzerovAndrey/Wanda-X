@@ -9,7 +9,15 @@
 import json
 import sys
 
-SETS = ['mb/core', 'mb/alias', 'mb/component', 'xon/core', 'xon/alias', 'xon/component']
+import glob, os
+
+
+def sets_of(root):
+    """Сети з $metadata.json (tokenSetOrder), інакше — усі */*.json."""
+    try:
+        return json.load(open(os.path.join(root, '$metadata.json')))['tokenSetOrder']
+    except Exception:
+        return sorted(os.path.relpath(f, root)[:-5] for f in glob.glob(os.path.join(root, '*', '*.json')))
 
 
 def flat(d, p=''):
@@ -20,10 +28,18 @@ def flat(d, p=''):
             yield from flat(v, p + k + '.')
 
 
+def load(root, f):
+    path = f'{root}/{f}.json'
+    return dict(flat(json.load(open(path)))) if os.path.exists(path) else {}
+
+
 def main(old, new):
-    for f in SETS:
-        a = dict(flat(json.load(open(f'{old}/{f}.json'))))
-        b = dict(flat(json.load(open(f'{new}/{f}.json'))))
+    so, sn = sets_of(old), sets_of(new)
+    if so != sn:
+        print('== СТРУКТУРА СЕТІВ ЗМІНИЛАСЬ:', so, '→', sn)
+    for f in list(dict.fromkeys(so + sn)):
+        a = load(old, f)
+        b = load(new, f)
         add = sorted(set(b) - set(a))
         rem = sorted(set(a) - set(b))
         chg = sorted(k for k in set(a) & set(b) if a[k] != b[k])

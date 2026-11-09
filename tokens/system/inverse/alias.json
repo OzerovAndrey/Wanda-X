@@ -1,0 +1,478 @@
+{
+  "text": {
+    "default": {
+      "heading": {
+        "value": "{text.defaultInvert.heading}",
+        "type": "color"
+      },
+      "primary": {
+        "value": "{text.defaultInvert.primary}",
+        "type": "color"
+      },
+      "secondary": {
+        "value": "{text.defaultInvert.secondary}",
+        "type": "color"
+      },
+      "tertiary": {
+        "value": "{text.defaultInvert.tertiary}",
+        "type": "color"
+      }
+    },
+    "defaultInvert": {
+      "heading": {
+        "value": "{core.white.500}",
+        "type": "color"
+      },
+      "primary": {
+        "value": "{core.white.a90}",
+        "type": "color"
+      },
+      "secondary": {
+        "value": "{core.white.a70}",
+        "type": "color"
+      },
+      "tertiary": {
+        "value": "{core.white.a50}",
+        "type": "color"
+      }
+    },
+    "brand": {
+      "primary": {
+        "value": "{core.brand10.500}",
+        "type": "color"
+      },
+      "secondary": {
+        "value": "{core.brand30.500}",
+        "type": "color"
+      },
+      "onBrand": {
+        "value": "{core.content.a100}",
+        "type": "color"
+      },
+      "onBrandSecondary": {
+        "value": "{core.content.a100}",
+        "type": "color"
+      }
+    },
+    "disabled": {
+      "primary": {
+        "value": "{core.content.a25}",
+        "type": "color"
+      },
+      "onBrand": {
+        "value": "{core.content.a40}",
+        "type": "color"
+      },
+      "secondary": {
+        "value": "{core.brand10.a60}",
+        "type": "color"
+      },
+      "static": {
+        "value": "{core.grey.300a50}",
+        "type": "color"
+      }
+    },
+    "static": {
+      "primary": {
+        "value": "{core.grey.700}",
+        "type": "color"
+      },
+      "secondary": {
+        "value": "{core.grey.500}",
+        "type": "color"
+      },
+      "accent": {
+        "value": "{core.brand30.500}",
+        "type": "color"
+      }
+    },
+    "bannerCart": {
+      "accent": {
+        "value": "{core.brand10.300}",
+        "type": "color"
+      }
+    }
+  },
+  "background": {
+    "5": {
+      "value": "{core.grey.a30}",
+      "type": "color"
+    },
+    "page": {
+      "value": "{override.background.pageInvert}",
+      "type": "color"
+    },
+    "slate2": {
+      "value": "{core.white.500}",
+      "type": "color",
+      "description": "+ cards, profile side menu, payment popup, ingame"
+    },
+    "slate4": {
+      "value": "{core.brand60.a15}",
+      "type": "color",
+      "description": "+ shop prices"
+    },
+    "slateDark1": {
+      "value": "{core.grey.700}",
+      "type": "color",
+      "description": "+ dark plate: leaderboard striped"
+    },
+    "slateDark2": {
+      "value": "{core.grey.800}",
+      "type": "color",
+      "description": "+ dark stripe / head on dark plate"
+    },
+    "brandSubtle": {
+      "value": "{core.brand60.a10}",
+      "type": "color",
+      "description": "+ table filled"
+    },
+    "brand": {
+      "emphasizing": {
+        "default": {
+          "primary": {
+            "value": "{core.brand10.500}",
+            "type": "color"
+          }
+        }
+      }
+    }
+  },
+  "fill": {
+    "subtle": {
+      "value": "{fill.subtleInvert}",
+      "type": "color"
+    },
+    "subtleInvert": {
+      "value": "{core.white.500}",
+      "type": "color",
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "alpha",
+            "value": "0.1",
+            "space": "hsl"
+          }
+        }
+      }
+    }
+  },
+  "border": {
+    "default": {
+      "default": {
+        "value": "{core.content.a20}",
+        "type": "color"
+      },
+      "secondary": {
+        "value": "{core.content.a8}",
+        "type": "color"
+      },
+      "disabled": {
+        "value": "{core.grey.a8}",
+        "type": "color"
+      }
+    }
+  },
+  "icon": {
+    "static": {
+      "primary": {
+        "value": "{core.grey.700}",
+        "type": "color"
+      },
+      "secondary": {
+        "value": "{core.grey.500}",
+        "type": "color"
+      },
+      "tertiary": {
+        "value": "{core.grey.300}",
+        "type": "color"
+      }
+    },
+    "default": {
+      "primary": {
+        "value": "{core.content.a85}",
+        "type": "color"
+      },
+      "secondary": {
+        "value": "{core.content.a70}",
+        "type": "color"
+      },
+      "tertiary": {
+        "value": "{core.content.a50}",
+        "type": "color"
+      }
+    },
+    "bannerCart": {
+      "primary": {
+        "value": "{core.content.a100}",
+        "type": "color"
+      },
+      "secondary": {
+        "value": "{core.content.a80}",
+        "type": "color"
+      },
+      "tertiary": {
+        "value": "{core.content.a60}",
+        "type": "color"
+      },
+      "accent": {
+        "value": "{core.brand30.500}",
+        "type": "color"
+      }
+    },
+    "brand": {
+      "primary": {
+        "value": "{core.brand10.400}",
+        "type": "color"
+      },
+      "secondary": {
+        "value": "{core.brand30.500}",
+        "type": "color"
+      }
+    }
+  },
+  "status": {
+    "warning": {
+      "text": {
+        "primary": {
+          "value": "{core.validation.warning.500}",
+          "type": "color"
+        }
+      },
+      "bg": {
+        "primary": {
+          "value": "{core.validation.warning.500}",
+          "type": "color"
+        },
+        "secondary": {
+          "value": "{core.validation.warning.a20}",
+          "type": "color"
+        }
+      },
+      "icon": {
+        "primary": {
+          "value": "{core.validation.warning.500}",
+          "type": "color"
+        }
+      }
+    },
+    "gold": {
+      "text": {
+        "value": "{core.additionals.gold}",
+        "type": "color"
+      },
+      "fill": {
+        "value": "{core.additionals.gold}",
+        "type": "color"
+      },
+      "border": {
+        "value": "{core.additionals.gold}",
+        "type": "color"
+      }
+    },
+    "silver": {
+      "text": {
+        "value": "{core.additionals.silver}",
+        "type": "color"
+      }
+    },
+    "bronze": {
+      "text": {
+        "value": "{core.additionals.bronze}",
+        "type": "color"
+      }
+    },
+    "pending": {
+      "bg": {
+        "primary": {
+          "value": "{core.validation.warning.600}",
+          "type": "color"
+        },
+        "secondary": {
+          "value": "{core.validation.warning.a20}",
+          "type": "color"
+        }
+      },
+      "text": {
+        "primary": {
+          "value": "{core.validation.warning.600}",
+          "type": "color"
+        }
+      }
+    },
+    "declined": {
+      "bg": {
+        "primary": {
+          "value": "{core.grey.200}",
+          "type": "color"
+        },
+        "secondary": {
+          "value": "{core.grey.200a40}",
+          "type": "color"
+        }
+      },
+      "text": {
+        "primary": {
+          "value": "{core.grey.200}",
+          "type": "color"
+        }
+      }
+    },
+    "success": {
+      "text": {
+        "primary": {
+          "value": "{core.validation.success.500}",
+          "type": "color"
+        }
+      },
+      "bg": {
+        "primary": {
+          "value": "{core.validation.success.600}",
+          "type": "color"
+        },
+        "secondary": {
+          "value": "{core.validation.success.a20}",
+          "type": "color"
+        }
+      },
+      "icon": {
+        "primary": {
+          "value": "{core.validation.success.500}",
+          "type": "color"
+        }
+      }
+    },
+    "error": {
+      "text": {
+        "primary": {
+          "value": "{core.validation.danger.500}",
+          "type": "color"
+        }
+      },
+      "bg": {
+        "primary": {
+          "value": "{core.validation.danger.500}",
+          "type": "color"
+        },
+        "secondary": {
+          "value": "{core.validation.danger.a20}",
+          "type": "color"
+        }
+      },
+      "border": {
+        "primary": {
+          "value": "{core.validation.danger.500}",
+          "type": "color"
+        }
+      },
+      "icon": {
+        "primary": {
+          "value": "{core.validation.danger.500}",
+          "type": "color"
+        }
+      }
+    },
+    "info": {
+      "text": {
+        "primary": {
+          "value": "{core.validation.info.400}",
+          "type": "color"
+        }
+      },
+      "bg": {
+        "primary": {
+          "value": "{core.validation.info.500}",
+          "type": "color"
+        },
+        "secondary": {
+          "value": "{core.validation.info.a20}",
+          "type": "color"
+        }
+      },
+      "icon": {
+        "primary": {
+          "value": "{core.validation.info.600}",
+          "type": "color"
+        }
+      }
+    },
+    "default": {
+      "bg": {
+        "secondary": {
+          "value": "{core.content.a20}",
+          "type": "color"
+        }
+      }
+    }
+  },
+  "link": {
+    "default": {
+      "default": {
+        "value": "{link.default.defaultInvert}",
+        "type": "color"
+      },
+      "defaultInvert": {
+        "value": "{text.default.heading}",
+        "type": "color"
+      },
+      "disabled": {
+        "value": "{link.default.disabledInvert}",
+        "type": "color"
+      },
+      "disabledInvert": {
+        "value": "{text.default.tertiary}",
+        "type": "color"
+      },
+      "hover": {
+        "value": "{text.brand.primary}",
+        "type": "color"
+      }
+    },
+    "accent": {
+      "default": {
+        "value": "{text.brand.primary}",
+        "type": "color"
+      },
+      "hover": {
+        "value": "{text.brand.primary}",
+        "type": "color"
+      }
+    },
+    "static": {
+      "default": {
+        "value": "{link.static.defaultInvert}",
+        "type": "color"
+      },
+      "defaultInvert": {
+        "value": "{text.default.heading}",
+        "type": "color"
+      },
+      "hover": {
+        "value": "{text.brand.primary}",
+        "type": "color"
+      }
+    }
+  },
+  "divider": {
+    "default": {
+      "secondary": {
+        "value": "{core.brand60.a20}",
+        "type": "color"
+      },
+      "transparency": {
+        "value": "{core.content.a0}",
+        "type": "color"
+      }
+    },
+    "bannerCart": {
+      "primary": {
+        "value": "{core.content.a20}",
+        "type": "color"
+      },
+      "secondary": {
+        "value": "{core.content.a10}",
+        "type": "color"
+      }
+    }
+  }
+}
