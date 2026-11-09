@@ -2,6 +2,7 @@
 
 Історія рішень і робіт (раніше — у SKILL.md). Нові записи — зверху. Claude читає лише на прямий запит («що ми робили з …»).
 
+- 2026-11-09 page(messages): сторінку впорядковано (референси `Preview` / `Components` / `Messages` у ряд з x 4512, старе — `Old — Popups`, `Old — Components`); зібрано сети попапа `Messages` і `Messages — Empty` (`Modal/Default` 3xs + xl lg, `Tabs`, `Empty`) і компонент `Messages/Card` (Image / Actions, глобальні токени) — `pages/messages.md`
 - 2026-11-09 page(races): `Race/Stage` перев'язано з `lotteryTournament.*` на глобальні токени (`background.slateDark2`, `divider.default.primary`, `global.borderRadius.lg`, `spacing.*`, `text.*`, `fill.subtleInvert`); правило: локальні компоненти сторінок — лише глобальні токени (`build-page.md` §5)
 - 2026-11-09 page(profile): локальний компонент `Profile/Balance` над сетом Balances, 8 карток → інстанси; правило: компонент сторінки — Section над своїм сетом; пастка GRID
 - 2026-11-09 tokens: export 2026-11-09 з GitLab — нова структура 8 сетів (mb|xon core+override, default|inverse alias+component); повний diff — `reports/tokens-diff-2026-11-09.txt`; `tokens-diff.py` — сети з `$metadata.json`; усі 22 токени профілю є в новому експорті
