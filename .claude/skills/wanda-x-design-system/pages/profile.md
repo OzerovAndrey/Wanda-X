@@ -1,28 +1,28 @@
 # Profile — сторінка `32965:145491` (`     ↳ Profile +`)
 
-Статус (2026-11-06): **зібрано 7 сетів сторінки + 13 модалок; KYC Verification і Loyalty points — ще ні** (потрібні нові компоненти сторінки). Старе — референсами в чорних `Old — …` праворуч (Андрей попросив так після пілоту). `Preview` / `Design` нема.
+Статус (2026-11-09): **референс — Section `Profile` 81302:100053** (Андрей, «вірний референс»; чорна, вміст / назву / колір не чіпати). Зібрано 17 сетів сторінки + 11 модалок + компонент `KYC Verification/Step`. Старі лейаути й 34 старі компоненти **видалено** на прохання Андрея; лишилась `🔴Old — Components` — 18 старих компонентів, що мають інстанси на інших сторінках (`↳ Modal` Profile popup, Cashbox, Table originals, ingame).
 
-## Рішення Андрея (2026-11-06)
-- Профіль — **сторінками в `Layout/3xs` + `Layout/xl`**, не темний `Profile popup` (`↳ Modal` 80108:43620 / 43628, `Profile popup mobile` 80108:45062).
-- Модалки Section `1`–`10` — **перезібрати**: клон модалки команди (зберігає вписані MrBet-заголовки) у новий сірий сет + переклад за правилами (CTA у Footer FILL, `Description`, картинки → порожній `Image/Single` + приклад над Section, `Accordions`). Старі Section `1`–`10` → чорні `Old — Popup N · …` (вміст не чіпали; вкласти Section у Section конектор не може).
+## Рішення Андрея
+- Профіль — сторінками в `Layout/3xs` + `Layout/xl`, не темний `Profile popup`.
+- Референс для всього — Section `Profile` (Bonuses, Bet history / Bets history, Personal details, KYC + KYC/mobile + KYC popups, Game limits, Loyalty points, Change password).
+- Модалок поза референсом не тримати (Successful registration, Bonus played — прибрано).
 
 ## Розкладка (y 0, 600 між)
-| x | Section | ID | Що |
-|---|---|---|---|
-| 0 | `Bonus balance` | 81063:50626 | Title+Description → `Notification/System` Info (Actions «Games») → Active bonus → Available (+ `Button Tertiary md`) → FAQ (`Accordion` ×9) |
-| 2256 | `Bonus balance — Empty` | 81065:53188 | Title → Info «No active bonuses balances» + `Button Primary lg` → FAQ |
-| 4512 | `Account info` | 81087:61895 | Title → `Notification/System` Info «Share your link…» (Copy link) + Warning «Please confirm your email…» (Verify) → `Inputs` 5 рядів (`Input` Filled; xl 2 кол., 3xs 1 кол.; 5-й — дата + `Segmented`) → `Checkbox` згоди → Change password (`Button Text md`) + Save changes (`Primary md`) |
-| 6768 | `Game limits` | 81086:58889 | Title → 3 картки `Wrapper` (fill `semantic.background.slate-2`, radius `border-radius.global.lg`, p 16): Time Limit / Deposit Limit / Self-Restriction — Title + `Button Text sm` «Limits history», Description, `Input`, `Chip`-и, `Button Primary lg` |
-| 9024 | `Game limits — Active` | 81086:61116 | те саме, Time Limit — відлік «02d : 58h…» + «Active until…» + `Progress` (новий 79804:4510) |
-| 11280 | `Bet history` | 81085:63070 | Title → `Tabs Default` (Open bets / Settled bets) → `Table` 6 кол. (xl з Head; 3xs без Head, `Table/Row Direction=Vertical`), Cashout — `Button Primary sm` у слоті 6-ї клітинки |
-| 13536 | `Bet history — Empty` | 81085:66050 | Title → Tabs → `Empty Card=True` (Description «You have no open bets», Button «Place a bet») |
-| 15792 … 42864 | модалки (по 2256) | | `Bonus played` 81065:55301 · `Successful registration` 81081:54758 · `Session ending` 81081:54913 · `Access restricted` 81081:54990 · `Login limit` 81081:55067 · `Deposit limit` 81081:55144 · `Time limit history` 81083:56052 (`Table` Limit/Start/Finish) · `Time limit history — Empty` 81083:55036 · `Password change` 81083:55810 (2 `Input` + Primary lg + Text «My profile») · `Unsaved changes` 81083:55151 · `Confirm email` 81083:55252 · `Email confirmed` 81083:55399 · `Verification info` 81083:55520 |
-| 45120 → | чорні `Old — Bonus balance` · `Loyalty points` · `Account info` · `KYC Verification` · `Game limits` · `Bet history` · `Popups` · `Popup 1…10 · …` · `Components` | | вміст не змінено |
+Стани (порядок меню профілю): `Bonus balance` · `— Empty` · `Loyalty points` · `— Shop` · `— History` · `— History empty` · `— Email` · `Account info` · `Account info — Confirmed` · `Bet history` · `— Empty` · `Game limits` · `— Active` · `KYC Verification` · `— Photo ID` · `— Declined` · `— Completed` → модалки `Unsaved changes` · `Confirm email` · `Email confirmed` · `Password change` · `Session ending` · `Access restricted` · `Deposit limit` · `Login limit` · `Time limit history` · `— Empty` · `Verification info` → компонент `KYC Verification/Step` (81306:48393) → референс `Profile` → `🔴Old — Components`.
 
-Заголовки — клони MrBet-текстів зі старих макетів, fill `text.default.heading`. Сетка карток — GRID, рядки HUG.
+| Сет | Зібрано з |
+|---|---|
+| Bonus balance (+Empty) | Title + Description (RU-текст референсу) · `Notification/System` **Warning** + «Games» · `Card / Bonuses (Profile)` у GRID · `Button Tertiary md` «Available promotions» · FAQ `Accordion` ×9 (2-й Opened «2. Why have I been asked for verification?»). Empty — Info «No active bonuses balances» + `Primary lg` «Available promotions» |
+| Loyalty points ×5 | картка slate-2: «9 083 points», `Image` 32 + «Exchange rate by / Professional» + `Badge` «10:1», `Image` 96 · `Tabs Default` (Bonus balance / Bonuses for points / History) · обмін: `Input` + сума + `Primary md` «Exchange», рівні (Image 32 + назва/курс + сума) · Shop: GRID карток (Image + «Multiplier x1.15» + «2000 points» + «Buy») · History: `Table/History Card` (Points exchange / Prize / Purchased bonus; Open — ID / Date) · History empty / Email — `Empty Card=False` (Description + «Open Email») |
+| Account info (+Confirmed) | Notification Info «Share your link…» (Copy link) + Warning «…bonus - 20 FS» (Verify) · 9 `Input` Filled з підписами референсу (User name … Date of Birth) · `Segmented` Male / Female · `Checkbox` згоди · Change password / Save changes. Confirmed — без нотифікацій |
+| Bet history (+Empty) | `Tabs Default` · `Table` 6 кол. (Cashout — окрема колонка) · Empty — `Empty Card=True` |
+| Game limits (+Active) | картки slate-2: Time / Deposit / Self-Restriction — `Input`, `Chip`, `Button`, `Progress` |
+| KYC ×4 | hero: `Heading` Primary + картка прогресу (`Progress Type=Step`, 25% / 100%) + `Image` 294×194 з `Status` Error «Uncompleted» · `KYC Verification/Step` ×4 (Photo ID / Proof of payment / Selfie with documents / Additional documents); Photo ID Opened: опис, «Choose file», помилки (`status.error.text.primary`), формати, файли (Image 40 + назва + `Status` / `Progress`), «Send», `Image` 288×148. Declined / Completed — `Image` + `Status` + `Heading` + опис + «Go to Home» |
 
-**Вписати вручну (MrBet):** стиль `heading/md` на `FAQ` ×4 і на назвах карток Game limits ×12 (клони без стилю); Title модалки `Bonus played` ×2 «TITLE» → «Congratulations!»; заголовок Game limits: xl «Time limits», 3xs «Game limits» — вирівняти на один.
-**Відкрито:** KYC Verification (список · Photo ID з завантаженням · Declined · Verified) і Loyalty points (обмін · магазин · історія · email) — потрібні нові компоненти сторінки (`KYC Verification/Step`, `Loyalty points/Summary`, `/Level`, `/Offer`); кнопка порожнього Bonus balance «Label»; `Card / Bonuses (Profile)` зі старим `Progress/Linear`; Achievements / Referral / Real / Sport balance — макетів нема. XON конектором не перевірити.
+**Компонент `KYC Verification/Step`** (81306:48393): State=Closed | Opened; картка slate-2, radius lg, p16; `Image/Single` 64 + Title (`text.lg-stronger`, `text.default.heading`) + Value «+25%» (`status.success.text.primary`) + chevron-down / up; Opened — слот `Content`.
+
+**Вписати вручну (MrBet / іконки):** `heading/md` на `FAQ` ×4 і назвах карток Game limits ×12; `Heading` у KYC ×8 — «Please complete verification by submitting your documents» / «Account Declined» (джерел MrBet-тексту більше нема); заголовок Game limits xl «Time limits» vs 3xs «Game limits»; іконка смітника в рядках файлів KYC (зараз дефолтна `plus`); кнопки «Confirm» у полях телефону / email Account info.
+**Відкрито:** Bet history — у референсі Cashout під сумою і рядки розгортаються (express), на 3xs — список з розгортанням; зараз 6-та колонка й вертикальні рядки. XON конектором не перевірити.
 
 ## Як було на сторінці до збирання
 

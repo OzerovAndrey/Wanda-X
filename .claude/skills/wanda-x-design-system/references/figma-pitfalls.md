@@ -67,3 +67,5 @@
 - `Empty` Card=True має MrBet Title — вставляти group/ungroup, текст — у `Description` (Title вимкнути).
 - Section не вкладається в Section (`appendChild` падає на MrBet усередині) — старі Section-референси лише фарбувати / переставляти.
 - Скриншот одразу після правки часто кешований — перевіряти розміри даними.
+- `findAll` за назвою кнопки в Layout чіпляє і кнопки хедера / сайдбару — шукати тільки в `Main Area` / слотах.
+- `component.resize()` після `primaryAxisSizingMode='AUTO'` фіксує висоту — після ресайзу ставити `layoutSizingVertical='HUG'`.

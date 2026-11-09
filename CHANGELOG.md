@@ -2,6 +2,7 @@
 
 Історія рішень і робіт (раніше — у SKILL.md). Нові записи — зверху. Claude читає лише на прямий запит («що ми робили з …»).
 
+- 2026-11-09 page(profile): новий референс `Profile` 81302:100053; видалено старі лейаути й 34 невикористані старі компоненти; зібрано Loyalty points ×5, KYC ×4 (+ компонент `KYC Verification/Step`), Account info — Confirmed; Bonus balance / модалки вирівняно з референсом; прибрано Successful registration і Bonus played
 - 2026-11-06 page(profile): старе — у чорні `Old — …` (Section 1–10 → `Old — Popup N`); зібрано сети Account info, Game limits (+Active), Bet history (+Empty) і 13 модалок; ряд сети → модалки → Old
 - 2026-11-06 page(profile): рішення — профіль сторінками в Layout (не Profile popup), пілот Bonus balance; зібрано сети `Bonus balance`, `Bonus balance — Empty`, модалку `Bonus played`; старе не рухали
 - 2026-11-06 page(profile): впорядкування відкочено на прохання Андрея — усі 130 вузлів на початкових координатах і в початковому порядку шарів, Section `Old — …` прибрано
