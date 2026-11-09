@@ -40,3 +40,10 @@
 5. Копія фрагментів — `tokens/<c>.{mb,xon}.{alias,component}.json` у репо.
 6. **Ніколи не писати в storage Token Studio** — GitHub sync перезапише.
 7. Після Export — змінні мають нові ID: аудит мертвих прив'язок → переприв'язка за plugin data `tokens` (`token.replace(/\./g,'/')`).
+
+## Структура після оновлення з GitLab (2026-11-09)
+- Джерело токенів — GitLab `ys/design/wanda-x` (`git.slygods.com`, гілка `main`, тека `tokens`), Token Studio storage `gitlab`. Наш GitHub `tokens/system/` — лише копія; оновлювати з експорту Андрея.
+- Сети: `mb/core`, `mb/override`, `xon/core`, `xon/override`, `default/alias`, `default/component`, `inverse/alias`, `inverse/component`. Figma: колекція `Product` (MB / XON) + `Theme` (Default / Inverse).
+- Старі назви прибрано: `semantic.*`, `border-radius.global.*`, `contextual.*`. Нові: `background.slate2`, `background.1`, `global.borderRadius.lg`, `menu.color.accent`, `text.default.*`, `status.<state>.text.primary`. Типографіка — camelCase як стилі: `text.mdStrong`, `text.lgStrong`, `text.lgStronger`, `text.smStrong`, `heading.md` …
+- Збережені в документі дані Token Studio (`values`) після пулу не оновлюються — свіжу структуру брати з експорту JSON, а перевіряти прив'язки за змінними `Product` / `Theme`.
+- Клони MrBet-заголовків тягнуть node-level прив'язки fontSize / fontFamily / fontWeight / lineHeight до старих змінних — знімати `setBoundVariable(k, null)`, стиль `heading/*` лишається.
