@@ -23,7 +23,7 @@ Section `Web` (тепер `Old — Web`, 80681:92644) — найсвіжіші �
 ## `Race/Stage`
 `Type = Active | Soon | Finished` × `Open = False | True` (Soon лише False) — точна копія старих `Races / Stage` + `Races / Stage / Soon`.
 Анатомія: `Image` (Image/Single Slot=False, 204, верхні радіуси) · `Label` (absolute 16/16, Transparent light md: Now / Finished) · `Content` → `Info` (Title Row з декором + `Prize` + `Time` Ends in / Start in) · `Me` (Table/Leaderboard Striped, 1 рядок) · `Players` (5 рядків, видно при Open) · `Button` Text [Invert] md + chevron-up / chevron-down (Top players / Hide).
-Токени — готові `contextual.lottery-tournament.*` (card.fill / border / color, padding-t/h/b, gap, content.gap), `border-radius.lottery-tournament.general`, `border.lottery-tournament.default`; очки — `semantic.text.brand.secondary`. Нових токенів нема.
+Токени — **глобальні** (2026-11-09, замість `lotteryTournament.*`): фон `background.slateDark2`, обведення `divider.default.primary` (ширина 1 — без токена), радіус `global.borderRadius.lg` (картка + верхні кути `Image`), padding top `spacing.200` / h і bottom `spacing.300`, gap `spacing.200`, `Info` gap `spacing.100`, назва й приз `text.defaultInvert.heading`, очки `text.brand.secondary`, номери — `fill.subtleInvert` + `text.defaultInvert.primary`. Нових токенів нема.
 Картка без накладання тексту на фото (в оригіналі -40 + фейдер) — правило «чисте фото без фейдерів».
 
 ## Вручну (MrBet Black — конектор не змінює)
