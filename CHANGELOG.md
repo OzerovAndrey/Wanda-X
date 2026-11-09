@@ -2,6 +2,7 @@
 
 Історія рішень і робіт (раніше — у SKILL.md). Нові записи — зверху. Claude читає лише на прямий запит («що ми робили з …»).
 
+- 2026-11-09 page(profile): версія 2 добудована (Free Spins, Sport balance + Free Bet, Achievements, Referral, Congratulations, Bonus offer, Cool-off / Subscriptions); увесь референс версії 2 видалено
 - 2026-11-09 page(profile): видалено 6 покритих Section референсу версії 2; непокриті (Bonus balance, Sport balance, Achievements, Referral program, Game limits 170511) лишились
 - 2026-11-09 page(profile): версія 2 — 8 модалок (попередження, історії лімітів) + стан Loyalty points — Confirm email
 - 2026-11-09 page(profile): сети Profile popup (+ Old) перенесено праворуч від референсу версії 2 (y 20 522)
