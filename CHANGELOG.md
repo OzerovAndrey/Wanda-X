@@ -2,6 +2,7 @@
 
 Історія рішень і робіт (раніше — у SKILL.md). Нові записи — зверху. Claude читає лише на прямий запит («що ми робили з …»).
 
+- 2026-11-11 page(referral): `Referral Program/Step` fill → глобальний `gradients.4` (style + токен, 12 інстансів вирівняно); `referral.step.fill` більше не використовується
 - 2026-11-11 page(ingame): `Navigation` `Ingame/Layout` → `menu.fill` + Inverse, як `Sidebar`; rule: навігація сторінки = кольори Sidebar
 - 2026-11-11 page(ingame): `Ingame/Layout` на глобальних токенах — `Navigation` `background.1`, `Panel` `background.slate2` (замість `ingame.*`, `content.fill`); xl Navigation / Panel знову `Theme = Inverse`; rule: локальні компоненти — лише глобальні токени, продуктові групи не брати
 - 2026-11-11 rule(tokens): токени / змінні самому не додавати — лише наявні в `stage`

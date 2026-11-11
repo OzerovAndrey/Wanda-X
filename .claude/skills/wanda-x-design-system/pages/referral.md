@@ -16,7 +16,7 @@ Section `Referal program` + `Referal program/blocked` (свіжий дизайн
 База сетів — clone `VIP Club` (80510:16829) з group/ungroup; Blocked — clone основного, Empty вставлено через placeholder `Spinner` + swap.
 
 ## `Referral Program/Step`
-H · center · p `spacing.400` / `spacing.200` · gap `spacing.200` · радіус `border-radius.global.lg` · fill — paint style `contextual/referral/step/fill` (токен `contextual.referral.step.fill` → `semantic.gradients.4`, вже був у TS). Анатомія: `Number` (Image/Single 40) · `Label` (`text/md`, `semantic.text.banner-cart.primary`, Fill; жирне — range `text/md-strong` в інстансі) · `Image` (Image/Single 72). Hug по висоті (у старому — фікс 84, текст не влазив на xl); на xl у ряді — Fill по висоті. Нових токенів нема (як у VIP — глобальні spacing напряму).
+H · center · p `spacing.400` / `spacing.200` · gap `spacing.200` · радіус `border-radius.global.lg` · fill — глобальний `gradients.4` (paint style `gradients/4`); компонентний `referral.step.fill` не використовується — Андрей прибирає сам. Анатомія: `Number` (Image/Single 40) · `Label` (`text/md`, `semantic.text.banner-cart.primary`, Fill; жирне — range `text/md-strong` в інстансі) · `Image` (Image/Single 72). Hug по висоті (у старому — фікс 84, текст не влазив на xl); на xl у ряді — Fill по висоті. Нових токенів нема (як у VIP — глобальні spacing напряму).
 Замість старих `Step` (Step 1–3 × md/sm — різниця лише в картинці → один компонент). `rope` і тінь `shadow.referal.step-card` (нема в експорті TS) не перенесено.
 
 ## Банер
