@@ -45,6 +45,8 @@ Main Area
 ```
 **Ingame** (ігрове вікно) — без `Layout/*`: сет = `Ingame/Layout` `Breakpoint=3xs` (x 80) + `xl` (x 480), вміст — у слот `Panel`, активний пункт рейки — `State=Active`; деталі — `pages/ingame.md`.
 
+**Кнопка поруч із `Primary`** (Cancel / No / Login …) — завжди `Variant=Secondary`, не `Static` / `Neutral` / `Tertiary`.
+
 **Десктоп і мобайл — однаковий контент** (ті самі блоки, той самий порядок); різниця лише в розкладці (колонки, ряд / стовпчик, кількість карток).
 
 ## 4. Типові блоки
