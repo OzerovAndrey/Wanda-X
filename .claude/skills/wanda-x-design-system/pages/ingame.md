@@ -27,8 +27,8 @@ Section `Design` 80806:196059 (чорна, референс — не чіпал�
 | Компонент | Анатомія / токени |
 |---|---|
 | `Ingame/Layout` | див. Каркас; слот `Panel` |
-| `Ingame/Booster` | V p `spacing.400` gap `spacing.300`, fill `semantic.fill.default`, радіус `border-radius.card.general`: `Image/Single` 96 · опис · `Price` (Coin `Image` 20 + Value lg-stronger) · Button Primary «Buy» · `Info` (absolute) |
-| `Ingame/Bonus` | `State = Default \| Delete`; fill `semantic.fill.default`, border / паддінги / gap — `contextual.bonuses.*`, радіус `border-radius.card.general`; `Image` (absolute праворуч) · Header + close · Progress-рядок (DS `Progress` Line sm) · Valid for / Wager · Activate; Delete — Title, Description, Cancel (Static) / Delete |
+| `Ingame/Booster` | V p `spacing.400` gap `spacing.300`, fill `fill.subtle`, радіус `global.borderRadius.lg`: `Image/Single` 96 · опис · `Price` (Coin `Image` 20 + Value lg-stronger) · Button Primary «Buy» · `Info` (absolute) |
+| `Ingame/Bonus` | `State = Default \| Delete`; fill `fill.subtle`, p `spacing.300` / pb `spacing.400`, gap `spacing.200`, без обведення, радіус `global.borderRadius.lg`; `Image` (absolute праворуч) · Header + close · Progress-рядок (DS `Progress` Line sm) · Valid for / Wager · Activate; Delete — Title, Description, Cancel (Static) / Delete |
 Блоки без нових компонентів (`Wrapper` + DS): рядок Winning now (`Wrapper` H gap `spacing.200`: `Image/Single` 40 · `Wrapper` Player xs + Game sm-strong · `Amount` md-strong; `Ingame/Winner` прибрано 2026-11-11), User (аватар, ім'я, статус, mail, Progress), Talisman, Bonus-рядок (Progress/Circle + trash), Write off, Tournament Banner/Stats/My result, провайдери в пошуку. Нових токенів нема.
 
 ## Вручну (MrBet Black — конектор не змінює)
@@ -49,3 +49,6 @@ Section `Design` 80806:196059 (чорна, референс — не чіпал�
 ## Зміни 2026-11-11 (оновлення компонента Table)
 - `— Tournament`, `— Tournament Join`, 3xs: рядки `Leaderboard/Row Card Inverted=True` і комірки `…/True` (42 інстанси) → swap на актуальні (без Inverted); на обох лідербордах виставлено `Theme = Inverse` — тексти білі, картки `fill.subtleInvert`. Питання 2 вище для таблиць закрите: інверсія тепер лише через `Theme`.
 - Відкрите: у вузькій 3xs-комірці Subtext (номер) переноситься `58395 / 770` — `Subtext` у `Table/Cell` FIXED.
+
+## Поверхні на панелі (2026-11-11)
+Картки й блоки на панелі (`Ingame/Booster`, `Ingame/Bonus`, Bonus-рядок, Write off, провайдери) — `fill.subtle` (Default `core.content.a8`, Inverse `core.white.a30`). Не `fill.default` (це заливка контролів) і не `background.slate2` (= фон панелі `content.fill`, у Inverse зливається). Компонентні `bonuses.*`, `card.general.*` прибрано — лише глобальні.

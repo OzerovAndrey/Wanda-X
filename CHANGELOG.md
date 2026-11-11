@@ -2,6 +2,7 @@
 
 Історія рішень і робіт (раніше — у SKILL.md). Нові записи — зверху. Claude читає лише на прямий запит («що ми робили з …»).
 
+- 2026-11-11 page(ingame): поверхні на панелі `fill.default` → `fill.subtle` (Booster, Bonus, Bonus-рядок, Write off, Provider); `Ingame/Bonus` без `bonuses.*`, обидві картки `card.general.borderRadius` → `global.borderRadius.lg`; rule: вкладена поверхня — `fill.subtle`
 - 2026-11-11 rule(layout): компоненти сторінки — в одній Section `Components` над плиткою сетів; page(ingame): Layout / Booster / Bonus зібрано в `Components`
 - 2026-11-11 page(ingame): `Ingame/Winner` прибрано — рядки Winning now зібрані кастомно (`Wrapper`), 24 інстанси детачено
 - 2026-11-11 page(ingame): `Navigation` xl як у 3xs — fill `ingame.mob.navmenu.fill` + `Theme = Inverse`
