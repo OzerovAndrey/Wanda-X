@@ -2,6 +2,7 @@
 
 Історія рішень і робіт (раніше — у SKILL.md). Нові записи — зверху. Claude читає лише на прямий запит («що ми робили з …»).
 
+- 2026-11-11 page(ingame): `Ingame/Winner` прибрано — рядки Winning now зібрані кастомно (`Wrapper`), 24 інстанси детачено
 - 2026-11-11 page(ingame): `Navigation` xl як у 3xs — fill `ingame.mob.navmenu.fill` + `Theme = Inverse`
 - 2026-11-11 rule(build-page): кнопка поруч із Primary — Secondary; page(ingame): `Ingame/Bonus` Delete Cancel, Write off No → Secondary; лого xl Guest → Theme Dark (панель Inverse)
 - 2026-11-11 page(ingame): слот `Panel` xl теж `Theme = Inverse` (усі панелі Ingame — Inverse); у панелях `Text [Invert]` → `Text` (16)

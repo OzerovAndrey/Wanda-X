@@ -20,17 +20,16 @@ Section `Design` 80806:196059 (чорна, референс — не чіпал�
 | 2, y 1496 | Bet Hero Active · Featured · Search · Search Not found · Boosters · Boosters Empty · Bonuses · Bonuses Empty · Notifications · Notifications Empty |
 | 3, y 2896 | Strip Rules · Strip Choose · Strip Model · попапи Bet Hero · 5% cashback · You've already claimed a cashback! · Congratulations! · Bad luck in this game? · Back to Lobby? · Resetting girl's progress |
 | 4, y 4424 | попапи Search · Search — Found |
-| Компоненти, y 5952 | `Ingame/Layout` 80834:42333 (x 0) · `Ingame/Winner` 80836:42245 · `Ingame/Booster` 80836:42252 · `Ingame/Bonus` 80836:42322 |
+| Компоненти, y 5952 | `Ingame/Layout` 80834:42333 (x 0) · `Ingame/Booster` 80836:42252 · `Ingame/Bonus` 80836:42322 |
 Сети: `Ingame/Layout 3xs` x 80 + `xl` x 480 у Section 1656 × (80+h+80). Старого на сторінці більше нема.
 
 ## Компоненти сторінки
 | Компонент | Анатомія / токени |
 |---|---|
 | `Ingame/Layout` | див. Каркас; слот `Panel` |
-| `Ingame/Winner` | H gap `spacing.200`: `Image/Single` 40 (`border-radius.thumb.general`) · `Player` xs secondary + `Game` sm-strong · `Amount` md-strong |
 | `Ingame/Booster` | V p `spacing.400` gap `spacing.300`, fill `semantic.fill.default`, радіус `border-radius.card.general`: `Image/Single` 96 · опис · `Price` (Coin `Image` 20 + Value lg-stronger) · Button Primary «Buy» · `Info` (absolute) |
 | `Ingame/Bonus` | `State = Default \| Delete`; fill `semantic.fill.default`, border / паддінги / gap — `contextual.bonuses.*`, радіус `border-radius.card.general`; `Image` (absolute праворуч) · Header + close · Progress-рядок (DS `Progress` Line sm) · Valid for / Wager · Activate; Delete — Title, Description, Cancel (Static) / Delete |
-Блоки без нових компонентів (`Wrapper` + DS): User (аватар, ім'я, статус, mail, Progress), Talisman, Bonus-рядок (Progress/Circle + trash), Write off, Tournament Banner/Stats/My result, провайдери в пошуку. Нових токенів нема.
+Блоки без нових компонентів (`Wrapper` + DS): рядок Winning now (`Wrapper` H gap `spacing.200`: `Image/Single` 40 · `Wrapper` Player xs + Game sm-strong · `Amount` md-strong; `Ingame/Winner` прибрано 2026-11-11), User (аватар, ім'я, статус, mail, Progress), Talisman, Bonus-рядок (Progress/Circle + trash), Write off, Tournament Banner/Stats/My result, провайдери в пошуку. Нових токенів нема.
 
 ## Вручну (MrBet Black — конектор не змінює)
 | Де | Зараз | Має бути |
