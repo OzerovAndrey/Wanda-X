@@ -9,7 +9,7 @@ Section `Web` (тепер `Old — Web`, 80681:92644) — найсвіжіші �
 | Вузол | id | x | Що |
 |---|---|---|---|
 | `Race — Rules` | 80686:41490 | 0 | 3xs 80686:41491 · xl 80686:41492 — hero з «Take part», Tournament games, вкладка Rules + Race rules + Show more |
-| `Race — Prizes` | 80686:78303 | 2256 | 3xs 80686:78304 · xl 80686:78305 — Prize places: `Table/Leaderboard Striped`, 10 рядків, 1–3 кубки, 5-й (я) Selected, Load more |
+| `Race — Prizes` | 80686:78303 | 2256 | 3xs 80686:78304 · xl 80686:78305 — Prize places: `Table/Leaderboard Filled` (до 11.11 — Striped), 10 рядків, 1–3 кубки, 5-й (я) Selected, Load more |
 | `Race — Stage` | 80686:80041 | 4512 | 3xs 80686:80042 · xl 80686:80043 — hero з `Results Type=Result`; Active (1 картка) + Starting soon (3) |
 | `Race — Stage Empty` | 80686:81779 | 6768 | 3xs 80686:81780 · xl 80686:81781 — Active → `Empty Card=True` |
 | `Race — Finished` | 80686:83517 | 9024 | 3xs 80686:83518 · xl 80686:83519 — 2 картки Finished, без заголовка (як в оригіналі) |
@@ -22,7 +22,7 @@ Section `Web` (тепер `Old — Web`, 80681:92644) — найсвіжіші �
 
 ## `Race/Stage`
 `Type = Active | Soon | Finished` × `Open = False | True` (Soon лише False) — точна копія старих `Races / Stage` + `Races / Stage / Soon`.
-Анатомія: `Image` (Image/Single Slot=False, 204, верхні радіуси) · `Label` (absolute 16/16, Transparent light md: Now / Finished) · `Content` → `Info` (Title Row з декором + `Prize` + `Time` Ends in / Start in) · `Me` (Table/Leaderboard Striped, 1 рядок) · `Players` (5 рядків, видно при Open) · `Button` Text [Invert] md + chevron-up / chevron-down (Top players / Hide).
+Анатомія: `Image` (Image/Single Slot=False, 204, верхні радіуси) · `Label` (absolute 16/16, Transparent light md: Now / Finished) · `Content` → `Info` (Title Row з декором + `Prize` + `Time` Ends in / Start in) · `Me` (Table/Leaderboard Filled, 1 рядок) · `Players` (5 рядків, видно при Open) · `Button` Text [Invert] md + chevron-up / chevron-down (Top players / Hide).
 Токени — **глобальні** (2026-11-09, замість `lotteryTournament.*`): фон `background.slateDark2`, обведення `divider.default.primary` (ширина 1 — без токена), радіус `global.borderRadius.lg` (картка + верхні кути `Image`), padding top `spacing.200` / h і bottom `spacing.300`, gap `spacing.200`, `Info` gap `spacing.100`, назва й приз `text.defaultInvert.heading`, очки `text.brand.secondary`, номери — `fill.subtleInvert` + `text.defaultInvert.primary`. Нових токенів нема.
 Картка без накладання тексту на фото (в оригіналі -40 + фейдер) — правило «чисте фото без фейдерів».
 
@@ -42,3 +42,7 @@ Section `Web` (тепер `Old — Web`, 80681:92644) — найсвіжіші �
 3. `List/Bullet` без `Inverted` — номери на темних рядках через оверрайд `semantic/fill/subtle-invert` (як на Tournaments).
 4. Сітка ігор — за стандартом (xl 5 кол., 3xs 2), в оригіналі 9 / 3 кол.; картки етапів — xl 2 кол. (в оригіналі 3 в ряд, Starting soon — карусель).
 5. XON-перевірка через API неможлива (шрифт `Xon_028` не вантажиться) — глянути вручну.
+
+## Зміни 2026-11-11 (оновлення компонента Table)
+- `Striped → Filled`, `Inverted` прибрано командою. 129 інстансів (у мейні `Race/Stage` і в сетах `Race — Prizes / Stage / Finished`) з видалених `…/True` → swap на актуальні; 46 мертвих override-ів заливок / ліній переприв'язано або взято з компонента.
+- Лідерборди тепер світлі (Theme Default) — на темній картці `Race/Stage` виглядають як світла вставка. Пункт 3 «Відкритого» (оверрайд `subtle-invert` у `List/Bullet`) — перевірити, чи ще потрібен.

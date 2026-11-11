@@ -63,3 +63,6 @@ Hall of Fame/Prize   Place = 1 | 2 | 3
 
 ## Картинки → `Image` (2026-11-04)
 `Hall of Fame/Prize` — у мейні `Image/Single Slot=False` (порожній); монети 1/2/3 — інстансами над Section, кожна над своїм варіантом; у сеті `Hall of Fame` інстанси без картинок. Відкрите: Section `Hall of Fame/Prize` стоїть ліворуч від сету (x −629) — за правилом розкладки має бути праворуч.
+
+## Зміни 2026-11-11 (оновлення компонента Table)
+- Структура без змін (`Table/Leaderboard Card`); знято 27 мертвих override-ів висоти `Icon` / `Image` у комірках.

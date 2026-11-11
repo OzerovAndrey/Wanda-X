@@ -23,7 +23,7 @@
 | List + List/Bullet | `↳ List item - Андрей`, Section `List` | Виправлено командою + токени | 2026-10-22 | 47820:58472, 30276:434400 | 2 + 4 | `components/list-bullet.md` |
 | Profile-menu (+ /Item, /Subitem) | `↳ List item - Андрей`, Section `Profile-menu` | Нова збірка, макети перенесено, токени | 2026-10-22 | 78892:291573, 78859:389, 78859:340 | 1 + 6 + 4 | `components/list.md` |
 | Gamehall / Open-thumb-provider | `Gamehall` | Замінено новим `Gamehall/Provider Select` 80735:25481 на сторінці Gamehall (2026-11-05) | 2026-10-22 | 41123:11531 | 1 | `components/filter-sorting.md`, `pages/gamehall.md` |
-| Table | `↳ Table -` | Rebuilt + component tokens bound 2026-10-27 — XON JSON pending | | `components/table.md` | | |
+| Table | `↳ Table` (4 Section: Default, Cell, Leaderboard, History) | Learned — доробка команди (без `Inverted`, `Striped → Filled`, інверсія через `Theme`); інстанси на сторінках мігровано 2026-11-11 | 2026-11-11 | 79220:4707 + Row 79415:4874, Cell 79056:3444, Head/Cell 79056:3449, Leaderboard 79075:3926 + Row 79075:3526, History 79215:294208 + Row 79215:4246 | 28 | `components/table.md` |
 | Notifications, Cookies, Toast | `↳ Notifications, Cookies, Toast` | Not started | | `Toast` 47040:2552 | 8 | |
 | Scrollbar | `↳ Scrollbar` | Нова збірка поруч, інстанси на оригіналі; токени в TS — pending | 2026-10-29 | новий 79774:18 у Section `Scrollbar` 79774:19; оригінал 28787:64507 (79 інст.) в Originals | 8 | `components/scrollbar.md` |
 | Popup | `↳ Popup -` | Rebuilt (етап 1) | 2026-10-28 | оригінали в 5 Section Originals; новий `Popup` 79597:7480 (Breakpoint × Size × Banner, 12v) + `Popup/Banner` 79597:7291 у сірій Section `Popup` — `components/popup.md` | 12 + 1 | токени ширин/банера — наступний етап |

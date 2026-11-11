@@ -1,11 +1,175 @@
-# Table — інвентаризація та план універсального компонента
+# Table
+
+Сторінка `↳ Table` (`78083:324361`) · 4 Section: `Table / Default` (79056:3415), `Table / Cell` (81706:40733, над Default), `Table / Leaderboard` (81706:40735), `Table / History` (81706:40734) · статус: **Learned 2026-11-11** (команда доробила після нашої збірки — нижче актуальний стан; історія збірки — в кінці файлу).
+
+## Призначення і характер
+Одна компонента `Table` з трьома підвидами — проста сітка (`Table`), лідерборд (`Table/Leaderboard`), історія з розкриттям (`Table/History`). Кожен підвид = контейнер (слоти `Head` + `Rows`) + свій рядок (слот `Cells`); комірки спільні — `Table/Cell`, `Table/Head/Cell`.
+- **Роль і місце:** списки з колонками на сторінках продукту — FAQ / Statistics, Welcome bonus, Profile (історії), Tournaments, Lottery, Races, Hall of Fame, Ingame, Dice Duel.
+- **Поведінка між станами:** лише в рядках — Leaderboard `State = Default | Selected` (поточний гравець, заливка `fill/active`), History `State = Default | Hover | Open` (Open — шеврон вниз + панель `Details`).
+- **Інверсія:** **варіантів `Inverted` більше нема** (прибрано з Cell, Head/Cell, Leaderboard/Row). Темний контекст — режим колекції змінних `Theme = Inverse` на контейнері / слоті макета (тексти → `text.defaultInvert.*`, `fill.subtle` → `fill.subtleInvert`). *(спостереження: так команда перевела всю ДС на сети `default` / `inverse`.)*
+- **MB vs XON:** токени однакові за назвами; бренди різняться значеннями alias (радіуси card / container: MB 8 / 16, XON 12 / 12).
+- **Масштаб і гнучкість:** контейнери й рядки 676 FIXED (в макеті — Fill), висота Hug; комірки Fill по ширині, Hug по висоті; фіксована колонка — Fixed width в інстансі.
+- **Межі:** немає Vertical-рядка (Direction лишився з одним значенням), немає sticky-хедера, сортування, пагінації (Load more — окрема кнопка в макеті).
+
+## Анатомія
+```
+Table (79220:4707)  Variant = Divider | Filled · Show head · SLOT Head, Rows
+└─ VERTICAL 676, Hug
+   ├─ Head (SLOT, visible = Show head)  HORIZONTAL, height table.head.height, gap table.row.gap
+   │   └─ 3 × Table/Head/Cell
+   └─ Rows (SLOT)  VERTICAL
+       └─ 3 × Table/Row Divider md
+   Filled: root fill table.filled.fill, radius table.filled.borderRadius; Head fill table.filled.headFill + padding-h table.filled.paddingH; Rows padding-h table.filled.paddingH
+
+Table/Row (79415:4874)  Variant = Divider | Plain × Size = md | sm × Direction = Horizontal
+└─ HORIZONTAL 676, padding-v table.row.paddingV.md|sm; Divider — нижня лінія table.divider
+   └─ Cells (SLOT)  gap table.row.gap — 3 × Table/Cell (Size = розмір рядка)
+
+Table/Leaderboard (79075:3926)  Variant = Card | Filled · Show head · SLOT Head, Rows
+└─ Card:   gap table.leaderboard.card.gap; Head height …head.height.card, padding-h …head.paddingH; Rows gap …card.gap — рядки Card (2-й Selected)
+   Filled: fill table.leaderboard.filled.fill, radius table.leaderboard.striped.borderRadius; Head fill …filled.headFill, height …head.height.striped; Rows gap 0 — рядки Filled / Plain почергово
+
+Table/Leaderboard/Row (79075:3526)  Variant = Card | Filled | Plain × State = Default | Selected
+└─ HORIZONTAL 676, padding table.leaderboard.row.paddingH / paddingV
+   ├─ fill: Card …row.fill.card + radius …row.card.borderRadius · Filled …row.fill.stripe · Plain — нема · Selected — …row.fill.selected
+   └─ Cells (SLOT)  gap table.leaderboard.row.gap — Cell (⬅️ Icon) · Cell · Cell Align=Right
+
+Table/History (79215:294208)  Variant = Divider | Card · Show head · Chevron space · SLOT Head, Rows
+└─ Head row (visible = Show head)  padding-v table.history.head.paddingV, gap …row.gap; Divider — лінія …history.divider; Card — padding-l/r …row.card.paddingL|R
+   ├─ Chevron space (visible = Chevron space)  width table.history.chevronSize
+   └─ Head (SLOT)  gap …row.cellsGap
+   Rows (SLOT): Divider gap 0 · Card gap table.history.card.gap
+
+Table/History/Row (79215:4246)  Variant = Card | Divider × State = Default | Hover | Open · Chevron · SLOT Cells
+└─ VERTICAL 676, padding-v table.history.row.paddingV, gap …row.gap
+   ├─ Divider: лінія …history.divider · Card: fill …row.fill.card, radius …row.card.borderRadius, padding-l/r …row.card.paddingL|R · Hover: fill …row.fill.hover
+   ├─ Main  HORIZONTAL, gap …row.gap — Chevron (chevron-right / Open chevron-down, height …chevronSize) + Cells (SLOT, gap …row.cellsGap)
+   └─ Details (лише Open)  padding-l …details.paddingL, gap …details.gap
+       └─ Panel  fill …panel.fill, radius …panel.borderRadius, padding …panel.paddingH / paddingV, gap …panel.gap — 2 × Table/Cell sm (1-ша з Icon ➡️ copy)
+
+Table/Cell (79056:3444)  Size = md | sm × Align = Left | Right   (200 W FIXED, Hug)
+└─ HORIZONTAL, gap table.cell.gap, по центру по висоті; Align=Right — MAX
+   ├─ Icon (⬅️ Icon, swap ↳ 💠 Icon left)  height table.cell.iconSize
+   ├─ Image (Image, swap ↳ 💠 Image → Image/Single)  height table.cell.imageSize.md|sm
+   ├─ ↳ Slot (Slot)  FIXED 32 / 24, height table.cell.imageSize.md|sm, вміст по центру
+   ├─ Content  VERTICAL Fill
+   │   ├─ Label (Label)  md text.mdStrong / sm text.smStrong, text.default.primary
+   │   ├─ Subtext (Subtext)  md text.smStrong / sm text.sm, text.default.secondary
+   │   └─ Status (Status)  інстанс Status Success Strong md
+   └─ Icon right (Icon ➡️, swap ↳ 💠 Icon right)  height table.cell.iconSize
+
+Table/Head/Cell (79056:3449)  Align = Left | Right   (200 W FIXED, Hug)
+└─ Label  text.smStrong, text.default.secondary
+```
+
+## Властивості
+| Набір | Властивість | Тип | Значення / default |
+|---|---|---|---|
+| `Table` | `Variant` | Variant | **Divider** \| Filled (було Default \| Filled) |
+| `Table`, `/Leaderboard`, `/History` | `Show head` | Boolean | true |
+| ″ | `Head`, `Rows` | Slot | preferred: Head/Cell; рядок свого підвиду |
+| `Table/History` | `Chevron space` | Boolean | true — місце під шеврон у хедері |
+| `Table/Row` | `Variant` · `Size` · `Direction` | Variant | **Divider** \| Plain · **md** \| sm · **Horizontal** (одне значення; Vertical прибрано) |
+| `Table/Leaderboard` | `Variant` | Variant | **Card** \| Filled (було Striped) |
+| `Table/Leaderboard/Row` | `Variant` · `State` | Variant | **Card** \| Filled \| Plain (Stripe → Filled) · **Default** \| Selected; `Inverted` прибрано |
+| `Table/History/Row` | `Variant` · `State` · `Chevron` | Variant / Boolean | Card \| **Divider** · **Default** \| Hover \| Open · true |
+| рядки | `Cells` | Slot | preferred `Table/Cell` |
+| `Table/Cell` | `Size` · `Align` | Variant | **md** \| sm · **Left** \| Right; `Inverted` прибрано |
+| `Table/Cell` | `⬅️ Icon` + `↳ 💠 Icon left` · `Image` + `↳ 💠 Image` · `Slot` + `↳ Slot` · `Icon ➡️` + `↳ 💠 Icon right` | Boolean + swap / slot | усе off; іконки `plus`, Image — `Image/Single` (2 preferred) |
+| `Table/Cell` | `Label` · `Subtext` · `Status` | Boolean | true · false · false |
+| `Table/Head/Cell` | `Align` | Variant | **Left** \| Right; `Inverted` прибрано |
+
+## Токени
+Шари несуть Token Studio-токени (camelCase) + однойменні змінні колекції **`Theme`** (Default / Inverse — значення однакові, різниця йде з alias). Нижче — **стан змінних Figma на 2026-11-11**; експорт у репо (`tokens/system/`, 09.11) уже застарів — див. «Розбіжності з експортом».
+
+| Токен | Значення | Де |
+|---|---|---|
+| `table.head.height` | `{size.500}` | Table → Head |
+| `table.row.gap` · `.gapV` | `{spacing.400}` · `{spacing.200}` | Cells / Head gap · *(gapV не використовується — Vertical нема)* |
+| `table.row.paddingV.md` · `.sm` | `{spacing.400}` · `{spacing.200}` | Table/Row |
+| `table.divider` | `{divider.default.primary}` | Table/Row Divider — лінія |
+| `table.filled.fill` · `.headFill` | `{fill.default}` · `{fill.default}` | Table Filled — плашка · Head |
+| `table.filled.paddingH` · `.borderRadius` | `{spacing.400}` · `{global.borderRadius.md}` | Table Filled |
+| `table.cell.gap` · `.iconSize` | `{spacing.200}` · `{size.300}` | Table/Cell |
+| `table.cell.imageSize.md` · `.sm` | `{size.400}` · `{size.300}` | Image, ↳ Slot |
+| `table.leaderboard.card.gap` | `{spacing.200}` | Leaderboard Card — між рядками |
+| `table.leaderboard.head.paddingH` · `.height.card` · `.height.striped` | `{spacing.400}` · `{size.500}` · `{size.600}` | Leaderboard Head |
+| `table.leaderboard.filled.fill` · `.headFill` | `{background.slate2}` · `{fill.active}` | Leaderboard Filled — плашка · Head |
+| `table.leaderboard.striped.borderRadius` | `{global.container.borderRadius}` | Leaderboard Filled — радіус |
+| `table.leaderboard.row.paddingH` · `.paddingV` · `.gap` | `{spacing.400}` · `{spacing.200}` · `{spacing.400}` | Leaderboard/Row |
+| `table.leaderboard.row.fill.card` · `.stripe` · `.selected` | `{fill.default}` · `{fill.default}` · `{fill.active}` | Row Card · Filled · Selected |
+| `table.leaderboard.row.card.borderRadius` | `{global.card.borderRadius}` | Row Card |
+| `table.history.divider` | `{divider.default.primary}` | History Divider |
+| `table.history.head.paddingV` · `.chevronSize` | `{spacing.100}` · `{size.300}` | Head row · Chevron / Chevron space |
+| `table.history.row.paddingV` · `.gap` · `.cellsGap` | `{spacing.200}` · `{spacing.200}` · `{spacing.400}` | History/Row |
+| `table.history.row.card.paddingL` · `.paddingR` · `.borderRadius` | `{spacing.200}` · `{spacing.400}` · `{global.borderRadius.xs}` | Row Card |
+| `table.history.row.fill.card` · `.hover` | `{fill.default}` · `{fill.hover}` | Row Card · Hover |
+| `table.history.card.gap` | `{spacing.100}` | History Card — між рядками |
+| `table.history.details.paddingL` · `.gap` | `{spacing.800}` · `{spacing.200}` | Details |
+| `table.history.panel.fill` · `.borderRadius` | `{fill.default}` · `{global.card.borderRadius}` | Panel |
+| `table.history.panel.paddingV` · `.paddingH` · `.gap` | `{spacing.300}` · `{spacing.400}` · `{spacing.100}` | Panel |
+| `table.fill` · `table.header` | `{override.table.*}` | legacy — тримає оригінал Welcome bonus |
+
+Текст / іконки — глобальні `text.default.*` напряму (правило).
+
+### Розбіжності з експортом 09.11 (`tokens/system/default/component.json`)
+- В експорті є `table.leaderboard.striped.fill|headFill` (`background.slateDark1|2`) і `table.leaderboard.row.inverted.fill.card|stripe|selected` — у Figma їх нема; замість striped — `table.leaderboard.filled.fill|headFill` (`background.slate2` / `fill.active`).
+- `row.fill.card|stripe`, `history.row.fill.card`, `history.panel.fill`: експорт `{fill.subtle}` → Figma `{fill.default}`; `table.filled.fill|headFill`: експорт `{background.brandSubtle}` → Figma `{fill.default}`.
+- Змінні `table/*` — без scopes (`[]`).
+→ Потрібен свіжий архів Token Studio, щоб звірити.
+
+## Вкладені компоненти
+- `Table/Cell` → `Image/Single` (Slot=False, Type=Default; swap), `Status` (Success / Strong / md), іконки `plus` / `chevron-*` / `copy` — `Static — Icons` (remote).
+- Рядки → `Table/Cell`; контейнери → `Table/Head/Cell` + рядок свого підвиду.
+
+## Відхилення від правил
+- `Table/Row` — `Direction` з одним значенням (`Horizontal`): властивість без вибору.
+- `Table/Leaderboard Filled` — токени з `striped` у назві (`striped.borderRadius`, `head.height.striped`), хоча варіант `Filled` (правило «назви за властивостями»).
+- Приклад `Table/Leaderboard Filled` (3-й рядок, Filled Default) має override токена `table.leaderboard.row.inverted.fill.selected` — такого токена / змінної вже нема.
+- `Table/Cell → Subtext` — FIXED/FIXED: у вузьких комірках (Ingame 3xs) номер переноситься (`58395 / 770`). *(спостереження)*
+- `Leaderboard/Row` `Filled, Selected` і `Plain, Selected` — ідентичні (обидва `row.fill.selected`, без радіуса).
+- 4 мертві прив'язки в прикладах `Table/History` на сторінці `↳ Table` (`Icon right` → height) — не чіпав (сторінка компонента).
+
+## Відкриті питання
+- `Direction` прибрати зовсім? `table.row.gapV` — `$deprecated`?
+- Перейменувати `striped.borderRadius` / `head.height.striped` → `filled.*`?
+- `Subtext` → Hug / Fill замість Fixed?
+
+## Використання на сторінках (2026-11-11)
+| Сторінка | Що стоїть |
+|---|---|
+| Welcome bonus | `Table Filled` × 12 |
+| FAQ, Rules, Statistics | `Table Divider` × 12 |
+| Profile | `Table Divider` × 8, `Table/History Card` × 10 |
+| Hall of fame | `Table/Leaderboard Card` × 2 |
+| Ingame | `Table/Leaderboard Card` × 4 (3xs — `Theme = Inverse` на лідерборді) |
+| Lottery | `Table/Leaderboard Filled` × 4 |
+| Races | `Table/Leaderboard Filled` × 18 (у т. ч. в `Race/Stage`) |
+| Tournaments | `Table/Leaderboard Filled` × 6 |
+| Dice Duel (не наша) | `Table Divider` × 4, `Filled` × 10 |
+| Verification | `Table` з іншої бібліотеки (remote 77898:93440) — не наша компонента |
+
+**Міграція 2026-11-11** (після видалення `Inverted`-варіантів командою): 419 інстансів на Ingame / Lottery / Races / Tournaments вказували на видалені варіанти `…/True` → `swapComponent` на актуальні (`Stripe → Filled`, `Inverted` прибрано; вміст слотів, тексти, Boolean-и збережено). Мертві прив'язки-override-и (~200 на 9 сторінках) переприв'язано за plugin data або знято (тоді працює прив'язка компонента). На Ingame 3xs двом лідербордам виставлено `Theme = Inverse`. Залишок: 0 сиріт, 0 мертвих прив'язок поза сторінкою `↳ Table`.
+
+## Мета знімка
+| | |
+|---|---|
+| Знімок | `snapshots/table.json` (8 наборів) |
+| Вивчено | 2026-11-11 |
+| Експорт токенів | 2026-11-09 (застарів відносно Figma) |
+| Варіантів | Table 2 · Row 4 · Cell 4 · Head/Cell 2 · Leaderboard 2 · Leaderboard/Row 6 · History 2 · History/Row 6 = 28 |
+
+---
+
+# Історія збірки (2026-10-23 … 2026-11-02)
+Нижче — журнал нашої збірки як був; актуальний стан — вище. Назви варіантів і токенів тут старі (`Default`, `Striped`, `Stripe`, `Inverted`, kebab-case).
 
 Статус: **інвентаризація (2026-10-23), збірку не розпочато** — чекає рішень Андрея (розділ «Питання»).
 
 **2026-10-23 — оригінали зібрано на сторінці `↳ Table -`** (на запит Андрея) у 4 Section з підписами (назва · звідки · що це · node): `79045:532` 1. Лідерборди, `79045:546` 2. Транзакції та платежі, `79045:557` 3. Історія з розкриттям рядка, `79045:574` 4. Таблиці з колонками. Мейни перенесено (інстанси в макетах лишились прив'язаними); фрейми `Tables` з FAQ — копії. 6 наборів зі шрифтом **MrBet Black** конектор перенести не може (шрифт недоступний) — на їхньому місці червона пунктирна рамка, переносить Андрей: `Leaders`, `Hall-of-fame / Table` (лежить поверх рамки, поза Section), `Bets history content`, `Bets history content mob`, `Time limit history`, `content limit mob`. Не перенесено: `Leaders/Multipliers` (картки), `time limit history` 56×56 (ілюстрація), сироти `cell igame additional` / `thead cell igame additional` (мейн без сторінки).
 Сторінка: `↳ Table -` (`78083:324361`).
 
-## 1. Що лежить на сторінці `↳ Table -`
+### 1. Що лежить на сторінці `↳ Table -`
 Лише продуктові набори (правило 11 — не ДС), жодного базового Table:
 
 | Набір | Node | Варіанти | Що це |
@@ -18,7 +182,7 @@
 | `Welcome_bonus_row` | `33250:316385` | `Type=default \| bottom` | 2 колонки, розділювач між рядками |
 | `Welcome_bonus_column` | `33250:316359` | — | заголовок + хедер колонок `Deposit / Bonus` + 3 рядки |
 
-## 2. Таблиці поза сторінкою Table (не зібрані)
+### 2. Таблиці поза сторінкою Table (не зібрані)
 | Де | Набір / фрейм | Node | Тип |
 |---|---|---|---|
 | Tournaments + / Lottery + / Races + | `tourmanents / lottery leader table` | `68537:202555` | лідерборд на темній плашці, смугасті рядки, місце-медаль, поточний гравець — акцент |
@@ -33,7 +197,7 @@
 | Wheel of Fortune + | `spin history` | `61849:5540` | рядок історії на темній плашці |
 | Achievements + | `Achivments table` | `68586:48661` | **не таблиця** (картка) — виключити |
 
-## 3. Спільна анатомія (кандидат на універсальний компонент)
+### 3. Спільна анатомія (кандидат на універсальний компонент)
 - **`Table`** — контейнер: необов'язковий `Table/Header` + SLOT `Rows` (preferred — `Table/Row`).
 - **`Table/Header`** — рядок назв колонок (текст secondary, sm).
 - **`Table/Row`** — горизонтальний рядок комірок. Варіанти, що реально зустрічаються:
@@ -42,7 +206,7 @@
 - **`Table/Cell`** — комірка; типи контенту: `Text`, `Text + Subtext` (2 рядки, мобільне згортання колонок), `Place` (номер / медаль), `Icon + Text`, `Thumb + Text`, `Status`, `Amount` (праворуч), `Action` (kebab / кнопка), `Chevron`.
 - Мобільна версія = ті самі комірки в режимі `Text + Subtext`, без окремих Device-варіантів (`naming.md` → пристрій ≠ варіант).
 
-## 4. Питання до Андрея (блокують збірку)
+### 4. Питання до Андрея (блокують збірку)
 1. Сторінка Table містить не всі варіанти — переносимо на неї знайдені в п. 2 (у Section `Originals`) чи збираємо універсальний компонент одразу з усіх джерел?
 2. Обсяг: які з типів п. 2 входять у Table, а які лишаються окремими (Betting history з Cashout, Transactions з групами — скоріше `List`/Accordion-патерн)?
 3. Inverted: лідерборд турнірів і spin history стоять на темній плашці — робимо `Inverted` у `Table/Row` / `Table/Header`?
@@ -50,14 +214,14 @@
 </content>
 </invoke>
 
-## 5. План збірки (рішення 2026-10-23)
+### 5. План збірки (рішення 2026-10-23)
 Три різні таблиці за логікою, бо поводяться по-різному:
 1. **Сітка** (`Table`) — хедер + рядки з текстовими комірками. Джерела: Time limit history, Welcome bonus, FAQ/Rules Tables.
 2. **Лідерборд** — місце-медаль, поточний гравець, картки / смуги на темному. Джерела: Hall of fame, Tournaments/Lottery, Leaders, Ingame, spin history.
 3. **Історія з розкриттям** — шеврон, іконка, статус, сума, дії, `State=Open`. Джерела: transactions/Payment history, Betting history, Loyalty/points.
 `Table/Cell` — спільна комірка для всіх трьох.
 
-## 6. Етап 1 — Сітка (зібрано 2026-10-23)
+### 6. Етап 1 — Сітка (зібрано 2026-10-23)
 Section `Table` (`79056:3415`, сіра) праворуч від білих оригіналів, на рівні групи 4.
 
 | Компонент | Node | Властивості | Анатомія |
@@ -72,7 +236,7 @@ Section `Table` (`79056:3415`, сіра) праворуч від білих ор
 - Відхилення від оригіналів (рішення на перевірку): перша колонка Time limit (`$1456.77`, `text/lg-strong`, `semantic/text/brand/primary`) — змінюється в інстансі вручну; Rules head мав gap 48 між колонками — у новій сітці колонки FILL з gap 16; рядки без вертикальних падінгів неможливі (2-рядкові комірки) — padding-v токеном за `Size`.
 - Inverted у сітці не потрібен (темного контексту в джерелах немає).
 
-## 7. Етап 2 — Лідерборд (зібрано 2026-10-23)
+### 7. Етап 2 — Лідерборд (зібрано 2026-10-23)
 Section `Leaderboard` (`79075:3513`, сіра) праворуч від білих оригіналів, на рівні групи 1.
 
 | Компонент | Node | Властивості | Анатомія |
@@ -87,16 +251,16 @@ Section `Leaderboard` (`79075:3513`, сіра) праворуч від біли�
 - Відхилення від оригіналів: Lottery рядок мав падінги 12/6 → 16/8; Hall of fame — колонки з gap 48 і thumb гри 48 → колонки FILL, гра через іконку/ручну заміну; поточний гравець у Lottery мав помаранчевий текст — тепер підсвічення заливкою `Selected`, текст змінюється вручну; Ingame активний рядок `#9f87cf` (hex) → `semantic/fill/active`; spin history (чужі змінні) → `Style=Card, Inverted=True`.
 - Device-варіанти (`Mobile(320-767)` / `Desktop`) не робимо: мобільна версія — та сама таблиця вужча, 2-рядкові комірки через `Subtext`.
 
-## 8. Image у комірці (2026-10-26)
+### 8. Image у комірці (2026-10-26)
 - `Table/Cell` + Boolean `⬅️ Image` (off) і swap `↳ 💠 Image` (дефолт `Image/Single` Slot=False; preferred — `Image/Single` і медалі `Place`, чужа бібліотека, set key `1a26f576…`). Шар `Image` стоїть між `Icon` і `Content` (Left) / між `Content` і `Icon` (Right). Розмір — токен на height: md `size/400` (32), sm `size/300` (24), lock ratio. Медалі 1–3 місць — swap на `Place` place=1|2|3.
 - Перевірено превʼю (Striped лідерборд, медалі 1–3) — медалі на місці, 32×32.
 
-### Знайдено 2026-10-26: токени змінились після експорту 22.10
+#### Знайдено 2026-10-26: токени змінились після експорту 22.10
 - Змінної `semantic/background/slate-for-cards` у Figma більше немає (Export видалив) → мертві прив'язки: плашка `Leaderboard` Striped, `Head`, `Leaderboard/Row` Style=Fill (обидва Inverted).
 - `semantic/background/slate-1` у MB тепер `core/grey/100a10` (світлий 10 %), в експорті 22.10 — `core.grey.700`.
 - Нічого не перепривʼязано (не підміняємо без погодження). Потрібен свіжий архів JSON з Token Studio.
 
-## 9. Звірка групи 1 з `Leaderboard` (2026-10-26)
+### 9. Звірка групи 1 з `Leaderboard` (2026-10-26)
 | Оригінал | Покрито | Як |
 |---|---|---|
 | Leaders | ✅ | Striped; № — комірка з номером або медаль (`Image` → `Place`); поточний гравець — `Selected` |
@@ -106,12 +270,12 @@ Section `Leaderboard` (`79075:3513`, сіра) праворуч від біли�
 | spin history | ✅ | Card Inverted; дата/час — `Subtext`, сектор / 3D — `Image` |
 Вручну в інстансі (не варіанти): помаранчевий текст поточного гравця (`semantic/text/brand/primary`), жовтий множник `X.2` (колір частини тексту), сума `lg-stronger`, колір посилання назви гри, thumb гри 48 (override висоти Image), заголовок таблиці (`Heading`) і `Show more` (`Button`) — поза компонентом.
 
-## 10. `Table/Cell` — доповнення (2026-10-26)
+### 10. `Table/Cell` — доповнення (2026-10-26)
 - Єдиний порядок шарів для обох Align: `Icon` → `Image` → `Content` → `Icon right`; Align змінює лише вирівнювання тексту і групи.
 - Нове: Boolean `Icon ➡️` + swap `↳ 💠 Icon right` (дефолт `plus`; для ID — `copy`). Щоб іконка стала одразу за текстом, в інстансі комірці і `Content` ставиться Hug, тексту — auto width (так у `History/Details`).
 - **`Table/Cell — Slot`** (`79214:293697`, `Align = Left | Right`): SLOT `Content` (VERTICAL, gap `spacing/200`, вирівнювання за Align), preferred `Status/Badge`, `Button`, `Button/Text`. Для статусів, лічильників статусів, kebab, сума + Cashout стовпчиком.
 
-## 11. Етап 3 — Історія з розкриттям (зібрано 2026-10-26)
+### 11. Етап 3 — Історія з розкриттям (зібрано 2026-10-26)
 Section `History` (`79215:4197`, сіра) праворуч від білих оригіналів груп 2–3.
 
 | Компонент | Node | Властивості | Анатомія |
@@ -137,7 +301,7 @@ Section `History` (`79215:4197`, сіра) праворуч від білих о
 - Опис під рядком транзакції (на всю ширину) — `Details` з `Table/Cell sm`.
 - Inverted не потрібен (темного контексту немає).
 
-## 12. Доробки групи 4 (2026-10-26) — підбірка покрита повністю
+### 12. Доробки групи 4 (2026-10-26) — підбірка покрита повністю
 - **`Table` перескладено набором** (`79220:4707`, старий `79056:291816` видалено — 0 інстансів): `Style = Plain | Filled`; слоти `Head`, `Rows`, Boolean `Show head` — як раніше.
   - **Filled** (Welcome bonus): плашка `contextual/table/fill`, радіус `border-radius/global/md` (12), clip; `Head` з заливкою `contextual/table/header` і padding-h `spacing/400`; `Rows` padding-h `spacing/400`. Токени `contextual/table/*` уже були в `Product` (обидва зараз alias на одну змінну — перевірити на етапі токенів).
   - Хедер Welcome bonus в оригіналі `text/md-strong` heading, у нас `Table/Head/Cell` `text/sm-strong` secondary — ручний override або питання.
@@ -145,7 +309,7 @@ Section `History` (`79215:4197`, сіра) праворуч від білих о
 - Комірка з кількома блоками «заголовок + опис» (Welcome bonus) — `Table/Cell — Slot` з кількома `Table/Cell` стовпчиком.
 - Перевірено превʼю: Welcome bonus (Filled) і Time limit mobile (Vertical) у MB і XON.
 
-### Підсумок покриття (усі 4 групи)
+#### Підсумок покриття (усі 4 групи)
 | Група | Новий компонент |
 |---|---|
 | 1. Лідерборди | `Leaderboard` (Card / Striped) + `Leaderboard/Row` |
@@ -154,7 +318,7 @@ Section `History` (`79215:4197`, сіра) праворуч від білих о
 | 4. Таблиці з колонками | `Table` (Plain / Filled) + `Table/Row` (Horizontal / Vertical) |
 | Спільне | `Table/Cell`, `Table/Cell — Slot`, `Table/Head/Cell` |
 
-## 13. Єдиний неймінг властивостей (2026-10-26, рішення Андрея)
+### 13. Єдиний неймінг властивостей (2026-10-26, рішення Андрея)
 `Variant` = **як розділені рядки**; ті самі слова в усіх таблицях. Порядок: `Variant → Size → State → Align → Inverted → Direction`.
 
 | Значення | Що означає | Де |
@@ -181,18 +345,18 @@ Section `History` (`79215:4197`, сіра) праворуч від білих о
 Замінено: `Style` → `Variant`; `Filled` → `Panel`; рядок `Fill` → `Stripe`; `Divider = True | False` → `Variant = Divider | Plain`; слот `Head cells` → `Head`; `↳ 💠 Icon` → `↳ 💠 Icon left`; `⬅️ Image` → `Image`.
 Пастка: при перейменуванні варіантів за шаблоном набір `History` отримав назви `Component` (порожній результат) — після масового перейменування перевіряти `variantOptions` кожного набору.
 
-## 14. Повернуто `Table/Row` (2026-10-27)
+### 14. Повернуто `Table/Row` (2026-10-27)
 Спроба зібрати `Table` без `Table/Row` відкочена на прохання Андрея. `Table/Row` перестворено з тими самими варіантами й прив'язками (новий node `79415:4874`, key `0766282b…`); `Table` — `Variant = Default | Filled` (назви Андрея), слот `Rows` з інстансами `Table/Row`; preferred у `Table` і `History/Details` відновлено.
 `Table/Cell` Inverted: ліва `Icon` теж на `semantic/text/default-invert/primary`.
 
-## 15. `Table/Cell — Slot` злито в `Table/Cell` (2026-10-27, рішення Андрея)
+### 15. `Table/Cell — Slot` злито в `Table/Cell` (2026-10-27, рішення Андрея)
 - `Table/Cell` (`79056:3444`): **`Type = Text | Slot`** × `Size` × `Align` × `Inverted` — 16 варіантів. Порядок: `Type → Size → Align → Inverted`.
 - `Type=Slot`: SLOT `Content` (VERTICAL, gap `spacing/200`, вирівнювання за Align; preferred `Status/Badge`, `Button`, `Button/Text`), дефолт — `Status/Badge`. Варіанти Slot однакові для всіх Size/Inverted — повна матриця потрібна, щоб перемикач `Type` працював з будь-якої комбінації (неповна матриця → «Unable to find a variant»).
 - `Type=Text`: як раніше (`⬅️ Icon`, `Image`, `Subtext`, `Icon ➡️` + swap-и). Figma показує лише властивості поточного Type.
 - Злиття — перенесенням компонентів (`set.appendChild`): властивість SLOT переїхала, 12 інстансів (у `History/Row`) лишились прив'язаними, старий набір (`79214:293697`) зник сам.
 - Preferred оновлено: `History/Row` Cells → `Table/Cell`; `History/Details` → `Table/Cell`, `Table/Row`.
 
-## 16. Статус у `Table/Cell` замість `Type=Slot` (2026-10-27, рішення Андрея)
+### 16. Статус у `Table/Cell` замість `Type=Slot` (2026-10-27, рішення Андрея)
 - `Type = Text | Slot` прибрано: `Table/Cell` знову `Size × Align × Inverted` (8v), без слота.
 - Нове: Boolean **`Status`** (off) — exposed instance `Status/Badge` (Status=Success, Size=md, Variant=Subtle) усередині `Content` під текстом; вирівнюється за `Align`. Його варіанти (Status, Size, Variant) змінюються з батьківського інстансу.
 - Нове: Boolean **`Label`** (on) — вимикає основний текст. Колонка статусу = `Label` off + `Status` on.
@@ -200,20 +364,20 @@ Section `History` (`79215:4197`, сіра) праворуч від білих о
 - 6 комірок-статусів у мейнах `History/Row` переведено на `Table/Cell` (Label off, Status on); вкладені копії оновились від мейнів. Варіанти Slot і властивість `Content` видалено.
 - Cashout / kebab / сума + кнопка стовпчиком більше не мають окремої комірки — у разі потреби повернутись до питання (Button у комірці).
 
-## 17. `History/Details` прибрано (2026-10-27, рішення Андрея)
+### 17. `History/Details` прибрано (2026-10-27, рішення Андрея)
 - Обгортка деталей збирається в таблиці кастомно: у слоті `Details` рядків `State=Open` — **фрейм `Details`**: VERTICAL, padding `spacing/300` / `spacing/400`, gap `spacing/100`, fill `semantic/fill/subtle`, радіус 8 (без токена), STRETCH; всередині `Table/Cell sm` (перша — Hug + `Icon ➡️` copy, текст auto width; друга — опис).
 - Компонент `History/Details` (`79215:4198`) видалено після заміни 2 інстансів у мейнах `History/Row` (Open); вкладені копії оновились від мейнів.
 - `History/Row` → слот `Details` preferred: `Table/Cell`, `History/Row` (вкладені рядки груп транзакцій).
 - Картка події Express — такий самий фрейм із `Table/Row` / двома `Table/Cell`.
 
-## 18. Слот `Details` прибрано (2026-10-27, рішення Андрея)
+### 18. Слот `Details` прибрано (2026-10-27, рішення Андрея)
 - `History/Row` (Open): `Details` — звичайний фрейм (VERTICAL, STRETCH, padding-l `spacing/800`, gap `spacing/200`), всередині фрейм `Panel` (колишня обгортка деталей, токени ті самі). Усе кастомно редагується в інстансі.
 - Властивості `History/Row`: `Variant`, `State`, `Chevron`, слот `Cells`.
 
-## 19. Структура після правок Андрея (2026-10-27)
+### 19. Структура після правок Андрея (2026-10-27)
 4 сірі Section: `Table` (`Table`, `Table/Row`) · `Leaderboard` (`Leaderboard`, `Leaderboard/Row`) · `History` (`History`, `History/Row`) · `Cell` (`Table/Cell`, `Table/Head/Cell` — спільні для всіх таблиць). Основний компонент у кожній — зверху.
 
-## 20. План токенів (чернетка до JSON-handoff)
+### 20. План токенів (чернетка до JSON-handoff)
 Текст, іконки, шеврони — `semantic.*` напряму (правило); компонентні токени — розміри, падінги, gap, радіуси, заливки, лінії. Значення — лише alias.
 
 **table** (`mb/component`, `xon/component`)
@@ -262,7 +426,7 @@ Section `History` (`79215:4197`, сіра) праворуч від білих о
 
 Відкриті рішення: alias для радіусів 8 і 16; темна заливка Striped/Stripe замість видаленого `slate-for-cards` (і `slate-1`, що в MB став світлим); `contextual.table.fill|header` — на core і однакові.
 
-## 21. Виправлено 3 проблеми токенів (2026-10-27, на прохання Андрея)
+### 21. Виправлено 3 проблеми токенів (2026-10-27, на прохання Андрея)
 Створено змінні в `Product` (обидва режими, alias на core, явні scopes) + фрагменти JSON для Token Studio (`tokens/table-fixes.{mb,xon}.{alias,component}.json` — **вставити в Token Studio до наступного Export**, інакше Export видалить змінні):
 | Новий alias | Значення | Де |
 |---|---|---|
@@ -276,18 +440,18 @@ Section `History` (`79215:4197`, сіра) праворуч від білих о
 - `Leaderboard/Row` Stripe Inverted=False → `semantic.fill.subtle` (світлий контекст).
 - Перевірка: 0 мертвих прив'язок, 0 радіусів без токена в усіх табличних наборах; превʼю MB/XON.
 
-## 22. Токени MB component (2026-10-27, JSON-handoff)
+### 22. Токени MB component (2026-10-27, JSON-handoff)
 Андрей дав повний `mb/component`; додано +48, змінено 2 (`contextual.table.fill|header` → `{semantic.background.brand-subtle}`), видалено 0. Підмножина — `tokens/table.mb.component.json`. Назви — як у §20, з уточненнями: `history.row.gap` (Main↔Details і шеврон↔комірки) + `history.row.cells-gap`; `leaderboard.head.padding-h`; інвертовані — `contextual.leaderboard.row.inverted.fill.{card|stripe|selected}`.
 Залежить від alias із `tokens/table-fixes.*.alias.json` (`border-radius.global.card|container`, `semantic.background.slate-dark-1|2`, `semantic.background.brand-subtle`) — вони мають бути в `mb/alias` до вставки, інакше посилання обірвуться.
 Далі: XON component (той самий набір), Export → прив'язка токенів на шари (plugin data `tokens` + змінні).
 
-## 23. Компонентні токени прив'язано (2026-10-27)
+### 23. Компонентні токени прив'язано (2026-10-27)
 - У `Product` створено 48 змінних з назвами токенів (`/` замість `.`), alias на ті самі alias-змінні в MB і XON, scopes: spacing → GAP, sizing → WIDTH_HEIGHT, borderRadius → CORNER_RADIUS, color → FRAME_FILL/SHAPE_FILL/STROKE_COLOR; `contextual/table/fill|header` переведено на `semantic/background/brand-subtle`.
 - 244 прив'язки на шарах (plugin data `tokens` + змінна): Table 32, Table/Row 52, Table/Cell 32, Leaderboard 62, Leaderboard/Row 122, History 58, History/Row 107 (з вкладеними шарами). Лишились лише `semantic.text/icon` (за правилом), стилі тексту і власні токени `Status`. Мертвих прив'язок — 0.
 - Мапа шар → токен — як у §20 (+ `table.row.gap` на Head, `leaderboard.row.gap` на Head лідерборду, `history.row.gap` на Head row і Main, `history.row.cells-gap` на Head і Cells, `history.chevron-size` на Chevron space (width)).
 - **Ризик:** поки JSON (MB alias-фрагмент + component, XON) не вставлено в Token Studio, Export видалить ці змінні → прив'язки стануть мертвими. Лікування — перестворити змінні й перепривʼязати за plugin data `tokens` (`token-studio.md` → Робочий цикл.6).
 
-## 24. Назви токенів = назви властивостей (2026-10-27, Андрей)
+### 24. Назви токенів = назви властивостей (2026-10-27, Андрей)
 Токен, що діє лише в одному варіанті, містить назву цього варіанту. Перейменовано (змінні в Figma, plugin data на 40 шарах, JSON):
 - `table.panel.padding-h` → `table.filled.padding-h`
 - `contextual.table.fill` → `contextual.table.filled.fill`
@@ -301,28 +465,28 @@ Section `History` (`79215:4197`, сіра) праворуч від білих о
 - `border-radius.history.row` → `border-radius.history.row.card`
 Замість `panel` — `filled` (Variant=Filled); `header` → `head-fill` (шар `Head`, як `striped.head-fill`). Оригінал Welcome bonus тримає прив'язку (змінна та сама, перейменована).
 
-## 25. MB alias (2026-10-27, JSON-handoff)
+### 25. MB alias (2026-10-27, JSON-handoff)
 Андрей дав повний `mb/alias`; додано 5 (+5 / −0 / ~0): `border-radius.global.card` (між `sm` і `md`), `border-radius.global.container` (між `md` і `lg`), `semantic.background.slate-dark-1|2`, `semantic.background.brand-subtle` (після `slate-for-cards`, перед групою `brand`). Усі 21 посилання токенів таблиць у `mb/component` тепер резолвляться.
 Примітка: у свіжому `mb/alias` `semantic.background.slate-for-cards` знову існує, але як **градієнт** (`linear-gradient(...brand-preset.for-gradients.primary...)`), а `slate-1` = `{core.grey.100a10}` — тому для темної плашки лідерборду лишаємо `slate-dark-1|2`.
 
-## 26. Одна компонента `Table` з підвидами (2026-10-27, рішення Андрея)
+### 26. Одна компонента `Table` з підвидами (2026-10-27, рішення Андрея)
 - Набори: `Table` (Default | Filled), `Table/Leaderboard`, `Table/History`, їхні рядки `Table/Row`, `Table/Leaderboard/Row`, `Table/History/Row`, спільні `Table/Cell`, `Table/Head/Cell` (назви Андрея).
 - **Одна Section `Table`** (`79056:3415`): три колонки підвидів (контейнер зверху, рядок під ним, 80 px), внизу `Table/Cell` і `Table/Head/Cell`. Section `Table/Leaderboard`, `Table/History`, `Table/Cell` прибрано; оригінали зсунуто праворуч.
 - Сітка варіантів у кожному наборі — 16 px, рядки/колонки за властивостями: Table/Row — Variant × (Size·Direction); Leaderboard/Row — (Variant·State) × Inverted; History/Row — Variant × State; Cell — Inverted × (Size·Align); Head/Cell — Inverted × Align.
 - **Токени в просторі `table`**: `leaderboard.*` → `table.leaderboard.*`, `history.*` → `table.history.*`, `border-radius.{leaderboard|history}.*` → `border-radius.table.{…}.*`, `contextual.{leaderboard|history}.*` → `contextual.table.{…}.*` (50 токенів; MB component +50 / −2 / ~0 проти вихідного).
 - **Інцидент:** Export з бренчі без наших токенів видалив 48 компонентних + 5 alias-змінних (490 мертвих прив'язок). Відновлено: 55 змінних перестворено з новими назвами, 474 прив'язки — за plugin data `tokens`; мертвих 0. Старі `contextual/table/fill|header` повернув Export (їх тримає оригінал Welcome bonus).
 
-## 27. XON (2026-10-27, JSON-handoff)
+### 27. XON (2026-10-27, JSON-handoff)
 - `xon/alias` +5 / −0 / ~0: ті самі `slate-dark-1|2`, `brand-subtle`; **`border-radius.global.card` і `container` = `{border-radius.core.300}` (12)** — у XON уся шкала `sm`/`md`/`lg` = 12, тож рядок Card, Panel і плашка Striped теж 12 (бренд-різниця). Порядок радіусів упорядковано: `xs, sm, card, md, container, lg`. Змінні Figma (режим XON) оновлено так само.
 - `xon/component` +50 / −2 / ~0 — набір токенів таблиць ідентичний MB (`tokens/table.xon.component.json`); −2 = `contextual.table.fill|header` → `contextual.table.filled.*`. Усі 21 посилання резолвляться в `xon/alias`.
 
-## 28. Після мерджу і Export (2026-10-28)
+### 28. Після мерджу і Export (2026-10-28)
 - MR «Tokens for table» змерджено (MB: +53, перейменовано 2; XON: +55, −2).
 - Export перестворив змінні → 174 мертві прив'язки (старі ID) — переприв'язано за plugin data на живі змінні з тими ж назвами.
 - Inspect показував радіуси з ⬡: plugin data мав ключ `borderRadius`, а змінні — на кутах. Записано per-corner ключі на 25 шарах (100), `borderRadius` прибрано.
 - Аудит: 517 властивостей = змінна + однойменний токен; 0 мертвих; 32 «розбіжності» — корінь інстансу `Status` (показує прив'язки мейна, токени стоять у компоненті Status).
 
-## 29. Слот у `Table/Cell` (2026-11-02, на запит Андрея)
+### 29. Слот у `Table/Cell` (2026-11-02, на запит Андрея)
 - Новий SLOT `↳ Slot` + Boolean `Slot` (off) у всіх 8 варіантах (спільний ключ). Порядок шарів: `Icon` → `Image` → `↳ Slot` → `Content` → `Icon right`.
 - Розмір як у `Image`: md 32 / sm 24, FIXED, lock ratio, токен `table.cell.image-size.md|sm` на height; вміст центрується. Для довільної компоненти в комірці (аватар, бейдж, кастомна іконка).
 - Нових токенів немає — використано наявні `table.cell.image-size.*`.

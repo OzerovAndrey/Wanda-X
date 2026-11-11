@@ -26,7 +26,7 @@ Container
 ├─ Wrapper «Buy tickets» (лише 3xs): Heading Info + ряд Card/Lottery & Tournament/Tickets (clip) + Navigator
 │      + панель «Buy another quantity» (fill semantic/fill/subtle, r16): Title · Input + arrow-narrow-right + Price · Button Primary lg Fill «Buy»
 ├─ Wrapper «You have 25 lottery tickets»: Heading Info; 3xs — 21 × Lottery/Ticket (wrap, 3 в ряд) + Show more
-└─ Wrapper «Prize places»: Table/Leaderboard Striped — Player / Ticket · (Results xl) · Sum / Prize; 1–3 кубки + номер квитка,
+└─ Wrapper «Prize places»: Table/Leaderboard Filled (до 11.11 — Striped) — Player / Ticket · (Results xl) · Sum / Prize; 1–3 кубки + номер квитка,
        5-й (я) — Selected, помаранчевий текст; Button «Load more»; xl — ще Button Primary md «Claim reward»
 ```
 3xs: комірки таблиці `sm`, колонка Sum / Prize 120.
@@ -59,3 +59,7 @@ H · hug · h24 · center · gap spacing/100 · padding-h spacing/200 · r4 · T
 - `Lottery — History` — вкладка «Lottery history» (Selected): одна сітка завершених карток без заголовка (xl 6, 3xs 2) + Show more.
 - `Lottery — Archived` — деталі завершеної лотереї: Time `Date=True` «Dates: …», замість Purchase — `Card / Lottery-tournament / Results` (Insufficient), без Buy tickets; квитки, Prize places, Load more, Claim reward лишаються.
 - `Lottery — Empty` — Heading + Tabs + `Empty` «More lotteries coming up here soon ⏳».
+
+## Зміни 2026-11-11 (оновлення компонента Table)
+- Команда прибрала `Inverted` і перейменувала `Striped → Filled`, `Stripe → Filled`. 80 інстансів «Prize places» (рядки, комірки, хедер) вказували на видалені `…/True` → swap на актуальні варіанти (`Filled` / `Plain` / Selected), вміст збережено. Мертві override-и заливки рядків переприв'язано (`table.leaderboard.row.fill.stripe`).
+- Вигляд тепер за компонентом: світла плашка `table.leaderboard.filled.fill` (`background.slate2`) зі смугами `fill.default`, хедер `fill.active`, темний текст (Theme Default). Темної «зебри» більше нема.

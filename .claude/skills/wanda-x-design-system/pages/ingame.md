@@ -53,3 +53,7 @@ Section `Design` 80806:196059 (чорна, референс — не чіпал�
 5. Рейка: іконки — найближчі зі Static (crown = Winning now, flame = Strip, gamepad = Bet Hero, thumb-up = Popular?, flash = Boosters, goblet-filled = Tournament, support); на 3xs пункт «wallet» замість картки — уточнити.
 6. Горизонтальний мобайл (640×360) не збирався — наступний захід (третій Breakpoint `Ingame/Layout`?).
 7. Картинки-приклади (банери турніру / стрипу, скриня, слот-машина) над Section не викладені — у референсі вони remote / растрові.
+
+## Зміни 2026-11-11 (оновлення компонента Table)
+- `— Tournament`, `— Tournament Join`, 3xs: рядки `Leaderboard/Row Card Inverted=True` і комірки `…/True` (42 інстанси) → swap на актуальні (без Inverted); на обох лідербордах виставлено `Theme = Inverse` — тексти білі, картки `fill.subtleInvert`. Питання 2 вище для таблиць закрите: інверсія тепер лише через `Theme`.
+- Відкрите: у вузькій 3xs-комірці Subtext (номер) переноситься `58395 / 770` — `Subtext` у `Table/Cell` FIXED.

@@ -88,3 +88,7 @@ for (const lay of sec.children) {
   - Номери на темному: `List/Bullet` без Inverted → оверрайд fill `semantic/fill/subtle-invert`, текст `semantic/text/default-invert/primary` (**питання: додати `Inverted` у `List/Bullet`**).
 - **My progress** — той самий стиль, що Leaders: `Variant=Striped`, без Head; 55 / 57 — `Plain`, 56 (я) — `Stripe Selected` + помаранчевий текст, `List/Bullet Active`; праворуч `X.2  2 061 835` (HUG); 3xs — комірки `sm`.
 - **Фікс компонента:** `contextual.table.leaderboard.row.inverted.fill.selected` = `{semantic.background.slate-dark-2}` (було `{semantic.fill.active}` — світло-блакитна плашка). Змінна в Figma оновлена (MB, XON), JSON — `tokens/system/*/component.json`, `tokens/table.*.component.json`; **вставити в Token Studio до наступного Export**.
+
+## Зміни 2026-11-11 (оновлення компонента Table)
+- Команда прибрала `Inverted`, `Striped → Filled`, `Stripe → Filled`. 168 інстансів у Leaders / My progress (`Tournament — Active`, `— Archived`) з видалених `…/True` → swap на актуальні (`Filled` / `Plain`, Selected збережено), вміст і тексти збережено; 56 мертвих override-ів переприв'язано.
+- Вигляд — за компонентом: світла плашка `Filled` з хедером `fill.active`, темний текст. Рішення «темна зебра як в оригіналі» (вище) — **більше не діє**; фікс `inverted.fill.selected` — токена вже нема.

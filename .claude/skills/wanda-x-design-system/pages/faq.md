@@ -18,7 +18,7 @@
 
 ## Рішення
 - Розкритий Accordion = `State=Opened`, вміст — у слот `Layout`.
-- Усі таблиці сторінки — `Table Variant=Default` + `Table/Row Divider md` (як у Preview — роздільники, не картки). Фіксовані колонки: курс xl 120 / 3xs 80, сума xl 120 / 3xs 64; на 3xs gap клітинок 8.
+- Усі таблиці сторінки — `Table Variant=Divider` (до 11.11 — `Default`) + `Table/Row Divider md` (як у Preview — роздільники, не картки). Фіксовані колонки: курс xl 120 / 3xs 80, сума xl 120 / 3xs 64; на 3xs gap клітинок 8.
 - Статуси — `Table/Cell` Image + Label + Subtext (3-й рядок «58395770» не влазить у Cell — опущено).
 - Блок «Bonus wagering prohibited…» — `Wrapper` `Games` (fill `semantic.background.slate-4`, радіус `border-radius.global.lg`, p 16): Heading Secondary · `Alphabet` GRID 9 кол. (`Link`, «All» Accent; у Preview нема «Y» — залишено) · `Divider` · `Groups` (Title `text/lg-strong` + GRID TEXT xl 4 · 3xs 1).
 - Картинки (медалі, ігри) — порожні `Image` / `Thumb` (правило «інстанси без картинок»).
@@ -29,3 +29,6 @@
 
 ## Відкрите
 1. MB / XON — перевірено лише MB.
+
+## Зміни 2026-11-11 (оновлення компонента Table)
+- `Table Variant=Default` перейменовано командою на `Divider` — інстанси підхопили автоматично. Знято 20 мертвих override-ів висоти `Icon` / `Image` у комірках (працює прив'язка компонента). Деталі — `references/components/table.md`.

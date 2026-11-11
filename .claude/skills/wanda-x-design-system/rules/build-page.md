@@ -60,7 +60,7 @@ Main Area
 | Карусель | ряд **сам у своєму рядку на всю ширину**, картки **Fill**, + Navigator; суміжні блоки — під нею; на xl карток більше |
 | Сітка карток | `Wrapper` GRID: xl 2 кол. gap 16 · 3xs 1 кол. gap 8 · `Card / …` FILL |
 | Сітка ігор | `Wrapper` GRID: xl 5 кол. gap 8 · 3xs 2 кол. gap 8 · `Thumb/Default` FILL |
-| Лідерборд / мій прогрес | **як в оригіналі**: світлі картки — `Table/Leaderboard Variant=Card`; темна зебра — `Variant=Striped`, рядки `Inverted=True`, `Plain`/`Stripe` по черзі. Мій прогрес — той самий стиль, без Head. Поточний гравець — `State=Selected` + текст `semantic/text/brand/primary`. Місце — `List/Bullet` або `Image` (медаль / кубок), не слот. Таблиці на сторінці — в одному стилі |
+| Лідерборд / мій прогрес | світлі картки — `Table/Leaderboard Variant=Card`; суцільна плашка — `Variant=Filled`, рядки `Filled` / `Plain` по черзі. Темний фон — `Theme = Inverse` на таблиці / слоті (варіантів `Inverted` у Table нема). Мій прогрес — той самий стиль, без Head. Поточний гравець — `State=Selected` + текст `semantic/text/brand/primary`. Місце — `List/Bullet` або `Image` (медаль / кубок), не слот. Таблиці на сторінці — в одному стилі |
 | Списки умов / правил | `List/Item — Default Ordered=False` |
 | Терміни / FAQ | `Accordion` у ряді `Accordions` V gap 8 |
 | Теги | `Tag`, ряд gap 8 |
