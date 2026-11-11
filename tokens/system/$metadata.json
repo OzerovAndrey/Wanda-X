@@ -1,12 +1,16 @@
 {
   "tokenSetOrder": [
     "mb/core",
+    "mb/map",
     "mb/override",
-    "bb/core",
-    "bb/override",
     "sc/core",
+    "sc/map",
     "sc/override",
+    "bb/core",
+    "bb/map",
+    "bb/override",
     "xon/core",
+    "xon/map",
     "xon/override",
     "default/alias",
     "default/component",

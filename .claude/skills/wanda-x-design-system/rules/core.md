@@ -39,8 +39,8 @@
 
 ## Токени
 - Token Studio-токен **прямо на шар** (plugin data `tokens`) + однойменна змінна `Product`. Жодного hex / hardcode.
-- Свій компонентний токен `<component>.*` для заливок, обведень, розмірів, радіусів; значення — **тільки alias** (`semantic.*`, `spacing.*`, `size.*`, `border-radius.global.*`), не core.
-- **Текст, іконки, шеврони — глобальні `semantic.text.*` / `semantic.icon.*` напряму**, без компонентних. Іконки на темному — `semantic.text.default-invert.*` (групи icon-invert нема).
+- Свій компонентний токен `<component>.*` для заливок, обведень, розмірів, радіусів; значення — alias (`fill.*`, `background.*`, `global.borderRadius.*` …) або `override.*`, не `core` / `map`; розміри й відступи в `stage` — числа (див. `rules/tokens.md`).
+- **Колір тексту — глобальні `tt.*` напряму** (`tt.primary|secondary|tertiary`, `tt.accent1|2|3`, `tt.link`, `tt.success|warning|danger|info`), іконки / шеврони — `icon.*`; без компонентних. На темному — `Theme = Inverse` (сет `inverse` перевизначає `tt.*`).
 - Типографіка — тільки стилі `text/*` (+ токен `typography` на шарі); тексти без стилю = дефект.
 - Мінімум токенів: gap 0, прозора заливка, однакове значення в Default / Inverse — без окремого токена.
 - Назви за властивостями (`table.filled.*` для `Variant=Filled`); `padding-h`, `padding-v`, `gap-v`; окремих `inverted.*` токенів не робимо — інверсію дає сет `inverse`.

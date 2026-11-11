@@ -1,4 +1,52 @@
 {
+  "link": {
+    "default": {
+      "default": {
+        "value": "{link.default.defaultInvert}",
+        "type": "color"
+      },
+      "defaultInvert": {
+        "value": "{tt.primary}",
+        "type": "color"
+      },
+      "disabled": {
+        "value": "{link.default.disabledInvert}",
+        "type": "color"
+      },
+      "disabledInvert": {
+        "value": "{tt.tertiary}",
+        "type": "color"
+      },
+      "hover": {
+        "value": "{tt.accent1}",
+        "type": "color"
+      }
+    },
+    "accent": {
+      "default": {
+        "value": "{tt.accent1}",
+        "type": "color"
+      },
+      "hover": {
+        "value": "{tt.accent1}",
+        "type": "color"
+      }
+    },
+    "static": {
+      "default": {
+        "value": "{link.static.defaultInvert}",
+        "type": "color"
+      },
+      "defaultInvert": {
+        "value": "{tt.primary}",
+        "type": "color"
+      },
+      "hover": {
+        "value": "{tt.accent1}",
+        "type": "color"
+      }
+    }
+  },
   "btn": {
     "neutral": {
       "fill": {

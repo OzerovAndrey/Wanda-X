@@ -1,21 +1,149 @@
 {
+  "tt": {
+    "primary": {
+      "value": "{fg.default.1000}",
+      "type": "color",
+      "$extensions": {
+        "com.figma.scopes": [
+          "TEXT_FILL",
+          "SHAPE_FILL"
+        ]
+      }
+    },
+    "secondary": {
+      "value": "{fg.default.700}",
+      "type": "color",
+      "$extensions": {
+        "com.figma.scopes": [
+          "TEXT_FILL",
+          "SHAPE_FILL"
+        ]
+      }
+    },
+    "tertiary": {
+      "value": "{fg.default.500}",
+      "type": "color",
+      "$extensions": {
+        "com.figma.scopes": [
+          "TEXT_FILL",
+          "SHAPE_FILL"
+        ]
+      }
+    },
+    "accent1": {
+      "value": "{primary.default.500}",
+      "type": "color",
+      "$extensions": {
+        "com.figma.scopes": [
+          "TEXT_FILL",
+          "SHAPE_FILL"
+        ]
+      }
+    },
+    "accent2": {
+      "value": "{secondary.default.500}",
+      "type": "color",
+      "$extensions": {
+        "com.figma.scopes": [
+          "TEXT_FILL",
+          "SHAPE_FILL"
+        ]
+      }
+    },
+    "accent3": {
+      "value": "{tertiary.default.500}",
+      "type": "color",
+      "$extensions": {
+        "com.figma.scopes": [
+          "TEXT_FILL",
+          "SHAPE_FILL"
+        ]
+      }
+    },
+    "success": {
+      "value": "{success.default.500}",
+      "type": "color",
+      "$extensions": {
+        "com.figma.scopes": [
+          "TEXT_FILL",
+          "SHAPE_FILL"
+        ]
+      }
+    },
+    "warning": {
+      "value": "{warning.default.500}",
+      "type": "color",
+      "$extensions": {
+        "com.figma.scopes": [
+          "TEXT_FILL",
+          "SHAPE_FILL"
+        ]
+      }
+    },
+    "danger": {
+      "value": "{danger.default.500}",
+      "type": "color",
+      "$extensions": {
+        "com.figma.scopes": [
+          "TEXT_FILL",
+          "SHAPE_FILL"
+        ]
+      }
+    },
+    "info": {
+      "value": "{info.default.500}",
+      "type": "color",
+      "$extensions": {
+        "com.figma.scopes": [
+          "TEXT_FILL",
+          "SHAPE_FILL"
+        ]
+      }
+    },
+    "link": {
+      "value": "{tt.accent1}",
+      "type": "color",
+      "$extensions": {
+        "com.figma.scopes": [
+          "TEXT_FILL",
+          "SHAPE_FILL"
+        ]
+      }
+    }
+  },
   "text": {
     "default": {
       "heading": {
         "value": "{core.content.a100}",
-        "type": "color"
+        "type": "color",
+        "$deprecated": {
+          "severity": "warning",
+          "message": ""
+        }
       },
       "primary": {
         "value": "{core.content.a90}",
-        "type": "color"
+        "type": "color",
+        "$deprecated": {
+          "severity": "warning",
+          "message": ""
+        }
       },
       "secondary": {
         "value": "{core.content.a70}",
-        "type": "color"
+        "type": "color",
+        "$deprecated": {
+          "severity": "warning",
+          "message": ""
+        }
       },
       "tertiary": {
         "value": "{core.content.a50}",
-        "type": "color"
+        "type": "color",
+        "$deprecated": {
+          "severity": "warning",
+          "message": ""
+        }
       }
     },
     "defaultInvert": {
@@ -55,69 +183,129 @@
     "brand": {
       "primary": {
         "value": "{core.brand10.500}",
-        "type": "color"
+        "type": "color",
+        "$deprecated": {
+          "severity": "warning",
+          "message": ""
+        }
       },
       "secondary": {
         "value": "{core.brand30.500}",
-        "type": "color"
+        "type": "color",
+        "$deprecated": {
+          "severity": "warning",
+          "message": ""
+        }
       },
       "onBrand": {
         "value": "{core.content.a100}",
-        "type": "color"
+        "type": "color",
+        "$deprecated": {
+          "severity": "warning",
+          "message": ""
+        }
       },
       "onBrandSecondary": {
         "value": "{core.content.a100}",
-        "type": "color"
+        "type": "color",
+        "$deprecated": {
+          "severity": "warning",
+          "message": ""
+        }
       }
     },
     "disabled": {
       "primary": {
         "value": "{core.content.a25}",
-        "type": "color"
+        "type": "color",
+        "$deprecated": {
+          "severity": "warning",
+          "message": ""
+        }
       },
       "onBrand": {
         "value": "{core.content.a40}",
-        "type": "color"
+        "type": "color",
+        "$deprecated": {
+          "severity": "warning",
+          "message": ""
+        }
       },
       "secondary": {
         "value": "{core.brand10.a60}",
-        "type": "color"
+        "type": "color",
+        "$deprecated": {
+          "severity": "warning",
+          "message": ""
+        }
       },
       "static": {
         "value": "{core.grey.300a50}",
-        "type": "color"
+        "type": "color",
+        "$deprecated": {
+          "severity": "warning",
+          "message": ""
+        }
       }
     },
     "static": {
       "primary": {
         "value": "{core.grey.700}",
-        "type": "color"
+        "type": "color",
+        "$deprecated": {
+          "severity": "warning",
+          "message": ""
+        }
       },
       "secondary": {
         "value": "{core.grey.500}",
-        "type": "color"
+        "type": "color",
+        "$deprecated": {
+          "severity": "warning",
+          "message": ""
+        }
       },
       "accent": {
         "value": "{core.brand30.500}",
-        "type": "color"
+        "type": "color",
+        "$deprecated": {
+          "severity": "warning",
+          "message": ""
+        }
       }
     },
     "bannerCart": {
       "accent": {
         "value": "{core.brand10.300}",
-        "type": "color"
+        "type": "color",
+        "$deprecated": {
+          "severity": "warning",
+          "message": ""
+        }
       },
       "primary": {
-        "value": "{override.text.bannerCart.primary}",
-        "type": "color"
+        "value": "{tt.primary}",
+        "type": "color",
+        "$deprecated": {
+          "severity": "warning",
+          "message": ""
+        }
       },
       "secondary": {
-        "value": "{override.text.bannerCart.secondary}",
-        "type": "color"
+        "value": "{tt.secondary}",
+        "type": "color",
+        "$deprecated": {
+          "severity": "warning",
+          "message": ""
+        }
       },
       "tertiary": {
-        "value": "{override.text.bannerCart.tertiary}",
-        "type": "color"
+        "value": "{tt.tertiary}",
+        "type": "color",
+        "$deprecated": {
+          "severity": "warning",
+          "message": ""
+        }
       }
     }
   },
@@ -226,6 +414,14 @@
     "active": {
       "value": "{override.fill.active}",
       "type": "color"
+    },
+    "subtle": {
+      "value": "{core.content.a8}",
+      "type": "color"
+    },
+    "subtleInvert": {
+      "value": "{core.white.a30}",
+      "type": "color"
     }
   },
   "border": {
@@ -254,57 +450,105 @@
     "static": {
       "primary": {
         "value": "{core.grey.700}",
-        "type": "color"
+        "type": "color",
+        "$deprecated": {
+          "severity": "warning",
+          "message": ""
+        }
       },
       "secondary": {
         "value": "{core.grey.500}",
-        "type": "color"
+        "type": "color",
+        "$deprecated": {
+          "severity": "warning",
+          "message": ""
+        }
       },
       "tertiary": {
         "value": "{core.grey.300}",
-        "type": "color"
+        "type": "color",
+        "$deprecated": {
+          "severity": "warning",
+          "message": ""
+        }
       }
     },
     "default": {
       "primary": {
         "value": "{core.content.a85}",
-        "type": "color"
+        "type": "color",
+        "$deprecated": {
+          "severity": "warning",
+          "message": ""
+        }
       },
       "secondary": {
         "value": "{core.content.a70}",
-        "type": "color"
+        "type": "color",
+        "$deprecated": {
+          "severity": "warning",
+          "message": ""
+        }
       },
       "tertiary": {
         "value": "{core.content.a50}",
-        "type": "color"
+        "type": "color",
+        "$deprecated": {
+          "severity": "warning",
+          "message": ""
+        }
       }
     },
     "bannerCart": {
       "primary": {
         "value": "{core.content.a100}",
-        "type": "color"
+        "type": "color",
+        "$deprecated": {
+          "severity": "warning",
+          "message": ""
+        }
       },
       "secondary": {
         "value": "{core.content.a80}",
-        "type": "color"
+        "type": "color",
+        "$deprecated": {
+          "severity": "warning",
+          "message": ""
+        }
       },
       "tertiary": {
         "value": "{core.content.a60}",
-        "type": "color"
+        "type": "color",
+        "$deprecated": {
+          "severity": "warning",
+          "message": ""
+        }
       },
       "accent": {
         "value": "{core.brand30.500}",
-        "type": "color"
+        "type": "color",
+        "$deprecated": {
+          "severity": "warning",
+          "message": ""
+        }
       }
     },
     "brand": {
       "primary": {
         "value": "{core.brand10.400}",
-        "type": "color"
+        "type": "color",
+        "$deprecated": {
+          "severity": "warning",
+          "message": ""
+        }
       },
       "secondary": {
         "value": "{core.brand30.500}",
-        "type": "color"
+        "type": "color",
+        "$deprecated": {
+          "severity": "warning",
+          "message": ""
+        }
       }
     }
   },
@@ -313,7 +557,11 @@
       "text": {
         "primary": {
           "value": "{core.validation.warning.500}",
-          "type": "color"
+          "type": "color",
+          "$deprecated": {
+            "severity": "warning",
+            "message": ""
+          }
         }
       },
       "bg": {
@@ -329,7 +577,11 @@
       "icon": {
         "primary": {
           "value": "{core.validation.warning.500}",
-          "type": "color"
+          "type": "color",
+          "$deprecated": {
+            "severity": "warning",
+            "message": ""
+          }
         }
       }
     },
@@ -399,7 +651,11 @@
       "text": {
         "primary": {
           "value": "{core.validation.success.500}",
-          "type": "color"
+          "type": "color",
+          "$deprecated": {
+            "severity": "warning",
+            "message": ""
+          }
         }
       },
       "bg": {
@@ -415,7 +671,11 @@
       "icon": {
         "primary": {
           "value": "{core.validation.success.500}",
-          "type": "color"
+          "type": "color",
+          "$deprecated": {
+            "severity": "warning",
+            "message": ""
+          }
         }
       }
     },
@@ -423,7 +683,11 @@
       "text": {
         "primary": {
           "value": "{core.validation.danger.500}",
-          "type": "color"
+          "type": "color",
+          "$deprecated": {
+            "severity": "warning",
+            "message": ""
+          }
         }
       },
       "bg": {
@@ -445,7 +709,11 @@
       "icon": {
         "primary": {
           "value": "{core.validation.danger.500}",
-          "type": "color"
+          "type": "color",
+          "$deprecated": {
+            "severity": "warning",
+            "message": ""
+          }
         }
       }
     },
@@ -453,7 +721,11 @@
       "text": {
         "primary": {
           "value": "{core.validation.info.400}",
-          "type": "color"
+          "type": "color",
+          "$deprecated": {
+            "severity": "warning",
+            "message": ""
+          }
         }
       },
       "bg": {
@@ -469,7 +741,11 @@
       "icon": {
         "primary": {
           "value": "{core.validation.info.600}",
-          "type": "color"
+          "type": "color",
+          "$deprecated": {
+            "severity": "warning",
+            "message": ""
+          }
         }
       }
     },
@@ -486,57 +762,13 @@
       },
       "text": {
         "primary": {
-          "value": "{override.status.default.text.primary}",
-          "type": "color"
+          "value": "{tt.primary}",
+          "type": "color",
+          "$deprecated": {
+            "severity": "warning",
+            "message": ""
+          }
         }
-      }
-    }
-  },
-  "link": {
-    "default": {
-      "default": {
-        "value": "{text.default.heading}",
-        "type": "color"
-      },
-      "defaultInvert": {
-        "value": "{text.default.heading}",
-        "type": "color"
-      },
-      "disabled": {
-        "value": "{text.default.tertiary}",
-        "type": "color"
-      },
-      "disabledInvert": {
-        "value": "{text.default.tertiary}",
-        "type": "color"
-      },
-      "hover": {
-        "value": "{text.brand.primary}",
-        "type": "color"
-      }
-    },
-    "accent": {
-      "default": {
-        "value": "{text.brand.primary}",
-        "type": "color"
-      },
-      "hover": {
-        "value": "{text.brand.primary}",
-        "type": "color"
-      }
-    },
-    "static": {
-      "default": {
-        "value": "{text.static.primary}",
-        "type": "color"
-      },
-      "defaultInvert": {
-        "value": "{text.default.heading}",
-        "type": "color"
-      },
-      "hover": {
-        "value": "{text.brand.primary}",
-        "type": "color"
       }
     }
   },
@@ -572,157 +804,265 @@
   },
   "spacing": {
     "0": {
-      "value": "{dimension.0}",
-      "type": "spacing"
+      "value": "0",
+      "type": "spacing",
+      "$deprecated": {
+        "severity": "warning",
+        "message": ""
+      }
     },
     "50": {
-      "value": "{dimension.0_5}",
-      "type": "spacing"
+      "value": "2",
+      "type": "spacing",
+      "$deprecated": {
+        "severity": "warning",
+        "message": ""
+      }
     },
     "100": {
-      "value": "{dimension.1}",
-      "type": "spacing"
+      "value": "4",
+      "type": "spacing",
+      "$deprecated": {
+        "severity": "warning",
+        "message": ""
+      }
     },
     "150": {
-      "value": "{dimension.1_5}",
-      "type": "spacing"
+      "value": "6",
+      "type": "spacing",
+      "$deprecated": {
+        "severity": "warning",
+        "message": ""
+      }
     },
     "200": {
-      "value": "{dimension.2}",
-      "type": "spacing"
+      "value": "8",
+      "type": "spacing",
+      "$deprecated": {
+        "severity": "warning",
+        "message": ""
+      }
     },
     "300": {
-      "value": "{dimension.3}",
-      "type": "spacing"
+      "value": "12",
+      "type": "spacing",
+      "$deprecated": {
+        "severity": "warning",
+        "message": ""
+      }
     },
     "400": {
-      "value": "{dimension.4}",
-      "type": "spacing"
+      "value": "16",
+      "type": "spacing",
+      "$deprecated": {
+        "severity": "warning",
+        "message": ""
+      }
     },
     "600": {
-      "value": "{dimension.6}",
-      "type": "spacing"
+      "value": "24",
+      "type": "spacing",
+      "$deprecated": {
+        "severity": "warning",
+        "message": ""
+      }
     },
     "800": {
-      "value": "{dimension.8}",
-      "type": "spacing"
+      "value": "32",
+      "type": "spacing",
+      "$deprecated": {
+        "severity": "warning",
+        "message": ""
+      }
     },
     "1200": {
-      "value": "{dimension.12}",
-      "type": "spacing"
+      "value": "48",
+      "type": "spacing",
+      "$deprecated": {
+        "severity": "warning",
+        "message": ""
+      }
     },
     "1600": {
-      "value": "{dimension.16}",
-      "type": "spacing"
+      "value": "64",
+      "type": "spacing",
+      "$deprecated": {
+        "severity": "warning",
+        "message": ""
+      }
     }
   },
   "blur": {
     "overlay": {
-      "value": "{blur.100}",
-      "type": "dimension"
+      "value": "4",
+      "type": "dimension",
+      "$deprecated": {
+        "severity": "warning",
+        "message": ""
+      }
     },
     "slateOnCard": {
-      "value": "{blur.600}",
-      "type": "dimension"
+      "value": "24",
+      "type": "dimension",
+      "$deprecated": {
+        "severity": "warning",
+        "message": ""
+      }
     }
   },
   "depth": {
     "0": {
-      "value": "{dimension.0}",
-      "type": "dimension"
+      "value": "0",
+      "type": "dimension",
+      "$deprecated": {
+        "severity": "warning",
+        "message": ""
+      }
     },
     "50": {
-      "value": "{dimension.0_5}",
-      "type": "dimension"
+      "value": "2",
+      "type": "dimension",
+      "$deprecated": {
+        "severity": "warning",
+        "message": ""
+      }
     },
     "100": {
-      "value": "{dimension.1}",
-      "type": "dimension"
+      "value": "4",
+      "type": "dimension",
+      "$deprecated": {
+        "severity": "warning",
+        "message": ""
+      }
     },
     "200": {
-      "value": "{dimension.2}",
-      "type": "dimension"
+      "value": "8",
+      "type": "dimension",
+      "$deprecated": {
+        "severity": "warning",
+        "message": ""
+      }
     },
     "300": {
-      "value": "{dimension.3}",
-      "type": "dimension"
+      "value": "12",
+      "type": "dimension",
+      "$deprecated": {
+        "severity": "warning",
+        "message": ""
+      }
     },
     "400": {
-      "value": "{dimension.4}",
-      "type": "dimension"
+      "value": "16",
+      "type": "dimension",
+      "$deprecated": {
+        "severity": "warning",
+        "message": ""
+      }
     },
     "800": {
-      "value": "{dimension.8}",
-      "type": "dimension"
+      "value": "32",
+      "type": "dimension",
+      "$deprecated": {
+        "severity": "warning",
+        "message": ""
+      }
     },
     "1200": {
-      "value": "{dimension.12}",
-      "type": "dimension"
+      "value": "48",
+      "type": "dimension",
+      "$deprecated": {
+        "severity": "warning",
+        "message": ""
+      }
     },
     "1400": {
-      "value": "{dimension.16}",
-      "type": "dimension"
+      "value": "64",
+      "type": "dimension",
+      "$deprecated": {
+        "severity": "warning",
+        "message": ""
+      }
     },
     "025": {
-      "value": "{dimension.0_25}",
-      "type": "dimension"
+      "value": "1",
+      "type": "dimension",
+      "$deprecated": {
+        "severity": "warning",
+        "message": ""
+      }
     },
     "m100": {
-      "value": "{dimension.m1}",
-      "type": "dimension"
+      "value": "-4",
+      "type": "dimension",
+      "$deprecated": {
+        "severity": "warning",
+        "message": ""
+      }
     }
   },
   "size": {
     "100": {
-      "value": "{dimension.2}",
-      "type": "sizing"
+      "value": "8",
+      "type": "sizing",
+      "$deprecated": {
+        "severity": "warning",
+        "message": ""
+      }
     },
     "200": {
-      "value": "{dimension.4}",
-      "type": "sizing"
+      "value": "16",
+      "type": "sizing",
+      "$deprecated": {
+        "severity": "warning",
+        "message": ""
+      }
     },
     "300": {
-      "value": "{dimension.6}",
-      "type": "sizing"
+      "value": "24",
+      "type": "sizing",
+      "$deprecated": {
+        "severity": "warning",
+        "message": ""
+      }
     },
     "400": {
-      "value": "{dimension.8}",
-      "type": "sizing"
+      "value": "32",
+      "type": "sizing",
+      "$deprecated": {
+        "severity": "warning",
+        "message": ""
+      }
     },
     "450": {
-      "value": "{dimension.9}",
-      "type": "sizing"
+      "value": "36",
+      "type": "sizing",
+      "$deprecated": {
+        "severity": "warning",
+        "message": ""
+      }
     },
     "500": {
-      "value": "{dimension.10}",
-      "type": "sizing"
+      "value": "40",
+      "type": "sizing",
+      "$deprecated": {
+        "severity": "warning",
+        "message": ""
+      }
     },
     "600": {
-      "value": "{dimension.12}",
-      "type": "sizing"
+      "value": "48",
+      "type": "sizing",
+      "$deprecated": {
+        "severity": "warning",
+        "message": ""
+      }
     }
   },
   "maxWidth": {
     "content": {
-      "value": "{dimension.284}",
+      "value": "1136",
       "type": "sizing",
       "description": "Use for Content on page"
-    }
-  },
-  "layout": {
-    "paddingH": {
-      "xs": {
-        "value": "16",
-        "type": "spacing"
-      },
-      "md": {
-        "value": "64",
-        "type": "spacing"
-      },
-      "lg": {
-        "value": "32",
-        "type": "spacing"
-      }
     }
   },
   "global": {

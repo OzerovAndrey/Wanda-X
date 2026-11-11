@@ -35,12 +35,12 @@
 | T11 | Дубль text styles | `text/button/lg` = `text/button/md` (Inter Extra Bold 16) | Розвести або злити |
 | T12 | Ефекти по компонентах | 33 effect styles (`shadow/button/*` ×16, `shadow/wheel/*`, `shadow/homepage/*`) | Шкала `shadow/drop/{xs..ml}` + компонентні лише для ДС |
 
-## Перейменування / видалення (експорт 2026-11-11)
-Команда видалила 38 токенів без `$deprecated`. Мертві прив'язки в Figma переприв'язувати так:
+## Перейменування / видалення (експорт `stage` 2026-11-11)
+Мертві прив'язки в Figma переприв'язувати так:
 | Було | Стало |
 |---|---|
-| `fill.subtle`, `background.brandSubtle` | `fill.default` |
-| `fill.subtleInvert`, `background.slateDark1|slateDark2`, `table.leaderboard.row.inverted.*` | звичайний токен + `Theme = Inverse` на контейнері |
+| `background.brandSubtle` | `fill.default` (`fill.subtle` / `fill.subtleInvert` у `stage` є) |
+| `background.slateDark1|slateDark2`, `table.leaderboard.row.inverted.*` | звичайний токен + `Theme = Inverse` на контейнері |
 | `background.surface`, `override.background.surface` | — (нема заміни; модалка — `background.*` / `modal.custom.*`) |
 | `background.pageInvert` (override) | `override.background-inverted.page` (через inverse `background.page`) |
 | `table.leaderboard.striped.fill|headFill` | `table.leaderboard.filled.fill|headFill` |
@@ -51,6 +51,10 @@
 | `tabsSort.gap|paddingH` | — (видалено) |
 | `override.btn.neutralInvert.*`, `override.progress*` | `inverse/component` `btn.neutral.*`; progress — прямі значення в `default/component` |
 | `inverse/alias` `text.defaultInvert.*`, `status.gold.fill` | прибрано лише з inverse; у `default/alias` `text.defaultInvert.*` є |
+| колір тексту в компонентах `text.default.heading|secondary|tertiary`, `text.brand.primary` | `tt.primary|secondary|tertiary`, `tt.accent1` |
+| alias `link.*` | `default/component` `link.*` (на `tt.*`) |
+| `fontSize.main.xs…lg` / `fontSize.accent.xs…xxxl`, `lineHeight.headingXxl|Xxxl` | `fontSize.textXs…Lg` / `fontSize.headingXs…3Xl`, `lineHeight.heading2Xl|3Xl` |
+| `<бренд>/core` палітра `core.*` | `<бренд>/map` (той самий `core.*`); `core` тепер — 24 seed-кольори |
 
 ## Заборонені (чужі) змінні, знайдені у файлі
 
