@@ -8,9 +8,9 @@ Section `Design` 80806:196059 (чорна, референс — не чіпал�
 ## Каркас — `Ingame/Layout` (а не `Layout/3xs` + `Layout/xl`)
 | Breakpoint | Розмір | Склад |
 |---|---|---|
-| `xl` | 1096×616 (fill `semantic.background.slate-1`) | `Navigation` (64, fill `contextual.ingame.navmenu.fill`, p `spacing.200`, 11 пунктів + Home знизу) · слот `Panel` (264, fill `contextual.content.fill`, p/gap `spacing.400`) · `Game` (pt/pl/pr `spacing.600`, gap `spacing.400`: `Toolbar` View mode + ★ ×, `Image/Single` Fill) · `Collapse` (Button Neutral sm, absolute) |
-| `3xs` | 320×640 | `Game` `Image/Single` (absolute) · `Navigation` (fill `contextual.ingame.mob.navmenu.fill`, 8 пунктів, `Inverted=True`, Close — Button Neutral md) · слот `Panel` (Fill, fill `contextual.ingame.mob.bg`, режим колекції `Theme` = **Inverse**) |
-Сет = Section 1656 × (80+h+80): `Ingame/Layout 3xs` x 80 + `xl` x 480. Активний пункт рейки — override `State=Active` вкладеного `Ingame/Navigation item`. Якщо вміст панелі вищий за екран — інстанс Hug по висоті (Profile, Tournament).
+| `xl` | 1096×616 (fill `semantic.background.slate-1`) | `Navigation` (64, fill `contextual.ingame.navmenu.fill`, p `spacing.200`, 11 кнопок + Home знизу) · слот `Panel` (264, fill `contextual.content.fill`, p/gap `spacing.400`) · `Game` (pt/pl/pr `spacing.600`, gap `spacing.400`: `Toolbar` View mode + ★ ×, `Image/Single` Fill) · `Collapse` (Button Neutral sm, absolute) |
+| `3xs` | 320×640 | `Game` `Image/Single` (absolute) · `Navigation` (fill `contextual.ingame.mob.navmenu.fill`, 8 кнопок + Close, режим `Theme = Inverse`) · слот `Panel` (Fill, fill `contextual.ingame.mob.bg`, режим колекції `Theme` = **Inverse**) |
+Сет = Section 1656 × (80+h+80): `Ingame/Layout 3xs` x 80 + `xl` x 480. Пункти рейки — DS `Button` `Text` lg `Label=False` (48×48) з іконкою зі Static, ім'я шару = назва іконки; активний — override `Variant=Neutral`, `State=Active` + повторний swap іконки (зміна варіанта скидає іконку). Окремого компонента пункту нема (`Ingame/Navigation item` прибрано 2026-11-11). Якщо вміст панелі вищий за екран — інстанс Hug по висоті (Profile, Tournament).
 
 ## Розкладка (2026-11-11 — плиткою, по 10 у ряд, 600 між)
 | Ряд, y | Section (зліва направо, крок x 2256) |
@@ -19,13 +19,12 @@ Section `Design` 80806:196059 (чорна, референс — не чіпал�
 | 2, y 1496 | Bet Hero Active · Featured · Search · Search Not found · Boosters · Boosters Empty · Bonuses · Bonuses Empty · Notifications · Notifications Empty |
 | 3, y 2896 | Strip Rules · Strip Choose · Strip Model · попапи Bet Hero · 5% cashback · You've already claimed a cashback! · Congratulations! · Bad luck in this game? · Back to Lobby? · Resetting girl's progress |
 | 4, y 4424 | попапи Search · Search — Found |
-| Компоненти, y 5952 | `Ingame/Layout` 80834:42333 (x 0) · `Ingame/Navigation item` 80834:42122 · `Ingame/Winner` 80836:42245 · `Ingame/Booster` 80836:42252 · `Ingame/Bonus` 80836:42322 |
+| Компоненти, y 5952 | `Ingame/Layout` 80834:42333 (x 0) · `Ingame/Winner` 80836:42245 · `Ingame/Booster` 80836:42252 · `Ingame/Bonus` 80836:42322 |
 Сети: `Ingame/Layout 3xs` x 80 + `xl` x 480 у Section 1656 × (80+h+80). Старого на сторінці більше нема.
 
 ## Компоненти сторінки
 | Компонент | Анатомія / токени |
 |---|---|
-| `Ingame/Navigation item` | `State = Default \| Active` × `Inverted = False \| True`; 48×48 (`size.600`), радіус `border-radius.global.md`, Active fill `contextual.tabs.item.navigation.fill.active`; іконка — swap `↳ 💠` (Static — Icons), колір `semantic.icon.default.tertiary` / `.primary`, Inverted — `semantic.text.default-invert.secondary` / `.primary` |
 | `Ingame/Layout` | див. Каркас; слот `Panel` |
 | `Ingame/Winner` | H gap `spacing.200`: `Image/Single` 40 (`border-radius.thumb.general`) · `Player` xs secondary + `Game` sm-strong · `Amount` md-strong |
 | `Ingame/Booster` | V p `spacing.400` gap `spacing.300`, fill `semantic.fill.default`, радіус `border-radius.card.general`: `Image/Single` 96 · опис · `Price` (Coin `Image` 20 + Value lg-stronger) · Button Primary «Buy» · `Info` (absolute) |
