@@ -25,11 +25,11 @@
 
 ## Ingame (2026-11-05)
 - Нова колекція змінних `Theme` (Default / Inverse, camelCase) замість `contextual/*` у `Product` — це нова схема? Правило «Token Studio-токен + однойменна змінна Product» оновити на `Theme`? (`pages/ingame.md` #1)
-- Режим `Theme = Inverse` на темній 3xs-панелі замість `Inverted` у кожному компоненті — ок? (`pages/ingame.md` #2)
+- ~~Режим `Theme = Inverse` на темній 3xs-панелі замість `Inverted` — ок?~~ — **так** (2026-11-11).
 - MB: `Account/Balance`, `FastClickPayment` на білій xl-панелі нечитабельні — Inverted для них чи темний `contextual.content.fill`? (`pages/ingame.md` #3)
 
 ## Table (2026-11-11)
-- Команда прибрала `Inverted` з `Table/Cell`, `Table/Head/Cell`, `Leaderboard/Row` — інверсія тепер через `Theme = Inverse`. Це нове загальне правило замість `Inverted = False | True` у `rules/core.md`? (`components/table.md`)
+- ~~Інверсія через `Theme` замість `Inverted` — загальне правило?~~ — **так** (Андрей, 2026-11-11) → `rules/core.md`.
 - `Table/Row` — `Direction` з одним значенням: прибрати? `table.row.gapV` → `$deprecated`?
 - `Table/Leaderboard Filled` — токени `striped.borderRadius`, `head.height.striped` перейменувати на `filled.*`?
 - `Table/Cell → Subtext` FIXED — переноси у вузьких комірках (Ingame 3xs); зробити Hug / Fill?

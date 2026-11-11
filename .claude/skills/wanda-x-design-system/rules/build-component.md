@@ -16,7 +16,7 @@
 - Прозорий стан — шар без fill, без токена.
 - Картинка в компоненті — порожній `Image/Single`; приклади — над Section (`rules/core.md` → Компоненти).
 
-## 3. Властивості (порядок: `Variant → Size → State → Inverted → решта`)
+## 3. Властивості (порядок: `Variant → Size → State → решта`)
 | Тип | Ключ / значення |
 |---|---|
 | Variant | Title Case: `Variant=Primary`, `State=Hover` |
@@ -29,7 +29,7 @@
 | Text | **не використовується** |
 
 - State: `Default | Hover | Active | Selected | Disabled` (+ `Error`, `Filled`, `Focus` у формах); `Open` = активний + розкритий. Інтерактивним — мінімум Default / Hover / Active|Selected / Disabled.
-- **Inverted** — лише якщо інстанси стоять на темному фоні: `Inverted = False | True`, повна матриця; міняється лише колір контенту; властивість — на компоненті з власним кольоровим контентом (не на контейнері-слоті). Заборонено `State=Invert`, `Variant=…[Invert]`, `Theme=Dark`, окремий набір. Inverted ≠ бренд XON.
+- **Інверсія — тільки через `Theme = Inverse`** (колекція змінних `Theme`, сети `default` / `inverse`): компонент прив'язаний до alias-змінних, на темному фоні режим `Inverse` ставиться на контейнер / слот. Властивість `Inverted`, `State=Invert`, `Variant=…[Invert]`, окремий набір — не робимо. Inverse ≠ бренд XON.
 - Список однакових пунктів — **SLOT** (`componentNode.createSlot()`), gap токеном на слоті. Фіксовані різні вкладені елементи — exposed instances + Boolean `Item #N`, шар з тією ж назвою.
 - Таблиці: `Variant = Divider | Card | Striped | Panel`, рядок — `Stripe | Plain`.
 - Наявні TEXT-властивості при перескладанні прибрати, зберігши тексти в інстансах.
@@ -48,7 +48,7 @@
 - [ ] Auto layout на 2+ дітях; absolute лише оверлеї / маски; ресайз — текст переноситься, нічого не обрізається.
 - [ ] 0 hardcode fill/stroke (крім масок), 0 текстів без стилю, 0 effects без стилю; radius / height / padding / gap / icon size — токени.
 - [ ] Лише свої компонентні + `semantic.*`; 0 `core.*` поза тінями / градієнтами; 0 чужих змінних; токени Token Studio на шарах (Inspect без ⬡).
-- [ ] MB і XON (і Inverted, якщо є): тимчасово `setExplicitVariableModeForCollection` на Section → скриншот → повернути.
+- [ ] MB і XON, Theme Default і Inverse: тимчасово `setExplicitVariableModeForCollection` на Section → скриншот → повернути.
 - [ ] Іконки зі Static через `↳ 💠`; вкладені елементи — інстанси ДС.
 - [ ] `description` у Figma порожній.
 

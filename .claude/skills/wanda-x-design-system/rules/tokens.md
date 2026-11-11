@@ -6,7 +6,7 @@
 - Джерело — GitLab `ys/design/wanda-x` (`git.slygods.com`, `main`, тека `tokens`); у нашому репо `tokens/system/` — копія з експорту Андрея (останній — 2026-11-09).
 - Сети: `mb/core`, `mb/override`, `xon/core`, `xon/override` (бренд) + `default/alias`, `default/component`, `inverse/alias`, `inverse/component` (спільні). Теми: група `Product` — MB (`mb/*` + `default/*` source) / XON; група `Theme` — Default (`default/*`) / Inverse (`default/*` + `inverse/*`). Figma: колекції `Product` (MB / XON) і `Theme` (Default / Inverse).
 - Компонентні токени — у `default/component` (camelCase: `btn.*`, `menu.*`, `profileMenu.*`, `modal.*`, `table.*` …), інверт — `inverse/component`. Alias — `default/alias`: `text.*`, `background.*`, `fill.*`, `border.*`, `icon.*`, `status.*`, `global.borderRadius.*`, `spacing.*`. Типографіка — `mb|xon/override`: `heading.*`, `text.md|mdStrong|lgStronger …`.
-- Темний фон: `text.defaultInvert.*` (або тема Inverse). Старі `semantic.*` / `contextual.*` / `border-radius.*` більше не існують.
+- Темний фон — режим `Theme = Inverse` (сет `inverse` перевизначає alias); `text.defaultInvert.*` напряму — лише де Inverse поставити не можна. Старі `semantic.*` / `contextual.*` / `border-radius.*` більше не існують.
 
 ## Свіжий архів (на початку кожної сесії)
 Спитати про зміни → zip розпакувати в окрему порожню папку → `python3 -I scripts/tokens-diff.py tokens/system <папка>` (сети бере з `$metadata.json`) → коротко: + / − / ~, що торкається нашого компонента, конфлікти імен → замінити `tokens/system/`, оновити дату в `references/token-studio.md`, коміт `tokens: export YYYY-MM-DD` → перевірити, чи потрапили раніше передані `tokens/<c>.*.json` (ні — нагадати вставити). Нема архіву — сказати, від якої дати експорт.
@@ -17,7 +17,7 @@
 | розміри, падінги, gap | `<component>.<part>.<property>` (`anchor.item.height`, `table.filled.padding-h`) | sizing / spacing |
 | радіус | `border-radius.<component>.<part>` | borderRadius |
 | кольори (fill / border) | `contextual.<component>.<part>.<role>[.<state>]` | color |
-| інверт | `contextual.<component>[.<part>].inverted.<role>[.<state>]` (у старих Anchor / Chip — `-invert`, не переробляти без запиту) | color |
+| інверт | окремих токенів нема — `Theme = Inverse` (старі `inverted.*` / `-invert` у Anchor / Chip — легасі) | — |
 | типографіка | наявний alias (`text.md-strong`) | typography |
 - Сегменти = значення властивостей (`filled`, `card`, `md`, `hover`, `inverted`); шар-хедер — `head`.
 - **«В рядок»**: останній рівень — набір сусідніх значень (стани, розміри); рівня з одним листком не створювати.
