@@ -2,6 +2,7 @@
 
 Історія рішень і робіт (раніше — у SKILL.md). Нові записи — зверху. Claude читає лише на прямий запит («що ми робили з …»).
 
+- 2026-11-11 rule(layout): батьківські компоненти сторінки — окремим рядом під плиткою сетів; page(ingame): 5 компонентів перенесено в окремий ряд (y 5952)
 - 2026-11-11 rule(tokens): `$deprecated`-токени не мігруємо й не виносимо в питання — ними займається команда при мерджі з GitLab (`rules/tokens.md`)
 - 2026-11-11 rule(layout): нові сети — плиткою по 10 у ряд (не в один рядок); page(ingame): 37 Section перекладено плиткою
 - 2026-11-11 tokens: експорт з GitLab-гілки **`stage`** (основна) замість попереднього — `<бренд>/core` → 24 seed-кольори (source), нова `<бренд>/map` (палітра `core.*` + рампи `primary|…|fg.default|inverse.<крок>`, `fontSize.text*|heading*`), порядок брендів MB / SC / BB / XON; alias `tt.*` (колір тексту, 136 компонентних токенів переведено на нього), `link.*` і `layout.paddingH.*` → component, розміри — числа; `fill.subtle|subtleInvert` у `stage` є. Оновлено `tokens/system/`, `rules/core.md` (текст → `tt.*`), `rules/tokens.md` (джерело `stage`, структура core/map/override), `token-studio.md`, `references/tokens.md` (мапа), open-questions

@@ -18,7 +18,8 @@ Section `Design` 80806:196059 (чорна, референс — не чіпал�
 | 1, y 0 | Guest · Profile · Demo · Game · Write off · Winning now · Winning now Demo · Tournament · Tournament Join · Bet Hero |
 | 2, y 1496 | Bet Hero Active · Featured · Search · Search Not found · Boosters · Boosters Empty · Bonuses · Bonuses Empty · Notifications · Notifications Empty |
 | 3, y 2896 | Strip Rules · Strip Choose · Strip Model · попапи Bet Hero · 5% cashback · You've already claimed a cashback! · Congratulations! · Bad luck in this game? · Back to Lobby? · Resetting girl's progress |
-| 4, y 4424 | попапи Search · Search — Found · компоненти `Ingame/Layout` 80834:42333 · `Ingame/Navigation item` 80834:42122 · `Ingame/Winner` 80836:42245 · `Ingame/Booster` 80836:42252 · `Ingame/Bonus` 80836:42322 |
+| 4, y 4424 | попапи Search · Search — Found |
+| Компоненти, y 5952 | `Ingame/Layout` 80834:42333 (x 0) · `Ingame/Navigation item` 80834:42122 · `Ingame/Winner` 80836:42245 · `Ingame/Booster` 80836:42252 · `Ingame/Bonus` 80836:42322 |
 Сети: `Ingame/Layout 3xs` x 80 + `xl` x 480 у Section 1656 × (80+h+80). Старого на сторінці більше нема.
 
 ## Компоненти сторінки
