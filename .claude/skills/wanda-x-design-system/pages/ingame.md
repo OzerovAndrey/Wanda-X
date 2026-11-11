@@ -8,8 +8,8 @@ Section `Design` 80806:196059 (чорна, референс — не чіпал�
 ## Каркас — `Ingame/Layout` (а не `Layout/3xs` + `Layout/xl`)
 | Breakpoint | Розмір | Склад |
 |---|---|---|
-| `xl` | 1096×616 (fill `semantic.background.slate-1`) | `Navigation` (64, як у 3xs: fill `ingame.mob.navmenu.fill`, `Theme = Inverse`, p `spacing.200`, 11 кнопок + Home знизу) · слот `Panel` (264, fill `contextual.content.fill`, p/gap `spacing.400`, режим `Theme = Inverse`) · `Game` (pt/pl/pr `spacing.600`, gap `spacing.400`: `Toolbar` View mode + ★ ×, `Image/Single` Fill) · `Collapse` (Button Neutral sm, absolute) |
-| `3xs` | 320×640 | `Game` `Image/Single` (absolute) · `Navigation` (fill `contextual.ingame.mob.navmenu.fill`, 8 кнопок + Close, режим `Theme = Inverse`) · слот `Panel` (Fill, fill `contextual.ingame.mob.bg`, режим колекції `Theme` = **Inverse**) |
+| `xl` | 1096×616 (fill `semantic.background.slate-1`) | `Navigation` (64, fill `background.1`, `Theme = Inverse`, p `spacing.200`, 11 кнопок + Home знизу) · слот `Panel` (264, fill `background.slate2`, p/gap `spacing.400`, `Theme = Inverse`) · `Game` (pt/pl/pr `spacing.600`, gap `spacing.400`: `Toolbar` View mode + ★ ×, `Image/Single` Fill) · `Collapse` (Button Neutral sm, absolute) |
+| `3xs` | 320×640 | `Game` `Image/Single` (absolute) · `Navigation` (fill `background.1`, 8 кнопок + Close, `Theme = Inverse`) · слот `Panel` (Fill, fill `background.slate2`, `Theme = Inverse`) |
 **Усі панелі (`Panel` xl і 3xs) — `Theme = Inverse`**; усередині без `Inverted` / `[Invert]`-варіантів (звичайні `Text`, `Inverted=False`).
 Сет = Section 1656 × (80+h+80): `Ingame/Layout 3xs` x 80 + `xl` x 480. Пункти рейки — DS `Button` `Text` lg `Label=False` (48×48) з іконкою зі Static, ім'я шару = назва іконки; активний — override `Variant=Neutral`, `State=Active` + повторний swap іконки (зміна варіанта скидає іконку). Окремого компонента пункту нема (`Ingame/Navigation item` прибрано 2026-11-11). Якщо вміст панелі вищий за екран — інстанс Hug по висоті (Profile, Tournament).
 
@@ -52,3 +52,6 @@ Section `Design` 80806:196059 (чорна, референс — не чіпал�
 
 ## Поверхні на панелі (2026-11-11)
 Картки й блоки на панелі (`Ingame/Booster`, `Ingame/Bonus`, Bonus-рядок, Write off, провайдери) — `fill.subtle` (Default `core.content.a8`, Inverse `core.white.a30`). Не `fill.default` (це заливка контролів) і не `background.slate2` (= фон панелі `content.fill`, у Inverse зливається). Компонентні `bonuses.*`, `card.general.*` прибрано — лише глобальні.
+
+## Токени `Ingame/Layout` (2026-11-11)
+Лише глобальні: корінь xl `background.slate1`, `Navigation` `background.1` (Inverse → `core.brand60.800`), `Panel` `background.slate2` (Inverse → `core.grey.900`), `spacing.*`, `global.borderRadius.md`. Компонентні `ingame.*`, `content.fill` не використовуються — команда їх депрекейтне. Мобільна панель тепер суцільна (було напівпрозоре `ingame.mob.bg` поверх гри).

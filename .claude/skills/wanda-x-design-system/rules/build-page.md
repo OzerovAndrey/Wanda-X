@@ -45,6 +45,8 @@ Main Area
 ```
 **Ingame** (ігрове вікно) — без `Layout/*`: сет = `Ingame/Layout` `Breakpoint=3xs` (x 80) + `xl` (x 480), вміст — у слот `Panel`, активний пункт рейки — `State=Active`; деталі — `pages/ingame.md`.
 
+**Локальні компоненти сторінки — тільки глобальні токени** (`background.*`, `fill.*`, `spacing.*`, `global.borderRadius.*` …), навіть якщо в сеті є «свої» продуктові групи (`ingame.*`, `content.fill`, `bonuses.*`, `card.*`) — їх команда депрекейтить; свої токени під компонент не робити.
+
 **Картка / блок на панелі чи картці** (вкладена поверхня) — `fill.subtle` + `global.borderRadius.*`; `fill.default` — лише для контролів, `background.*` — для фону сторінки / панелі.
 
 **Кнопка поруч із `Primary`** (Cancel / No / Login …) — завжди `Variant=Secondary`, не `Static` / `Neutral` / `Tertiary`.
