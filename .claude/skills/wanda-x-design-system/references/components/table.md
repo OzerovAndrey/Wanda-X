@@ -27,7 +27,7 @@ Table/Row (79415:4874)  Variant = Divider | Plain × Size = md | sm × Direction
 
 Table/Leaderboard (79075:3926)  Variant = Card | Filled · Show head · SLOT Head, Rows
 └─ Card:   gap table.leaderboard.card.gap; Head height …head.height.card, padding-h …head.paddingH; Rows gap …card.gap — рядки Card (2-й Selected)
-   Filled: fill table.leaderboard.filled.fill, radius table.leaderboard.striped.borderRadius; Head fill …filled.headFill, height …head.height.striped; Rows gap 0 — рядки Filled / Plain почергово
+   Filled: fill table.leaderboard.filled.fill, radius table.leaderboard.striped.borderRadius (fill / headFill — `table.leaderboard.filled.*`); Head fill …filled.headFill, height …head.height.striped; Rows gap 0 — рядки Filled / Plain почергово
 
 Table/Leaderboard/Row (79075:3526)  Variant = Card | Filled | Plain × State = Default | Selected
 └─ HORIZONTAL 676, padding table.leaderboard.row.paddingH / paddingV

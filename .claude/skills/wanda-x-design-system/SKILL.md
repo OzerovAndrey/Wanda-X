@@ -1,6 +1,6 @@
 ---
 name: wanda-x-design-system
-description: Правила, еталони та чекліст очистки для Figma-файлу "[Wanda X] Design system" (fileKey 3MbdWPLOGBjBj92Y3EnPYN, бренди MB / XON, Token Studio core/alias/component). Use ANY TIME the user works on Wanda X components, layouts or tokens — audit, cleanup, fixing a component, building a layout from Wanda X components — or mentions "Wanda X", "Wanda X ДС", file key 3MbdWPLOGBjBj92Y3EnPYN, MB/XON themes. INDEX file — read rules/core.md + the one rules/ file the task needs; nothing else.
+description: Правила, еталони та чекліст очистки для Figma-файлу "[Wanda X] Design system" (fileKey 3MbdWPLOGBjBj92Y3EnPYN, бренди MB / BB / SC / XON, Token Studio core/alias/component). Use ANY TIME the user works on Wanda X components, layouts or tokens — audit, cleanup, fixing a component, building a layout from Wanda X components — or mentions "Wanda X", "Wanda X ДС", file key 3MbdWPLOGBjBj92Y3EnPYN, MB/BB/SC/XON themes. INDEX file — read rules/core.md + the one rules/ file the task needs; nothing else.
 ---
 
 # Wanda X — index
@@ -10,7 +10,7 @@ description: Правила, еталони та чекліст очистки �
 | | |
 |---|---|
 | Figma | `3MbdWPLOGBjBj92Y3EnPYN` · `https://www.figma.com/design/3MbdWPLOGBjBj92Y3EnPYN/-Wanda-X--Design-system` |
-| Бренди | **MB**, **XON** — Token Studio сети `core` / `alias` / `component`; Figma-колекція `Product`, режими MB / XON |
+| Бренди | **MB**, **BB**, **SC**, **XON** — Token Studio сети `<бренд>/core` + `<бренд>/override`, спільні `default/*` + `inverse/*`; Figma-колекції `Product` (MB / BB / SC / XON) і `Theme` (Default / Inverse) |
 | Іконки | тільки `Static — Icons` (`J3DHQyf6ARy401o7WywySC`) |
 | Ready for dev | Atoms → `Accordion`, `Badge`, `Button`, `Link`, `Divider`, `Dropdown`, `Label`, `Spinner` (через API не читається — оновлювати тут вручну) |
 

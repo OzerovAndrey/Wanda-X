@@ -142,7 +142,7 @@
     "xs": {
       "value": {
         "fontFamily": "{fontFamily.heading}",
-        "fontWeight": "{bold}",
+        "fontWeight": "{extrabold}",
         "fontSize": "{fontSize.accent.xs}",
         "lineHeight": "{lineHeight.headingXs}"
       },
@@ -151,7 +151,7 @@
     "sm": {
       "value": {
         "fontFamily": "{fontFamily.heading}",
-        "fontWeight": "{bold}",
+        "fontWeight": "{extrabold}",
         "fontSize": "{fontSize.accent.sm}",
         "lineHeight": "{lineHeight.headingSm}"
       },
@@ -247,7 +247,7 @@
         }
       },
       "2": {
-        "value": "{core.brand60.600}",
+        "value": "{core.brand60.800}",
         "type": "color",
         "description": "+ bg for default page's bg: footer banner support",
         "$extensions": {
@@ -284,18 +284,51 @@
             "NONE"
           ]
         }
-      },
-      "pageInvert": {
-        "value": "{core.grey.700}",
+      }
+    },
+    "background-inverted": {
+      "1": {
+        "value": "{core.brand60.700}",
         "type": "color",
+        "description": "+ for block pages",
         "$extensions": {
           "com.figma.scopes": [
             "NONE"
           ]
         }
       },
-      "surface": {
-        "value": "{core.brand60.900}",
+      "2": {
+        "value": "{core.brand60.800}",
+        "type": "color",
+        "description": "+ bg for default page's bg: footer banner support",
+        "$extensions": {
+          "com.figma.scopes": [
+            "NONE"
+          ]
+        }
+      },
+      "3": {
+        "value": "{core.brand60.a25}",
+        "type": "color",
+        "description": "+ for icons, some dropdowns",
+        "$extensions": {
+          "com.figma.scopes": [
+            "NONE"
+          ]
+        }
+      },
+      "slate1": {
+        "value": "{core.grey.700}",
+        "type": "color",
+        "description": "+ ingame, timer",
+        "$extensions": {
+          "com.figma.scopes": [
+            "NONE"
+          ]
+        }
+      },
+      "page": {
+        "value": "{core.grey.700}",
         "type": "color",
         "$extensions": {
           "com.figma.scopes": [
@@ -338,12 +371,19 @@
         }
       },
       "active": {
-        "value": "{override.fill.default}",
+        "value": "{core.brandPreset.vibrant}",
         "type": "color",
         "$extensions": {
           "com.figma.scopes": [
             "NONE"
-          ]
+          ],
+          "studio.tokens": {
+            "modify": {
+              "type": "alpha",
+              "value": "0.4",
+              "space": "hsl"
+            }
+          }
         }
       }
     },
@@ -508,37 +548,6 @@
             }
           }
         }
-      },
-      "neutralInvert": {
-        "fill": {
-          "default": {
-            "value": "{core.grey.700}",
-            "type": "color",
-            "$extensions": {
-              "com.figma.scopes": [
-                "NONE"
-              ]
-            }
-          },
-          "hover": {
-            "value": "{core.grey.800}",
-            "type": "color",
-            "$extensions": {
-              "com.figma.scopes": [
-                "NONE"
-              ]
-            }
-          },
-          "active": {
-            "value": "{core.grey.900}",
-            "type": "color",
-            "$extensions": {
-              "com.figma.scopes": [
-                "NONE"
-              ]
-            }
-          }
-        }
       }
     },
     "card": {
@@ -551,6 +560,24 @@
               "NONE"
             ]
           }
+        }
+      },
+      "fill": {
+        "value": "{core.grey.800}",
+        "type": "color",
+        "$extensions": {
+          "com.figma.scopes": [
+            "NONE"
+          ]
+        }
+      },
+      "fill-invert": {
+        "value": "{core.grey.800}",
+        "type": "color",
+        "$extensions": {
+          "com.figma.scopes": [
+            "NONE"
+          ]
         }
       }
     },
@@ -648,6 +675,23 @@
             "com.figma.scopes": [
               "NONE"
             ]
+          }
+        }
+      },
+      "fill": {
+        "value": "{override.header.fill.default}",
+        "type": "color",
+        "description": "0.24",
+        "$extensions": {
+          "com.figma.scopes": [
+            "NONE"
+          ],
+          "studio.tokens": {
+            "modify": {
+              "type": "darken",
+              "value": "0.24",
+              "space": "hsl"
+            }
           }
         }
       }
@@ -841,6 +885,17 @@
               ]
             }
           }
+        },
+        "color-inverted": {
+          "active": {
+            "value": "{text.default.heading}",
+            "type": "color",
+            "$extensions": {
+              "com.figma.scopes": [
+                "NONE"
+              ]
+            }
+          }
         }
       }
     },
@@ -853,41 +908,6 @@
             "com.figma.scopes": [
               "NONE"
             ]
-          }
-        }
-      }
-    },
-    "progressBar": {
-      "normal": {
-        "primary": {
-          "container": {
-            "value": "{core.content.a10}",
-            "type": "color",
-            "$extensions": {
-              "com.figma.scopes": [
-                "NONE"
-              ]
-            }
-          }
-        },
-        "secondary": {
-          "track": {
-            "value": "{core.content.a100}",
-            "type": "color",
-            "$extensions": {
-              "com.figma.scopes": [
-                "NONE"
-              ]
-            }
-          },
-          "container": {
-            "value": "{core.content.a15}",
-            "type": "color",
-            "$extensions": {
-              "com.figma.scopes": [
-                "NONE"
-              ]
-            }
           }
         }
       }
@@ -1140,24 +1160,100 @@
         }
       }
     },
-    "progress": {
-      "track": {
-        "value": "{core.content.a10}",
-        "type": "color",
-        "$extensions": {
-          "com.figma.scopes": [
-            "NONE"
-          ]
+    "header": {
+      "fill": {
+        "default": {
+          "value": "{core.grey.700}",
+          "type": "color"
         }
-      },
-      "secondary": {
-        "indicator": {
-          "value": "{core.content.a100}",
+      }
+    },
+    "lootbox": {
+      "card": {
+        "fill": {
+          "value": "{core.grey.800}",
           "type": "color",
           "$extensions": {
             "com.figma.scopes": [
               "NONE"
             ]
+          }
+        },
+        "fill-invert": {
+          "value": "{core.grey.800}",
+          "type": "color",
+          "$extensions": {
+            "com.figma.scopes": [
+              "NONE"
+            ]
+          }
+        }
+      }
+    },
+    "slider": {
+      "start": {
+        "value": "{core.grey.700}",
+        "type": "color",
+        "$extensions": {
+          "com.figma.scopes": [
+            "NONE"
+          ],
+          "studio.tokens": {
+            "modify": {
+              "type": "alpha",
+              "value": "0.85",
+              "space": "hsl"
+            }
+          }
+        }
+      },
+      "end": {
+        "value": "{core.grey.700}",
+        "type": "color",
+        "$extensions": {
+          "com.figma.scopes": [
+            "NONE"
+          ],
+          "studio.tokens": {
+            "modify": {
+              "type": "alpha",
+              "value": "0.25",
+              "space": "hsl"
+            }
+          }
+        }
+      }
+    },
+    "banner": {
+      "start": {
+        "value": "{core.grey.700}",
+        "type": "color",
+        "$extensions": {
+          "com.figma.scopes": [
+            "NONE"
+          ],
+          "studio.tokens": {
+            "modify": {
+              "type": "alpha",
+              "value": "0.85",
+              "space": "hsl"
+            }
+          }
+        }
+      },
+      "end": {
+        "value": "{core.grey.700}",
+        "type": "color",
+        "$extensions": {
+          "com.figma.scopes": [
+            "NONE"
+          ],
+          "studio.tokens": {
+            "modify": {
+              "type": "alpha",
+              "value": "0.25",
+              "space": "hsl"
+            }
           }
         }
       }

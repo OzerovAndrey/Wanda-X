@@ -347,10 +347,30 @@
             }
           }
         },
+        "card-inverted": {
+          "start": {
+            "value": "{core.brand60.700}",
+            "type": "color",
+            "$extensions": {
+              "com.figma.scopes": [
+                "NONE"
+              ]
+            }
+          },
+          "end": {
+            "value": "{core.brand60.900}",
+            "type": "color",
+            "$extensions": {
+              "com.figma.scopes": [
+                "NONE"
+              ]
+            }
+          }
+        },
         "special": {
           "1": {
             "start": {
-              "value": "{core.brandPreset.forGradients.5}",
+              "value": "{core.brandPreset.forGradients.6}",
               "type": "color",
               "$extensions": {
                 "com.figma.scopes": [
@@ -370,7 +390,7 @@
           },
           "2": {
             "start": {
-              "value": "{core.brandPreset.forGradients.1}",
+              "value": "{core.brandPreset.forGradients.2}",
               "type": "color",
               "$extensions": {
                 "com.figma.scopes": [
@@ -390,7 +410,7 @@
           },
           "3": {
             "start": {
-              "value": "{core.brandPreset.forGradients.6}",
+              "value": "{core.brandPreset.forGradients.3}",
               "type": "color",
               "$extensions": {
                 "com.figma.scopes": [
@@ -410,7 +430,7 @@
           },
           "4": {
             "start": {
-              "value": "{core.brandPreset.forGradients.6}",
+              "value": "{core.brandPreset.forGradients.4}",
               "type": "color",
               "$extensions": {
                 "com.figma.scopes": [
@@ -430,7 +450,7 @@
           },
           "5": {
             "start": {
-              "value": "{core.brand30.800}",
+              "value": "{core.brandPreset.forGradients.5}",
               "type": "color",
               "$extensions": {
                 "com.figma.scopes": [

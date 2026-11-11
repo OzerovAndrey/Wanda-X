@@ -2,13 +2,13 @@
 
 ## Структура
 - Версія плагіна 2.13, storage `local` (токени живуть у самому Figma-файлі).
-- Сети: `mb/core`, `mb/alias`, `mb/component`, `xon/core`, `xon/alias`, `xon/component`. Тема `Product` → режими MB / XON колекції `Product`.
+- Сети: `mb|bb|sc|xon` × `core` + `override`, спільні `default/alias|component`, `inverse/alias|component`. Тема `Product` → режими MB / BB / SC / XON; `Theme` → Default / Inverse.
 - Компонентні токени — **тільки** в `*/component`.
 
 ## Джерело правди
-Повний експорт усіх сетів і тем — `tokens/system/` у корені репо (`$themes.json`, `$metadata.json`, `mb/*`, `xon/*`, `default/*`, `inverse/*`). Перед роботою з токенами читати звідти; після змін у Token Studio — оновлювати експорт.
+Повний експорт усіх сетів і тем — `tokens/system/` у корені репо (`$themes.json`, `$metadata.json`, `mb/*`, `bb/*`, `sc/*`, `xon/*`, `default/*`, `inverse/*`). Перед роботою з токенами читати звідти; після змін у Token Studio — оновлювати експорт.
 
-**Останній експорт у репо: 2026-11-09** (з GitLab; 8 сетів: mb|xon core 238 + override 140, default alias 156 + component 960, inverse alias 88 + component 6).
+**Останній експорт у репо: 2026-11-11** (з GitLab; 12 сетів: mb|bb|sc|xon core 240 + override 146, default alias 150 + component 966, inverse alias 79 + component 9).
 
 > Правила токенів, іменування, прив'язка, JSON-handoff, свіжий архів — `rules/tokens.md`. Тут — лише довідка.
 

@@ -16,7 +16,7 @@ Claude **лише читає і документує**, у Figma нічого н
    - `DIGEST=true` — для git → `snapshots/<c>.json` (kebab-case, однина; набори одного компонента — в одному файлі);
    - `DIGEST=true` + `BASELINE=<вміст snapshots/<c>.json>` — лише змінене;
    - `DIGEST=false` — повний знімок для вивчення (не в git; ліміт відповіді 48 КБ → `VARIANT_FROM`, `MAX_VARIANTS`); `LITE`, `COMPACT` — стискання.
-3. **Скриншот** Section: стани, Theme Default / Inverse, MB / XON.
+3. **Скриншот** Section: стани, Theme Default / Inverse, MB / BB / SC / XON.
 4. **Diff**: `python3 scripts/snapshot-diff.py snapshots/<c>.json` (vs останній коміт); `--summary <file>` — звести повний знімок.
 5. **Записати** `references/components/<c>.md` за `_template.md`; значення токенів — з `tokens/system/`. Висновки Claude позначати **(спостереження)**, призначення не вигадувати.
 6. **Звірити** з DoD (`rules/build-component.md` §6): кожен ❌ — рядок «Відхилення»; повторюване в кількох компонентах — спитати, чи це нове правило (`references/open-questions.md`).

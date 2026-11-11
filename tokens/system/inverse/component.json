@@ -3,8 +3,9 @@
     "neutral": {
       "fill": {
         "default": {
-          "value": "{override.btn.neutralInvert.fill.default}",
+          "value": "{core.grey.900}",
           "type": "color",
+          "description": "{override.btn.neutralInvert.fill.default}",
           "$extensions": {
             "com.figma.scopes": [
               "NONE"
@@ -12,7 +13,7 @@
           }
         },
         "hover": {
-          "value": "{override.btn.neutralInvert.fill.hover}",
+          "value": "{core.grey.600}",
           "type": "color",
           "$extensions": {
             "com.figma.scopes": [
@@ -21,7 +22,7 @@
           }
         },
         "active": {
-          "value": "{override.btn.neutralInvert.fill.active}",
+          "value": "{core.grey.800}",
           "type": "color",
           "$extensions": {
             "com.figma.scopes": [
@@ -35,30 +36,80 @@
   "lotteryTournament": {
     "card": {
       "fill": {
-        "value": "{core.grey.800}",
+        "value": "{override.card.fill-invert}",
         "type": "color",
         "$extensions": {
           "com.figma.scopes": [
             "NONE"
           ]
         }
-      },
+      }
+    }
+  },
+  "lootbox": {
+    "card": {
+      "fill": {
+        "value": "{override.card.fill-invert}",
+        "type": "color",
+        "$extensions": {
+          "com.figma.scopes": [
+            "NONE"
+          ]
+        }
+      }
+    }
+  },
+  "shop": {
+    "card": {
+      "fill": {
+        "value": "{override.card.fill-invert}",
+        "type": "color",
+        "$extensions": {
+          "com.figma.scopes": [
+            "NONE"
+          ]
+        }
+      }
+    }
+  },
+  "news": {
+    "card": {
+      "fill": {
+        "value": "{override.card.fill-invert}",
+        "type": "color",
+        "description": "status-inactive",
+        "$extensions": {
+          "com.figma.scopes": [
+            "NONE"
+          ]
+        }
+      }
+    }
+  },
+  "mobileApplication": {
+    "card": {
+      "fill": {
+        "value": "{override.card.fill-invert}",
+        "type": "color",
+        "$extensions": {
+          "com.figma.scopes": [
+            "NONE"
+          ]
+        }
+      }
+    }
+  },
+  "switcher": {
+    "item": {
       "color": {
-        "value": "{text.default.heading}",
-        "type": "color",
-        "$extensions": {
-          "com.figma.scopes": [
-            "NONE"
-          ]
-        }
-      },
-      "border": {
-        "value": "{override.lotteryTournament.card.border}",
-        "type": "color",
-        "$extensions": {
-          "com.figma.scopes": [
-            "NONE"
-          ]
+        "active": {
+          "value": "{core.content.a100}",
+          "type": "color",
+          "$extensions": {
+            "com.figma.scopes": [
+              "NONE"
+            ]
+          }
         }
       }
     }

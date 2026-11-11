@@ -21,8 +21,8 @@ Progress (COMPONENT_SET 79804:4510)   Variant × Size × Inverted × Type (12v) 
 │   │   └─ Indicator  RECT  FIXED ширина (= значення; 134 Primary / 54 Secondary за замовч.) · FILL висота · fill …{primary|secondary}.indicator · radius
 │   └─ Value  TEXT  text.xs-strong · semantic.text.default[-invert].heading · "2/5" · visible ← Value
 └─ Variant=…, Size=md|sm, Inverted=False, Type=Step   H · 200 FIXED / HUG
-    └─ Items  SLOT (спільна властивість)  H · gap progress.step.gap · FILL · 10 × Progress/Step того ж Size (FILL), 3 Active
-Progress/Circle (COMPONENT_SET 79803:70)  Variant (2v) · 36×36 · height progress.circle.size, lock ratio
+    └─ Items  SLOT (спільна властивість)  H · gap progressBar.step.gap · FILL · 10 × Progress/Step того ж Size (FILL), 3 Active
+Progress/Circle (COMPONENT_SET 79803:70)  Variant (2v) · 36×36 · height progressBar.circle.size, lock ratio
 ├─ Track  ELLIPSE  stroke contextual.progress.{v}.track · borderWidth progress.circle.track-width (1)
 ├─ Indicator  ELLIPSE  arc · stroke contextual.progress.{v}.indicator · borderWidth progress.circle.indicator-width (2) · round cap
 └─ Label  TEXT  text.xs-strong · semantic.text.default.heading · "86%"
@@ -51,8 +51,8 @@ Progress/Step (COMPONENT_SET 79803:61)  Variant × Size × Active (8v)
 |---|---|---|---|
 | `progress.gap` | корінь Line → gap | `{spacing.200}` (8) | = |
 | `progress.height.md` / `.sm` | Track, `Progress/Step` → height | 10 / 4 | = |
-| `progress.step.gap` | слот `Items` → gap | `{spacing.100}` (4) | = |
-| `progress.circle.size` | корінь Circle → height | `{size.450}` (36) | = |
+| `progressBar.step.gap` | слот `Items` → gap | `{spacing.100}` (4) | = |
+| `progressBar.circle.size` | корінь Circle → height | `{size.450}` (36) | = |
 | `contextual.progress.track` | Track, Step-корінь, Circle Track (усі варіанти, і Inverted) | `{semantic.fill.default}` | `{core.content.a10}` |
 | `contextual.progress.primary.indicator` | Indicator Primary (Line, Step, Circle) | gradient success→vibrant (без змінної) | = |
 | `contextual.progress.secondary.indicator` | Indicator Secondary | `{core.brand-60.500}` | `{core.content.a100}` |

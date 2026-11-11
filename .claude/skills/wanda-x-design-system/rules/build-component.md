@@ -48,12 +48,12 @@
 - [ ] Auto layout на 2+ дітях; absolute лише оверлеї / маски; ресайз — текст переноситься, нічого не обрізається.
 - [ ] 0 hardcode fill/stroke (крім масок), 0 текстів без стилю, 0 effects без стилю; radius / height / padding / gap / icon size — токени.
 - [ ] Лише свої компонентні + `semantic.*`; 0 `core.*` поза тінями / градієнтами; 0 чужих змінних; токени Token Studio на шарах (Inspect без ⬡).
-- [ ] MB і XON, Theme Default і Inverse: тимчасово `setExplicitVariableModeForCollection` на Section → скриншот → повернути.
+- [ ] MB, BB, SC, XON, Theme Default і Inverse: тимчасово `setExplicitVariableModeForCollection` на Section → скриншот → повернути.
 - [ ] Іконки зі Static через `↳ 💠`; вкладені елементи — інстанси ДС.
 - [ ] `description` у Figma порожній.
 
 ## 7. Документація і здача
-- `references/components/<c>.md` за `references/components/_template.md` (анатомія з node ID, властивості, токени MB / XON, рішення, питання).
+- `references/components/<c>.md` за `references/components/_template.md` (анатомія з node ID, властивості, токени по брендах, рішення, питання).
 - JSON — `tokens/<c>.{mb,xon}.component.json` (передача — `rules/tokens.md`).
 - Рядок у `references/component-registry.md`, `CHANGELOG.md`, коміт `component(<c>): …`.
 - Відкриті питання (контраст, вибір іконки) — команді; Ready for dev ставить команда.

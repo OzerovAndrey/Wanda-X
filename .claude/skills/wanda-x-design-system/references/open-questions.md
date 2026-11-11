@@ -33,5 +33,7 @@
 - `Table/Row` — `Direction` з одним значенням: прибрати? `table.row.gapV` → `$deprecated`?
 - `Table/Leaderboard Filled` — токени `striped.borderRadius`, `head.height.striped` перейменувати на `filled.*`?
 - `Table/Cell → Subtext` FIXED — переноси у вузьких комірках (Ingame 3xs); зробити Hug / Fill?
-- Змінні `table/*` у Figma новіші за експорт 09.11 (`leaderboard.filled.*`, `fill.default` замість `fill.subtle`, без `inverted.*`) — потрібен свіжий архів Token Studio.
-
+- Змінні `table/*` у Figma новіші за експорт 09.11 (`leaderboard.filled.*`, `fill.default` замість `fill.subtle`, без `inverted.*`) — ✅ закрито експортом 2026-11-11: у сетах тепер `table.leaderboard.filled.fill|headFill`, `fill.default`, `inverted.*` прибрано.
+- Експорт 2026-11-11: у Figma прив'язані видалені токени — News/Card, News/CTA (`background.slateDark1`), Races-картки (`background.slateDark2`, `text.defaultInvert.*`), News/Skeleton / List / List bullet (`fill.subtle`), Popup (`background.surface`, `modal.banner.*`) — переприв'язати за мапою `references/tokens.md` § Перейменування після Export.
+- Команда видалила 38 токенів без `$deprecated` — порушує правило (фронт не мерджить видалення): нагадати / додати назад з `$deprecated`?
+- Нові бренди BB і SC: компоненти перевіряти в 4 режимах `Product`; в BB `core.brandPreset.*` схожі на заготовку (brand60 = сірий #808080) — бренд ще в роботі?

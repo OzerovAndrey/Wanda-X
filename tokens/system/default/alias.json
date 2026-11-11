@@ -21,19 +21,35 @@
     "defaultInvert": {
       "heading": {
         "value": "{core.white.500}",
-        "type": "color"
+        "type": "color",
+        "$deprecated": {
+          "severity": "warning",
+          "message": ""
+        }
       },
       "primary": {
         "value": "{core.white.a90}",
-        "type": "color"
+        "type": "color",
+        "$deprecated": {
+          "severity": "warning",
+          "message": ""
+        }
       },
       "secondary": {
         "value": "{core.white.a70}",
-        "type": "color"
+        "type": "color",
+        "$deprecated": {
+          "severity": "warning",
+          "message": ""
+        }
       },
       "tertiary": {
         "value": "{core.white.a50}",
-        "type": "color"
+        "type": "color",
+        "$deprecated": {
+          "severity": "warning",
+          "message": ""
+        }
       }
     },
     "brand": {
@@ -145,34 +161,9 @@
       "type": "color",
       "description": "+ slate for cards BG "
     },
-    "slateDark1": {
-      "value": "{core.grey.700}",
-      "type": "color",
-      "description": "+ dark plate: leaderboard striped"
-    },
-    "slateDark2": {
-      "value": "{core.grey.800}",
-      "type": "color",
-      "description": "+ dark stripe / head on dark plate"
-    },
-    "brandSubtle": {
-      "value": "{core.brand60.a10}",
-      "type": "color",
-      "description": "+ table filled"
-    },
     "overlay": {
       "value": "{core.grey.a50}",
       "type": "color"
-    },
-    "surface": {
-      "value": "{override.background.surface}",
-      "type": "color",
-      "$extensions": {
-        "com.figma.scopes": [
-          "FRAME_FILL",
-          "SHAPE_FILL"
-        ]
-      }
     },
     "brand": {
       "emphasizing": {
@@ -224,48 +215,13 @@
     }
   },
   "fill": {
-    "subtle": {
-      "value": "{core.content.a8}",
-      "type": "color"
-    },
-    "subtleInvert": {
-      "value": "{core.white.500}",
-      "type": "color",
-      "$extensions": {
-        "studio.tokens": {
-          "modify": {
-            "type": "alpha",
-            "value": "0.1",
-            "space": "hsl"
-          }
-        }
-      }
-    },
     "default": {
       "value": "{override.fill.default}",
-      "type": "color",
-      "$extensions": {
-        "studio.tokens": {
-          "modify": {
-            "type": "alpha",
-            "value": "0.16",
-            "space": "hsl"
-          }
-        }
-      }
+      "type": "color"
     },
     "hover": {
       "value": "{override.fill.hover}",
-      "type": "color",
-      "$extensions": {
-        "studio.tokens": {
-          "modify": {
-            "type": "alpha",
-            "value": "0.24",
-            "space": "hsl"
-          }
-        }
-      }
+      "type": "color"
     },
     "active": {
       "value": "{override.fill.active}",
@@ -519,12 +475,12 @@
     },
     "default": {
       "bg": {
-        "secondary": {
-          "value": "{core.content.a20}",
-          "type": "color"
-        },
         "primary": {
           "value": "{override.status.default.bg.primary}",
+          "type": "color"
+        },
+        "secondary": {
+          "value": "{core.content.a20}",
           "type": "color"
         }
       },
@@ -773,7 +729,11 @@
     "borderRadius": {
       "xs": {
         "value": "{core.borderRadius.100}",
-        "type": "borderRadius"
+        "type": "borderRadius",
+        "$deprecated": {
+          "severity": "warning",
+          "message": ""
+        }
       },
       "sm": {
         "value": "{override.global.borderRadius.sm}",
@@ -789,7 +749,11 @@
       },
       "xl": {
         "value": "{override.global.borderRadius.xl}",
-        "type": "borderRadius"
+        "type": "borderRadius",
+        "$deprecated": {
+          "severity": "warning",
+          "message": ""
+        }
       },
       "full": {
         "value": "{core.borderRadius.full}",
@@ -799,13 +763,21 @@
     "card": {
       "borderRadius": {
         "value": "{override.global.card.borderRadius}",
-        "type": "borderRadius"
+        "type": "borderRadius",
+        "$deprecated": {
+          "severity": "warning",
+          "message": ""
+        }
       }
     },
     "container": {
       "borderRadius": {
         "value": "{override.global.container.borderRadius}",
-        "type": "borderRadius"
+        "type": "borderRadius",
+        "$deprecated": {
+          "severity": "warning",
+          "message": ""
+        }
       }
     }
   }

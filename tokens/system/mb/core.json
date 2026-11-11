@@ -214,14 +214,14 @@
       },
       "forGradients": {
         "1": {
-          "value": "#4C186D",
+          "value": "#984bc7",
           "type": "color",
-          "description": "+ Bonus popover",
           "$extensions": {
             "com.figma.scopes": [
               "NONE"
             ]
-          }
+          },
+          "description": "+ Bonus popover"
         },
         "2": {
           "value": "#1748E3",
@@ -254,24 +254,24 @@
           }
         },
         "5": {
-          "value": "#502C15",
+          "value": "#dd793b",
           "type": "color",
-          "description": "+ for collections",
           "$extensions": {
             "com.figma.scopes": [
               "NONE"
             ]
-          }
+          },
+          "description": "+ for collections"
         },
         "6": {
-          "value": "#324E3F",
+          "value": "#7bcda1",
           "type": "color",
-          "description": "+ for collections",
           "$extensions": {
             "com.figma.scopes": [
               "NONE"
             ]
-          }
+          },
+          "description": "+ for collections"
         },
         "primary": {
           "start": {
@@ -347,10 +347,30 @@
             }
           }
         },
+        "card-inverted": {
+          "start": {
+            "value": "{core.brand60.600}",
+            "type": "color",
+            "$extensions": {
+              "com.figma.scopes": [
+                "NONE"
+              ]
+            }
+          },
+          "end": {
+            "value": "{core.grey.800}",
+            "type": "color",
+            "$extensions": {
+              "com.figma.scopes": [
+                "NONE"
+              ]
+            }
+          }
+        },
         "special": {
           "1": {
             "start": {
-              "value": "{core.brandPreset.forGradients.5}",
+              "value": "{core.brandPreset.forGradients.6}",
               "type": "color",
               "$extensions": {
                 "com.figma.scopes": [
@@ -359,7 +379,7 @@
               }
             },
             "end": {
-              "value": "{core.brand60.900}",
+              "value": "{core.brand60.50}",
               "type": "color",
               "$extensions": {
                 "com.figma.scopes": [
@@ -370,7 +390,7 @@
           },
           "2": {
             "start": {
-              "value": "{core.brandPreset.forGradients.1}",
+              "value": "{core.brandPreset.forGradients.2}",
               "type": "color",
               "$extensions": {
                 "com.figma.scopes": [
@@ -379,7 +399,7 @@
               }
             },
             "end": {
-              "value": "{core.brand60.900}",
+              "value": "{core.brand60.50}",
               "type": "color",
               "$extensions": {
                 "com.figma.scopes": [
@@ -390,7 +410,7 @@
           },
           "3": {
             "start": {
-              "value": "{core.brandPreset.forGradients.6}",
+              "value": "{core.brandPreset.forGradients.3}",
               "type": "color",
               "$extensions": {
                 "com.figma.scopes": [
@@ -399,7 +419,7 @@
               }
             },
             "end": {
-              "value": "{core.brand60.900}",
+              "value": "{core.brand60.50}",
               "type": "color",
               "$extensions": {
                 "com.figma.scopes": [
@@ -410,7 +430,7 @@
           },
           "4": {
             "start": {
-              "value": "{core.brandPreset.forGradients.6}",
+              "value": "{core.brandPreset.forGradients.4}",
               "type": "color",
               "$extensions": {
                 "com.figma.scopes": [
@@ -419,7 +439,7 @@
               }
             },
             "end": {
-              "value": "{core.brand60.900}",
+              "value": "{core.brand60.50}",
               "type": "color",
               "$extensions": {
                 "com.figma.scopes": [
@@ -430,7 +450,7 @@
           },
           "5": {
             "start": {
-              "value": "{core.brand30.800}",
+              "value": "{core.brandPreset.forGradients.5}",
               "type": "color",
               "$extensions": {
                 "com.figma.scopes": [
@@ -439,7 +459,7 @@
               }
             },
             "end": {
-              "value": "{core.brand60.900}",
+              "value": "{core.brand60.50}",
               "type": "color",
               "$extensions": {
                 "com.figma.scopes": [

@@ -592,7 +592,7 @@
           }
         },
         "hover": {
-          "value": "{core.brand60.100}",
+          "value": "{core.brand60.200}",
           "type": "color",
           "$extensions": {
             "com.figma.scopes": [
@@ -601,7 +601,7 @@
           }
         },
         "active": {
-          "value": "{core.brand60.200}",
+          "value": "{core.brand60.300}",
           "type": "color",
           "$extensions": {
             "com.figma.scopes": [
@@ -1007,7 +1007,7 @@
       },
       "fill": {
         "default": {
-          "value": "{override.btn.neutralInvert.fill.default}",
+          "value": "{btn.neutral.fill.default}",
           "type": "color",
           "$extensions": {
             "com.figma.scopes": [
@@ -1016,7 +1016,7 @@
           }
         },
         "hover": {
-          "value": "{override.btn.neutralInvert.fill.hover}",
+          "value": "{btn.neutral.fill.hover}",
           "type": "color",
           "$extensions": {
             "com.figma.scopes": [
@@ -1025,7 +1025,7 @@
           }
         },
         "active": {
-          "value": "{override.btn.neutralInvert.fill.active}",
+          "value": "{btn.neutral.fill.active}",
           "type": "color",
           "$extensions": {
             "com.figma.scopes": [
@@ -1386,7 +1386,7 @@
       },
       "color": {
         "primary": {
-          "value": "{override.lotteryTournament.ticketNumber.color.primary}",
+          "value": "{text.default.heading}",
           "type": "color",
           "$extensions": {
             "com.figma.scopes": [
@@ -1395,7 +1395,7 @@
           }
         },
         "secondary": {
-          "value": "{override.lotteryTournament.ticketNumber.color.secondary}",
+          "value": "{text.default.secondary}",
           "type": "color",
           "$extensions": {
             "com.figma.scopes": [
@@ -1451,7 +1451,7 @@
     },
     "card": {
       "fill": {
-        "value": "{background.page}",
+        "value": "{override.card.fill}",
         "type": "color",
         "$extensions": {
           "com.figma.scopes": [
@@ -1687,7 +1687,7 @@
         }
       },
       "fill": {
-        "value": "{core.grey.800}",
+        "value": "{override.card.fill}",
         "type": "color",
         "$extensions": {
           "com.figma.scopes": [
@@ -2357,7 +2357,7 @@
   "mobileApplication": {
     "card": {
       "fill": {
-        "value": "{core.grey.700}",
+        "value": "{override.card.fill}",
         "type": "color",
         "$extensions": {
           "com.figma.scopes": [
@@ -2723,7 +2723,7 @@
     },
     "bg": {
       "fill": {
-        "value": "{gradients.11}",
+        "value": "linear-gradient(180deg, {core.grey.600} 0%, {core.grey.700} 100%)",
         "type": "color",
         "$extensions": {
           "com.figma.scopes": [
@@ -3270,9 +3270,27 @@
         ]
       }
     },
+    "fill": {
+      "value": "{override.table.fill}",
+      "type": "color",
+      "$extensions": {
+        "com.figma.scopes": [
+          "NONE"
+        ]
+      }
+    },
+    "header": {
+      "value": "{override.table.header}",
+      "type": "color",
+      "$extensions": {
+        "com.figma.scopes": [
+          "NONE"
+        ]
+      }
+    },
     "filled": {
       "fill": {
-        "value": "{background.brandSubtle}",
+        "value": "{fill.default}",
         "type": "color",
         "$extensions": {
           "com.figma.scopes": [
@@ -3281,7 +3299,7 @@
         }
       },
       "headFill": {
-        "value": "{background.brandSubtle}",
+        "value": "{fill.default}",
         "type": "color",
         "$extensions": {
           "com.figma.scopes": [
@@ -3312,7 +3330,7 @@
       "row": {
         "fill": {
           "card": {
-            "value": "{fill.subtle}",
+            "value": "{fill.default}",
             "type": "color",
             "$extensions": {
               "com.figma.scopes": [
@@ -3321,7 +3339,7 @@
             }
           },
           "stripe": {
-            "value": "{fill.subtle}",
+            "value": "{fill.default}",
             "type": "color",
             "$extensions": {
               "com.figma.scopes": [
@@ -3336,37 +3354,6 @@
               "com.figma.scopes": [
                 "NONE"
               ]
-            }
-          }
-        },
-        "inverted": {
-          "fill": {
-            "card": {
-              "value": "{fill.subtleInvert}",
-              "type": "color",
-              "$extensions": {
-                "com.figma.scopes": [
-                  "NONE"
-                ]
-              }
-            },
-            "stripe": {
-              "value": "{background.slateDark2}",
-              "type": "color",
-              "$extensions": {
-                "com.figma.scopes": [
-                  "NONE"
-                ]
-              }
-            },
-            "selected": {
-              "value": "{fill.active}",
-              "type": "color",
-              "$extensions": {
-                "com.figma.scopes": [
-                  "NONE"
-                ]
-              }
             }
           }
         },
@@ -3409,9 +3396,9 @@
           }
         }
       },
-      "striped": {
+      "filled": {
         "fill": {
-          "value": "{background.slateDark1}",
+          "value": "{background.slate2}",
           "type": "color",
           "$extensions": {
             "com.figma.scopes": [
@@ -3420,14 +3407,16 @@
           }
         },
         "headFill": {
-          "value": "{background.slateDark2}",
+          "value": "{fill.active}",
           "type": "color",
           "$extensions": {
             "com.figma.scopes": [
               "NONE"
             ]
           }
-        },
+        }
+      },
+      "striped": {
         "borderRadius": {
           "value": "{global.container.borderRadius}",
           "type": "borderRadius",
@@ -3494,7 +3483,7 @@
       "row": {
         "fill": {
           "card": {
-            "value": "{fill.subtle}",
+            "value": "{fill.default}",
             "type": "color",
             "$extensions": {
               "com.figma.scopes": [
@@ -3571,7 +3560,7 @@
       },
       "panel": {
         "fill": {
-          "value": "{fill.subtle}",
+          "value": "{fill.default}",
           "type": "color",
           "$extensions": {
             "com.figma.scopes": [
@@ -3666,24 +3655,6 @@
             ]
           }
         }
-      }
-    },
-    "fill": {
-      "value": "{override.table.fill}",
-      "type": "color",
-      "$extensions": {
-        "com.figma.scopes": [
-          "NONE"
-        ]
-      }
-    },
-    "header": {
-      "value": "{override.table.header}",
-      "type": "color",
-      "$extensions": {
-        "com.figma.scopes": [
-          "NONE"
-        ]
       }
     },
     "head": {
@@ -3819,8 +3790,8 @@
     },
     "normal": {
       "primary": {
-        "container": {
-          "value": "{override.progressBar.normal.primary.container}",
+        "track": {
+          "value": "linear-gradient(90deg, {core.brandPreset.validation.success} 0%, {core.brandPreset.vibrant} 100%)",
           "type": "color",
           "$extensions": {
             "com.figma.scopes": [
@@ -3828,8 +3799,8 @@
             ]
           }
         },
-        "track": {
-          "value": "linear-gradient(90deg, {core.brandPreset.validation.success} 0%, {core.brandPreset.vibrant} 100%)",
+        "container": {
+          "value": "{fill.default}",
           "type": "color",
           "$extensions": {
             "com.figma.scopes": [
@@ -3840,7 +3811,7 @@
       },
       "secondary": {
         "track": {
-          "value": "{override.progressBar.normal.secondary.track}",
+          "value": "{core.brand60.500}",
           "type": "color",
           "$extensions": {
             "com.figma.scopes": [
@@ -3849,13 +3820,35 @@
           }
         },
         "container": {
-          "value": "{override.progressBar.normal.secondary.container}",
+          "value": "{fill.default}",
           "type": "color",
           "$extensions": {
             "com.figma.scopes": [
               "NONE"
             ]
           }
+        }
+      }
+    },
+    "step": {
+      "gap": {
+        "value": "{spacing.100}",
+        "type": "spacing",
+        "$extensions": {
+          "com.figma.scopes": [
+            "NONE"
+          ]
+        }
+      }
+    },
+    "circle": {
+      "size": {
+        "value": "{size.450}",
+        "type": "sizing",
+        "$extensions": {
+          "com.figma.scopes": [
+            "NONE"
+          ]
         }
       }
     }
@@ -3910,8 +3903,8 @@
         ]
       }
     },
-    "paddingV": {
-      "value": "{spacing.100}",
+    "paddingR": {
+      "value": "{spacing.200}",
       "type": "spacing",
       "$extensions": {
         "com.figma.scopes": [
@@ -3919,8 +3912,8 @@
         ]
       }
     },
-    "paddingH": {
-      "value": "{spacing.200}",
+    "paddingL": {
+      "value": "{spacing.400}",
       "type": "spacing",
       "$extensions": {
         "com.figma.scopes": [
@@ -4367,7 +4360,7 @@
   "header": {
     "fill": {
       "default": {
-        "value": "{core.grey.700}",
+        "value": "{override.header.fill.default}",
         "type": "color",
         "$extensions": {
           "com.figma.scopes": [
@@ -6165,16 +6158,9 @@
   },
   "menu": {
     "fill": {
-      "value": "{header.fill.default}",
+      "value": "{override.menu.fill}",
       "type": "color",
       "$extensions": {
-        "studio.tokens": {
-          "modify": {
-            "type": "darken",
-            "value": "0.24",
-            "space": "hsl"
-          }
-        },
         "com.figma.scopes": [
           "NONE"
         ]
@@ -6954,46 +6940,6 @@
         }
       }
     },
-    "banner": {
-      "fill": {
-        "value": "linear-gradient(90deg, {core.grey.700} , {core.brand60.600} )",
-        "type": "color",
-        "$extensions": {
-          "com.figma.scopes": [
-            "NONE"
-          ]
-        }
-      },
-      "color": {
-        "value": "{text.defaultInvert.heading}",
-        "type": "color",
-        "$extensions": {
-          "com.figma.scopes": [
-            "NONE"
-          ]
-        }
-      }
-    },
-    "slate": {
-      "1": {
-        "value": "{core.brand60.a15}",
-        "type": "color",
-        "$extensions": {
-          "com.figma.scopes": [
-            "NONE"
-          ]
-        }
-      },
-      "2": {
-        "value": "{core.brand60.a10}",
-        "type": "color",
-        "$extensions": {
-          "com.figma.scopes": [
-            "NONE"
-          ]
-        }
-      }
-    },
     "br": {
       "value": "{border.default.secondary}",
       "type": "color",
@@ -7132,6 +7078,139 @@
           }
         }
       }
+    },
+    "custom": {
+      "header": {
+        "paddingL": {
+          "3xs": {
+            "value": "16",
+            "type": "spacing",
+            "$extensions": {
+              "com.figma.scopes": [
+                "NONE"
+              ]
+            }
+          },
+          "xl": {
+            "value": "16",
+            "type": "spacing",
+            "$extensions": {
+              "com.figma.scopes": [
+                "NONE"
+              ]
+            }
+          }
+        },
+        "paddingR": {
+          "3xs": {
+            "value": "16",
+            "type": "spacing",
+            "$extensions": {
+              "com.figma.scopes": [
+                "NONE"
+              ]
+            }
+          },
+          "xl": {
+            "value": "44",
+            "type": "spacing",
+            "$extensions": {
+              "com.figma.scopes": [
+                "NONE"
+              ]
+            }
+          }
+        },
+        "paddingV": {
+          "3xs": {
+            "value": "8",
+            "type": "spacing",
+            "$extensions": {
+              "com.figma.scopes": [
+                "NONE"
+              ]
+            }
+          },
+          "xl": {
+            "value": "16",
+            "type": "spacing",
+            "$extensions": {
+              "com.figma.scopes": [
+                "NONE"
+              ]
+            }
+          }
+        },
+        "bg": {
+          "value": "{core.brand60.a10}",
+          "type": "color",
+          "$extensions": {
+            "com.figma.scopes": [
+              "NONE"
+            ]
+          }
+        }
+      },
+      "sidebar": {
+        "width": {
+          "value": "280",
+          "type": "sizing",
+          "$extensions": {
+            "com.figma.scopes": [
+              "NONE"
+            ]
+          }
+        },
+        "padding": {
+          "value": "16",
+          "type": "spacing",
+          "$extensions": {
+            "com.figma.scopes": [
+              "NONE"
+            ]
+          }
+        },
+        "bg": {
+          "value": "{modal.custom.header.bg}",
+          "type": "color",
+          "$extensions": {
+            "com.figma.scopes": [
+              "NONE"
+            ]
+          }
+        }
+      },
+      "body": {
+        "padding": {
+          "3xs": {
+            "value": "16",
+            "type": "spacing",
+            "$extensions": {
+              "com.figma.scopes": [
+                "NONE"
+              ]
+            }
+          },
+          "xl": {
+            "value": "24",
+            "type": "spacing",
+            "$extensions": {
+              "com.figma.scopes": [
+                "NONE"
+              ]
+            }
+          }
+        },
+        "bg": {
+          "value": "{core.brand60.a15}",
+          "type": "color",
+          "$extensions": {
+            "com.figma.scopes": [
+              "NONE"
+            ]
+          }
+        }
+      }
     }
   },
   "overlay": {
@@ -7225,8 +7304,8 @@
   },
   "shop": {
     "card": {
-      "border": {
-        "value": "{border.default.secondary}",
+      "fill": {
+        "value": "{override.card.fill}",
         "type": "color",
         "$extensions": {
           "com.figma.scopes": [
@@ -7234,8 +7313,8 @@
           ]
         }
       },
-      "fill": {
-        "value": "{core.grey.800}",
+      "border": {
+        "value": "{border.default.secondary}",
         "type": "color",
         "$extensions": {
           "com.figma.scopes": [
@@ -7708,7 +7787,7 @@
           }
         },
         "active": {
-          "value": "{text.default.heading}",
+          "value": "{core.white.500}",
           "type": "color",
           "$extensions": {
             "com.figma.scopes": [
@@ -7797,7 +7876,7 @@
           }
         },
         "active": {
-          "value": "{text.default.heading}",
+          "value": "{core.white.500}",
           "type": "color",
           "$extensions": {
             "com.figma.scopes": [
@@ -8012,6 +8091,10 @@
           "com.figma.scopes": [
             "NONE"
           ]
+        },
+        "$deprecated": {
+          "severity": "warning",
+          "message": ""
         }
       },
       "normal": {
@@ -8021,6 +8104,10 @@
           "com.figma.scopes": [
             "NONE"
           ]
+        },
+        "$deprecated": {
+          "severity": "warning",
+          "message": ""
         }
       },
       "active": {
@@ -8030,6 +8117,10 @@
           "com.figma.scopes": [
             "NONE"
           ]
+        },
+        "$deprecated": {
+          "severity": "warning",
+          "message": ""
         }
       }
     },
@@ -8041,6 +8132,10 @@
           "com.figma.scopes": [
             "NONE"
           ]
+        },
+        "$deprecated": {
+          "severity": "warning",
+          "message": ""
         }
       },
       "hover": {
@@ -8050,6 +8145,10 @@
           "com.figma.scopes": [
             "NONE"
           ]
+        },
+        "$deprecated": {
+          "severity": "warning",
+          "message": ""
         }
       },
       "active": {
@@ -8059,6 +8158,10 @@
           "com.figma.scopes": [
             "NONE"
           ]
+        },
+        "$deprecated": {
+          "severity": "warning",
+          "message": ""
         }
       }
     },
@@ -8070,6 +8173,10 @@
           "com.figma.scopes": [
             "NONE"
           ]
+        },
+        "$deprecated": {
+          "severity": "warning",
+          "message": ""
         }
       },
       "hover": {
@@ -8079,6 +8186,10 @@
           "com.figma.scopes": [
             "NONE"
           ]
+        },
+        "$deprecated": {
+          "severity": "warning",
+          "message": ""
         }
       },
       "active": {
@@ -8088,6 +8199,10 @@
           "com.figma.scopes": [
             "NONE"
           ]
+        },
+        "$deprecated": {
+          "severity": "warning",
+          "message": ""
         }
       }
     },
@@ -8099,6 +8214,10 @@
           "com.figma.scopes": [
             "NONE"
           ]
+        },
+        "$deprecated": {
+          "severity": "warning",
+          "message": ""
         }
       },
       "normal": {
@@ -8108,6 +8227,10 @@
           "com.figma.scopes": [
             "NONE"
           ]
+        },
+        "$deprecated": {
+          "severity": "warning",
+          "message": ""
         }
       },
       "hover": {
@@ -8117,6 +8240,10 @@
           "com.figma.scopes": [
             "NONE"
           ]
+        },
+        "$deprecated": {
+          "severity": "warning",
+          "message": ""
         }
       }
     },
@@ -8133,32 +8260,18 @@
   "specialMenuItem": {
     "fill": {
       "default": {
-        "value": "{header.fill.default}",
+        "value": "{btn.neutral.fill.default}",
         "type": "color",
         "$extensions": {
-          "studio.tokens": {
-            "modify": {
-              "type": "darken",
-              "value": "0.35",
-              "space": "hsl"
-            }
-          },
           "com.figma.scopes": [
             "NONE"
           ]
         }
       },
       "hover": {
-        "value": "{header.fill.default}",
+        "value": "{btn.neutral.fill.hover}",
         "type": "color",
         "$extensions": {
-          "studio.tokens": {
-            "modify": {
-              "type": "darken",
-              "value": "0.08",
-              "space": "hsl"
-            }
-          },
           "com.figma.scopes": [
             "NONE"
           ]
@@ -8329,7 +8442,7 @@
       }
     },
     "height": {
-      "value": "138",
+      "value": "96",
       "type": "sizing",
       "$extensions": {
         "com.figma.scopes": [
@@ -8351,32 +8464,18 @@
   },
   "slider": {
     "start": {
-      "value": "{core.grey.700}",
+      "value": "{override.slider.start}",
       "type": "color",
       "$extensions": {
-        "studio.tokens": {
-          "modify": {
-            "type": "alpha",
-            "value": "0.85",
-            "space": "hsl"
-          }
-        },
         "com.figma.scopes": [
           "NONE"
         ]
       }
     },
     "end": {
-      "value": "{core.grey.700}",
+      "value": "{override.slider.end}",
       "type": "color",
       "$extensions": {
-        "studio.tokens": {
-          "modify": {
-            "type": "alpha",
-            "value": "0.25",
-            "space": "hsl"
-          }
-        },
         "com.figma.scopes": [
           "NONE"
         ]
@@ -8545,7 +8644,7 @@
       }
     },
     "overlayL": {
-      "value": "linear-gradient(90deg, {slider.start} 20%, {slider.end} 100%)",
+      "value": "linear-gradient(90deg, {override.slider.start} 20%, {override.slider.end} 100%)",
       "type": "color",
       "$extensions": {
         "com.figma.scopes": [
@@ -8556,32 +8655,18 @@
   },
   "banner": {
     "start": {
-      "value": "{core.grey.700}",
+      "value": "{override.banner.start}",
       "type": "color",
       "$extensions": {
-        "studio.tokens": {
-          "modify": {
-            "type": "alpha",
-            "value": "0.85",
-            "space": "hsl"
-          }
-        },
         "com.figma.scopes": [
           "NONE"
         ]
       }
     },
     "end": {
-      "value": "{core.grey.700}",
+      "value": "{override.banner.end}",
       "type": "color",
       "$extensions": {
-        "studio.tokens": {
-          "modify": {
-            "type": "alpha",
-            "value": "0.25",
-            "space": "hsl"
-          }
-        },
         "com.figma.scopes": [
           "NONE"
         ]
@@ -8609,7 +8694,7 @@
     },
     "paddingR": {
       "xs": {
-        "value": "148",
+        "value": "128",
         "type": "spacing",
         "$extensions": {
           "com.figma.scopes": [
@@ -8767,6 +8852,26 @@
           "NONE"
         ]
       }
+    },
+    "noDepositeBonus": {
+      "fill": {
+        "value": "linear-gradient(90deg, {core.grey.700} , {core.brand60.600} )",
+        "type": "color",
+        "$extensions": {
+          "com.figma.scopes": [
+            "NONE"
+          ]
+        }
+      },
+      "color": {
+        "value": "{text.defaultInvert.heading}",
+        "type": "color",
+        "$extensions": {
+          "com.figma.scopes": [
+            "NONE"
+          ]
+        }
+      }
     }
   },
   "heading": {
@@ -8837,7 +8942,7 @@
     "bullet": {
       "fill": {
         "default": {
-          "value": "{fill.subtle}",
+          "value": "{fill.default}",
           "type": "color",
           "$extensions": {
             "com.figma.scopes": [
@@ -8865,7 +8970,7 @@
         }
       },
       "borderRadius": {
-        "value": "{global.borderRadius.xs}",
+        "value": "{global.borderRadius.sm}",
         "type": "borderRadius",
         "$extensions": {
           "com.figma.scopes": [
@@ -9027,7 +9132,7 @@
         }
       },
       "fill": {
-        "value": "{core.grey.800}",
+        "value": "{override.card.fill}",
         "type": "color",
         "description": "status-inactive",
         "$extensions": {
@@ -9349,7 +9454,7 @@
   "bullet": {
     "fill": {
       "default": {
-        "value": "{core.content.a8}",
+        "value": "{fill.default}",
         "type": "color",
         "$extensions": {
           "com.figma.scopes": [
@@ -9431,22 +9536,30 @@
   },
   "progress": {
     "track": {
-      "value": "{override.progress.track}",
+      "value": "{core.brand60.500}",
       "type": "color",
       "$extensions": {
         "com.figma.scopes": [
           "NONE"
         ]
+      },
+      "$deprecated": {
+        "severity": "warning",
+        "message": ""
       }
     },
     "secondary": {
       "indicator": {
-        "value": "{override.progress.secondary.indicator}",
+        "value": "{core.brand60.500}",
         "type": "color",
         "$extensions": {
           "com.figma.scopes": [
             "NONE"
           ]
+        },
+        "$deprecated": {
+          "severity": "warning",
+          "message": ""
         }
       }
     },
@@ -9457,6 +9570,10 @@
         "com.figma.scopes": [
           "NONE"
         ]
+      },
+      "$deprecated": {
+        "severity": "warning",
+        "message": ""
       }
     },
     "height": {
@@ -9467,6 +9584,10 @@
           "com.figma.scopes": [
             "NONE"
           ]
+        },
+        "$deprecated": {
+          "severity": "warning",
+          "message": ""
         }
       },
       "sm": {
@@ -9476,28 +9597,10 @@
           "com.figma.scopes": [
             "NONE"
           ]
-        }
-      }
-    },
-    "step": {
-      "gap": {
-        "value": "{spacing.100}",
-        "type": "spacing",
-        "$extensions": {
-          "com.figma.scopes": [
-            "NONE"
-          ]
-        }
-      }
-    },
-    "circle": {
-      "size": {
-        "value": "{size.450}",
-        "type": "sizing",
-        "$extensions": {
-          "com.figma.scopes": [
-            "NONE"
-          ]
+        },
+        "$deprecated": {
+          "severity": "warning",
+          "message": ""
         }
       }
     },
@@ -9728,26 +9831,6 @@
             "NONE"
           ]
         }
-      }
-    }
-  },
-  "tabsSort": {
-    "paddingH": {
-      "value": "{spacing.800}",
-      "type": "spacing",
-      "$extensions": {
-        "com.figma.scopes": [
-          "NONE"
-        ]
-      }
-    },
-    "gap": {
-      "value": "{spacing.200}",
-      "type": "spacing",
-      "$extensions": {
-        "com.figma.scopes": [
-          "NONE"
-        ]
       }
     }
   }

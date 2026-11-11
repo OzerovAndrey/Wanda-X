@@ -2,24 +2,6 @@
   "text": {
     "default": {
       "heading": {
-        "value": "{text.defaultInvert.heading}",
-        "type": "color"
-      },
-      "primary": {
-        "value": "{text.defaultInvert.primary}",
-        "type": "color"
-      },
-      "secondary": {
-        "value": "{text.defaultInvert.secondary}",
-        "type": "color"
-      },
-      "tertiary": {
-        "value": "{text.defaultInvert.tertiary}",
-        "type": "color"
-      }
-    },
-    "defaultInvert": {
-      "heading": {
         "value": "{core.white.500}",
         "type": "color"
       },
@@ -46,21 +28,21 @@
         "type": "color"
       },
       "onBrand": {
-        "value": "{core.content.a100}",
+        "value": "{core.white.500}",
         "type": "color"
       },
       "onBrandSecondary": {
-        "value": "{core.content.a100}",
+        "value": "{core.white.500}",
         "type": "color"
       }
     },
     "disabled": {
       "primary": {
-        "value": "{core.content.a25}",
+        "value": "{core.white.a30}",
         "type": "color"
       },
       "onBrand": {
-        "value": "{core.content.a40}",
+        "value": "{core.white.a30}",
         "type": "color"
       },
       "secondary": {
@@ -74,7 +56,7 @@
     },
     "static": {
       "primary": {
-        "value": "{core.grey.700}",
+        "value": "{core.white.500}",
         "type": "color"
       },
       "secondary": {
@@ -94,16 +76,20 @@
     }
   },
   "background": {
+    "1": {
+      "value": "{override.background-inverted.1}",
+      "type": "color"
+    },
     "5": {
       "value": "{core.grey.a30}",
       "type": "color"
     },
     "page": {
-      "value": "{override.background.pageInvert}",
+      "value": "{override.background-inverted.page}",
       "type": "color"
     },
     "slate2": {
-      "value": "{core.white.500}",
+      "value": "{core.grey.900}",
       "type": "color",
       "description": "+ cards, profile side menu, payment popup, ingame"
     },
@@ -112,46 +98,12 @@
       "type": "color",
       "description": "+ shop prices"
     },
-    "slateDark1": {
-      "value": "{core.grey.700}",
-      "type": "color",
-      "description": "+ dark plate: leaderboard striped"
-    },
-    "slateDark2": {
-      "value": "{core.grey.800}",
-      "type": "color",
-      "description": "+ dark stripe / head on dark plate"
-    },
-    "brandSubtle": {
-      "value": "{core.brand60.a10}",
-      "type": "color",
-      "description": "+ table filled"
-    },
     "brand": {
       "emphasizing": {
         "default": {
           "primary": {
             "value": "{core.brand10.500}",
             "type": "color"
-          }
-        }
-      }
-    }
-  },
-  "fill": {
-    "subtle": {
-      "value": "{fill.subtleInvert}",
-      "type": "color"
-    },
-    "subtleInvert": {
-      "value": "{core.white.500}",
-      "type": "color",
-      "$extensions": {
-        "studio.tokens": {
-          "modify": {
-            "type": "alpha",
-            "value": "0.1",
-            "space": "hsl"
           }
         }
       }
@@ -176,7 +128,7 @@
   "icon": {
     "static": {
       "primary": {
-        "value": "{core.grey.700}",
+        "value": "{core.white.500}",
         "type": "color"
       },
       "secondary": {
@@ -190,15 +142,15 @@
     },
     "default": {
       "primary": {
-        "value": "{core.content.a85}",
+        "value": "{core.white.a90}",
         "type": "color"
       },
       "secondary": {
-        "value": "{core.content.a70}",
+        "value": "{core.white.a70}",
         "type": "color"
       },
       "tertiary": {
-        "value": "{core.content.a50}",
+        "value": "{core.white.a50}",
         "type": "color"
       }
     },
@@ -258,10 +210,6 @@
     },
     "gold": {
       "text": {
-        "value": "{core.additionals.gold}",
-        "type": "color"
-      },
-      "fill": {
         "value": "{core.additionals.gold}",
         "type": "color"
       },

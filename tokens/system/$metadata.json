@@ -2,6 +2,10 @@
   "tokenSetOrder": [
     "mb/core",
     "mb/override",
+    "bb/core",
+    "bb/override",
+    "sc/core",
+    "sc/override",
     "xon/core",
     "xon/override",
     "default/alias",

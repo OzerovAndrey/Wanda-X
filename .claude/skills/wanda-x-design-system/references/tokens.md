@@ -35,6 +35,23 @@
 | T11 | Дубль text styles | `text/button/lg` = `text/button/md` (Inter Extra Bold 16) | Розвести або злити |
 | T12 | Ефекти по компонентах | 33 effect styles (`shadow/button/*` ×16, `shadow/wheel/*`, `shadow/homepage/*`) | Шкала `shadow/drop/{xs..ml}` + компонентні лише для ДС |
 
+## Перейменування / видалення (експорт 2026-11-11)
+Команда видалила 38 токенів без `$deprecated`. Мертві прив'язки в Figma переприв'язувати так:
+| Було | Стало |
+|---|---|
+| `fill.subtle`, `background.brandSubtle` | `fill.default` |
+| `fill.subtleInvert`, `background.slateDark1|slateDark2`, `table.leaderboard.row.inverted.*` | звичайний токен + `Theme = Inverse` на контейнері |
+| `background.surface`, `override.background.surface` | — (нема заміни; модалка — `background.*` / `modal.custom.*`) |
+| `background.pageInvert` (override) | `override.background-inverted.page` (через inverse `background.page`) |
+| `table.leaderboard.striped.fill|headFill` | `table.leaderboard.filled.fill|headFill` |
+| `progress.circle.size`, `progress.step.gap` | `progressBar.circle.size`, `progressBar.step.gap` |
+| `modal.banner.fill|color` | `banner.noDepositeBonus.fill|color` |
+| `modal.slate.1`, `modal.slate.2` | `modal.custom.body.bg`, `modal.custom.header.bg` |
+| `filterSort.paddingH|paddingV` | `filterSort.paddingL|paddingR` |
+| `tabsSort.gap|paddingH` | — (видалено) |
+| `override.btn.neutralInvert.*`, `override.progress*` | `inverse/component` `btn.neutral.*`; progress — прямі значення в `default/component` |
+| `inverse/alias` `text.defaultInvert.*`, `status.gold.fill` | прибрано лише з inverse; у `default/alias` `text.defaultInvert.*` є |
+
 ## Заборонені (чужі) змінні, знайдені у файлі
 
 Підтягуються з іншої бібліотеки — на сторінках Banner, Breadcrumbs, Switcher, Thumb, List item, Footer, Tabbar, Page:
