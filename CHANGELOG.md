@@ -2,6 +2,7 @@
 
 Історія рішень і робіт (раніше — у SKILL.md). Нові записи — зверху. Claude читає лише на прямий запит («що ми робили з …»).
 
+- 2026-11-11 page(ingame): слот `Panel` xl теж `Theme = Inverse` (усі панелі Ingame — Inverse); у панелях `Text [Invert]` → `Text` (16)
 - 2026-11-11 page(ingame): `Ingame/Navigation item` прибрано — рейка `Ingame/Layout` на DS `Button` Text lg (активний — Neutral Active), 3xs-рейка й панель — `Theme = Inverse` (оновлено mode id нової колекції `Theme`)
 - 2026-11-11 rule(layout): батьківські компоненти сторінки — окремим рядом під плиткою сетів; page(ingame): 5 компонентів перенесено в окремий ряд (y 5952)
 - 2026-11-11 rule(tokens): `$deprecated`-токени не мігруємо й не виносимо в питання — ними займається команда при мерджі з GitLab (`rules/tokens.md`)
