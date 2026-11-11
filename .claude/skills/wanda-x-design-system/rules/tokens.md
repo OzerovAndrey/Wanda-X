@@ -11,6 +11,8 @@
 - Розміри в `default/component` і alias-шкали (`spacing.*`, `size.*`, `depth.*`, `btn.height.*` …) у `stage` — **числа**, не посилання на `dimension.*`; це стан команди, не переписувати.
 - Темний фон — режим `Theme = Inverse` (сет `inverse` перевизначає alias); `text.defaultInvert.*` напряму — лише де Inverse поставити не можна. Старі `semantic.*` / `contextual.*` / `border-radius.*` більше не існують; у `stage` нема `background.brandSubtle|slateDark1|slateDark2|surface` (`fill.subtle` / `fill.subtleInvert` — є) — замість них `fill.default` / `Theme = Inverse` (повна мапа — `references/tokens.md` § Перейменування).
 
+- **`$deprecated` у `stage` — не наша справа**: команда мерджить з GitLab-сервером, deprecated-токени розбирають інші. Не мігрувати, не переприв'язувати, не виносити в питання; лише не брати deprecated для нових прив'язок, якщо є живий відповідник.
+
 ## Свіжий архів (на початку кожної сесії)
 Спитати про зміни → zip розпакувати в окрему порожню папку → `python3 -I scripts/tokens-diff.py tokens/system <папка>` (сети бере з `$metadata.json`) → коротко: + / − / ~, що торкається нашого компонента, конфлікти імен → замінити `tokens/system/`, оновити дату в `references/token-studio.md`, коміт `tokens: export YYYY-MM-DD` → перевірити, чи потрапили раніше передані `tokens/<c>.*.json` (ні — нагадати вставити). Нема архіву — сказати, від якої дати експорт.
 
