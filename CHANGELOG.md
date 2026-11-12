@@ -2,6 +2,7 @@
 
 Історія рішень і робіт (раніше — у SKILL.md). Нові записи — зверху. Claude читає лише на прямий запит («що ми робили з …»).
 
+- 2026-11-12 page(profile): Congratulations — ілюстрація через `⬆️ Hero` модалки; Bonus offer — умови в картці з обвідкою, 4 пункти списку з прототипу, 3xs під контент
 - 2026-11-12 page(profile): `Profile/Free Bet Card` злито з `Profile/Free Spins Card` → `Profile/Free Bonus Card` (boolean `Odds`); правило «не плодити схожі компоненти — варіант / проперті»
 - 2026-11-12 page(profile): Sport balance — одна сітка карток за прототипом, Primary «Available promotions»; Free Bet перезібрано як Free Spins (таби, `Profile/Free Bet Card`, нумерований FAQ); виправлено злиплі пари Meta в картках FS/FB
 - 2026-11-12 page(profile): Achievements у попапі перезібрано з компонентів сторінки Achievements (`Banner` + `Heading` + ряди `Card / Achievement` + `Navigator`, кнопка Primary) за прикладом прототипу

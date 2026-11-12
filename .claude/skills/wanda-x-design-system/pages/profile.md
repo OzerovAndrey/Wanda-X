@@ -109,3 +109,8 @@
 `Profile popup — Sport balance — Free Bet` (81337:102809): структура як у Free Spins — `Tabs` (Sport balances з Badge «2» / Free Bet Selected) → Wrapper «Free Bet» + Cards (xl ряд, 3xs стовпець) з тим самим компонентом, що й Free Spins — `Profile/Free Bonus Card` (82246:14605, колишній `Profile/Free Spins Card`; Type Active / Soon + boolean `Odds` — рядок «Odds from 1.5 to 8.0»): у Free Bet Odds=on, тексти «20 $» / «Available for 4d 20h 56m» / «Make a bet» — override-ами. Окремий `Profile/Free Bet Card` видалено → FAQ з нумерацією 1–9.
 - Пастка: пари «Description + Value» в Meta були SPACE_BETWEEN + Hug → текст злипався («Wagerx10»); тепер MIN, gap 8, тексти Auto width (і в `Profile/Free Spins Card`).
 - Вписати вручну (MrBet): заголовки секцій «Free Spins», «Soon Free Spins», «Free Bet» (зараз Inter).
+
+Модалки `Congratulations` (81340:104343) і `Bonus offer` (81340:104442) — `Modal/Default` (сторінка `↳ Modal`; ще є `Modal/Custom` — для профілю з сайдбаром):
+- **Congratulations** — картинка-ілюстрація (скриня) = вбудований `⬆️ Hero` (Image/Multi 216 над заголовком з маскою), а не `Image/Single` у `↳ ⬆️ Slot`. Далі Title + Description, у Body «$2000» + «Transferred to your main balance.», футер «OK».
+- **Bonus offer** — умови (4 рядки Description / Value, Value по базовій лінії) у картці: `background.slate2` + обвідка `border.default.default` + радіус `global.borderRadius.lg`, падінг 12/16; нумерований `List/Item` ×4 (тексти з прототипу); футер «Activate». 3xs — висота під контент (693).
+- Вписати вручну (MrBet): «Congratulations!», «Bônus 45.000$ + 270 FS».
