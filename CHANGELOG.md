@@ -2,6 +2,7 @@
 
 Історія рішень і робіт (раніше — у SKILL.md). Нові записи — зверху. Claude читає лише на прямий запит («що ми робили з …»).
 
+- 2026-11-12 page(profile): Referral program у попапі перезібрано з компонентів сторінки Referral (`Banner` + `Heading` + `Referral Program/Step`) замість ручних Wrapper; 3xs — висота під контент
 - 2026-11-12 page(profile): `Profile/Free Spins Card` — обвідка `border.default.default`, Wager / Events по базовій лінії; чекліст: картка не зливається з фоном
 - 2026-11-12 page(profile): Free Spins перезібрано за структурою прототипу (таби, 2+2 картки, Soon-секція, нумерований FAQ); локальний компонент `Profile/Free Spins Card` (Active/Soon) над сетом
 - 2026-11-12 page(profile): Bets history Open / Settled перезібрано за прототипом (без Cashout, Result + Win/Loss, деталі 3xs рядками й картками подій); пастка Table/Cell Slot
