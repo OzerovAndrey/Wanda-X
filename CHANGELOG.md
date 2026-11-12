@@ -2,6 +2,7 @@
 
 Історія рішень і робіт (раніше — у SKILL.md). Нові записи — зверху. Claude читає лише на прямий запит («що ми робили з …»).
 
+- 2026-11-12 page(profile): Bonus balance — російські тексти → англійською (інфо про один активний бонус, `ОК` → `OK`); чекліст build-page: тексти англійською
 - 2026-11-12 page(profile): Bonuses for points — картки магазину на DS `shop` замість Wrapper; правило-рядок «Картка магазину» у build-page
 - 2026-11-12 page(races): `Race/Card` (нова структура команди: Filled-таблиці, `Theme = Inverse`) перев'язано з `races.*` / `card.general.borderRadius` / `text.brand.secondary` на глобальні `background.slate2`, `divider.default.primary`, `global.borderRadius.lg`, `spacing.200|400|600` (нова шкала), `tt.primary|accent3`; у сетах власні тексти → `tt.*`
 - 2026-11-11 page(referral): `Referral Program/Step` fill → глобальний `gradients.4` (style + токен, 12 інстансів вирівняно); `referral.step.fill` більше не використовується
