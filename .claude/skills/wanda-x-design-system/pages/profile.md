@@ -101,3 +101,6 @@
 
 `Profile popup — Referral program` (81339:103944): структура як на сторінці Referral (`pages/referral.md`) — `Banner` (xl `device=lg`, Fill, minWidth знято; 3xs `device=xs`) з тим самим слотом Stats («Friends invited: 3» / «Bonus claimed: 1»), кнопкою «Copy referral link» і Under btn text; далі Wrapper — `Heading` Secondary (lg / 3xs) + `Steps` з `Referral Program/Step` ×3 (у попапі на xl — стовпцем, gap 8, як у прототипі; 3xs — стовпцем). Rules у попап не беремо (в прототипі нема). 3xs-модалка — висота під контент (754).
 - Вписати вручну (MrBet): Title банера «Invite friend and get $25!», Title `Heading` «How does it work?» (зараз дефолтне «Title»).
+
+`Profile popup — Achievements` (81339:102636): структура як на сторінці Achievements (32784:33395, `Achievement / Full`) + прототип — `Banner` (Content block: Subtitle «Welcome bonus», Description, Button «Deposit»; xl `lg` Fill, 3xs `xs`) → Wrapper з двох блоків `Heading` Secondary + ряд `Card / Achievement` (Recent — Received/Default, In progress — Progress; ряд з clip) + `Navigator`; на xl блоки поруч (H gap 24), на 3xs — один під одним → `Button` Primary «Go to Achievements» (xl по центру, 3xs Fill). 3xs-модалка — під контент (978).
+- Вписати вручну (MrBet): Title банера «Achievements», `Heading` «Recent» / «In progress» (зараз «Title»).
