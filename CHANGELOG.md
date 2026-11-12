@@ -2,6 +2,7 @@
 
 Історія рішень і робіт (раніше — у SKILL.md). Нові записи — зверху. Claude читає лише на прямий запит («що ми робили з …»).
 
+- 2026-11-12 page(profile): Sport balance — одна сітка карток за прототипом, Primary «Available promotions»; Free Bet перезібрано як Free Spins (таби, `Profile/Free Bet Card`, нумерований FAQ); виправлено злиплі пари Meta в картках FS/FB
 - 2026-11-12 page(profile): Achievements у попапі перезібрано з компонентів сторінки Achievements (`Banner` + `Heading` + ряди `Card / Achievement` + `Navigator`, кнопка Primary) за прикладом прототипу
 - 2026-11-12 page(profile): Referral program у попапі перезібрано з компонентів сторінки Referral (`Banner` + `Heading` + `Referral Program/Step`) замість ручних Wrapper; 3xs — висота під контент
 - 2026-11-12 page(profile): `Profile/Free Spins Card` — обвідка `border.default.default`, Wager / Events по базовій лінії; чекліст: картка не зливається з фоном
