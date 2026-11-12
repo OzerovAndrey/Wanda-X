@@ -69,7 +69,7 @@ Main Area
 | Сітка ігор | `Wrapper` GRID: xl 5 кол. gap 8 · 3xs 2 кол. gap 8 · `Thumb/Default` FILL |
 | Лідерборд / мій прогрес | світлі картки — `Table/Leaderboard Variant=Card`; суцільна плашка — `Variant=Filled`, рядки `Filled` / `Plain` по черзі. Темний фон — `Theme = Inverse` на таблиці / слоті (варіантів `Inverted` у Table нема). Мій прогрес — той самий стиль, без Head. Поточний гравець — `State=Selected` + текст `semantic/text/brand/primary`. Місце — `List/Bullet` або `Image` (медаль / кубок), не слот. Таблиці на сторінці — в одному стилі |
 | Списки умов / правил | `List/Item — Default Ordered=False` |
-| Терміни / FAQ | `Accordion` у ряді `Accordions` V gap 8 |
+| Терміни / FAQ / кроки-розгортки (KYC-документи тощо) | `Accordion` у ряді `Accordions` V gap 8 — не локальний компонент |
 | Теги | `Tag`, ряд gap 8 |
 | Назад до списку | `Button Variant=Text, Size=md` + TEXT |
 | Порожній стан | `Empty` |

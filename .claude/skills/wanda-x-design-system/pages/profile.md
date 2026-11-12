@@ -86,3 +86,5 @@
 ## Розкладка ряду Profile popup (y 20522, крок 2256)
 Ліворуч (незалогінені): `Attention — Login` (x −1918). Далі сети сторінки від x 338 (Balances … Referral program), праворуч — модалки залогінених: Session, Access restricted, Deposit, Time limit history (Empty / full), Deposit Limit history, Self-Restriction history, Congratulations, Bonus offer. Під кожним — `Old — …` на 200 нижче (у Balances і Bonus balance Old уже нема).
 `Personal details`: Input з Prefix (код +380, стрілка) і Suffix-кнопкою `Confirm` (Phone, Email), Country — Suffix-стрілка, Date of Birth — Suffix; футер xl — Change password ліворуч / Save праворуч; 3xs — модалка 640 (Max. height), відступи 8.
+
+`Profile popup — KYC Verification`: кроки документів — `Accordion` (Closed, 78143:289103) замість `KYC Verification/Step` (картинка й «+25%» прибрані — в Accordion нема); 3xs-модалка 640. `KYC Verification/Step` (81306:48393) лишається для верхнього ряду.
