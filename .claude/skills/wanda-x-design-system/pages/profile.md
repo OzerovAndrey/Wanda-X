@@ -90,3 +90,5 @@
 `Profile popup — KYC Verification`: кроки документів — `Accordion` (Closed, 78143:289103) замість `KYC Verification/Step` (картинка й «+25%» прибрані — в Accordion нема); 3xs-модалка 640. `KYC Verification/Step` (81306:48393) лишається для верхнього ряду.
 
 `Profile popup — Game limits`: заголовки блоків — наш `heading/md` (MrBet, клони); **вручну**: «Cool-off Period» і «Subscriptions» (xl і 3xs, зараз «Self-Restriction»; те саме в `Game limits — Set time limit`), «… history» праворуч; xl — Input + `Save limit` в одному ряду, Deposit — Input `Sum` + «Time period» з чипами праворуч; плейсхолдери Hours / Sum; 3xs 640. Не зроблено: суфікс `BRL` у полі суми (в Input нема текстового суфікса).
+
+**Еталон Андрея — `Profile popup — Game limits` 3xs**: заголовки `heading/md` Time Limit / Deposit Limit / Restriction / Cool-off Period / Subscriptions, посилання `History` праворуч у тому ж ряду, модалка на всю висоту вмісту. Те саме перенесено в `Game limits — Set time limit` (3xs) + xl-заголовки Cool-off Period / Subscriptions в обох сетах (клони MrBet з еталона).
