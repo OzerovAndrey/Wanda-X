@@ -77,7 +77,8 @@
 
 ## Локальні компоненти Profile popup (над своїм сетом)
 - `Profile/Balance` (Section 81406:98481 над `Profile popup — Balances`, comp 81406:98480): картка балансу — `Image/Single` 32 + Description + Title; fill `background.1`, radius `global.borderRadius.lg`, padding `spacing.300`, gap `spacing.200`; дефолт тексти `Label`. У сеті 8 інстансів (xl 1×4, 3xs 2×2), тексти — override.
-- Кандидати далі: картка балів Loyalty («9 083 points», 3 сети), картки Game limits (Time / Deposit Limit / Self-Restriction), картка магазину («Multiplier x1.15»), лічильники Referral, Current balance, прогрес KYC.
+- `Profile popup — Loyalty points — Bonuses for points`: картки магазину — інстанси ДС `shop` (67873:163682): xl 2 в ряд, 3xs стовпчиком; кнопка «Buy»; «4000 points» (MrBet) — дефолт, змінювати вручну.
+- Кандидати далі: картка балів Loyalty («9 083 points», 3 сети), картки Game limits (Time / Deposit Limit / Self-Restriction), лічильники Referral, Current balance, прогрес KYC.
 
 ## Зміни 2026-11-11 (оновлення компонента Table)
 - `Table Default → Divider` (автоматично); `Table/History Card` без змін; знято 4 мертві override-и висоти.
