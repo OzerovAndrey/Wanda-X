@@ -75,6 +75,7 @@ Main Area
 | Порожній стан | `Empty` |
 | Картка магазину (бонус за бали) | `shop` (сторінка `↳ Cards`, 67873:163682) — не збирати Wrapper; у GRID FILL; кнопка `Buy`; сума `MrBet` — вручну |
 | Заголовок + опис | `Title` + `Description` прямо в батьківському фреймі |
+| Заголовок картки в попапі + посилання «… history» | `Title` = `text/lgStrong` (Inter, як в оригіналі — не MrBet `heading/*`), ряд `SPACE_BETWEEN`, Title FILL, посилання — `Button Text sm` праворуч |
 
 ## 5. Новий компонент сторінки
 - Назва `<Сторінка>/<Блок>` (`VIP Club/Card`, `Hall of Fame/Prize`, `Profile/Balance`), сіра Section **прямо над сетом, де він використовується** (той самий x, низ на 104 px вище сету), правила — `rules/core.md` (токени, Inverted, без text-властивостей, без обгорток).

@@ -88,3 +88,5 @@
 `Personal details`: Input з Prefix (код +380, стрілка) і Suffix-кнопкою `Confirm` (Phone, Email), Country — Suffix-стрілка, Date of Birth — Suffix; футер xl — Change password ліворуч / Save праворуч; 3xs — модалка 640 (Max. height), відступи 8.
 
 `Profile popup — KYC Verification`: кроки документів — `Accordion` (Closed, 78143:289103) замість `KYC Verification/Step` (картинка й «+25%» прибрані — в Accordion нема); 3xs-модалка 640. `KYC Verification/Step` (81306:48393) лишається для верхнього ряду.
+
+`Profile popup — Game limits`: заголовки блоків — Inter `text/lgStrong` (Time limit / Deposit Limit / Self-Restriction / Cool-off Period / Subscriptions; MrBet-заголовки з неправильними назвами видалено), «… history» праворуч; xl — Input + `Save limit` в одному ряду, Deposit — Input `Sum` + «Time period» з чипами праворуч; плейсхолдери Hours / Sum; 3xs 640. Не зроблено: суфікс `BRL` у полі суми (в Input нема текстового суфікса).
