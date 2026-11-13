@@ -60,3 +60,4 @@ Section `Design` 80806:196059 (чорна, референс — не чіпал�
 Усі gap / padding власних фреймів сторінки (каркас `Ingame/Layout`, `Panel`, `Wrapper`-и, сітки, `Ingame/Booster`, `Ingame/Bonus`) — прості значення без токенів; згадані вище `spacing.*` — лише довідка про значення (100 = 4, 200 = 8, 300 = 12, 400 = 16, 600 = 24).
 
 - 2026-11-13 Featured (xl + 3xs): Dropdown — `Theme = Inverse` на `Wrapper` меню (було темне на темному в Default), Trigger у темі панелі.
+- 2026-11-13 Розгорнуто 16 `Header` (лише `Title`) у Winning now, Boosters, Bonuses balances, Notifications (xl + 3xs, обидва стани): `Title` прямо в Panel, Fill × фіксована висота 1 рядка (24 / 28) — Auto height вручну. Інші фрейми з 1 дитиною — лише всередині Modal (структура DS, не чіпали).
