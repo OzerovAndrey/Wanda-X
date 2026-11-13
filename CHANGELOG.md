@@ -2,6 +2,7 @@
 
 Історія рішень і робіт (раніше — у SKILL.md). Нові записи — зверху. Claude читає лише на прямий запит («що ми робили з …»).
 
+- 2026-11-13 page(ingame): `Book Of Ra` у Game і Write off (xl + 3xs) — клон стилізованого заголовка з Demo (`heading/xl` / `heading/xs`)
 - 2026-11-13 rule(build-page): заголовки панелей — xl `heading/xl`, 3xs `heading/xs` (було lg/md); page(ingame): токен `typography` на 36 Header Title
 - 2026-11-13 rule(build-page): заголовки панелей — xl `heading/lg`, 3xs `heading/md`; page(ingame): 36 Header Title — ручна правка (MrBet)
 - 2026-11-13 rule(build-page): токени gap / padding знімаються лише з власних Wrapper-ів; у вставлених DS-компонентах власні токени лишаються (перевірено: 2968 вкладених шарів Ingame збігаються з майстрами)
