@@ -55,3 +55,6 @@ Section `Design` 80806:196059 (чорна, референс — не чіпал�
 
 ## Токени `Ingame/Layout` (2026-11-11)
 Лише глобальні: корінь xl `background.slate1`, `Navigation` `menu.fill` — той самий токен, що в `Sidebar/Desktop` (рішення Андрея: навігація = кольори сайдбару), `Panel` `background.slate2` (Inverse → `core.grey.900`), `spacing.*`, `global.borderRadius.md`. Компонентні `ingame.*`, `content.fill` не використовуються — команда їх депрекейтне. Мобільна панель тепер суцільна (було напівпрозоре `ingame.mob.bg` поверх гри).
+
+## Відступи (2026-11-13)
+Усі gap / padding власних фреймів сторінки (каркас `Ingame/Layout`, `Panel`, `Wrapper`-и, сітки, `Ingame/Booster`, `Ingame/Bonus`) — прості значення без токенів; згадані вище `spacing.*` — лише довідка про значення (100 = 4, 200 = 8, 300 = 12, 400 = 16, 600 = 24).
