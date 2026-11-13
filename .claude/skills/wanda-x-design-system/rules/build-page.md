@@ -91,6 +91,8 @@ Main Area
 ## 6. Швидкий старт
 Є схожий новий сет на іншій сторінці → `clone()` його `Layout/*` + group/ungroup у свою Section (переносить MrBet-тексти й override-и Heading) і міняти вміст за оригіналом. Після clone — перевірити тексти вкладок / кнопок (override-и злітають) і прибрати залишки на корені сторінки.
 
+**Dropdown на світлій поверхні** — тема `Inverse` ставиться на шар `Wrapper` (меню) всередині інстансу, не на весь Dropdown: у Default токени `dropdownMenu/fill` (`core.grey.800`, темний) і `dropdownMenu/item/color/*` (`tt.*`, темний) дають темне на темному. Trigger лишається в темі панелі. Так само Dropdown стоїть у Header / Sidebar (Inverse). Токени не чіпаємо.
+
 **Заголовок панелі / блоку сторінки** (Header `Title`) — наш шрифт: xl `heading/xl` (28/34), 3xs `heading/xs` (16/20), не `text/*`. Конектор MrBet не пише → ставлю токен Token Studio `typography` = `heading.xl` / `heading.xs`, Андрій застосовує (Token Studio → Apply) або стиль вручну.
 
 **Заголовки з текстом**: конектор не пише MrBet → клонувати готовий TEXT `heading/*` з потрібним текстом зі старих макетів цієї сторінки (clone + group/ungroup, Fill, висота — перевірити) замість `Heading` з чужим текстом. Сети не клонувати з інших сторінок.
