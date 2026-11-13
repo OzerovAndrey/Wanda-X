@@ -91,6 +91,8 @@ Main Area
 ## 6. Швидкий старт
 Є схожий новий сет на іншій сторінці → `clone()` його `Layout/*` + group/ungroup у свою Section (переносить MrBet-тексти й override-и Heading) і міняти вміст за оригіналом. Після clone — перевірити тексти вкладок / кнопок (override-и злітають) і прибрати залишки на корені сторінки.
 
+**Заголовок панелі / блоку сторінки** (Header `Title`) — наш шрифт: xl `heading/lg`, 3xs `heading/md` (як `Heading` Secondary), не `text/*`. Конектор MrBet не пише → у список ручних правок.
+
 **Заголовки з текстом**: конектор не пише MrBet → клонувати готовий TEXT `heading/*` з потрібним текстом зі старих макетів цієї сторінки (clone + group/ungroup, Fill, висота — перевірити) замість `Heading` з чужим текстом. Сети не клонувати з інших сторінок.
 
 **MrBet Black** (`heading/*`) конектор не завантажує: `appendChild` падає → `group/ungroup` або placeholder `Spinner` 47531:173652 + `swapComponent`. Тексти `Heading` змінити не можна — перелічити у відповіді, що вписати вручну. Деталі — `references/figma-pitfalls.md` → MrBet.
