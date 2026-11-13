@@ -93,7 +93,9 @@ Main Area
 
 **Без зайвих Wrapper-ів** — фрейм з одним дочірнім шаром без власного фону / обвідки / падінгу не робимо (напр. `Header` лише з `Title` → `Title` прямо в Panel, `Fill` по ширині). Перед здачею — пошук фреймів з 1 дитиною на сторінці (крім внутрішньої структури DS-інстансів). MrBet-текст переносити через `figma.group([t], parent, i)` + `ungroup`, потім `layoutSizingHorizontal = FILL` і висоту = lineHeight (Auto height без шрифту не ставиться — ручна правка).
 
-**Dropdown на світлій поверхні** — тема `Inverse` ставиться на шар `Wrapper` (меню) всередині інстансу, не на весь Dropdown: у Default токени `dropdownMenu/fill` (`core.grey.800`, темний) і `dropdownMenu/item/color/*` (`tt.*`, темний) дають темне на темному. Trigger лишається в темі панелі. Так само Dropdown стоїть у Header / Sidebar (Inverse). Токени не чіпаємо.
+**Темні компоненти на світлій поверхні** (Dropdown, `Strip/Card` …: фон з токена, що в Default темний, + текст `text/default/*` / `tt.*`) — тема `Inverse` ставиться на шар `Wrapper` (меню) всередині інстансу, не на весь Dropdown: у Default токени `dropdownMenu/fill` (`core.grey.800`, темний) і `dropdownMenu/item/color/*` (`tt.*`, темний) дають темне на темному. Trigger лишається в темі панелі. Так само Dropdown стоїть у Header / Sidebar (Inverse). Картка цілком (напр. `Strip/Card`) — `Inverse` на інстанс. Перевірка: на скриншоті текст на картці / меню читається. Токени не чіпаємо.
+
+**Картки-квадрати в панелі** (`Strip/Card` 148×148 у майстрі) — не розтягувати на всю ширину: 2 в ряд (wrap, gap 8), розмір `(ширина − 8) / 2`, `Image` = картка − 14; інакше картинка вилазить за картку.
 
 **Заголовок панелі / блоку сторінки** (Header `Title`) — наш шрифт: xl `heading/xl` (28/34), 3xs `heading/xs` (16/20), не `text/*`. Конектор MrBet не пише → ставлю токен Token Studio `typography` = `heading.xl` / `heading.xs`, Андрій застосовує (Token Studio → Apply) або стиль вручну.
 

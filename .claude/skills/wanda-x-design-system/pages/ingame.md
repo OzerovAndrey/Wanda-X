@@ -61,3 +61,4 @@ Section `Design` 80806:196059 (чорна, референс — не чіпал�
 
 - 2026-11-13 Featured (xl + 3xs): Dropdown — `Theme = Inverse` на `Wrapper` меню (було темне на темному в Default), Trigger у темі панелі.
 - 2026-11-13 Розгорнуто 16 `Header` (лише `Title`) у Winning now, Boosters, Bonuses balances, Notifications (xl + 3xs, обидва стани): `Title` прямо в Panel, Fill × фіксована висота 1 рядка (24 / 28) — Auto height вручну. Інші фрейми з 1 дитиною — лише всередині Modal (структура DS, не чіпали).
+- 2026-11-13 Strip Choose (xl + 3xs): `Strip/Card` — `Theme = Inverse` на інстанс (темний текст на темній картці), квадрати 108 / 112 по 2 в ряд, `Image` у межах картки. Майстер `Strip/Card` (сторінка Strip - Ozerov) у Default має ту саму проблему — не чіпали.

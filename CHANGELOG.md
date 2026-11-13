@@ -2,6 +2,7 @@
 
 Історія рішень і робіт (раніше — у SKILL.md). Нові записи — зверху. Claude читає лише на прямий запит («що ми робили з …»).
 
+- 2026-11-13 page(ingame): Strip Choose — картки в `Inverse`, 2 в ряд квадратами, картинка не вилазить; rule(build-page): темні компоненти на світлій поверхні, картки-квадрати
 - 2026-11-13 page(ingame): прибрано 16 зайвих `Header`-обгорток над `Title`; rule(build-page): без Wrapper-ів з одним шаром
 - 2026-11-13 page(ingame): Featured — Dropdown меню в `Inverse` на `Wrapper` (текст і фон обидва темні в Default); rule(build-page): Dropdown на світлій поверхні
 - 2026-11-13 page(ingame): `Book Of Ra` у Game і Write off (xl + 3xs) — клон стилізованого заголовка з Demo (`heading/xl` / `heading/xs`)
