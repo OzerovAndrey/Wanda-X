@@ -2,6 +2,7 @@
 
 Історія рішень і робіт (раніше — у SKILL.md). Нові записи — зверху. Claude читає лише на прямий запит («що ми робили з …»).
 
+- 2026-11-16 page(login): старе Log in / Sign up — у 5 чорних `Old — …`; нові сети: ряд логіну (8) і ряд реєстрації (9), `Modal/Default` 3xs + xl
 - 2026-11-16 page(cashbox): Top up — замість `Banner/Modal` свій банер-Wrapper (Image + Title + Description) у Body
 - 2026-11-16 page(cashbox): Top up — банер перенесено з topBanner у Body над інпутом (як в оригіналі)
 - 2026-11-16 page(cashbox): під кожним новим сетом — чорна `Old — <сет>` зі старими макетами для звірки; ряд Filter опущено нижче
