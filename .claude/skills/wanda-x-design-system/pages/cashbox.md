@@ -12,7 +12,8 @@
 ## Розкладка (y 0, крок 2256)
 Ліворуч (незалогінені, реєстрація в касі): `Top up your account` −9024 · `Enter your email address or phone number` −6768 · `Save your password` −4512 · `Have you saved your password?` −2256.
 Ряд 1: `Cashbox — Deposit` 0 · `Cashbox — Payment history` 2256 · `— Empty` 4512 · `Payment — Processing` 6768 · `— Success` 9024 · `— Failed` 11280 · `Cashbox bonus` 13536 · `Deposit bonus` 15792 · `Weekly Freebet` 18048 · `Payment failed — Bonus` 20304.
-Ряд 2 (y 1715): `Filter` 0.
+Ряд 2 (y 2883): `Filter` 0.
+**Порівняння:** під кожним сірим сетом — чорна `Old — <сет>` (200 нижче): клони старих мобайлів (x 80) і десктопів (x 480+), зайві старі стани — праворуч у тій же Section; для попапів без старого макета — інстанси старих локальних компонентів (`Deposit contnent` Mobile, `Cashbox/Weekly Freebet`, `Filter content`, `Save your password*`, `Have you saved your password? content`). Під `Payment history — Empty` порівняння нема — старого макета порожнього стану не було. Оригінали в `Old — Pages / Popups / Local components` не змінено.
 Над плиткою: `Components` 82627:7734 (x 0, низ −600).
 Old (x від 22560): `Old — Components` 81470:19878 (колишня Section `Components` команди) · `Old — Pages` 82624:7618 (7 фреймів) · `Old — Popups` 82624:7626 (19 інстансів) · `Old — Local components` 82624:7646 (21 вузол).
 
