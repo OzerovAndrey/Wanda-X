@@ -2,6 +2,7 @@
 
 Історія рішень і робіт (раніше — у SKILL.md). Нові записи — зверху. Claude читає лише на прямий запит («що ми робили з …»).
 
+- 2026-11-16 page(cashbox): `Cashbox/Method` — лого Payment-Methods у фреймі 36 px, Width HUG + Height FILL (пропорції зберігаються, картка завжди 68); у сетах Deposit — 13 реальних методів; pitfall про swap і ширину
 - 2026-11-16 page(profile): KYC — локальні `KYC Verification/Upload` і `/File` розібрано (detach) у кастомну збірку, компоненти й їхню Section видалено; ряд сетів піднято на y 1725; правило: вміст `Accordion` — кастомно
 - 2026-11-16 page(profile): KYC Verification — 7 станів зі старої Section `KYC` на нашій збірці (еталон Андрея `Modal/Custom` 3xs + xl, `Accordion` Opened); нові компоненти `KYC Verification/Upload` (xl/3xs, Sides, Errors) і `KYC Verification/File` (Completed/Uploading/Error)
 - 2026-11-16 page(login): старе Log in / Sign up — у 5 чорних `Old — …`; нові сети: ряд логіну (8) і ряд реєстрації (9), `Modal/Default` 3xs + xl

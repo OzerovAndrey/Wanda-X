@@ -21,7 +21,7 @@ Old (x від 22560): `Old — Components` 81470:19878 (колишня Section `
 | Компонент | ID | Будова |
 |---|---|---|
 | `Cashbox/Bonus` (Type = Free spins / Deposit) | 82627:7730 | 248 FIXED, p16 gap12, `fill.subtle` + `global.borderRadius.lg`. Free spins: `Image/Single` 96 + `Title` (`tt.accent1`) + `Description` + `Time sm` + `Button Primary md` «Activate», info — absolute. Deposit: ряд `Title` + info, Divider, сума + «On deposit from», `Time`, кнопка. Перевикористано в `Payment failed — Bonus` (override-и текстів, «Go to checkout») |
-| `Cashbox/Method` | 82627:7731 | 128 FIXED (у сітці FILL), p8 gap4, `fill.subtle` + `global.borderRadius.md`: `Image/Single` 112×40 (лого) + `Description` «Min: 10 EUR». Сітка xl 5 кол., 3xs 3 кол., gap 8 |
+| `Cashbox/Method` | 82627:7731 | 128 FIXED (у сітці FILL), висота HUG = 68 для будь-якого лого; p8 gap4, `fill.subtle` + `global.borderRadius.md`: `Logo` (FILL × **36 FIXED**, по центру) → інстанс лого з бібліотеки **Payment-Methods** (`MshuL41rV4VR7vlZxqpcLU`, `Symbol=False, Theme=Light`), **Width HUG + Height FILL** — компонент лого сам тримає пропорцію (90×90…180×90 → 36…72 px), swap-властивість `Payment methods`; + `Description` «Min: 10 EUR». 36, а не 40: найширше лого (180) = 72 px влазить у картку 3xs (91). Сітка xl 5 кол., 3xs 3 кол., gap 8 |
 
 **Top up your account:** банер — свій `Banner` у Body над інпутом (не `topBanner`, не `Banner/Modal`): H gap 16, pr 16, `fill.subtle` + `global.borderRadius.md` → `Image/Single` 120×88 + `Wrapper` (`Title` «Get a registration bonus of up to» `text.mdStrong` `tt.primary` + `Description` «$750 + 300 FS!» `tt.accent1`).
 
@@ -33,6 +33,6 @@ Inter-тексти з токеном `typography = heading.*` (застосув�
 1. Згруповані операції в історії (Account Replenishment з 3 під-операціями й лічильниками статусів) — у `Table/History/Row` Details не слот, тому зараз окремими рядками. Потрібен слот у Details?
 2. Статуси на 3xs — `Modal/Default` без бонусу в сайдбарі (як у старому мобайлі), на xl бонус є. Лишати так?
 3. Меню на 3xs — `Tabs` (History — коротший текст). Чи потрібен окремий екран-меню, як у Profile?
-4. Лого методів оплати й картинка скрині — порожні `Image/Single`, прикладів над Section ще нема.
+4. Картинка скрині — порожній `Image/Single`, прикладу над Section ще нема.
 5. `Card / Bonus` (DS) у попап не підійшов (MrBet Title, кроки не вимикаються) — взято `Cashbox/Bonus`.
 6. «Filter» на xl був поповером біля кнопки; зібрано як окремий попап `Filter`.
