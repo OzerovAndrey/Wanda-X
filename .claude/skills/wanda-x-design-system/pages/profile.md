@@ -117,11 +117,10 @@
 
 ## Сторінка `↳ Profile ` (82592:12282) — KYC Verification, стани з Section `KYC` (2026-11-16)
 Джерело — Section `KYC` (82703:223398, 11 десктопів, темні; вміст не чіпали). Унікальних станів 8 (x1396 = x2622, x3918 = x6272, x7449 = x8675). Дефолтний стан — еталон Андрея `Profile — KYC Verification` (82661:194181, x 11254); нові сети — клони його пари `Modal/Custom` 3xs (82661:194182) + xl (82661:194183), x 80 / 480.
-Під `KYC` (x 31612): `KYC Verification — Components` (82714:2, y 1725) → ряд сетів y 2589, крок 2256:
+Під `KYC` (x 31612), ряд сетів y 1725, крок 2256:
 `— Photo ID` (82714:15228, помилки) · `— Photo ID — No errors` (15754) · `— Photo ID — Sides` (16280) · `— Proof of payment` (16850) · `— Selfie with documents` (17376, помилки) · `— Declined` (18174) · `— Completed` (18557).
-- Відкритий крок — `Accordion State=Opened`, у слот `Layout` — `KYC Verification/Upload`.
-- **`KYC Verification/Upload`** (82713:15313): `Breakpoint = xl | 3xs`; boolean `Sides` (Segmented «Front side / Back side», іконка `placeholder-default`) і `Errors` (2 × `Status Error Text sm` + `warning`). xl — колонка (опис → Sides → «Choose file» Secondary → помилки → формати → `Files` → «Send» Primary) + `Image/Single` 288×148 праворуч; 3xs — стовпцем, картинка під описом (Fill × 132).
-- **`KYC Verification/File`** (82710:39647): `State = Completed | Uploading | Error` — `Image/Single` 40 + назва (`text/smStrong`, `text.default.primary`) + `Status Success/Error Text sm` (check-mark / warning) або `ProgressBar Line sm` (Value off) + `Button Text sm` з `trash`.
+- Відкритий крок — `Accordion State=Opened`, у слоті `Layout` — **кастомна збірка** (`Wrapper`, без локальних компонентів — рішення Андрея): xl — колонка (опис → `Segmented` «Front side / Back side» лише в Sides → «Choose file» Secondary → `Errors` 2 × `Status Error Text sm` + `warning` → формати → `Files` → «Send» Primary) + `Image/Single` 288×148 праворуч; 3xs — стовпцем, картинка під описом (Fill × 132).
+- Рядок файлу (`Wrapper` у `Files`): `Image/Single` 40 + назва (`text/smStrong`, `text.default.primary`) + `Status Success/Error Text sm` (check-mark / warning) або `ProgressBar Line sm` (Value off) + `Button Text sm` з `trash`.
 - Declined / Completed: `Image/Single` + `Status` (Error «Uncompleted» / Success «Completed») → заголовок → опис по центру → «Go to Home» Primary.
 - Пастки: ширину `Indicator` у `ProgressBar Line` в інстансі не перевизначити (лінія повна); у поточному `Accordion` нема «+25%».
 - **Вписати вручну (MrBet):** заголовок Declined «Account Declined», Completed — текст на погодження (у прототипі помилково теж «Account Declined»), обидва по центру; опис Completed у прототипі — той самий, що в Declined.
