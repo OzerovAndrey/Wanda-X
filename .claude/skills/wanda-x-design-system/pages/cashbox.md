@@ -24,7 +24,7 @@ Old (x від 22560): `Old — Components` 81470:19878 (колишня Section `
 | `Cashbox/Method` | 82627:7731 | 128 FIXED (у сітці FILL), p8 gap4, `fill.subtle` + `global.borderRadius.md`: `Image/Single` 112×40 (лого) + `Description` «Min: 10 EUR». Сітка xl 5 кол., 3xs 3 кол., gap 8 |
 
 ## Вписати вручну (MrBet)
-Title всіх `Modal/Default` (зараз «TITLE»): Cashbox bonus «Get $10 000» · Deposit bonus «Bonus 25% on minimum deposit + 10 free spins» · Weekly Freebet · Payment failed — Bonus «Unfortunately, your payment was not processed» · Filter · Top up your account · Enter your email address or phone number · Save your password · Have you saved your password? · Payment — Processing / Success / Failed (3xs). Текст банера `Banner/Modal/Welcome bonus` у Top up → «Get a registration bonus of up to $750 + 300 FS!».
+Title всіх `Modal/Default` (зараз «TITLE»): Cashbox bonus «Get $10 000» · Deposit bonus «Bonus 25% on minimum deposit + 10 free spins» · Weekly Freebet · Payment failed — Bonus «Unfortunately, your payment was not processed» · Filter · Top up your account · Enter your email address or phone number · Save your password · Have you saved your password? · Payment — Processing / Success / Failed (3xs). Текст банера `Banner/Modal/Welcome bonus` у Top up (банер — у Body над інпутом, як у старому, не в topBanner) → «Get a registration bonus of up to $750 + 300 FS!».
 Inter-тексти з токеном `typography = heading.*` (застосувати Token Studio → Apply): заголовки 3xs-хедерів (Deposit / Payment history, `heading.xs`), заголовки статусів xl (`heading.md`).
 
 ## Відкриті питання
