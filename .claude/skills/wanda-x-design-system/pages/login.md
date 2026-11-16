@@ -13,7 +13,7 @@ Old (y 0, від x 20304): `Old — Pages` 82678:4954 (3 signup page) · `Old �
 - CTA — `Button Primary lg` FILL (maxWidth знято); «Forgot password?» — `Link Neutral md Strong`; «Register / Log in / Resend» — `Link Accent md Strong` у ряді `Prompt` з `Description` (`text/md`, `tt.secondary`).
 - Соцмережі — `Divider` Label «or» + ряд `Socials` (Google, TikTok, X — набір `Social icons` 55092:3697, remote, як в оригіналі).
 - Кроки реєстрації — ряд `Steps`: «Step N of 2» (`text/sm`, `tt.tertiary`) + `ProgressBar Type=Step` з 2 `Progress/Step`.
-- Банер бонусу: xl — `leftBanner = true` у Modal; 3xs — свій `Banner` першим у Body (як у Cashbox: `fill.subtle` + `global.borderRadius.md`, `Image/Single` 120×88 + `Title` / `Description` `text/mdStrong` `tt.primary` / `tt.accent1`). Той самий `Banner` — у `Congratulations` («Confirm your email»).
+- Банер бонусу: xl — `leftBanner = true` у Modal; 3xs — свій `Banner` першим у Body (як у Cashbox: `fill.subtle` + `global.borderRadius.md`, `Image/Single` 88×88 (квадрат) + `Title` / `Description` `text/mdStrong` `tt.primary` / `tt.accent1`). Той самий `Banner` — у `Congratulations` («Confirm your email»).
 - Ілюстрації над заголовком (замок у Forgot password, дівчина в Welcome bonus) — вбудований `⬆️ Hero`, порожній.
 - 3xs з довгою формою (`Registration — Step 1` 660, `— Step 2` 816) — модалка на висоту вмісту.
 
