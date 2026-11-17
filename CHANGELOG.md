@@ -2,6 +2,7 @@
 
 Історія рішень і робіт (раніше — у SKILL.md). Нові записи — зверху. Claude читає лише на прямий запит («що ми робили з …»).
 
+- 2026-11-17 page(login): Congratulations ×3 — футер «Proceed to the game» повернуто
 - 2026-11-17 page(login): Registration Step 1 / 2 — прибрано прогрес кроків (у продукті нема)
 - 2026-11-17 page(login): Congratulations ×3 — прибрано футер «Proceed to the game» (у продукті нема)
 - 2026-11-17 rule: вміст слота без Wrapper; прибрано Wrapper у слотах — Log in / Sign up 34, Cashbox 16, Profile 39, Providers 4, Loyalty 2, Referral 2

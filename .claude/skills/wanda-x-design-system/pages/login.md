@@ -8,7 +8,7 @@
 Old (y 0, від x 20304): `Old — Pages` 82678:4954 (3 signup page) · `Old — Login popups` 82678:4958 · `Old — Password recovery popups` 82678:4966 · `Old — Registration popups` 82678:4986 (one more step / congratulations · реєстрація · AFK) · `Old — Components` 82678:5017 (22 локальні набори / фрейми).
 
 ## Як зібрано
-- 3xs `Modal/Default Breakpoint=3xs` (x 80, вікно знизу); xl `Breakpoint=xl, Size=sm, Centered=True` (x 480). Header + Title + Closable; Footer лише в Forgot password (`Back to Login` — `Button Text Accent md`, Fill). «Proceed to the game» зі старих Congratulations у продукті нема — не збираємо.
+- 3xs `Modal/Default Breakpoint=3xs` (x 80, вікно знизу); xl `Breakpoint=xl, Size=sm, Centered=True` (x 480). Header + Title + Closable; Footer — `Button Text Accent md`, Fill: `Back to Login` (Forgot password ×4), `Proceed to the game` (Congratulations ×3 — пропустити підтвердження email).
 - Форма: `Input` (Default / Filled / Error), пароль — Suffix + `eye-off` (Static — Icons), телефон — Prefix `↳ Text` +380 + Arrow (іконку `plus` сховано), селекти (Currency, Country, Date of birth) — Suffix `↳ Arrow`. Пари полів — `Wrapper` H gap 16 (обидва FILL).
 - CTA — `Button Primary lg` FILL (maxWidth знято); «Forgot password?» — `Link Neutral md Strong`; «Register / Log in / Resend» — `Link Accent md Strong` у ряді `Prompt` з `Description` (`text/md`, `tt.secondary`).
 - Соцмережі — `Divider` Label «or» + ряд `Socials` (Google, TikTok, X — набір `Social icons` 55092:3697, remote, як в оригіналі).
