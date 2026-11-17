@@ -23,7 +23,7 @@ Old (y 0, від x 20304): `Old — Pages` 82678:4954 (3 signup page) · `Old �
 
 ## Відкриті питання
 1. Тексти кнопок в оригіналі були `Label` — поставлено Log in / Send / Send again / Confirm / Save / Next / Register / Confirm email / Go to email / Registration. Підтвердити.
-2. `One more step`: в оригіналі ключі перекладів (`email.popup.*.description`) — лишено як є; іконок / рядків-переваг з макета не видно (текст на темному), потрібен референс.
+2. `One more step`: список — 3 `List/Item — Default Ordered=True` (як у старому `Main-content / There is just one more step`), тексти написано за ключами `email.popup.email|bonus|lock.description` — підтвердити копірайт.
 3. Step 2 реєстрації: кругла кнопка «+» ліворуч від CTA в оригіналі — не зібрано (незрозуміла роль).
 4. Варіант логіну з 8 соцмережами і відкритий список країн (Dropdown) — окремими сетами не збирали.
 5. Локальні `Log out content`, `Nontypical device`, `Confirmation content`, `AFK modal content` не мали попапів на сторінці — сетів нема. Збирати?
