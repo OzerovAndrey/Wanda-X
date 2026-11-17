@@ -12,10 +12,10 @@ Old (y 0, від x 20304): `Old — Pages` 82678:4954 (3 signup page) · `Old �
 - Форма: `Input` (Default / Filled / Error), пароль — Suffix + `eye-off` (Static — Icons), телефон — Prefix `↳ Text` +380 + Arrow (іконку `plus` сховано), селекти (Currency, Country, Date of birth) — Suffix `↳ Arrow`. Пари полів — `Wrapper` H gap 16 (обидва FILL).
 - CTA — `Button Primary lg` FILL (maxWidth знято); «Forgot password?» — `Link Neutral md Strong`; «Register / Log in / Resend» — `Link Accent md Strong` у ряді `Prompt` з `Description` (`text/md`, `tt.secondary`).
 - Соцмережі — `Divider` Label «or» + ряд `Socials` (Google, TikTok, X — набір `Social icons` 55092:3697, remote, як в оригіналі).
-- Кроки реєстрації — ряд `Steps`: «Step N of 2» (`text/sm`, `tt.tertiary`) + `ProgressBar Type=Step` з 2 `Progress/Step`.
+- Прогресу кроків («Step N of 2» + ProgressBar) у продукті нема — не збираємо.
 - Банер бонусу: xl — `leftBanner = true` у Modal; 3xs — свій `Banner` першим у Body (як у Cashbox: `fill.subtle` + `global.borderRadius.md`, `Image/Single` 88×88 (квадрат) + `Title` / `Description` `text/mdStrong` `tt.primary` / `tt.accent1`). Той самий `Banner` — у `Congratulations` («Confirm your email»).
 - Ілюстрації над заголовком (замок у Forgot password, дівчина в Welcome bonus) — вбудований `⬆️ Hero`, порожній.
-- 3xs з довгою формою (`Registration — Step 1` 660, `— Step 2` 816) — модалка на висоту вмісту.
+- 3xs з довгою формою (`Registration — Step 2` 784; xl — `Max. height = True`) — модалка на висоту вмісту.
 
 ## Вписати вручну (MrBet)
 - `Title` модалок: Login ×2 сети — «Login»; Forgot password ×4 — «Forgot your password?» (Email sent — «Please wait», Sent again — «Send again»); New password — «New password»; Password updated — «Successfully!»; Registration ×3 — «Registration»; Account details — «Provide your account details»; One more step — «There is just one more step»; Congratulations ×3 — «Congratulations!»; Welcome bonus — «Get up to 300 UAH».
