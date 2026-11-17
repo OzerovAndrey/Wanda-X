@@ -2,6 +2,7 @@
 
 Історія рішень і робіт (раніше — у SKILL.md). Нові записи — зверху. Claude читає лише на прямий запит («що ми робили з …»).
 
+- 2026-11-17 page(login): сети переставлено за флоу — ряд 1 реєстрація, ряд 2 логін
 - 2026-11-17 page(login): One more step — список `List/Item — Default` (Ordered) замість голих TEXT з ключами
 - 2026-11-16 rule: `Image/Single` у банерах — квадрат; Log in / Sign up — 5 картинок банерів 120×88 / 100×100 → 88×88
 - 2026-11-16 page(cashbox): `Cashbox/Method` — лого Payment-Methods у фреймі 36 px, Width HUG + Height FILL (пропорції зберігаються, картка завжди 68); у сетах Deposit — 13 реальних методів; pitfall про swap і ширину

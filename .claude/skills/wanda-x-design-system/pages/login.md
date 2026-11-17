@@ -2,9 +2,9 @@
 
 Статус (2026-11-16): вся сторінка — **попапи** (`Modal/Default` 3xs + xl), лейаутів `Layout/*` нема. Логін і реєстрація — окремими рядами сетів. Старе — у чорних Section праворуч, нічого не видалено.
 
-## Розкладка (крок 2256, 600 між рядами)
-Ряд 1 — **логін** (y 0): `Login` 82681:4954 · `Login — Phone` 82682:5104 · `Forgot password` 82682:5314 · `Forgot password — Email sent` 82682:5426 · `Forgot password — Sent again` 82682:5528 · `Forgot password — SMS` 82682:5630 · `New password` 82682:5756 · `Password updated` 82682:5892.
-Ряд 2 — **реєстрація** (y 1528): `Registration` 82684:5805 · `Registration — Step 1` 82686:5987 · `Registration — Step 2` 82686:6307 · `Account details` 82686:6645 · `One more step` 82686:6849 · `Congratulations` 82686:6959 · `Congratulations — Email sent` 82686:7073 · `Congratulations — Resend timer` 82686:7181 · `Welcome bonus` 82686:7287.
+## Розкладка (крок 2256, 600 між рядами) — за флоу клієнта
+Ряд 1 — **реєстрація** (y 0): `Welcome bonus` (AFK-заклик) · `Registration` · `Registration — Step 1` · `Registration — Step 2` · `One more step` (додати email) · `Congratulations` · `Congratulations — Email sent` · `Congratulations — Resend timer` · `Account details` (дозаповнення даних пізніше).
+Ряд 2 — **логін** (y 1576): `Login` · `Login — Phone` · `Forgot password` · `Forgot password — Email sent` · `Forgot password — Sent again` · `Forgot password — SMS` · `New password` · `Password updated`.
 Old (y 0, від x 20304): `Old — Pages` 82678:4954 (3 signup page) · `Old — Login popups` 82678:4958 · `Old — Password recovery popups` 82678:4966 · `Old — Registration popups` 82678:4986 (one more step / congratulations · реєстрація · AFK) · `Old — Components` 82678:5017 (22 локальні набори / фрейми).
 
 ## Як зібрано
