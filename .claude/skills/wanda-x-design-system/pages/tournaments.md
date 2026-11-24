@@ -92,3 +92,6 @@ for (const lay of sec.children) {
 ## Зміни 2026-11-11 (оновлення компонента Table)
 - Команда прибрала `Inverted`, `Striped → Filled`, `Stripe → Filled`. 168 інстансів у Leaders / My progress (`Tournament — Active`, `— Archived`) з видалених `…/True` → swap на актуальні (`Filled` / `Plain`, Selected збережено), вміст і тексти збережено; 56 мертвих override-ів переприв'язано.
 - Вигляд — за компонентом: світла плашка `Filled` з хедером `fill.active`, темний текст. Рішення «темна зебра як в оригіналі» (вище) — **більше не діє**; фікс `inverted.fill.selected` — токена вже нема.
+
+## 2026-11-24
+- `Tournaments` (80078:100446): інстанси скинуто під оновлені мейни зі збереженням контенту (бекап у plugin data секції `claude/backup-2026-11-24`); мобайл заповнено текстами з xl (Tournament, Active / Archived, Active, Coming soon, Dates, Participate / Read more); Coming soon — картки знову `Type=Soon`; Section 80 px.

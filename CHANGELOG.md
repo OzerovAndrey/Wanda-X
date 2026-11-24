@@ -1,5 +1,7 @@
 # Журнал змін Wanda X
 
+- 2026-11-24 — Tournaments: reset instances to updated mains, content preserved; mobile texts restored from xl; Coming soon cards back to Soon.
+
 Історія рішень і робіт (раніше — у SKILL.md). Нові записи — зверху. Claude читає лише на прямий запит («що ми робили з …»).
 
 - 2026-11-17 page(login): Congratulations ×3 — футер «Proceed to the game» повернуто
