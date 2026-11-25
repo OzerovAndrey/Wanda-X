@@ -144,6 +144,7 @@ for (const comp of figma.root.findAll(n => n.type === 'COMPONENT')) {
 |---|---|---|---|
 | `VariableID:82236:356104` | radio/card/br/default (стара копія) | `VariableID:83017:5346` | Radio/Card stroke — `resetOverrides()` |
 | `VariableID:82484:214946` | dropdown/item/borderRadius (стара копія) | `VariableID:82779:254058` | Dropdown/Item — 3 main COMPONENT, 12 radius полів |
+| `VariableID:82560:218438` | empty/borderRadius (стара копія) | `VariableID:82779:254059` | Empty — 2 main COMPONENT, 8 radius полів |
 
 ## Ресет інстансів після оновлення мейна зі збереженням контенту (2026-11-24, Tournaments)
 1. Знімок у plugin data секції (`setSharedPluginData('claude','backup-<дата>', json)`): для кожного інстансу в `Main Area` — `componentProperties`, `[layoutSizingH, layoutSizingV, w, h]`, тексти `[id, characters]` усього піддерева (id підшарів інстансу після ресету не змінюються).
