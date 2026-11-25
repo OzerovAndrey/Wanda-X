@@ -1,5 +1,6 @@
 # Журнал змін Wanda X
 
+- 2026-11-25 — Search: Icon ghost iconSize/sm (`80959:907`) — override знятий `setBoundVariable(null)` на 6 Icon інстансах; 0 ghost на сторінці
 - 2026-11-25 — Providers: Input Field ghost paddingV (`82340:207868`→`82474:214135`) — 32 поля в FRAME Field; Icon ghost iconSize/sm (`80959:907`) — override знятий `setBoundVariable(null)` на 4 Icon інстансах; 0 ghost на сторінці
 - 2026-11-25 — Providers: Empty ghost borderRadius (`82560:218438`→`82779:254059`) зафіксовано в 2 main COMPONENTs (8 полів); pages/providers.md створено
 - 2026-11-25 — Shop: ghost vars Radio/Card stroke (`82236:356104`→`83017:5346`) і Dropdown/Item borderRadius (`82484:214946`→`82779:254058`) зафіксовано в main components; TabBar effects false positive задокументовано; pitfalls оновлено: ghost-scan patterns, page.findAll() limitation
