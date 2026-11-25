@@ -88,6 +88,63 @@
 - `Table/Cell` зі Slot: щоб слот зайняв ширину, сховати сусідній `Content` — **тільки прямою дитиною** (`p2.children.find`), не `findOne` (глибокий пошук зачепить Content першого вкладеного `Table/Cell` і зламає його); вміст слота — Wrapper FILL.
 - Лого з бібліотеки Payment-Methods (і будь-які компоненти з авто-шириною): у мейні **Width HUG + Height FILL** у фреймі фіксованої висоти. З `FILL`/`FIXED` шириною + lock ratio swap через INSTANCE_SWAP-властивість лишає стару ширину → лого сплющується (`swapComponent` ширину перераховує, властивість — ні). Після swap в інстансах, що мали override ширини, — повернути `layoutSizingHorizontal = 'HUG'`.
 
+## Ghost variables — сканування і фікс (2026-11-25, Shop)
+
+### Що таке ghost variable
+Змінна, чий `id` є в `boundVariables` вузла, але відсутня в `figma.variables.getLocalVariables()`. Flint-лінтер показує їх як "Ghost variables".
+
+### Як шукати
+```js
+// SYNC — не async!
+const localIds = new Set(figma.variables.getLocalVariables().map(v => v.id));
+
+// page.findAll() НЕ заходить у вкладені інстанси — лише перший рівень
+// Щоб охопити весь файл — перебирати ВСІХ дітей через figma.root.findAll()
+const allNodes = figma.root.findAll(() => true); // або з фільтром
+for (const node of allNodes) {
+  const bv = node.boundVariables || {};
+  // radius — чотири окремих поля, не тільки cornerRadius
+  for (const field of ['topLeftRadius','topRightRadius','bottomLeftRadius','bottomRightRadius','cornerRadius']) {
+    if (bv[field]?.id && !localIds.has(bv[field].id)) { /* ghost */ }
+  }
+  // fills / strokes — через масив
+  for (const fill of (node.fills || [])) {
+    if (fill.boundVariables?.color?.id && !localIds.has(fill.boundVariables.color.id)) { /* ghost */ }
+  }
+}
+```
+
+### Де живе ghost — може бути НЕ на аудитованій сторінці
+- Flint сканує **main components** по всьому файлу, тому «34 nodes» можуть бути екземплярами з будь-якої сторінки
+- Ghost може жити на мейні компонента на іншій сторінці (напр. `↳ Dropdown` page), а не на сторінці, яку аудитуємо
+- Перевіряти: `figma.root.findAll(n => n.type === 'COMPONENT')` по всьому файлу
+
+### Як фіксувати
+```js
+// Знайти правильну змінну (замінник для ghost)
+const correctVar = await figma.variables.getVariableByIdAsync("VariableID:...");
+const ghostId = "VariableID:...";
+// Фіксувати в main COMPONENT, а не в інстансах — поширюється на всі використання
+for (const comp of figma.root.findAll(n => n.type === 'COMPONENT')) {
+  const bv = comp.boundVariables || {};
+  for (const field of ['topLeftRadius','topRightRadius','bottomLeftRadius','bottomRightRadius','cornerRadius']) {
+    if (bv[field]?.id === ghostId) {
+      comp.setBoundVariable(field, correctVar);
+    }
+  }
+}
+```
+
+### Flint false positive — TabBar effects
+- `effects[1]` і `effects[2]` у TabBar → змінні `VariableID:80959:232` та `VariableID:80959:494` (`depth/0` та аналог) — **реальні локальні змінні**, Flint помилково їх позначає ghost
+- НЕ чіпати; після фіксу всіх справжніх ghost-ів ці 2 залишаться — це норма
+
+### Знайдені ghost-и у Wanda X (для довідки)
+| Ghost ID | Назва | Правильна змінна | Де фіксували |
+|---|---|---|---|
+| `VariableID:82236:356104` | radio/card/br/default (стара копія) | `VariableID:83017:5346` | Radio/Card stroke — `resetOverrides()` |
+| `VariableID:82484:214946` | dropdown/item/borderRadius (стара копія) | `VariableID:82779:254058` | Dropdown/Item — 3 main COMPONENT, 12 radius полів |
+
 ## Ресет інстансів після оновлення мейна зі збереженням контенту (2026-11-24, Tournaments)
 1. Знімок у plugin data секції (`setSharedPluginData('claude','backup-<дата>', json)`): для кожного інстансу в `Main Area` — `componentProperties`, `[layoutSizingH, layoutSizingV, w, h]`, тексти `[id, characters]` усього піддерева (id підшарів інстансу після ресету не змінюються).
 2. «Власні» інстанси = без предка-інстансу до `Main Area`, або дитина слота. Інстанси з непорожніми слотами (Tabs, Image/Multi) **не ресетити** — ресетити їхній вміст слота окремо.

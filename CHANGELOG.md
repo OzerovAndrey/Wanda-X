@@ -1,5 +1,6 @@
 # Журнал змін Wanda X
 
+- 2026-11-25 — Shop: ghost vars Radio/Card stroke (`82236:356104`→`83017:5346`) і Dropdown/Item borderRadius (`82484:214946`→`82779:254058`) зафіксовано в main components; TabBar effects false positive задокументовано; pitfalls оновлено: ghost-scan patterns, page.findAll() limitation
 - 2026-11-24 — Tournaments: reset instances to updated mains, content preserved; mobile texts restored from xl; Coming soon cards back to Soon.
 
 Історія рішень і робіт (раніше — у SKILL.md). Нові записи — зверху. Claude читає лише на прямий запит («що ми робили з …»).
