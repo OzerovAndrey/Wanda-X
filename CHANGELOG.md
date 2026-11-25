@@ -1,5 +1,6 @@
 # Журнал змін Wanda X
 
+- 2026-11-25 — Ghost variable sweep ЗАВЕРШЕНО: 0 ghost variables по всьому файлу. Виправлено fills на Profile (1099 вузлів), Verification (492), Dice Duel (86), Lottery (2), Switch (4), Wheel of Fortune (4), Cashbox (1), Log in/Sign up — всі hash-prefix remote library overrides очищено через `setBoundVariableForPaint(paint,'color',null)` та `node.fills = fills.map(f=>({...f}))`.
 - 2026-11-25 — Search: Icon ghost iconSize/sm (`80959:907`) — override знятий `setBoundVariable(null)` на 6 Icon інстансах; 0 ghost на сторінці
 - 2026-11-25 — Providers: Input Field ghost paddingV (`82340:207868`→`82474:214135`) — 32 поля в FRAME Field; Icon ghost iconSize/sm (`80959:907`) — override знятий `setBoundVariable(null)` на 4 Icon інстансах; 0 ghost на сторінці
 - 2026-11-25 — Providers: Empty ghost borderRadius (`82560:218438`→`82779:254059`) зафіксовано в 2 main COMPONENTs (8 полів); pages/providers.md створено
